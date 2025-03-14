@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# Aggiunta automatica della codifica UTF8
+AddDefaultCharset utf-8
+
+# Cartella del progetto
+RewriteBase /ProntoEmergenza/
+
+
+RewriteCond %{REQUEST_URI} api
+RewriteRule ^(.*)$ api.php?route=$1 [L,QSA]
+
+
+# Reindirizza tutte le richieste a index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?route=$1 [L,QSA]
