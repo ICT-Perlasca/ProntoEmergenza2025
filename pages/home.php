@@ -2,7 +2,7 @@
 session_start();
 
 if(!isset($_SESSION['idUtente'])){
-    header("Location: elenco");
+    header("Location: login");
 }else{
 ?>
 <html>
