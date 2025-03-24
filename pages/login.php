@@ -6,7 +6,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="row">
+<div class="row min-vh-90">
         <div class="col-lg-6 col-12 px-5 py-5">
             <img class="rounded img-fluid px-5 py-3" src="public/images/logo-ambulanza.png" alt="Logo Pronto Emergenza">
             <img class="rounded img-fluid px-5 py-3" src="public/images/icona-ambulanza.png" alt="Icona Ambulanza">

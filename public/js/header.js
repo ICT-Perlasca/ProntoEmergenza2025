@@ -30,7 +30,7 @@ function loginJS(formLog)
     xhttp.onload = function(){
         ritornaLog(this);
     }
-    xhttp.open("POST", "api\\ricercaUser.php");
+    xhttp.open("POST", "api\");
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("user="+user+"& psw="+psw);
     
