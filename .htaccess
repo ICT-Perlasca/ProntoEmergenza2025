@@ -4,7 +4,7 @@ RewriteEngine On
 AddDefaultCharset utf-8
 
 # Cartella del progetto
-RewriteBase /ProntoEmergenza/
+RewriteBase /ProntoEmergenza2025/
 
 
 RewriteCond %{REQUEST_URI} api
