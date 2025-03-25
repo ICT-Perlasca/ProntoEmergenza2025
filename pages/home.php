@@ -2,6 +2,8 @@
 session_start();
 
 if(!isset($_SESSION['idUtente'])){
+    // header("Location: elenco");
+// }else{
 ?>
 <html>
         <head>

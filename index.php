@@ -1,8 +1,6 @@
 <?php
-//echo $_GET['route']."<br>";
 $route = isset($_GET['route']) ? trim($_GET['route'], "/") : 'home';
 $pageFile = "./pages/{$route}.php";
-
 
 if (file_exists($pageFile)) {
     include $pageFile;
