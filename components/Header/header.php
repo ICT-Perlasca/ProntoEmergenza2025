@@ -1,10 +1,8 @@
 <?php
 function COMP_header($user) {
 
-    $links = $user['tipoUtente'] == 'admin' ? adminLinks() : volontarioLinks();
+    $links = $user['tipoUtente'] == 'admin' ? _adminLinks() : _volontarioLinks();
     
-    $user['image'] = "https://fakeimg.pl/440x320/282828/eae0d0/?retina=1";
-
     return '
         <link rel="stylesheet" href="./public/css/header.css" type="text/css"/>
         <script type="text/javascript" src="./public/js/header.js"></script>
@@ -23,11 +21,11 @@ function COMP_header($user) {
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    '.renderLinks($links).'
+                    '._renderLinks($links).'
                 </ul>
 
-                <ul class="navbar-nav pl-3">
-                    <li class="nav-item dropdown">
+                <ul class="navbar-nav pl-md-3">
+                    <li class="nav-item dropdown d-flex justify-content-end">
                         <div class="nav-link dropdown-toggle d-flex align-items-center" 
                             id="userDropdown" 
                             role="button" data-bs-toggle="dropdown"
@@ -49,7 +47,7 @@ function COMP_header($user) {
         </nav>';
 }
 
-function renderLinks($links){
+function _renderLinks($links){
     $html = "";
 
     foreach ($links as $k => $l){
@@ -80,25 +78,7 @@ function renderLinks($links){
     return $html;
 }
 
-function adminLinks(){
-    return [
-        [
-            "url" => "home",
-            "title" => "Home"
-        ],
-        [
-            "url" => "home",
-            "title" => "Utenti",
-            "sub" => [
-                [
-                    "url" => "utenti/agg",
-                    "title" => "Aggiunta utenti"
-                ]
-            ]
-        ]
-    ];
-}
-function volontarioLinks(){
+function _adminLinks(){
     return [
         [
             "url" => "home",
@@ -109,8 +89,186 @@ function volontarioLinks(){
             "title" => "Bacheca",
             "sub" => [
                 [
-                    "url" => "utenti/agg",
-                    "title" => "Aggiunta utenti"
+                    "url" => "bacheca/elenco",
+                    "title" => "Elenco comunicazioni"
+                ],
+                [
+                    "url" => "bacheca/aggiunta",
+                    "title" => "Aggiunta comunicazione"
+                ]
+            ]
+        ],
+        [
+            "url" => "turni",
+            "title" => "Turni",
+            "sub" => [
+                [
+                    "url" => "turni/utente",
+                    "title" => "Elenco turni di un utente"
+                ],
+                [
+                    "url" => "turni/visualizza-disponibilita",
+                    "title" => "Visualizza disponibilità"
+                ],
+                [
+                    "url" => "turni/inserimento",
+                    "title" => "Inserimento turno"
+                ],
+                [
+                    "url" => "turni/scoperti",
+                    "title" => "Turni scoperti"
+                ],
+                [
+                    "url" => "turni/fissi",
+                    "title" => "Turni fissi"
+                ],
+                [
+                    "url" => "turni/convalida",
+                    "title" => "Convalida turni"
+                ],
+                [
+                    "url" => "turni/mese",
+                    "title" => "Scelta mese"
+                ],
+                [
+                    "url" => "turni/disponibilita",
+                    "title" => "Inserimento disponibilità"
+                ]
+            ]
+        ],
+        [
+            "url" => "utenti",
+            "title" => "Utenti",
+            "sub" => [
+                [
+                    "url" => "utenti/aggiunta",
+                    "title" => "Aggiunta utente"
+                ],
+                [
+                    "url" => "utenti/vidimazione",
+                    "title" => "Vidimazione utente"
+                ],
+                [
+                    "url" => "utenti/assenze",
+                    "title" => "Inserimento assenze"
+                ],
+                [
+                    "url" => "utenti/ore",
+                    "title" => "Conteggio ore"
+                ],
+                [
+                    "url" => "utenti/permessi",
+                    "title" => "Visualizzazione permessi"
+                ],
+                [
+                    "url" => "utenti/straordinarie",
+                    "title" => "Visualizzazione straordinarie"
+                ],
+                [
+                    "url" => "utenti/ore-minime",
+                    "title" => "Modifica ore minime"
+                ]
+            ]
+        ],
+        [
+            "url" => "report",
+            "title" => "Reportistica",
+            "sub" => [
+                [
+                    "url" => "report/turni-utenti",
+                    "title" => "Turni utente"
+                ],
+                [
+                    "url" => "report/turni-convalidati",
+                    "title" => "Turni convalidati"
+                ],
+                [
+                    "url" => "report/turni",
+                    "title" => "Storico turni"
+                ],
+                [
+                    "url" => "report/compleanni",
+                    "title" => "Compleanni nel mese"
+                ],
+                [
+                    "url" => "report/eventi",
+                    "title" => "Eventi"
+                ]
+            ]
+        ],
+        [
+            "url" => "assistenza",
+            "title" => "Assistenza",
+            "sub" => [
+                [
+                    "url" => "assistenza/aggiunta",
+                    "title" => "Nuovo evento"
+                ],
+                [
+                    "url" => "assistenza/aggiunta-personale",
+                    "title" => "Nuovo evento personale"
+                ]
+            ]
+        ],
+        [
+            "url" => "mezzi",
+            "title" => "Mezzi",
+            "sub" => [
+                [
+                    "url" => "mezzi/aggiunta",
+                    "title" => "Nuovo mezzi"
+                ],
+                [
+                    "url" => "mezzi/elenco",
+                    "title" => "Elenco mezzi"
+                ],
+                [
+                    "url" => "mezzi/storico",
+                    "title" => "Storico mezzi"
+                ]
+            ]
+        ]
+    ];
+}
+function _volontarioLinks(){
+    return [
+        [
+            "url" => "home",
+            "title" => "Home"
+        ],
+        [
+            "url" => "bacheca",
+            "title" => "Bacheca",
+            "sub" => [
+                [
+                    "url" => "bacheca/elenco",
+                    "title" => "Elenco comunicazioni"
+                ],
+                [
+                    "url" => "bacheca/to-admin",
+                    "title" => "Invio comunicazione all'admin"
+                ]
+            ]
+        ],
+        [
+            "url" => "turni",
+            "title" => "Turni",
+            "sub" => [
+                [
+                    "url" => "turni/elenco",
+                    "title" => "Elenco turni"
+                ],
+                [
+                    "url" => "turni/inserimento",
+                    "title" => "Inserimento turno"
+                ],
+                [
+                    "url" => "turni/fissi",
+                    "title" => "Turni fissi"
+                ],
+                [
+                    "url" => "turni/disponibilita",
+                    "title" => "Inserimento disponibilità"
                 ]
             ]
         ]
