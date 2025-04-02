@@ -4,7 +4,7 @@ function API_RitornaUtenti($get, $post, $session){
     if (!isset($session['tipoUtente']) || $session['tipoUtente'] != "admin"){
         header("HTTP/1.1 403 forbidden");
         return [];
-    }
+    }else{
     $sql = "SELECT * from utenti ORDER BY cognome,nome;";
     $valori = [];
     $tipi = [];
@@ -14,7 +14,7 @@ function API_RitornaUtenti($get, $post, $session){
 
 
 function ElaboraQuery($strquery, $valori, $tipi) {
-    include ("dsn.php"); 
+    include ("dsn.php"); /*file temp per provare le query, serve per settare la classe PDO*/
     $ris=[]; 
     try{ 
         $conn=new PDO($dsn,$username,$password); 
