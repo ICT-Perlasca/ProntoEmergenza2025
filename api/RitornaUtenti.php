@@ -10,7 +10,8 @@ function API_RitornaUtenti($get, $post, $session){
     $tipi = [];
     $risposta = ElaboraQuery($sql, $valori, $tipi);
     return $risposta;
-}
+    }
+}    
 
 
 function ElaboraQuery($strquery, $valori, $tipi) {
