@@ -8,6 +8,7 @@ function API_ElencoMezziDisponibli($get, $post, $session){
         $valori = [];
         $tipi = [];
         $risposta = ElaboraQuery($sql, $valori, $tipi);
+        var_dump($risposta);
         return $risposta;
     }
 }
