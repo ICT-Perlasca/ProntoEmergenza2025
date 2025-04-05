@@ -2,7 +2,7 @@
 
 function API_RitornaUtenti($get, $post, $session){
     if (!isset($session['tipoUtente']) || $session['tipoUtente'] != "admin"){
-        header("HTTP/1.1 403 forbidden");
+        header("HTTP/1.1 403 Forbidden");
         return [];
     }else{
     $sql = "SELECT * from utenti ORDER BY cognome,nome;";

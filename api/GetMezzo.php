@@ -2,7 +2,7 @@
 
 function API_GetMezzo($get, $post, $session){
     if(!isset($_POST['idMezzo']) || $session['tipoUtente'] != "admin"){
-        header("HTTP/1.1 403 forbidden");
+        header("HTTP/1.1 403 Forbidden");
         return [];
     }else{
         $sql = "SELECT * from mezzi WHERE idMezzo=?;";

@@ -1,7 +1,7 @@
 <?php
-function API_ElencoMezziDisponibli($get, $post, $session){
+function API_ElencoMezziDisponibili($get, $post, $session){
     if (!isset($session['tipoUtente']) || $session['tipoUtente'] != "admin"){
-        header("HTTP/1.1 403 forbidden");
+        header('HTTP/1.1 403 Forbidden');
         return [];
     }else{
         $sql = "SELECT * from mezzi ORDER BY tipoMezzo DESC;";
