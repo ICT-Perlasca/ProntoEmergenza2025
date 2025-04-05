@@ -13,7 +13,7 @@ function API_ElencoMezziDisponibili($get, $post, $session){
 }
 
 function ElaboraQuery($strquery, $valori, $tipi) {
-    include ("dsn.php"); 
+    include ("dsn.php"); /*file temp per provare le query, serve per settare la classe PDO*/
     $ris=[]; 
     try{ 
         $conn=new PDO($dsn,$username,$password); 
