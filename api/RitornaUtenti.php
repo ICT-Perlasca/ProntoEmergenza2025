@@ -5,11 +5,11 @@ function API_RitornaUtenti($get, $post, $session){
         header("HTTP/1.1 403 Forbidden");
         return [];
     }else{
-    $sql = "SELECT * from utenti ORDER BY cognome,nome;";
-    $valori = [];
-    $tipi = [];
-    $risposta = ElaboraQuery($sql, $valori, $tipi);
-    return $risposta;
+        $sql = "SELECT * from utenti ORDER BY cognome,nome;";
+        $valori = [];
+        $tipi = [];
+        $risposta = ElaboraQuery($sql, $valori, $tipi);
+        return $risposta;
     }
 }    
 

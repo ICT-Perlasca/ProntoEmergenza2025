@@ -1,12 +1,11 @@
 <?php
-
-function API_GetMezzo($get, $post, $session){
-    if(!isset($post['idMezzo']) || $session['tipoUtente'] != "admin"){
+function API_GetUtente($get, $post, $session){
+    if(!isset($post['idUtente']) || $session['tipoUtente'] != "admin"){
         header("HTTP/1.1 403 Forbidden");
         return [];
     }else{
-        $sql = "SELECT * from mezzi WHERE idMezzo=?;";
-        $valori = [$get['idMezzo']];
+        $sql = "SELECT * from utenti WHERE idUtente=?;";
+        $valori = [$get['idUtente']];
         $tipi = [PDO::PARAM_INT];
         $risposta = ElaboraQuery($sql, $valori, $tipi);
         return $risposta;
@@ -33,3 +32,4 @@ function ElaboraQuery($strquery, $valori, $tipi) {
     } 
     return $ris; 
 }
+?>
