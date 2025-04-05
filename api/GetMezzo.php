@@ -6,7 +6,7 @@ function API_GetMezzo($get, $post, $session){
         return [];
     }else{
         $sql = "SELECT * from mezzi WHERE idMezzo=?;";
-        $valori = [$get['idMezzo']];
+        $valori = [$post['idMezzo']];
         $tipi = [PDO::PARAM_INT];
         $risposta = ElaboraQuery($sql, $valori, $tipi);
         return $risposta;
