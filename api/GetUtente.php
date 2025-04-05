@@ -5,7 +5,7 @@ function API_GetUtente($get, $post, $session){
         return [];
     }else{
         $sql = "SELECT * from utenti WHERE idUtente=?;";
-        $valori = [$get['idUtente']];
+        $valori = [$post['idUtente']];
         $tipi = [PDO::PARAM_INT];
         $risposta = ElaboraQuery($sql, $valori, $tipi);
         return $risposta;
