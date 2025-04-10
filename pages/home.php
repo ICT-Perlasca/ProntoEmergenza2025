@@ -2,8 +2,8 @@
 session_start();
 
 if(!isset($_SESSION['idUtente'])){
-    // header("Location: elenco");
-// }else{
+    header("Location: login");
+}else{
 ?>
 <html>
         <head>
@@ -18,7 +18,7 @@ require_once ("./components/Header/header.php");
 require_once ("./components/SimpleComponent/comp.php");
 require_once ("./api/elencoComunicazioni.php");
 
-echo COMP_header();
+echo COMP_header($_SESSION);
 
 foreach(API_elencoComunicazioni([],[], $_SESSION) as $c) {
     echo COMP_simpleComponent($c['id']);
