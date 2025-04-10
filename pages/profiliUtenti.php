@@ -11,19 +11,19 @@
             ....BOOTSTRAP....
         </head>
         <body>
-<?php
-require_once ("./components/Header/header.php");
-require_once ("./components/SimpleComponent/comp.php");
-require_once ("./api/RitornaUtenti.php");
+            <?php
+                require_once ("./components/Header/header.php");
+                require_once ("./components/SimpleComponent/comp.php");
+                require_once ("./api/RitornaUtenti.php");
 
-echo COMP_header();
+                echo COMP_header();
+                echo COMP_searchBar();
 
-foreach(API_RitornaUtenti([],[], $_SESSION) as $u) {
-    echo COMP_simpleComponent($u['id']);
-}
-
-?>
-</body>
+                foreach(API_RitornaUtenti([],[], $_SESSION) as $u) {
+                    echo COMP_cardUtente($u['id']);
+                }
+            ?>
+        </body>
 </html>
 <?php
     }
