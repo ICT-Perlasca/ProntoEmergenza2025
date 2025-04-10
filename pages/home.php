@@ -2,7 +2,7 @@
 session_start();
 
 if(!isset($_SESSION['idUtente'])){
-    echo "NON LOGGATO";
+    header("Location: login");
 }else{
 ?>
 <html>
