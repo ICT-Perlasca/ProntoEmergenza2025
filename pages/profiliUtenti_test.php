@@ -2,7 +2,7 @@
     session_start();
 
     if(!isset($_SESSION['idUtente']) || $_SESSION['tipoUtente'] != 'admin'){
-        header("Location: ../fakeLoginAdmin.php");
+        header("Location: login");
     }else{
 ?>
 <html>
@@ -23,14 +23,13 @@
             <?php
                 require_once ("../components/Header/header.php");
                 require_once ("../components/SimpleComponent/comp.php");
-                require_once ("../components/Footer/footer.php");
                 require_once ("../api/RitornaUtenti.php");
 
-                echo COMP_header($_SESSION);
+                echo COMP_header();
                 echo COMP_Footer();
 
                 foreach(API_RitornaUtenti([],[], $_SESSION) as $u) {
-                    echo COMP_CardUtente($u);
+                    echo COMP_cardUtente($u);
                 }
             ?>
         </body>
