@@ -8,6 +8,7 @@
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
         <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
+        <script src="/public/js/calendar.js"></script>
 
         <script>
             
@@ -32,7 +33,7 @@
                 aspectRatio: 0.7,
                 selectable: true,
                 dateClick: function (info) {
-                    generateTable(info.dateStr); // Navigate to the clicked date in the day calendar
+                    turniData(info.dateStr); // Navigate to the clicked date in the day calendar
                 }, 
                 select: function (info) {
                     // Ensure only one day is selected
@@ -97,36 +98,6 @@
 */
             calendar.render();
             //dayCal.render();
-
-            
-            function generateTable(date) {
-                var tableHtml = `
-                    <h3>Schedule for ${date}</h3>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Time</th>
-                                <th>Event</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>09:00 - 10:00</td>
-                                <td>Meeting with Team</td>
-                            </tr>
-                            <tr>
-                                <td>12:00 - 13:00</td>
-                                <td>Lunch Break</td>
-                            </tr>
-                            <tr>
-                                <td>14:00 - 15:00</td>
-                                <td>Client Call</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                `;
-                dayCalElement.innerHTML = tableHtml; // Update the day calendar with the generated table
-            }
 
         });
 
