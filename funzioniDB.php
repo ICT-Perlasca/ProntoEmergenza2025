@@ -1,6 +1,6 @@
 <?php
 require_once "globals.php";
-function api_query($strquery,$valori, $tipi){
+function db_query($strquery,$valori, $tipi){
     global $DSN,$USERDB,$PSWDB;
     $ris=[];
     try{
