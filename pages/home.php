@@ -2,6 +2,9 @@
 session_start();
 
 if(!isset($_SESSION['idUtente'])){
+    header("location:/ProntoEmergenza2025/login");
+}
+else {
 ?>
 <html>
         <head>
