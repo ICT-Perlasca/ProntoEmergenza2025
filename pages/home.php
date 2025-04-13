@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['idUtente'])){
+if(!isset($_SESSION['nome'])){
     header("Location: login");
 }else{
 ?>

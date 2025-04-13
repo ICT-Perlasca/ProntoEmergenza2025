@@ -8,8 +8,8 @@ function COMP_header($user) {
         <script type="text/javascript" src="./public/js/header.js"></script>
     
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="navbar-brand">
-                <img src="./public/images/logo-ambulanza.png" class=""/>
+            <div class="navbar-brand container-fluid">
+                <img src="./public/images/logo-ambulanza.png"  class="" style="height: 50%;width:50%;"/>
             </div>
             <button 
                 class="navbar-toggler" 
@@ -33,7 +33,7 @@ function COMP_header($user) {
                             <span class="mx-2">
                                 '.$user['cognome'].' '.$user['nome'].'
                             </span>
-                            <img src="'.$user['image'].'" alt="Avatar" class="rounded-circle" width="40" height="40">
+                            <img src="'.$user['immagine'].'" alt="Avatar" class="rounded-circle" width="40" height="40">
                         </div>
                         <ul class="dropdown-menu" aria-labelledby="userDropdown">
                             <li><a class="dropdown-item" href="#">Profilo</a></li>
