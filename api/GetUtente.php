@@ -1,7 +1,7 @@
 <?php
 function API_GetUtente($get, $post, $session){
     require_once("./funzioniDB.php");
-    if(!isset($post['idUtente']) || $session['tipoUtente'] != "admin"){
+    if(!isset($post['idUtente']) || !isset($session['tipoUtente']) || $session['tipoUtente'] != "admin"){
         header("HTTP/1.1 403 Forbidden");
         return [];
     }else{
