@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Apr 13, 2025 alle 15:21
+-- Creato il: Apr 14, 2025 alle 12:29
 -- Versione del server: 10.4.11-MariaDB
 -- Versione PHP: 7.4.2
 
@@ -21,6 +21,9 @@ SET time_zone = "+00:00";
 --
 -- Database: `pronto_emergenza`
 --
+DROP DATABASE IF EXISTS `pronto_emergenza`;
+CREATE DATABASE IF NOT EXISTS `pronto_emergenza` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `pronto_emergenza`;
 
 -- --------------------------------------------------------
 
