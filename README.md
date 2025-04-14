@@ -1,4 +1,4 @@
-1)Al 13/04 modificato il database per aggiunta campo immagine nela tabella utenti
+1)Al 13/04 modificato il database per aggiunta campo immagine nella tabella utenti
 2) i dati memorizzati in sessione sono i seguenti:
             $_SESSION['idUtente']
             $_SESSION['nome']
