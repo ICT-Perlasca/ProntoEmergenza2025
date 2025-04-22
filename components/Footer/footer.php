@@ -1,7 +1,8 @@
 <?php
     function COMP_Footer() {
         $socials = [
-            "sito" => "https://www.prontoemergenza.it/",
+            "web" => "https://www.prontoemergenza.it/",
+            "email"=>"mailto:info@prontoemergenza.it",
             "contatti" => "https://www.prontoemergenza.it/contatti/",
             "servizi" => "https://www.prontoemergenza.it/servizi/",
             "facebook" => "https://www.facebook.com/prontoemergenzaorganizzazionedivolontariato/",
@@ -11,15 +12,57 @@
 
         $socialLinks = "";
         foreach ($socials as $platform => $link) {
-            $socialLinks .= '<a href="' . $link . '" class="text-white me-2"><i class="fab fa-' . $platform . '"></i></a>';
-        }
+            /****
+            $socials = [
+                "fas fa-globe" => "https://www.prontoemergenza.it/", web
+                "fas fa-envelope" => "https://www.prontoemergenza.it/contatti/", contatt
+                "fas fa-briefcase-medical" => "https://www.prontoemergenza.it/servizi/",servizi
+                "fab fa-facebook" => "https://www.facebook.com/prontoemergenzaorganizzazionedivolontariato/",
+                "fab fa-instagram" => "https://www.instagram.com/pronto_emergenza_odv/",
+                "fab fa-tiktok" => "https://www.tiktok.com/@prontoemergenza?_t=ZN-8vMvuRcE8vO&_r=1"
+            ];
+            $socialLinks = "";
+foreach ($socials as $iconClass => $link) {
+    $socialLinks .= '<a href="' . $link . '" class="text-white me-2" target="_blank"><i class="' . $iconClass . '"></i></a>';
+}
+*/
+            switch($platform){
+                case 'web':
+                    $iconClass="fas fa-globe";
+                    break;
+                case 'contatti':
+                    $iconClass="fas fa-phone";
+                    break;
+                case 'servizi':
+                    $iconClass="fas fa-briefcase-medical";
+                    break;
+                case 'email':
+                    $iconClass="fas fa-envelope";
+                    break;
+                case 'facebook':
+                    $iconClass="fab fa-facebook";
+                    break;
+                case 'instagram':
+                    $iconClass="fab fa-instagram";
+                    break;
+                case 'tik-tok':
+                    $iconClass="fab fa-tiktok";
+                    break;
 
-        return ' 
+            }
+           // $socialLinks .= '<a href=' . $link . ' class="text-white me-2"  target=_blank><i class="fab fa-' . $platform . '"></i></a>';
+           $socialLinks .= '<a href=' . $link . ' class="text-white me-2"  target=_blank><i class="'. $iconClass .'"></i></a>&nbsp;';
+        } //  $socialLinks .= '<a href="' . $link . '" class="text-white me-2" target="_blank"><i class="' . $iconClass . '"></i></a>';
+
+        return '
             <footer class="bg-dark text-white text-center py-3 mt-5">
                 <div class="container">
-                    <p class="mb-0">Pronto emergenza</p>
-                    <div class="mt-2 d-flex justify-content-center gap-3 flex-wrap">
-                        <?php echo $socialLinks; ?>
+                    <p class="mb-0 text-center">
+                    Pronto Emergenza - Organizzazione di Volontariato<br>
+                    Loc.tà Fondi, 1, 25071 Agnosine (BS)<br>
+                    Tel. 0365/826210 - Fax: 0365/1871098<br>
+                    C.F. 96022920175</p>
+                    <div class="mt-2 d-flex justify-content-center gap-3 flex-wrap">'.$socialLinks.'
                     </div>
                 </div>
             </footer>';

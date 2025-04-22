@@ -9,7 +9,7 @@ function COMP_header($user) {
     
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="navbar-brand container-fluid">
-                <img src="./public/images/logo-ambulanza.png"  class="" style="height: 50%;width:50%;"/>
+                <img src="./public/images/logo-ambulanza.png"  class="" style="height: 20%;width:20%;"/>
             </div>
             <button 
                 class="navbar-toggler" 
