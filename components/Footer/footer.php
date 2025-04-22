@@ -12,20 +12,6 @@
 
         $socialLinks = "";
         foreach ($socials as $platform => $link) {
-            /****
-            $socials = [
-                "fas fa-globe" => "https://www.prontoemergenza.it/", web
-                "fas fa-envelope" => "https://www.prontoemergenza.it/contatti/", contatt
-                "fas fa-briefcase-medical" => "https://www.prontoemergenza.it/servizi/",servizi
-                "fab fa-facebook" => "https://www.facebook.com/prontoemergenzaorganizzazionedivolontariato/",
-                "fab fa-instagram" => "https://www.instagram.com/pronto_emergenza_odv/",
-                "fab fa-tiktok" => "https://www.tiktok.com/@prontoemergenza?_t=ZN-8vMvuRcE8vO&_r=1"
-            ];
-            $socialLinks = "";
-foreach ($socials as $iconClass => $link) {
-    $socialLinks .= '<a href="' . $link . '" class="text-white me-2" target="_blank"><i class="' . $iconClass . '"></i></a>';
-}
-*/
             switch($platform){
                 case 'web':
                     $iconClass="fas fa-globe";
@@ -50,10 +36,9 @@ foreach ($socials as $iconClass => $link) {
                     break;
 
             }
-           // $socialLinks .= '<a href=' . $link . ' class="text-white me-2"  target=_blank><i class="fab fa-' . $platform . '"></i></a>';
            $socialLinks .= '<a href=' . $link . ' class="text-white me-2"  target=_blank><i class="'. $iconClass .'"></i></a>&nbsp;';
-        } //  $socialLinks .= '<a href="' . $link . '" class="text-white me-2" target="_blank"><i class="' . $iconClass . '"></i></a>';
-
+        } 
+        
         return '
             <footer class="bg-dark text-white text-center py-3 mt-5">
                 <div class="container">
