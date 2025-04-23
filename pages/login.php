@@ -38,7 +38,7 @@ else {
         <link href="./public/css/bootstrap.min.css" rel="stylesheet"/>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-        <script src="./public/js/script.js"></script>
+        
     </head>
     <body>
     <div class="row min-vh-90">
@@ -64,7 +64,6 @@ else {
                     <?php
                     if (isset($_COOKIE['errorelogin'])){
                        echo "<div class='col-12 alert alert-secondary' role='alert'>Nome utente o password inesistenti!!!!</div>"; 
-                       //echo"<div class='col-12 alert alert-secondary' role='alert' id=err></div><script>aggiungiAlert('Nome utente o password inesistenti!!!!','err');";
                        setcookie("errorelogin","",time()-1,"/");                  
                     }
                     ?>
