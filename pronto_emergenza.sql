@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Apr 14, 2025 alle 12:29
+-- Creato il: Apr 23, 2025 alle 10:12
 -- Versione del server: 10.4.11-MariaDB
 -- Versione PHP: 7.4.2
 
@@ -344,24 +344,27 @@ CREATE TABLE `utenti` (
   `istruttore` tinyint(1) NOT NULL COMMENT 'flag per conoscere se l’utente è o meno un istruttore',
   `status` enum('volontario','dipendente','corsista') NOT NULL COMMENT 'Tipo utente',
   `tipoUtente` enum('admin','user') NOT NULL,
-  `immagine` varchar(30) DEFAULT NULL
+  `immagine` varchar(30) DEFAULT NULL,
+  `dataoraInvioEmail` datetime NOT NULL,
+  `dataoraClickEmail` datetime DEFAULT NULL,
+  `validato` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dump dei dati per la tabella `utenti`
 --
 
-INSERT INTO `utenti` (`idUtente`, `cognome`, `nome`, `codiceFiscale`, `dataNascita`, `via`, `numero`, `cap`, `citta`, `provincia`, `username`, `password`, `email`, `telefono`, `indisponibilita`, `istruttore`, `status`, `tipoUtente`, `immagine`) VALUES
-(1, 'Rossi', 'Mario', 'RSSMRA80A01H501A', '1980-01-01', 'G. Perlsca', '17/c', '00100', 'Roma', 'RM', 'mario.rossi', 'password123', 'mario.rossi@example.com', '0123456789', 0, 0, 'volontario', 'admin', ''),
-(2, 'Bianchi', 'Laura', 'BNCLLRA80A01H501', '1980-03-15', 'Via Milano', '20', '20100', 'Milano', 'MI', 'laura.bianchi', 'istruttore123', 'laura.bianchi@example.com', '9876543210', 0, 1, 'dipendente', 'user', ''),
-(3, 'Verdi', 'Giuseppe', 'VRDGPZ80A01H501A', '1980-05-20', 'Via Napoli', '30', '80100', 'Napoli', 'NA', 'admin', 'admin123', 'admin@example.com', '1234567890', 0, 0, 'corsista', 'user', ''),
-(4, 'Ferrari', 'Anna', 'FRRNNA80A01H501A', '1980-08-10', 'Via Firenze', '40', '50100', 'Firenze', 'FI', 'anna.ferrari', 'annapass', 'anna.ferrari@example.com', '4567890123', 1, 0, 'volontario', 'user', ''),
-(5, 'Russo', 'Luca', 'RSSLCU80A01H501A', '1980-11-25', 'Via Torino', '50', '10100', 'Torino', 'TO', 'luca.russo', 'luca123', 'luca.russo@example.com', '6789012345', 0, 1, 'dipendente', 'user', ''),
-(6, 'Galli', 'Paola', 'GLLPLA80A01H501A', '1980-02-14', 'Via Venezia', '60', '30100', 'Venezia', 'VE', 'paola.galli', 'paola456', 'paola.galli@example.com', '8901234567', 0, 1, 'corsista', 'user', ''),
-(7, 'Moretti', 'Marco', 'MRTMRC80A01H501A', '1980-07-30', 'Via Genova', '70', '16100', 'Genova', 'GE', 'marco.moretti', 'moretti789', 'marco.moretti@example.com', '9012345678', 0, 0, 'volontario', 'user', ''),
-(8, 'Fabbri', 'Elena', 'FBBELN80A01H501A', '1980-09-18', 'Via Bologna', '80', '40100', 'Bologna', 'BO', 'elena.fabbri', 'fabbri10', 'elena.fabbri@example.com', '0123456789', 0, 0, 'dipendente', 'user', ''),
-(9, 'Mancini', 'Roberto', 'MCNRRT80A01H501A', '1980-04-05', 'Via Verona', '90', '37100', 'Verona', 'VR', 'roberto.mancini', 'mancini23', 'roberto.mancini@example.com', '1234567890', 0, 0, 'volontario', 'admin', ''),
-(10, 'Martini', 'Giovanna', 'MRTGVN80A01H501A', '1980-10-12', 'Via Palermo', '100', '90100', 'Palermo', 'PA', 'giovanna.martini', 'martini456', 'giovanna.martini@example.com', '2345678901', 0, 0, 'dipendente', 'user', '');
+INSERT INTO `utenti` (`idUtente`, `cognome`, `nome`, `codiceFiscale`, `dataNascita`, `via`, `numero`, `cap`, `citta`, `provincia`, `username`, `password`, `email`, `telefono`, `indisponibilita`, `istruttore`, `status`, `tipoUtente`, `immagine`, `dataoraInvioEmail`, `dataoraClickEmail`, `validato`) VALUES
+(1, 'Rossi', 'Mario', 'RSSMRA80A01H501A', '1980-01-01', 'G. Perlsca', '17/c', '00100', 'Roma', 'RM', 'mario.rossi', 'password123', 'mario.rossi@example.com', '0123456789', 0, 0, 'volontario', 'admin', '', '2025-03-10 00:00:00', NULL, 0),
+(2, 'Bianchi', 'Laura', 'BNCLLRA80A01H501', '1980-03-15', 'Via Milano', '20', '20100', 'Milano', 'MI', 'laura.bianchi', 'istruttore123', 'laura.bianchi@example.com', '9876543210', 0, 1, 'dipendente', 'user', '', '2025-02-13 00:00:00', NULL, 0),
+(3, 'Verdi', 'Giuseppe', 'VRDGPZ80A01H501A', '1980-05-20', 'Via Napoli', '30', '80100', 'Napoli', 'NA', 'admin', 'admin123', 'admin@example.com', '1234567890', 0, 0, 'corsista', 'user', '', '2025-03-10 00:00:00', NULL, 0),
+(4, 'Ferrari', 'Anna', 'FRRNNA80A01H501A', '1980-08-10', 'Via Firenze', '40', '50100', 'Firenze', 'FI', 'anna.ferrari', 'annapass', 'anna.ferrari@example.com', '4567890123', 1, 0, 'volontario', 'user', '', '2025-02-13 00:00:00', NULL, 0),
+(5, 'Russo', 'Luca', 'RSSLCU80A01H501A', '1980-11-25', 'Via Torino', '50', '10100', 'Torino', 'TO', 'luca.russo', 'luca123', 'luca.russo@example.com', '6789012345', 0, 1, 'dipendente', 'user', '', '2025-03-10 00:00:00', NULL, 0),
+(6, 'Galli', 'Paola', 'GLLPLA80A01H501A', '1980-02-14', 'Via Venezia', '60', '30100', 'Venezia', 'VE', 'paola.galli', 'paola456', 'paola.galli@example.com', '8901234567', 0, 1, 'corsista', 'user', '', '2025-02-13 00:00:00', NULL, 1),
+(7, 'Moretti', 'Marco', 'MRTMRC80A01H501A', '1980-07-30', 'Via Genova', '70', '16100', 'Genova', 'GE', 'marco.moretti', 'moretti789', 'marco.moretti@example.com', '9012345678', 0, 0, 'volontario', 'user', '', '2025-03-10 00:00:00', NULL, 1),
+(8, 'Fabbri', 'Elena', 'FBBELN80A01H501A', '1980-09-18', 'Via Bologna', '80', '40100', 'Bologna', 'BO', 'elena.fabbri', 'fabbri10', 'elena.fabbri@example.com', '0123456789', 0, 0, 'dipendente', 'user', '', '2025-02-13 00:00:00', NULL, 1),
+(9, 'Mancini', 'Roberto', 'MCNRRT80A01H501A', '1980-04-05', 'Via Verona', '90', '37100', 'Verona', 'VR', 'roberto.mancini', 'mancini23', 'roberto.mancini@example.com', '1234567890', 0, 0, 'volontario', 'admin', '', '2025-03-10 00:00:00', NULL, 1),
+(10, 'Martini', 'Giovanna', 'MRTGVN80A01H501A', '1980-10-12', 'Via Palermo', '100', '90100', 'Palermo', 'PA', 'giovanna.martini', 'martini456', 'giovanna.martini@example.com', '2345678901', 0, 0, 'dipendente', 'user', '', '2025-02-13 00:00:00', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -373,7 +376,7 @@ CREATE TABLE `utenticomunicazioni` (
   `idUtentiComunicazioni` int(11) NOT NULL,
   `idUtente` int(11) NOT NULL,
   `idComunicazione` int(11) NOT NULL,
-  `dataLettura` date NOT NULL
+  `dataLettura` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
