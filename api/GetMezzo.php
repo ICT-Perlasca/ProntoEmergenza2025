@@ -1,7 +1,7 @@
 <?php
+require_once("funzioniDB.php");
 
 function API_GetMezzo($get, $post, $session){
-    require_once("./funzioniDB.php");
     if(!isset($post['idMezzo']) || !isset($session['tipoUtente']) || $session['tipoUtente'] != "admin"){
         header("HTTP/1.1 403 Forbidden");
         return [];
