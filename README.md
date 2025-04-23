@@ -10,3 +10,9 @@
             $_SESSION['status']
             $_SESSION['tipoUtente']
             $_SESSION['immagine']
+3) account utente ADMIN
+username: mario.rossi
+password: password123
+4) account utente USER
+username: admin
+password: admin123
