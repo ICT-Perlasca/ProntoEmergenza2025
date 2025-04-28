@@ -141,6 +141,10 @@ function _adminLinks(){
             "title" => "Utenti",
             "sub" => [
                 [
+                    "url" => "utenti/profili",
+                    "title" => "Profili utente"
+                ],
+                [
                     "url" => "utenti/aggiunta",
                     "title" => "Aggiunta utente"
                 ],

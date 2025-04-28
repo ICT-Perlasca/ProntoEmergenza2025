@@ -16,6 +16,7 @@ else {
         }
         else{ //utente esiste
             $_SESSION['idUtente']=$ris[0]['idUtente'];
+            $_SESSION['username']=$ris[0]['username'];
             $_SESSION['nome']=$ris[0]['nome'];
             $_SESSION['cognome']=$ris[0]['cognome'];
             $_SESSION['dataNascita']=$ris[0]['dataNascita'];
