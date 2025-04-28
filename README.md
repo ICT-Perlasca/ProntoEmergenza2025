@@ -2,6 +2,7 @@
 
 2) i dati memorizzati in sessione sono i seguenti:
             $_SESSION['idUtente']
+            $_SESSION['username']
             $_SESSION['nome']
             $_SESSION['cognome']
             $_SESSION['dataNascita']
@@ -12,15 +13,15 @@
             $_SESSION['tipoUtente']
             $_SESSION['immagine']
 
-3) account utente ADMIN
+4) account utente ADMIN
 username: mario.rossi
 password: password123
 
-4) account utente USER
+5) account utente USER
 username: admin
 password: admin123
 
-5) Caricamento file
+6) Caricamento file
 ```
     /uploads
     |
