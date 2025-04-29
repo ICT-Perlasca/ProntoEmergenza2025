@@ -1,9 +1,11 @@
 <?php 
-// require_once $_SERVER['DOCUMENT_ROOT'].'/funzioniDB.php';
-// require_once $_SERVER['DOCUMENT_ROOT'].'/globals.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/funzioniDB.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/globals.php';
 
-require_once '../../funzioniDB.php';
-require_once '../../globals.php';
+// require_once '/funzioniDB.php';
+// require_once '/globals.php';
+
+
 ?>
 
 <!DOCTYPE html>
@@ -22,11 +24,60 @@ require_once '../../globals.php';
             
             
         $(document).ready (function() {
-            var calendarElement = $('#calendar')[0];
-            var dayCalElement = $('#dayCal')[0];
+            let calendarElement = $('#calendar')[0];
+            let dayCalElement = $('#dayCal')[0];
 
-            var calendar = new FullCalendar.Calendar(calendarElement, {
+            let today = new Date(); // Get today's date
+            let nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+
+            let year = nextMonth.getFullYear();
+            let month = String(nextMonth.getMonth() + 1).padStart(2, '0');
+            let day = String(nextMonth.getDate()).padStart(2, '0');
+
+            let nextMonthString = `${year}-${month}-${day}`;
+
+            let turni = {};
+
+            while (nextMonth.getMonth() === today.getMonth() + 1) {
+                let year = nextMonth.getFullYear();
+                let month = String(nextMonth.getMonth() + 1).padStart(2, '0');
+                let day = String(nextMonth.getDate()).padStart(2, '0');
+
+                let nextDateString = `${year}-${month}-${day}`;
+
+                let turno = turniData(nextDateString); // Fetch shifts for the next date
+                turni[nextDateString] = turno ? turno : []; // Fetch shifts for the next date
+
+                // Increment the date by one day
+                nextMonth.setDate(nextMonth.getDate() + 1);
+            }
+
+            let events = [];
+            for (let date in turni) {
+                if (turni[date].length == 9) {
+                    color = '#66ff66';
+                } else if (turni[date].length == 0) {
+                    color = '#ff3300'; // Color for no shifts
+                } else {
+                    color = '#ff9933'; // Default color for other cases
+                }
+
+                let event = {
+                    title: date, 
+                    start: date + 'T00:00:00', 
+                    end: date + 'T23:59:59',   
+                    backgroundColor: color, 
+                    display: 'background' 
+                };
+
+                events.push(event);
+            }
+
+            console.log( events); // Log the events array to the console
+
+            let calendar = new FullCalendar.Calendar(calendarElement, {
                 locale: 'it',
+                initialDate: nextMonthString, // Set the initial date to the first day of the next month
                 initialView: 'dayGridMonth',
                 navLink: true,
                 headerToolbar: {
@@ -41,69 +92,22 @@ require_once '../../globals.php';
                 aspectRatio: 0.7,
                 selectable: true,
                 dateClick: function (info) {
-                    turniData(info.dateStr); // Navigate to the clicked date in the day calendar
+                    let turni = turniData(info.dateStr); // Navigate to the clicked date in the day calendar
+                    $("#dayCal").html(generaTabella(info.dateStr, turni)); 
                 }, 
                 select: function (info) {
                     // Ensure only one day is selected
-                    var start = new Date(info.start);
-                    var end = new Date(info.end);
-                    var diff = (end - start) / (1000 * 60 * 60 * 24);
+                    let start = new Date(info.start);
+                    let end = new Date(info.end);
+                    let diff = (end - start) / (1000 * 60 * 60 * 24);
 
                     if (diff > 1) { // Restrict to a single day
                         calendar.unselect(); // Deselect the selection
                     }
-                }
+                }, 
+                events: events // Add the events to the calendar
             });
-/*
-            var dayCal = new FullCalendar.Calendar(dayCalElement, {
-                locale: 'it',
-                initialView: 'timeGridDay',
-                allDaySlot: false,
-                slotMinTime: '07:00:00',
-                headerToolbar: {
-                    left: '',
-                    center: 'title',
-                    right: ''
-                },
-                slotDuration: '06:00:00',
-                expandRows: true,
-                slotLabelFormat: {
-                    hour: '2-digit',
-                    minute: '2-digit'
-                },
-                eventContent: function (arg) {
-                    return {
-                        html: `
-                            <div class="col-md-4 h-100">
-                                <h1>${arg.event.title}</h1>
-                            </div>
 
-                        `
-                    };
-                },
-                events: [
-                    {
-                        title: 'Meeting with Team',
-                        start: '2025-04-10T09:00:00', // Event start time
-                        end: '2025-04-10T10:00:00',   // Event end time
-                        description: 'Discuss project updates',
-                        color: '#007bff' // Optional: Custom color for the event
-                    },
-                    {
-                        title: 'Lunch Break',
-                        start: '2025-04-10T09:00:00',
-                        end: '2025-04-10T10:00:00',
-                        color: '#28a745'
-                    },
-                    {
-                        title: 'Lunch Break',
-                        start: '2025-04-10T09:00:00',
-                        end: '2025-04-10T10:00:00',
-                        color: '#28a745'
-                    }
-                ]
-            });
-*/
             calendar.render();
             //dayCal.render();
 

@@ -1,65 +1,61 @@
 function turniData(dataStr) {
-    // oraInizio -> ora di inizio di un turno
-    // oraFine -> ora di fine di un turno
-    // nome -> nome dell'utente
-    // cognome -> cognome dell'utente
-    // turni -> array che contiene tutti i turni di questa data come oggetti javascript
-    // un turno è un oggetto con le seguenti proprietà:
-    // oraInizio, oraFine, nome, cognome
-    // dataStr -> An ISO8601 string representation of the date
-    // ogni giorno contiene 3 fasce orarie, ognuna con al massimo 3 turni
-    
-    $ajax({
-        url: "/turni",
+    let ret;
+
+    console.log("Fetching shifts for date:", dataStr); // Log the date being fetched
+
+    $.ajax({
+        url: "/pages/Calendar/elencoTurniData.php",
         type: "POST",
         data: { data: dataStr },
+        dataType: "json",
+        async: false,       // SINCRONO PER RISPETTARE L'ORDINE DELLE RICHIESTE
         success: function (response) {
-            const turni = response.turni; // Assuming the server returns an array of shifts for the date
-            const tableHTML = generaTabella(dataStr, turni);
-            $("#turniTable").html(tableHTML); // Update the table with the new HTML
+            console.log("Response from server:", response);
+            ret = response.turni; // Assuming the server returns a JSON object with a "turni" property
         },
         error: function (error) {
             console.error("Error fetching shifts:", error);
-            $("#turniTable").html("<p>Error loading shifts.</p>");
+            $("#dayCal").html("<p>Error loading shifts.</p>");
         }
     });
 
-    
+    return ret; // Return the response from the server
 };
+
 
 
 function generaTabella(dataStr, turni) {
 
     // Create a Bootstrap responsive table
     let tableHTML = `
-        <div class="table-responsive">
-            <h3>Schedule for ${dataStr}</h3>
-            <table class="table table-bordered">
-                <thead>
+        <div class="table-responsive" style="height: 100%; display: flex; flex-direction: column;">
+            <h3 class="text-center mb-4">Schedule for ${dataStr}</h3>
+            <table class="table table-bordered table-hover" style="height: 100%; table-layout: fixed;">
+                <thead class="thead-dark">
                     <tr>
-                        <th></th>
-                        <th class="text-center" colspan="2">Soccorritore</th>
-                        <th class="text-center">Autista</th>
+                                                                        <th class=}"text-center align-middle" style="font-size: 1.5rem; width: 20%;">Time</th>
+                        <th class="text-center align-middle" colspan="2" style="font-size: 1.5rem;">Soccorritore</th>
+                        <th class="text-center align-middle" style="font-size: 1.5rem;">Autista</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th>07:00-13:00</th>
-                        <td>${getTurni(turni, "07:00:00", "13:00:00", "Soccorritore", 0)}</td>
-                        <td>${getTurni(turni, "07:00:00", "13:00:00", "Soccorritore", 1)}</td>
-                        <td>${getTurni(turni, "07:00:00", "13:00:00", "Autista", 0)}</td>
+                <tbody style="height: 100%;">
+                    <tr style="height: 33%;">
+                        <th class="text-center align-middle" style="font-size: 1.5rem;">07:00-13:00</th>
+                        <td class="text-center align-middle" style="font-size: 1.5rem;">${getTurni(turni, "07:00:00", "13:00:00", "Soccorritore", 0)}</td>
+                        <td class="text-center align-middle" style="font-size: 1.5rem;">${getTurni(turni, "07:00:00", "13:00:00", "Soccorritore", 1)}</td>
+                        <td class="text-center align-middle" style="font-size: 1.5rem;">${getTurni(turni, "07:00:00", "13:00:00", "Autista", 0)}</td>
                     </tr>
-                    <tr>
-                        <th>13:00-19:00</th>
-                        <td>${getTurni(turni, "13:00:00", "19:00:00", "Soccorritore", 0)}</td>
-                        <td>${getTurni(turni, "13:00:00", "19:00:00", "Soccorritore", 1)}</td>
-                        <td>${getTurni(turni, "13:00:00", "19:00:00", "Autista", 0)}</td>
+                    <tr style="height: 33%;">
+                        <th class="text-center align-middle" style="font-size: 1.5rem;">13:00-19:00</th>
+                        <td class="text-center align-middle" style="font-size: 1.5rem;">${getTurni(turni, "13:00:00", "19:00:00", "Soccorritore", 0)}</td>
+                        <td class="text-center align-middle" style="font-size: 1.5rem;">${getTurni(turni, "13:00:00", "19:00:00", "Soccorritore", 1)}</td>
+                        <td class="text-center align-middle" style="font-size: 1.5rem;">${getTurni(turni, "13:00:00", "19:00:00", "Autista", 0)}</td>
                     </tr>
-                    <tr>
-                        <th>19:00-07:00</th>
-                        <td>${getTurni(turni, "19:00:00", "07:00:00", "Soccorritore", 0)}</td>
-                        <td>${getTurni(turni, "19:00:00", "07:00:00", "Soccorritore", 1)}</td>
-                        <td>${getTurni(turni, "19:00:00", "07:00:00", "Autista", 0)}</td>
+                    <tr style="height: 33%;">
+                        <th class="text-center align-middle" style="font-size: 1.5rem;">19:00-07:00</th>
+                        <td class="text-center align-middle" style="font-size: 1.5rem;">${getTurni(turni, "19:00:00", "07:00:00", "Soccorritore", 0)}</td>
+                        <td class="text-center align-middle" style="font-size: 1.5rem;">${getTurni(turni, "19:00:00", "07:00:00", "Soccorritore", 1)}</td>
+                        <td class="text-center align-middle" style="font-size: 1.5rem;">${getTurni(turni, "19:00:00", "07:00:00", "Autista", 0)}</td>
                     </tr>
                 </tbody>
             </table>
@@ -71,7 +67,7 @@ function generaTabella(dataStr, turni) {
             (turno) =>
                 turno.oraInizio === oraInizio &&
                 turno.oraFine === oraFine &&
-                turno.ruolo === ruolo
+                turno.ruolo.toUpperCase() === ruolo.toUpperCase()
         );
 
         const turno = turniFiltrati[index];
