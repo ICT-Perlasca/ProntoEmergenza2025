@@ -17,7 +17,7 @@ echo COMP_head();
         <body>
 <?php
     require_once ("./components/Header/header.php");
-    require_once ("./components/Card_Utente_Veicolo/cardVeicolo.php");
+    require_once ("./components/SimpleComponent/cardVeicolo.php");
     require_once ("./components/SimpleComponent/comp.php");
     require_once ("./components/Footer/footer.php");
     require_once ("./api/ElencoMezziDisponibili.php");
