@@ -15,6 +15,7 @@
         $valori = [$idU, $data];
         $tipi = ["PDO::PARAM_INT", "PDO::PARAM_STR"];
         $dataInvio = db_query($query, $valori, $tipi);
+        if()
     }
     else
     {
