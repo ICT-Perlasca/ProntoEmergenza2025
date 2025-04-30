@@ -7,7 +7,7 @@ $utente = [
     'nome' => 'Mario',
     'cognome' => 'Rossi',
     'email' => 'mario.rossi@example.com',
-    'foto' => 'test.jpg'
+    'immagine' => 'test.jpg'
 ];
 
 $veicolo = [
@@ -32,7 +32,7 @@ $cardVeicolo = generaCardMezzo($veicolo);
 </head>
 <body>
     <div class="container mt-5">
-        <h1>Test Card Utente</h1>
+        <h1>Test Card Utente e Card Veicolo</h1>
         <?php
         echo $card;
         echo $cardVeicolo;

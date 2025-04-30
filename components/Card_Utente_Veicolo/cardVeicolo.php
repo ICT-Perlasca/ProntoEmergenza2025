@@ -57,7 +57,7 @@ function generaCardMezzo($mezzo) {
     return '
     <a href="dettagliMezzo.php?id=' . $idMezzo . '" class="text-decoration-none">
         <div class="card mb-3 border-2 border-dark rounded-3 shadow" style="width: 18rem;">
-            <div class="card-body">
+            <div class="card-body bg-white text-dark">
                 <h5 class="card-title">' . $modello . ' (' . strtoupper($tipoMezzo) . ')</h5>
                 <p class="card-text"><strong>Targa:</strong> ' . $targa . '</p>
                 <p class="card-text"><strong>Immatricolazione:</strong> ' . $dataImmatricolazione . '</p>

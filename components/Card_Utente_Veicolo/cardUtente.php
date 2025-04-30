@@ -30,8 +30,8 @@ function generaCardUtente($utente) {
         $ruolo = 'Ruolo sconosciuto';
     }
 
-    if (!empty($utente['foto'])) {
-        $img = htmlspecialchars($utente['foto']);
+    if (!empty($utente['immagine'])) {
+        $img = htmlspecialchars($utente['immagine']);
     } else {
         $img = 'default.jpg';
     }
