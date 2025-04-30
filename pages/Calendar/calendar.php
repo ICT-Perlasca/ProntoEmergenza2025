@@ -93,7 +93,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/globals.php';
                 selectable: true,
                 dateClick: function (info) {
                     let turni = turniData(info.dateStr); // Navigate to the clicked date in the day calendar
-                    $("#dayCal").html(generaTabella(info.dateStr, turni)); 
+                    generaTabella(info.dateStr, turni); 
                 }, 
                 select: function (info) {
                     // Ensure only one day is selected
