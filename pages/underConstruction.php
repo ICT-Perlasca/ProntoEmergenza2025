@@ -2,7 +2,7 @@
 session_start();
 
 if(!isset($_SESSION['idUtente'])){
-    header("Location: login");
+    header("Location: login.php");
 }else{
 ?>
 <html>
@@ -20,9 +20,7 @@ require_once ("./components/Footer/footer.php");
 
 echo COMP_header($_SESSION);
 
-foreach(API_elencoComunicazioni([],[], $_SESSION) as $c) {
-    echo COMP_simpleComponent($c['id']);
-}
+echo '<img src="/prontoemergenza2025/public/images/underConstruction.jpeg" class="img-fluid rounded d-block mx-auto" alt="Under Construction.......">';
 
 echo COMP_Footer();
 ?>
