@@ -31,13 +31,13 @@ function generaCardUtente($utente) {
     }
 
     if (!empty($utente['immagine'])) {
-        $img = htmlspecialchars($utente['immagine']);
+        $img = './uploads/images/' . htmlspecialchars($utente['immagine']);
     } else {
         $img = 'default.jpg';
     }
 
     return '
-    <a href="profiloUtenteSingolo.php?id=' . $idUtente . '" class="text-decoration-none">
+    <a href="profiloUtente.php?id=' . $idUtente . '" class="text-decoration-none">
         <div class="card mb-3" style="width: 18rem; background-color: white; color: black; border: 2px solid black; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
             <img src="' . $img . '" class="card-img-top rounded-circle mx-auto d-block" alt="Foto di ' . $nome . '" style="width: 100px; height: 100px; object-fit: cover;">
             <div class="card-body bg-white text-dark">
