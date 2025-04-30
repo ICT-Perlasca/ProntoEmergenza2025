@@ -55,6 +55,7 @@ function generaCardMezzo($mezzo) {
     }
 
     return '
+    <a href="profiloMezzo.php?id=' . $idMezzo . '" class="text-decoration-none">
         <div class="card mb-3 border-2 border-dark rounded-3 shadow" style="width: 18rem;">
             <div class="card-body bg-white text-dark">
                 <h5 class="card-title">' . $modello . ' (' . strtoupper($tipoMezzo) . ')</h5>
@@ -68,6 +69,7 @@ function generaCardMezzo($mezzo) {
                     <button class="btn text-white border-dark" style="background-color: #ff6700; background-image: linear-gradient(45deg, #ff8500, #ff4500);">Visualizza Dettagli</button>
                 </div>
             </div>
-        </div>';
+        </div>
+    </a>';
 }
 ?>
