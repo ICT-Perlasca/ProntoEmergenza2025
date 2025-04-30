@@ -1,5 +1,4 @@
 function filtraUtenti(nomeCognome){
-	debugger;
 	const cards=document.querySelectorAll('.row > .col-12');
 	for(let i=0;i<cards.length;i++){
 		cards[i].classList.remove('d-none');
