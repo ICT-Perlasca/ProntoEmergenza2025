@@ -33,7 +33,7 @@ function generaCardUtente($utente) {
     if (!empty($utente['immagine'])) {
         $img = './uploads/images/' . htmlspecialchars($utente['immagine']);
     } else {
-        $img = 'default.jpg';
+        $img = './public/images/avatar.jpg';
     }
 
     return '

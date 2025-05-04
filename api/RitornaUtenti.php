@@ -1,6 +1,5 @@
 <?php
-require_once("funzioniDB.php");
-
+    require_once("./funzioniDB.php");
 function API_RitornaUtenti($get, $post, $session){
     if (!isset($session['tipoUtente']) || $session['tipoUtente'] != "admin"){
         header("HTTP/1.1 403 Forbidden");
@@ -12,5 +11,6 @@ function API_RitornaUtenti($get, $post, $session){
         $risposta = db_query($sql, $valori, $tipi);
         return $risposta;
     }
-}  
+}
+
 ?>

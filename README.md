@@ -13,15 +13,15 @@
             $_SESSION['tipoUtente']
             $_SESSION['immagine']
 
-4) account utente ADMIN
+3) account utente ADMIN
 username: mario.rossi
 password: password123
 
-5) account utente USER
+4) account utente USER
 username: admin
 password: admin123
 
-6) Caricamento file
+5) Caricamento file
 ```
     /uploads
     |
