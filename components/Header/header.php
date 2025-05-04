@@ -33,7 +33,7 @@ function COMP_header($user) {
                             <span class="mx-2">
                                 '.$user['cognome'].' '.$user['nome'].'
                             </span>
-                            <img src="'.$user['image'].'" alt="Avatar" class="rounded-circle" width="40" height="40">
+                            <img src="'.$user['immagine'].'" alt="Avatar" class="rounded-circle" width="40" height="40">
                         </div>
                         <ul class="dropdown-menu" aria-labelledby="userDropdown">
                             <li><a class="dropdown-item" href="utenteSingolo">Profilo</a></li>
