@@ -5,7 +5,6 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/globals.php';
 // require_once '/funzioniDB.php';
 // require_once '/globals.php';
 
-
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +21,9 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/globals.php';
 
         <script>
             
-            
+        let fullDays = 0;
+        let daysOfMonth = 0;
+
         $(document).ready (function() {
             let calendarElement = $('#calendar')[0];
             let dayCalElement = $('#dayCal')[0];
@@ -44,6 +45,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/globals.php';
                 let day = String(nextMonth.getDate()).padStart(2, '0');
 
                 let nextDateString = `${year}-${month}-${day}`;
+                daysOfMonth++;
 
                 let turno = turniData(nextDateString); // Fetch shifts for the next date
                 turni[nextDateString] = turno ? turno : []; // Fetch shifts for the next date
@@ -55,19 +57,18 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/globals.php';
             let events = [];
             for (let date in turni) {
                 if (turni[date].length == 9) {
-                    color = '#66ff66';
+                    color = '#66ff66';  
+                    fullDays++;
                 } else if (turni[date].length == 0) {
                     color = '#ff3300'; // Color for no shifts
                 } else {
                     color = '#ff9933'; // Default color for other cases
                 }
 
-                let event = {
-                    title: date, 
+                let event = { 
                     start: date + 'T00:00:00', 
                     end: date + 'T23:59:59',   
-                    backgroundColor: color, 
-                    display: 'background' 
+                    backgroundColor: color
                 };
 
                 events.push(event);
@@ -77,6 +78,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/globals.php';
 
             let calendar = new FullCalendar.Calendar(calendarElement, {
                 locale: 'it',
+                displayEventTime: false,
                 initialDate: nextMonthString, // Set the initial date to the first day of the next month
                 initialView: 'dayGridMonth',
                 navLink: true,
@@ -109,6 +111,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/globals.php';
             });
 
             calendar.render();
+            if (fullDays != daysOfMonth) $("#btnConvalida").addClass("disabled");
             //dayCal.render();
 
         });
@@ -121,6 +124,9 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/globals.php';
             <div class="row">
                 <div class="col-md-3">
                     <div id="calendar"></div>
+                    <button type="button" id="btnConvalida" class="btn btn-primary">
+                        Convalida turni
+                    </button>
                 </div>
                 <div class="col-md-9">
                     <div id="dayCal"></div>
