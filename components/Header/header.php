@@ -36,7 +36,7 @@ function COMP_header($user) {
                             <img src="'.$user['immagine'].'" alt="Avatar" class="rounded-circle" width="40" height="40">
                         </div>
                         <ul class="dropdown-menu" aria-labelledby="userDropdown">
-                            <li><a class="dropdown-item" href="#">Profilo</a></li>
+                            <li><a class="dropdown-item" href="utenteSingolo">Profilo</a></li>
                             <li><a class="dropdown-item" href="#">Impostazioni</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="logout">Logout</a></li>
@@ -140,6 +140,10 @@ function _adminLinks(){
             "url" => "utenti",
             "title" => "Utenti",
             "sub" => [
+                [
+                    "url" => "utenti/profili",
+                    "title" => "Profili utente"
+                ],
                 [
                     "url" => "utenti/aggiunta",
                     "title" => "Aggiunta utente"

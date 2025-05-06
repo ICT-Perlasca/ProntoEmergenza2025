@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Apr 23, 2025 alle 10:12
+-- Creato il: Mag 05, 2025 alle 13:09
 -- Versione del server: 10.4.11-MariaDB
 -- Versione PHP: 7.4.2
 
@@ -191,6 +191,7 @@ INSERT INTO `festivita` (`idFestivita`, `descrizione`, `data`) VALUES
 
 CREATE TABLE `mezzi` (
   `idMezzo` int(11) NOT NULL,
+  `nomeMezzo` varchar(30) NOT NULL,
   `modello` varchar(30) NOT NULL COMMENT 'nome del modello del mezzo',
   `targa` varchar(7) NOT NULL COMMENT 'targa del mezzo',
   `dataImmatricolazione` date NOT NULL COMMENT 'data in cui il mezzo è stato immatricolato',
@@ -205,17 +206,17 @@ CREATE TABLE `mezzi` (
 -- Dump dei dati per la tabella `mezzi`
 --
 
-INSERT INTO `mezzi` (`idMezzo`, `modello`, `targa`, `dataImmatricolazione`, `dataRevisione`, `scadAssicurazione`, `scadRevisione`, `scadBollo`, `tipoMezzo`) VALUES
-(1, 'Ford Focus', 'AB123CD', '2023-01-15', '2024-02-20', '2024-06-30', '2025-02-20', '2025-01-15', 'macchina'),
-(2, 'Toyota Corolla', 'EF456GH', '2022-11-10', '2024-01-05', '2024-09-15', '2025-01-05', '2025-11-10', 'macchina'),
-(3, 'Volkswagen Golf', 'IJ789KL', '2021-07-20', '2023-08-25', '2024-03-10', '2025-08-25', '2025-07-20', 'macchina'),
-(4, 'BMW Serie 3', 'MN012OP', '2023-03-05', '2024-05-10', '2024-11-20', '2025-05-10', '2025-03-05', 'ambulanza'),
-(5, 'Audi A4', 'QR345ST', '2022-09-12', '2023-11-18', '2024-07-25', '2025-11-18', '2025-09-12', 'macchina'),
-(6, 'Mercedes-Benz Classe C', 'UV678WX', '2021-12-30', '2023-02-28', '2024-10-05', '2025-02-28', '2025-12-30', 'ambulanza'),
-(7, 'Honda Civic', 'YZ901AB', '2022-05-08', '2023-06-15', '2024-12-20', '2025-06-15', '2025-05-08', 'ambulanza'),
-(8, 'Renault Megane', 'CD234EF', '2023-08-22', '2024-09-28', '2025-01-30', '2025-09-28', '2025-08-22', 'macchina'),
-(9, 'Fiat 500', 'GH567IJ', '2022-04-17', '2023-05-20', '2024-11-12', '2025-05-20', '2025-04-17', 'macchina'),
-(10, 'Peugeot 208', 'KL890MN', '2021-10-25', '2023-11-30', '2024-07-15', '2025-11-30', '2025-10-25', 'ambulanza');
+INSERT INTO `mezzi` (`idMezzo`, `nomeMezzo`, `modello`, `targa`, `dataImmatricolazione`, `dataRevisione`, `scadAssicurazione`, `scadRevisione`, `scadBollo`, `tipoMezzo`) VALUES
+(1, 'programmati 1', 'Ford Focus', 'AB123CD', '2023-01-15', '2024-02-20', '2024-06-30', '2025-02-20', '2025-01-15', 'macchina'),
+(2, 'programmati 2', 'Toyota Corolla', 'EF456GH', '2022-11-10', '2024-01-05', '2024-09-15', '2025-01-05', '2025-11-10', 'macchina'),
+(3, 'programmati 3', 'Volkswagen Golf', 'IJ789KL', '2021-07-20', '2023-08-25', '2024-03-10', '2025-08-25', '2025-07-20', 'macchina'),
+(4, 'Emergenza 1', 'BMW Serie 3', 'MN012OP', '2023-03-05', '2024-05-10', '2024-11-20', '2025-05-10', '2025-03-05', 'ambulanza'),
+(5, 'programmati 4', 'Audi A4', 'QR345ST', '2022-09-12', '2023-11-18', '2024-07-25', '2025-11-18', '2025-09-12', 'macchina'),
+(6, 'Emergenza 2', 'Mercedes-Benz Classe C', 'UV678WX', '2021-12-30', '2023-02-28', '2024-10-05', '2025-02-28', '2025-12-30', 'ambulanza'),
+(7, 'Emergenza 3', 'Honda Civic', 'YZ901AB', '2022-05-08', '2023-06-15', '2024-12-20', '2025-06-15', '2025-05-08', 'ambulanza'),
+(8, 'programmati 5', 'Renault Megane', 'CD234EF', '2023-08-22', '2024-09-28', '2025-01-30', '2025-09-28', '2025-08-22', 'macchina'),
+(9, 'programmati 6', 'Fiat 500', 'GH567IJ', '2022-04-17', '2023-05-20', '2024-11-12', '2025-05-20', '2025-04-17', 'macchina'),
+(10, 'Emergenza 4', 'Peugeot 208', 'KL890MN', '2021-10-25', '2023-11-30', '2024-07-15', '2025-11-30', '2025-10-25', 'ambulanza');
 
 -- --------------------------------------------------------
 
@@ -355,7 +356,7 @@ CREATE TABLE `utenti` (
 --
 
 INSERT INTO `utenti` (`idUtente`, `cognome`, `nome`, `codiceFiscale`, `dataNascita`, `via`, `numero`, `cap`, `citta`, `provincia`, `username`, `password`, `email`, `telefono`, `indisponibilita`, `istruttore`, `status`, `tipoUtente`, `immagine`, `dataoraInvioEmail`, `dataoraClickEmail`, `validato`) VALUES
-(1, 'Rossi', 'Mario', 'RSSMRA80A01H501A', '1980-01-01', 'G. Perlsca', '17/c', '00100', 'Roma', 'RM', 'mario.rossi', 'password123', 'mario.rossi@example.com', '0123456789', 0, 0, 'volontario', 'admin', '', '2025-03-10 00:00:00', NULL, 0),
+(1, 'Rossi', 'Mario', 'RSSMRA80A01H501A', '1980-01-01', 'G. Perlsca', '17/c', '00100', 'Roma', 'RM', 'mario.rossi', 'password123', 'mario.rossi@example.com', '0123456789', 0, 0, 'volontario', 'admin', 'bici.jpg', '2025-03-10 00:00:00', NULL, 0),
 (2, 'Bianchi', 'Laura', 'BNCLLRA80A01H501', '1980-03-15', 'Via Milano', '20', '20100', 'Milano', 'MI', 'laura.bianchi', 'istruttore123', 'laura.bianchi@example.com', '9876543210', 0, 1, 'dipendente', 'user', '', '2025-02-13 00:00:00', NULL, 0),
 (3, 'Verdi', 'Giuseppe', 'VRDGPZ80A01H501A', '1980-05-20', 'Via Napoli', '30', '80100', 'Napoli', 'NA', 'admin', 'admin123', 'admin@example.com', '1234567890', 0, 0, 'corsista', 'user', '', '2025-03-10 00:00:00', NULL, 0),
 (4, 'Ferrari', 'Anna', 'FRRNNA80A01H501A', '1980-08-10', 'Via Firenze', '40', '50100', 'Firenze', 'FI', 'anna.ferrari', 'annapass', 'anna.ferrari@example.com', '4567890123', 1, 0, 'volontario', 'user', '', '2025-02-13 00:00:00', NULL, 0),
@@ -467,7 +468,8 @@ ALTER TABLE `festivita`
 -- Indici per le tabelle `mezzi`
 --
 ALTER TABLE `mezzi`
-  ADD PRIMARY KEY (`idMezzo`);
+  ADD PRIMARY KEY (`idMezzo`),
+  ADD UNIQUE KEY `nomeMezzo` (`nomeMezzo`);
 
 --
 -- Indici per le tabelle `ruoli`
@@ -506,8 +508,8 @@ ALTER TABLE `turniutenti`
 --
 ALTER TABLE `utenti`
   ADD PRIMARY KEY (`idUtente`) USING BTREE,
-  ADD UNIQUE KEY `nome` (`nome`),
-  ADD UNIQUE KEY `username` (`username`);
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indici per le tabelle `utenticomunicazioni`

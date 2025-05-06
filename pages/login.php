@@ -1,5 +1,5 @@
 <?php
-require_once("funzioniDB.php");
+require_once("./funzioniDB.php");
 
 session_start();
 if (isset($_SESSION['nome']))  //utente già loggato
@@ -16,6 +16,7 @@ else {
         }
         else{ //utente esiste
             $_SESSION['idUtente']=$ris[0]['idUtente'];
+            $_SESSION['username']=$ris[0]['username'];
             $_SESSION['nome']=$ris[0]['nome'];
             $_SESSION['cognome']=$ris[0]['cognome'];
             $_SESSION['dataNascita']=$ris[0]['dataNascita'];
@@ -24,7 +25,7 @@ else {
             $_SESSION['istruttore']=$ris[0]['istruttore'];
             $_SESSION['status']=$ris[0]['status'];
             $_SESSION['tipoUtente']=$ris[0]['tipoUtente'];
-            $_SESSION['immagine']=(is_null($ris[0]['immagine']))?$ris[0]['immagine']:"./public/images/avatar.jpg";
+            $_SESSION['immagine']=(!is_null($ris[0]['immagine'])&&$ris[0]['immagine']!="")?"./".$cartellaImmagini."/".$ris[0]['immagine']:"./public/images/avatar.jpg";
             header("location:/ProntoEmergenza2025");
         }
             
@@ -36,6 +37,7 @@ else {
         <base href="./" />
         <base href="./" />
         <link href="./public/css/bootstrap.min.css" rel="stylesheet"/>
+        <link rel='icon' type='image/x-icon' href='/prontoemergenza2025/public/images/favicon.png'>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
         
