@@ -98,12 +98,12 @@ function API_inserimentoUtente($get, $post, $session) {
                 cognome, nome, codiceFiscale, dataNascita,
                 via, numero, cap, citta, provincia,
                 username, password, email, telefono,
-                indisponibilita, istruttore
+                indisponibilita, istruttore, status, tipoUtente 
             ) VALUES (
                 ?, ?, ?, ?,
                 ?, ?, ?, ?, ?,
                 ?, ?, ?, ?,
-                ?, ?
+                ?, ?, ?, ?
             )
     ";
 
@@ -135,15 +135,18 @@ function API_inserimentoUtente($get, $post, $session) {
     ];
 
     $rows = db_query($query, $valori, $tipi);
+    if (isset($rows["error"])) {
+        return $errori[] = "Errore nell'inserimento dell'utente: " . $rows["error"];
+    }
 	$q = "SELECT idUtente FROM utenti WHERE email=?";
 	$valori = [$post['email']];
 	$tipi = [PDO::PARAM_STR];
 	$idUtente = db_query($q, $valori, $tipi);
     $res["doc"] = API_uploadDocument([], $post, ["idUtente" => $idUtente]);
     if (count($res["doc"]) > 0) {
-		return $res;
+		return $errori[] = "Errore nell'inserimento del documento: " . $res["doc"];
 	}
 		
-    return ["reg"];
+    return [];
 }
 ?>
