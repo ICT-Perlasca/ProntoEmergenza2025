@@ -1,7 +1,7 @@
 <?php
 function COMP_formRegistrazione($title) {
     return '
-      <form method="POST">
+      <form method="POST" enctype="multipart/form-data">
         <label>Cognome: <input type="text" name="cognome" maxlength="30" required></label>
         <br>
         <label>Nome: <input type="text" name="nome" maxlength="30" required></label>
@@ -66,7 +66,7 @@ function COMP_formRegistrazione($title) {
         <input type="date" id="dataScadenza" name="dataScadenza" required>
         <br>
 
-        <input type="submit" value="invia">
+        <input type="submit" value="invia" name="invia">
     </form>
     ';
 }
