@@ -11,7 +11,7 @@
 <?php
 require_once ("./components/Head/head.php");
 
-echo COMP_head();
+echo COMP_head("mezzi");
 
 ?>
         <body>

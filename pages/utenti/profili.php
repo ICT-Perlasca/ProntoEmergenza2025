@@ -24,7 +24,7 @@ echo COMP_head();
     require_once ("./api/RitornaUtenti.php");
 
 echo COMP_header($_SESSION);
-echo CMP_SearchBar();
+echo CMP_SearchBar("utenti");
 
 echo '<div class="container my-4">';
 echo '<div class="row g-4">';

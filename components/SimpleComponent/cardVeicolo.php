@@ -54,22 +54,26 @@ function generaCardMezzo($mezzo) {
         $tipoMezzo = 'Tipo sconosciuto';
     }
 
+    if (isset($mezzo['nomeMezzo'])) {
+        $nomeMezzo = htmlspecialchars($mezzo['nomeMezzo']);
+    } else {
+        $nomeMezzo = 'Non disponibile';
+    }
     return '
-    <a href="profiloMezzo.php?id=' . $idMezzo . '" class="text-decoration-none">
         <div class="card mb-3 border-2 border-dark rounded-3 shadow" style="width: 18rem;">
             <div class="card-body bg-white text-dark">
+                <h4 class="card-title" id="ricerca1">' . $nomeMezzo . '</h4>
                 <h5 class="card-title">' . $modello . ' (' . strtoupper($tipoMezzo) . ')</h5>
-                <p class="card-text"><strong>Targa:</strong> ' . $targa . '</p>
+                <p class="card-text" id="ricerca2"><strong>Targa:</strong> ' . $targa . '</p>
                 <p class="card-text"><strong>Immatricolazione:</strong> ' . $dataImmatricolazione . '</p>
                 <p class="card-text"><strong>Ultima Revisione:</strong> ' . $dataRevisione . '</p>
                 <p class="card-text"><strong>Scadenza Assicurazione:</strong> ' . $scadAssicurazione . '</p>
                 <p class="card-text"><strong>Scadenza Revisione:</strong> ' . $scadRevisione . '</p>
                 <p class="card-text"><strong>Scadenza Bollo:</strong> ' . $scadBollo . '</p>
                 <div class="text-center">
-                    <button class="btn text-white border-dark" style="background-color: #ff6700; background-image: linear-gradient(45deg, #ff8500, #ff4500);">Visualizza Dettagli</button>
+                     <a href="profiloMezzo.php?id=' . $idMezzo . '" class="text-decoration-none"> <button class="btn text-white border-dark" style="background-color: #ff6700; background-image: linear-gradient(45deg, #ff8500, #ff4500);">Visualizza Dettagli</button> </a>
                 </div>
             </div>
-        </div>
-    </a>';
+        </div>';
 }
 ?>
