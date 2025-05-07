@@ -205,12 +205,20 @@ function _adminLinks(){
             "title" => "Assistenza",
             "sub" => [
                 [
-                    "url" => "assistenza/aggiunta",
+                    "url" => "assistenza/eventonew",
                     "title" => "Nuovo evento"
                 ],
                 [
                     "url" => "assistenza/aggiunta-personale",
-                    "title" => "Nuovo evento personale"
+                    "title" => "aggiunta personale"
+                ],
+                [
+                    "url" => "assistenza/elenco-eventi",
+                    "title" => "elenco eventi programmati"
+                ],
+                [
+                    "url" => "assistenza/storico-eventi",
+                    "title" => "storico eventi"
                 ]
             ]
         ],
@@ -220,16 +228,16 @@ function _adminLinks(){
             "sub" => [
                 [
                     "url" => "mezzi/aggiunta",
-                    "title" => "Nuovo mezzi"
+                    "title" => "Nuovo mezzo"
                 ],
                 [
                     "url" => "mezzi/elenco",
                     "title" => "Elenco mezzi"
-                ],
+                ]/*,
                 [
                     "url" => "mezzi/storico",
                     "title" => "Storico mezzi"
-                ]
+                ]*/
             ]
         ]
     ];
