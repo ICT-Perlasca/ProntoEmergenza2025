@@ -63,7 +63,7 @@ function generaCardMezzo($mezzo) {
         <div class="card mb-3 border-2 border-dark rounded-3 shadow" style="width: 18rem;">
             <div class="card-body bg-white text-dark">
                 <h4 class="card-title" id="ricerca1">' . $nomeMezzo . '</h4>
-                <h5 class="card-title">' . $modello . ' (' . strtoupper($tipoMezzo) . ')</h5>
+                <h5 class="card-title">' . $modello . '<br> (' . strtoupper($tipoMezzo) . ')</h5>
                 <p class="card-text" id="ricerca2"><strong>Targa:</strong> ' . $targa . '</p>
                 <p class="card-text"><strong>Immatricolazione:</strong> ' . $dataImmatricolazione . '</p>
                 <p class="card-text"><strong>Ultima Revisione:</strong> ' . $dataRevisione . '</p>

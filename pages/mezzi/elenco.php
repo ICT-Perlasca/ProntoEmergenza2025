@@ -11,7 +11,7 @@
 <?php
 require_once ("./components/Head/head.php");
 
-echo COMP_head("mezzi");
+echo COMP_head();
 
 ?>
         <body>
@@ -21,8 +21,10 @@ echo COMP_head("mezzi");
     require_once ("./components/SimpleComponent/comp.php");
     require_once ("./components/Footer/footer.php");
     require_once ("./api/ElencoMezziDisponibili.php");
+    require_once ("./components/SimpleComponent/searchBar.php");
 
 echo COMP_header($_SESSION);
+echo CMP_SearchBar("mezzi");
 
 echo '<div class="container my-4">';
 echo '<div class="row g-4">';

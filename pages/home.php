@@ -39,7 +39,7 @@ if(!isset($_SESSION['idUtente'])){
                         echo COMP_Button('calendar-date','Calendario','turni');
                         echo COMP_Button('card-list','Bacheca','bacheca');
                         if($_SESSION['tipoUtente'] == 'admin')
-                            echo COMP_Button('people-fill','Gestione Utenti','utenti');
+                            echo COMP_Button('people-fill','Gestione Utenti','utenti/profili');
                     ?>
                 </div>
             </div>

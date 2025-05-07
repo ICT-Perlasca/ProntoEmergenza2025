@@ -44,7 +44,7 @@ function generaCardUtente($utente) {
                     <span id="ricerca1">' . $nome . '</span>
                     <span id="ricerca2">' . $cognome . '</span>
                 </h5>
-                <p class="card-text">Email: ' . $email . '</p>
+                <p class="card-text">Email:<br> ' . $email . '</p>
                 <p class="card-text text-success">Ruolo: ' . $ruolo . '</p>
                 <div class="text-center">
                     <a href="profiloUtente.php?id=' . $idUtente . '" class="text-decoration-none"> <button class="btn text-white border-dark" style="background-color: #ff6700; background-image: linear-gradient(45deg, #ff8500, #ff4500);">Visualizza Dettagli</button> </a>
