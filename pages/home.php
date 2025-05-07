@@ -21,7 +21,7 @@ if(!isset($_SESSION['idUtente'])){
                 echo COMP_header($_SESSION);
             ?>
 
-            <section class="bg-primary text-white text-center d-flex align-items-center" style="min-height: 500px;">
+            <section class="bg-primary text-white text-center d-flex align-items-center" style="min-height: 350px;">
                 <div class="container py-5">
                     <div class="row justify-content-center">
                         <div class="col-12 col-md-10 col-lg-8">
