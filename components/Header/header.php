@@ -8,8 +8,8 @@ function COMP_header($user) {
         <script type="text/javascript" src="./public/js/header.js"></script>
     
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="navbar-brand">
-                <img src="./public/images/logo-ambulanza.png" class=""/>
+            <div class="navbar-brand container-fluid">
+                <img src="./public/images/logo-ambulanza.png"  class="" style="height: 20%;width:20%;"/>
             </div>
             <button 
                 class="navbar-toggler" 
@@ -33,13 +33,13 @@ function COMP_header($user) {
                             <span class="mx-2">
                                 '.$user['cognome'].' '.$user['nome'].'
                             </span>
-                            <img src="'.$user['image'].'" alt="Avatar" class="rounded-circle" width="40" height="40">
+                            <img src="'.$user['immagine'].'" alt="Avatar" class="rounded-circle" width="40" height="40">
                         </div>
                         <ul class="dropdown-menu" aria-labelledby="userDropdown">
-                            <li><a class="dropdown-item" href="#">Profilo</a></li>
+                            <li><a class="dropdown-item" href="utenteSingolo">Profilo</a></li>
                             <li><a class="dropdown-item" href="#">Impostazioni</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                            <li><a class="dropdown-item" href="logout">Logout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -141,6 +141,10 @@ function _adminLinks(){
             "title" => "Utenti",
             "sub" => [
                 [
+                    "url" => "utenti/profili",
+                    "title" => "Profili utente"
+                ],
+                [
                     "url" => "utenti/aggiunta",
                     "title" => "Aggiunta utente"
                 ],
@@ -201,12 +205,20 @@ function _adminLinks(){
             "title" => "Assistenza",
             "sub" => [
                 [
-                    "url" => "assistenza/aggiunta",
+                    "url" => "assistenza/eventonew",
                     "title" => "Nuovo evento"
                 ],
                 [
                     "url" => "assistenza/aggiunta-personale",
-                    "title" => "Nuovo evento personale"
+                    "title" => "aggiunta personale"
+                ],
+                [
+                    "url" => "assistenza/elenco-eventi",
+                    "title" => "elenco eventi programmati"
+                ],
+                [
+                    "url" => "assistenza/storico-eventi",
+                    "title" => "storico eventi"
                 ]
             ]
         ],
@@ -216,16 +228,16 @@ function _adminLinks(){
             "sub" => [
                 [
                     "url" => "mezzi/aggiunta",
-                    "title" => "Nuovo mezzi"
+                    "title" => "Nuovo mezzo"
                 ],
                 [
                     "url" => "mezzi/elenco",
                     "title" => "Elenco mezzi"
-                ],
+                ]/*,
                 [
                     "url" => "mezzi/storico",
                     "title" => "Storico mezzi"
-                ]
+                ]*/
             ]
         ]
     ];

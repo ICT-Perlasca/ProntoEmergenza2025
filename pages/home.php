@@ -5,30 +5,50 @@ if(!isset($_SESSION['idUtente'])){
     header("Location: login");
 }else{
 ?>
-<html>
-        <head>
-            <base href="./" />
-            <link href="./public/css/bootstrap.min.css" rel="stylesheet"/>
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        </head>
+    <html lang="it">
+        <?php
+            require_once ("./components/Head/head.php");
+            echo COMP_head();
+        ?>
         <body>
-<?php
-require_once ("./components/Header/header.php");
-require_once ("./components/SimpleComponent/comp.php");
-require_once ("./api/elencoComunicazioni.php");
+            <?php
+                require_once ("./components/Header/header.php");
+                require_once ("./components/SimpleComponent/comp.php");
+                require_once ("./api/elencoComunicazioni.php");
+                require_once ("./components/Footer/footer.php");
+                require_once ("./components/SimpleComponent/COMP_Buttons.php");
+               
+                echo COMP_header($_SESSION);
+            ?>
 
-echo COMP_header($_SESSION);
+            <section class="bg-primary text-white text-center d-flex align-items-center" style="min-height: 350px;">
+                <div class="container py-5">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-8">
+                            <h1 class="display-4 fw-bold lh-tight mb-3">Ciao <?php echo $_SESSION['nome']; ?>!</h1>
+                            <p class="lead fs-5 fw-light">Come possiamo aiutarti?</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-foreach(API_elencoComunicazioni([],[], $_SESSION) as $c) {
-    echo COMP_simpleComponent($c['id']);
-}
+            <div class="container mt-4">
+                <div class="d-flex flex-wrap justify-content-center gap-2">
+                    <?php
+                        echo COMP_Button('person-circle','Profilo','profiloUtente');
+                        echo COMP_Button('calendar-date','Calendario','turni');
+                        echo COMP_Button('card-list','Bacheca','bacheca');
+                        if($_SESSION['tipoUtente'] == 'admin')
+                            echo COMP_Button('people-fill','Gestione Utenti','utenti/profili');
+                    ?>
+                </div>
+            </div>
 
-echo COMP_Footer();
-?>
-</body>
-</html>
+            <?php 
+                echo COMP_Footer(); 
+            ?>
+        </body>
+    </html>
 <?php
 }
 ?>
