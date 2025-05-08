@@ -10,6 +10,11 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/globals.php';
 <!DOCTYPE html>
 <html>
     <head>
+        <style>
+            td {
+                height: 25px;
+            }
+        </style>
         <title> Prova </title>
         <meta charset='UTF-8'>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">

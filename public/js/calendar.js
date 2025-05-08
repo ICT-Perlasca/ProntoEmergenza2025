@@ -73,10 +73,29 @@ function generaTabella(dataStr, turni) {
     for (let ora = 0; ora < 24; ora++) {
         $(`#row-${(ora+7)%24} .time`).remove();
     }
-
+    
+    let turniBase = {
+        "07:00:00-13:00:00": {
+            "soccorritore-1": false,
+            "soccorritore-2": false,
+            "autista": false
+        },
+        "13:00:00-19:00:00": {
+            "soccorritore-1": false,
+            "soccorritore-2": false,
+            "autista": false
+        },
+        "19:00:00-07:00:00": {
+            "soccorritore-1": false,
+            "soccorritore-2": false,
+            "autista": false
+        }
+    };
     for (let turno of turni) {
         let oraInizio = parseInt(turno.oraInizioEffettiva.split(":")[0]); // Extract starting hour
         let oraFine = parseInt(turno.oraFineEffettiva.split(":")[0]); // Extract ending hour
+        let fascia = `${turno.oraInizio}-${turno.oraFine}`; // Shift time range
+
         if (oraFine === 0) oraFine = 24; // Handle shifts ending at midnight (e.g., 19:00-00:00)
 
         let durata = oraFine - oraInizio; // Calculate the duration of the shift
@@ -87,13 +106,16 @@ function generaTabella(dataStr, turni) {
 
         if (turno.ruolo.toLowerCase() === "soccorritore") {
             // Check if the first Soccorritore column has already been replaced
-            if ($(`#row-${oraInizio} .soccorritore-1`)[0].innerHTML == "") {
+            if (turniBase[fascia][`soccorritore-1`] == false) {
+                turniBase[fascia][`soccorritore-1`] = true; // Mark the first column as filled
                 columnClass = "soccorritore-1";
             } else {
+                turniBase[fascia][`soccorritore-2`] = true; // Mark the second column as filled
                 columnClass = "soccorritore-2";
             }
-        } else if (turno.ruolo.toLowerCase() === "autista") {
+        } else if (turno.ruolo.toLowerCase() == "autista") {
             // Always place Autista in the last column
+            turniBase[fascia][`autista`] = true;
             columnClass = "autista";
         }
 
