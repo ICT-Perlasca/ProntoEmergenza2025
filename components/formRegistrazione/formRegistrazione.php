@@ -1,73 +1,145 @@
 <?php
-function COMP_formRegistrazione($title) {
+function mostraErrore($campo, $errori) {
+    if (is_array($errori) && isset($errori[$campo])) {
+        return '<span class="text-danger d-block mt-1">' . htmlspecialchars($errori[$campo]) . '</span>';
+    }
+    return '';
+}
+
+function COMP_formRegistrazione(array $errori = []) {
     return '
-      <form method="POST" enctype="multipart/form-data">
-        <label>Cognome: <input type="text" name="cognome" maxlength="30" required></label>
-        <br>
-        <label>Nome: <input type="text" name="nome" maxlength="30" required></label>
-        <br>
-        <label>Codice Fiscale: <input type="text" name="codiceFiscale" maxlength="16" required></label>
-        <br>
-        <label>Data di nascita: <input type="date" name="dataNascita" required></label>
-        <br>
+    <div class="row min-vh-100 justify-content-center align-items-center bg-primary text-white py-5">
+        <div class="col-12 col-md-8 col-lg-6 bg-white text-dark p-5 rounded shadow">
+            <form method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label">Cognome</label>
+                    <input type="text" name="cognome" class="form-control" maxlength="30" required>
+                    ' . mostraErrore("cognome", $errori) . '
+                </div>
 
-        <label>Via: <input type="text" name="via" maxlength="20" required></label>
-        <br>
-        <label>Numero civico: <input type="text" name="numero" maxlength="4" required></label>
-        <br>
-        <label>CAP: <input type="text" name="cap" maxlength="5" required></label>
-        <br>
-        <label>Città: <input type="text" name="citta" maxlength="20" required></label>
-        <br>
-        <label>Provincia: <input type="text" name="provincia" maxlength="2" required></label>
-        <br>
+                <div class="mb-3">
+                    <label class="form-label">Nome</label>
+                    <input type="text" name="nome" class="form-control" maxlength="30" required>
+                    ' . mostraErrore("nome", $errori) . '
+                </div>
 
-        <label>Username: <input type="text" name="username" maxlength="30" required></label>
-        <br>
-        <label>Password: <input type="password" name="password" maxlength="30" required></label>
-        <br>
-        <label>Email: <input type="email" name="email" maxlength="30" required></label>
-        <br>
-        <label>Telefono: <input type="text" name="telefono" maxlength="13" required></label>
-        <br>
+                <div class="mb-3">
+                    <label class="form-label">Codice Fiscale</label>
+                    <input type="text" name="codiceFiscale" class="form-control" maxlength="16" required>
+                    ' . mostraErrore("codiceFiscale", $errori) . '
+                </div>
 
-        <label>disponibilità:
-          <select name="indisponibilita" required>
-            <option value="0">Disponibile</option>
-            <option value="1">Non disponibile</option>
-          </select>
-        </label>
-        <br>
+                <div class="mb-3">
+                    <label class="form-label">Data di nascita</label>
+                    <input type="date" name="dataNascita" class="form-control" required>
+                    ' . mostraErrore("dataNascita", $errori) . '
+                </div>
 
-        <label>Istruttore:
-          <select name="istruttore" required>
-            <option value="0">No</option>
-            <option value="1">Sì</option>
-          </select>
-        </label>
-        <br>
+                <div class="mb-3">
+                    <label class="form-label">Via</label>
+                    <input type="text" name="via" class="form-control" maxlength="20" required>
+                    ' . mostraErrore("via", $errori) . '
+                </div>
 
-        <label for="descrizione">Identificativo del certificato:</label>
-        <input type="text" id="descrizione" name="descrizione" required>
-        <br>
+                <div class="mb-3">
+                    <label class="form-label">Numero civico</label>
+                    <input type="text" name="numero" class="form-control" maxlength="4" required>
+                    ' . mostraErrore("numero", $errori) . '
+                </div>
 
-        <label for="fronte">Foto del fronte del documento:</label>
-        <input type="file" id="fronte" name="fronte" required>
-        <br>
+                <div class="mb-3">
+                    <label class="form-label">CAP</label>
+                    <input type="text" name="cap" class="form-control" maxlength="5" required>
+                    ' . mostraErrore("cap", $errori) . '
+                </div>
 
-        <label for="retro">Foto del retro del documento:</label>
-        <input type="file" id="retro" name="retro">
-        <br>
+                <div class="mb-3">
+                    <label class="form-label">Città</label>
+                    <input type="text" name="citta" class="form-control" maxlength="20" required>
+                    ' . mostraErrore("citta", $errori) . '
+                </div>
 
-        <label for="dataEmissione">Data di emissione del documento:</label>
-        <input type="date" id="dataEmissione" name="dataEmissione" required><br>
+                <div class="mb-3">
+                    <label class="form-label">Provincia</label>
+                    <input type="text" name="provincia" class="form-control" maxlength="2" required>
+                    ' . mostraErrore("provincia", $errori) . '
+                </div>
 
-        <label for="dataScadenza">Data di scadenza del documento:</label>
-        <input type="date" id="dataScadenza" name="dataScadenza" required>
-        <br>
+                <div class="mb-3">
+                    <label class="form-label">Username</label>
+                    <input type="text" name="username" class="form-control" maxlength="30" required>
+                    ' . mostraErrore("username", $errori) . '
+                </div>
 
-        <input type="submit" value="invia" name="invia">
-    </form>
-    ';
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" maxlength="30" required>
+                    ' . mostraErrore("password", $errori) . '
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" name="email" class="form-control" maxlength="30" required>
+                    ' . mostraErrore("email", $errori) . '
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Telefono</label>
+                    <input type="text" name="telefono" class="form-control" maxlength="13" required>
+                    ' . mostraErrore("telefono", $errori) . '
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Disponibilità</label>
+                    <select name="indisponibilita" class="form-select" required>
+                        <option value="0">Disponibile</option>
+                        <option value="1">Non disponibile</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Istruttore</label>
+                    <select name="istruttore" class="form-select" required>
+                        <option value="0">No</option>
+                        <option value="1">Sì</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Descrizione</label>
+                    <input type="text" name="descrizione" class="form-control" required>
+                    ' . mostraErrore("descrizione", $errori) . '
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Foto del fronte del documento</label>
+                    <input type="file" name="fronte" class="form-control" required>
+                    ' . mostraErrore("fronte", $errori) . '
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Foto del retro del documento</label>
+                    <input type="file" name="retro" class="form-control">
+                    ' . mostraErrore("retro", $errori) . '
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Data di emissione</label>
+                    <input type="date" name="dataEmissione" class="form-control" required>
+                    ' . mostraErrore("dataEmissione", $errori) . '
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Data di scadenza</label>
+                    <input type="date" name="dataScadenza" class="form-control">
+                    ' . mostraErrore("dataScadenza", $errori) . '
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Registrati</button>
+                </div>
+            </form>
+        </div>
+    </div>';
 }
 ?>

@@ -16,68 +16,64 @@ function API_inserimentoUtente($get, $post, $session) {
     // Verifica che tutti i campi obbligatori siano presenti
     foreach ($campiObbligatori as $campo) {
         if (!isset($post[$campo]) || trim($post[$campo]) === "") {
-            $errori[] = "Campo obbligatorio mancante o vuoto: $campo";
+            $errori[$campo] = "Campo obbligatorio mancante o vuoto: $campo";
         }
     }
 
     // Convalida dei valori input
-    /*
     // Verifica la lunghezza e il formato del codice fiscale (16 caratteri alfanumerici)
     if (strlen($post['codiceFiscale']) !== 16 || !preg_match("/^[A-Z0-9]+$/i", $post['codiceFiscale'])) {
-        $errori[] = "Codice Fiscale non valido (deve essere lungo 16 caratteri alfanumerici).";
+        $errori['codiceFiscale'] = "Codice Fiscale non valido.";
     }
     
-    // Verifica la data di nascita (l'utente deve essere maggiorenne e la data deve avere un formato valido)
+    // Verifica la data di nascita
+    
     $dataNascita = DateTime::createFromFormat('Y-m-d', $post['dataNascita']);
     if (!$dataNascita) {
-        $errori[] = "Formato data di nascita non valido. Utilizzare il formato YYYY-MM-DD.";
-    }
-    
-    $oggi = new DateTime();
-    $eta = $oggi->diff($dataNascita)->y;
-    if ($eta < 18) {
-        $errori[] = "L'utente deve avere almeno 18 anni.";
-    }
-    
-    // Verifica la validità dell'email
-    if (!filter_var($post['email'], FILTER_VALIDATE_EMAIL)) {
-        $errori[] = "Email non valida.";
+        $errori['dataNascita'] = "Formato data di nascita non valido.";
     }
 
+    // Verifica la validità dell'email
+    if (!filter_var($post['email'], FILTER_VALIDATE_EMAIL)) {
+        $errori['email'] = "Email non valida.";
+    }
 
     // Verifica la validità del numero di telefono (solo numeri, massimo 13 caratteri)
     if (!preg_match("/^\d{10,13}$/", $post['telefono'])) {
-        $errori[] = "Numero di telefono non valido (deve essere composto da 10 a 13 cifre).";
+        $errori['telefono'] = "Numero di telefono non valido.";
     }
     
     // Verifica che il CAP sia numerico e di 5 cifre
     if (!preg_match("/^\d{5}$/", $post['cap'])) {
-        $errori[] = "CAP non valido (deve essere numerico e lungo 5 cifre).";
+        $errori['cap'] = "CAP non valido (deve essere numerico e lungo 5 cifre).";
     }
     
     // Verifica che la provincia sia una sigla di 2 lettere
     if (strlen($post['provincia']) !== 2 || !ctype_alpha($post['provincia'])) {
-        $errori[] = "Provincia non valida (deve essere una sigla di 2 lettere).";
+        $errori['provincia'] = "Provincia non valida (deve essere una sigla di 2 lettere).";
     }
     
-    // Verifica complessità della password (almeno 8 caratteri, una lettera maiuscola, una minuscola e un numero)
-    if (strlen($post['password']) < 8 || 
-        !preg_match("/[A-Z]/", $post['password']) || 
-        !preg_match("/[a-z]/", $post['password']) || 
-        !preg_match("/[0-9]/", $post['password'])) {
-        $errori[] = "Password non sufficientemente complessa (minimo 8 caratteri, almeno una maiuscola, una minuscola e un numero)";
+    // Verifica complessità della password (almeno 8 caratteri, una maiuscola, una minuscola, un numero e almeno un carattere speciale tra ?!*#)
+    if (
+        strlen($post['password']) < 8 ||
+        !preg_match('/[A-Z]/', $post['password']) ||         
+        !preg_match('/[a-z]/', $post['password']) ||         
+        !preg_match('/[0-9]/', $post['password']) ||         
+        !preg_match('/[?!*#]/', $post['password'])        
+    ) {
+        $errori['password'] = "La password deve contenere almeno 8 caratteri, una maiuscola, una minuscola, un numero e un carattere speciale tra ?!*#";
     }
+
     
     // Verifica che il valore di indisponibilita sia 0 o 1
     if (!in_array($post['indisponibilita'], ['0', '1'], true)) {
-        $errori[] = "Il valore del campo indisponibilita deve essere 0 o 1.";
+        $errori['indisponibilita'] = "Il valore del campo indisponibilita deve essere 0 o 1.";
     }
     
     // Verifica che il valore di istruttore sia 0 o 1
     if (!in_array($post['istruttore'], ['0', '1'], true)) {
-        $errori[] = "Il valore del campo istruttore deve essere 0 o 1.";
+        $errori['istruttore'] = "Il valore del campo istruttore deve essere 0 o 1.";
     }
-    */
 
     // Verifica che l'email non sia già presente nel database
     $query = "SELECT COUNT(*) as n FROM utenti WHERE email=?";
@@ -85,7 +81,7 @@ function API_inserimentoUtente($get, $post, $session) {
     $tipi = [PDO::PARAM_STR];
     $n = db_query($query, $valori, $tipi);
     if ($n[0]['n'] > 0) {
-        $errori[] = "Email già registrata.";
+        $errori["email"] = "Email già registrata.";
     }
 
     // Se ci sono errori, restituisci l'array di errori
@@ -144,7 +140,7 @@ function API_inserimentoUtente($get, $post, $session) {
 	$idUtente = db_query($q, $valori, $tipi);
     $res["doc"] = API_uploadDocument([], $post, ["idUtente" => $idUtente]);
     if (count($res["doc"]) > 0) {
-		return $errori[] = "Errore nell'inserimento del documento: " . $res["doc"];
+		return $errori[] = $res["doc"];
 	}
 		
     return [];
