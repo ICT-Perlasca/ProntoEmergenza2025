@@ -4,11 +4,11 @@ function turniData(dataStr) {
     console.log("Fetching shifts for date:", dataStr); // Log the date being fetched
 
     $.ajax({
-        url: "/pages/Calendar/elencoTurniData.php",
+        url: "api/elencoTurniData",
         type: "POST",
         data: { data: dataStr },
         dataType: "json",
-        async: false,       // SINCRONO PER RISPETTARE L'ORDINE DELLE RICHIESTE
+        async: false,       // SINCRONO PER RISPETTARE L'ORDINE DELLE ISTRUZIONI
         success: function (response) {
             console.log("Response from server:", response);
             ret = response.turni; // Assuming the server returns a JSON object with a "turni" property
@@ -48,9 +48,9 @@ function generaTabella(dataStr, turni) {
     for (let ora = 0; ora < 24; ora++) {
         tableHTML += `<tr id="row-${(ora+7)%24}">
             <td class="text-center align-middle time" style="font-size: 1.5rem;"></td>
-            <td class="text-center align-middle soccorritore-1" style="font-size: 1.5rem;"></td>
-            <td class="text-center align-middle soccorritore-2" style="font-size: 1.5rem;"></td>
-            <td class="text-center align-middle autista" style="font-size: 1.5rem;"></td>
+            <td class="text-center align-middle soccorritore-1" style="height: 25px; font-size: 1.5rem;"></td>
+            <td class="text-center align-middle soccorritore-2" style="height: 25px; font-size: 1.5rem;"></td>
+            <td class="text-center align-middle autista" style="height: 25px; font-size: 1.5rem;"></td>
         </tr>`;
     }
 
@@ -98,7 +98,7 @@ function generaTabella(dataStr, turni) {
 
         if (oraFine === 0) oraFine = 24; // Handle shifts ending at midnight (e.g., 19:00-00:00)
 
-        let durata = oraFine - oraInizio; // Calculate the duration of the shift
+        let durata = Math.max(oraInizio, oraFine) - Math.min(oraInizio, oraFine); // Calculate the duration of the shift
         let rowspan = durata; // Use the duration as the rowspan
 
         // Determine the role column
@@ -128,8 +128,12 @@ function generaTabella(dataStr, turni) {
 
         // Append the shift cell to the correct row
         $(`#row-${oraInizio} .${columnClass}`).replaceWith(shiftCell);
-        for (let i = oraInizio + 1; i < oraFine; i++) {
+
+
+        let i = (oraInizio + 1) % 24;
+        while (i != oraFine) {
             $(`#row-${i} .${columnClass}`).remove(); // Remove the cells in between
+            i = (i + 1) % 24;
         }
     }
 

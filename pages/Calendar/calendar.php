@@ -1,6 +1,6 @@
 <?php 
-require_once $_SERVER['DOCUMENT_ROOT'].'/funzioniDB.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/globals.php';
+require_once('./funzioniDB.php');
+require_once ("./components/Head/head.php");
 
 // require_once '/funzioniDB.php';
 // require_once '/globals.php';
@@ -9,21 +9,20 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/globals.php';
 
 <!DOCTYPE html>
 <html>
-    <head>
+<?php
+
+echo COMP_head();
+
+?>
+    <body>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
+        <script src="public/js/calendar.js"></script>
         <style>
-            td {
+            td: {
                 height: 25px;
             }
         </style>
-        <title> Prova </title>
-        <meta charset='UTF-8'>
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
-        <script src="/public/js/calendar.js"></script>
-
         <script>
             
         let fullDays = 0;
@@ -122,7 +121,6 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/globals.php';
         });
 
     </script>
-    </head>
     <body>
         <div class="container">
             <h1>Prova</h1>
