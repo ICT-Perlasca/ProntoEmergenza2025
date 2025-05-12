@@ -8,7 +8,7 @@ if(!isset($_SESSION['idUtente'])){
 ?>
     <html lang="it">
         <?php
-            require("apiINScom.php");
+            require("./api/apiINScom.php");
             require_once ("./components/Head/head.php");
             echo COMP_head();
         ?>

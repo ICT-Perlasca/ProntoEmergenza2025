@@ -93,8 +93,8 @@ function _adminLinks(){
                     "title" => "Elenco comunicazioni"
                 ],
                 [
-                    "url" => "bacheca/aggiunta",
-                    "title" => "Aggiunta comunicazione"
+                    "url" => "bacheca/inserimentoComunicazioni",
+                    "title" => "Inserimento comunicazione"
                 ]
             ]
         ],
