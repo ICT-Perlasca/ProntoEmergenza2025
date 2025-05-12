@@ -5,7 +5,7 @@ require_once("funzioniDB.php");
 function API_elencoComunicazioni($get, $post, $session) {
 
     // Se non esiste la sessione non si procede
-    if (!isset($_SESSION["idUtente"]))
+    if (!isset($session["idUtente"]))
         return ["Nessun utente!"];
  
     // Query per ottenere comunicazioni con tipo
@@ -24,7 +24,7 @@ function API_elencoComunicazioni($get, $post, $session) {
     ;";
 
     $valori = [
-        $_SESSION["idUtente"]
+        $session["idUtente"]
     ];
 
     $tipi = [

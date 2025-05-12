@@ -12,7 +12,7 @@ function API_RitornaTipo ($get, $post, $session) {
     ";
 
     $valoriVer = [
-        $_SESSION["idUtente"]
+        $session["idUtente"]
     ];
 
     $tipiVer = [

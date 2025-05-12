@@ -5,15 +5,8 @@ require_once("funzioniDB.php");
 //Questa funzione permette agli admin di accedere a tutte le comunicazioni presenti nel DB.
 function API_tutteComunicazioni($get, $post, $session) {
     // Se non esiste la sessione non si procede
-    if (!isset($_SESSION["idUtente"]))
+    if (!isset($session["idUtente"]))
         return ["Nessun utente!"];
-
-    $tipo = API_RitornaTipo([], [], []);
-
-    // Se non esiste il risultato oppure non è admin
-    if (empty($tipo) || $tipo[0]['tipoUtente'] !== 'admin') {
-        return ["L'utente non è un admin!"];
-    }
 
     // Query per ottenere tutte le comunicazioni
     $sql = "SELECT
