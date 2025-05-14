@@ -1,16 +1,13 @@
 <?php
-require '../funzioniDB.php';
-require '../components/Head/head.php';
 
-//$idU = $_GET['id'];
-//$data = $_GET['data'];
-//$idUHash = $_GET['idUHash'];
-//$dataHash = $_GET['dataHash'];
+require './funzioniDB.php';
+require './components/Head/head.php';
 
-$idU = 1;
-$data = '2025-03-10 00:00:00';
-$idUHash = md5($idU);
-$dataHash = md5($data);
+$idU = $_GET['id'];
+$data = $_GET['data'];
+$idUHash = $_GET['idUHash'];
+$dataHash = $_GET['dataHash'];
+
 ?>
 <html>
 <?php
@@ -19,7 +16,7 @@ $dataHash = md5($data);
 <body>
 <?php
 if ($idUHash === md5($idU) && $dataHash === md5($data)) {
-    //$dataora = new DateTime('now', new DateTimeZone('Europe/Rome'));
+    $dataora = new DateTime('now', new DateTimeZone('Europe/Rome'));
     $dataora = new DateTime('2025-03-10 12:59:59');
     $dataoraStr = $dataora->format('Y-m-d H:i:s');
 
