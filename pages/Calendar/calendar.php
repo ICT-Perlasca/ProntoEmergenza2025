@@ -1,24 +1,27 @@
 <?php 
-require_once $_SERVER['DOCUMENT_ROOT'].'/funzioniDB.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/globals.php';
 
-// require_once '/funzioniDB.php';
-// require_once '/globals.php';
 
+//require_once $_SERVER['DOCUMENT_ROOT'].'/funzioniDB.php';
+//require_once $_SERVER['DOCUMENT_ROOT'].'/globals.php';
+session_start();
+require_once ('./funzioniDB.php');
+require_once ('./globals.php');
+require_once ('./components/Head/head.php');
+require_once ('./components/SimpleComponent/turniBottone.php');
+//echo COMP_PopupTurno("popupTurno", $_SESSION['nome'], "2025-05-15", "confermaTurno()");
 
 ?>
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> Prova </title>
-        <meta charset='UTF-8'>
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <?php echo COMP_head(); ?>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+        <script src="public/js/calendar.js"></script>
+        <script src="public/js/formTurno.js"></script>
 
-        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
-        <script src="/public/js/calendar.js"></script>
 
         <script>
             
@@ -114,8 +117,6 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/globals.php';
         });
 
     </script>
-    </head>
-    <body>
         <div class="container">
             <h1>Prova</h1>
             <div class="row">
@@ -127,5 +128,13 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/globals.php';
                 </div>
             </div>
         </div>
+        <?php 
+            $nomeUtente = $_SESSION['nome'] . ' ' . $_SESSION['cognome'];
+            //print_r('Nome utente calendar: ' . $nomeUtente);
+            echo COMP_turniBottone('2025-04-12', $nomeUtente); 
+        ?>
+        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" onclick="apriPopupTurno( <?php echo $data ?>, '<?php echo $nomeUtente ?>')">
+            Inserisci turno
+        </button> -->
     </body>
 </html>
