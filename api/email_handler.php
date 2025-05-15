@@ -16,7 +16,7 @@ Se non hai effettuato questa registrazione, ignora questo messaggio.<br>
 Grazie ancora e benvenuto a nome di tutta l'associazione!<br>
 Cordiali saluti,<br>
 Il team di ProntoEmrgenza di Agnosine(BS)",
-    "oggetto"=>" Grazie per esserti registrato su Pronto Emergenza!!",
+    "oggetto"=>" Grazie per esserti registrato su Pronto Emergenza!!"
 
 ];
 $cambioPsw=[
