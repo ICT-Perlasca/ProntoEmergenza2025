@@ -1,23 +1,29 @@
 <?php
-
 require './funzioniDB.php';
 require './components/Head/head.php';
-
+require './components/Footer/footer.php';
 $idU = $_GET['id'];
 $data = $_GET['data'];
 $idUHash = $_GET['idUHash'];
 $dataHash = $_GET['dataHash'];
-
+$idU = 1;
+$data = "2025-05-14 09:10:23";
+$idUHash = md5($idU);
+$dataHash = md5($data);
 ?>
 <html>
 <?php
     echo COMP_head(); 
 ?>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 10%;">
+                    <div class="navbar-brand container-fluid">
+                        <img src="./public/images/logo-ambulanza.png"  class="" style="height: 10%;width:10%;"/>
+                    </div>
+        </nav>';
 <?php
 if ($idUHash === md5($idU) && $dataHash === md5($data)) {
     $dataora = new DateTime('now', new DateTimeZone('Europe/Rome'));
-    $dataora = new DateTime('2025-03-10 12:59:59');
     $dataoraStr = $dataora->format('Y-m-d H:i:s');
 
     $query = 'SELECT dataoraInvioEmail FROM Utenti WHERE idUtente = ? AND dataoraInvioEmail = ?';
@@ -38,27 +44,44 @@ if ($idUHash === md5($idU) && $dataHash === md5($data)) {
                 $tipi = [PDO::PARAM_STR, PDO::PARAM_INT];
                 $ris = db_query($query, $valori, $tipi);
                 if ($ris == 1) {
-                    echo "<div class='alert alert-success' role='alert'>
+                    echo "<div class='alert alert-primary h-50' role='alert'>
                         <h4 class='alert-heading'>Ben Fatto!</h4>
                         <p>Hai verificato correttamente il tuo indirizzo mail!</p>
                         <hr>
                         <p class='mb-0'>Chiudi pure la pagina e fai il login!</p>
                     </div>";
                 } else {
-                    echo "<div class='alert alert-danger' role='alert'>Problemi a caricare la tua richiesta!</div>";
+                    echo "<div class='alert alert-danger h-50'  role='alert'>
+                        <h4 class='alert-heading'>Ops... Qualcosa è andato storto!</h4>
+                        <p>Problemi a caricare la tua richiesta</p>
+                        </div>";
                 }
             } else {
-                echo "<div class='alert alert-danger' role='alert'>Il link è scaduto!</div>";
+                echo "<div class='alert alert-danger h-50' role='alert'>
+                    <h4 class='alert-heading'>Ops... Qualcosa è andato storto!</h4>
+                    <p>Il link è scaduto!</p>
+                    </div>";
             }
         } else {
-            echo "<div class='alert alert-danger' role='alert'>Utente non trovato!</div>";
+            echo "<div class='alert alert-danger h-50' role='alert'>
+                <h4 class='alert-heading'>Ops... Qualcosa è andato storto!</h4>
+                <p>Utente non trovato!</p>
+                </div>";
         }
     } else {
-        echo "<div class='alert alert-danger' role='alert'>Errore nella query al database!</div>";
+        echo "<div class='alert alert-danger h-50' role='alert'>
+            <h4 class='alert-heading'>Ops... Qualcosa è andato storto!</h4>
+            <p>Errore nella query al database!</p>
+            </div>";
     }
 } else {
-    echo "<div class='alert alert-danger' role='alert'>Link non valido!</div>";
+    echo "<div class='alert alert-danger h-50' role='alert'>
+            <h4 class='alert-heading'>Ops... Qualcosa è andato storto!</h4>
+            <p>Link non valido!</p>
+            </div>";
 }
+echo COMP_footer();
+
 ?>
 </body>
 </html>
