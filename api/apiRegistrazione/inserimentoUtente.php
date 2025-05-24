@@ -39,7 +39,7 @@ function API_inserimentoUtente($get, $post, $session) {
     }
 
     // Verifica la validità del numero di telefono (solo numeri, massimo 13 caratteri)
-    if (!preg_match("/^\d{10,13}$/", $post['telefono'])) {
+    if (!preg_match("/^\d{10}$/", $post['telefono'])) {
         $errori['telefono'] = "Numero di telefono non valido.";
     }
     

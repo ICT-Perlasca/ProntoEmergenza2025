@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
 <h1 class="text-center text-primary my-4">Registrazione</h1>
-<?php echo COMP_formRegistrazione($errori); ?>
+<?php echo COMP_formRegistrazione($errori, $_POST); ?>
 
 </body>
 </html>
