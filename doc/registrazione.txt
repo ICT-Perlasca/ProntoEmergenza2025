@@ -1,6 +1,0 @@
-La pagina di registrazione presenta al suo interno un modulo form diviso in 3 sezioni: dati anagrafici, ruolo e disponibilità, e credenziali. Il form prevede la possibilità di allegare una foto di fronte e retro di un documento di autenticazione qualifica in formato jpg, jpeg, png, pdf.
-Il modulo è dunque una funzione che prende in input due array ($errori e $_POST), e ritorna il form formattato. Il form, una volta compilato e inviato, se non presenta errori, restituisce un messaggio di conferma, altrimenti ricarica il form stampando i messaggi di errore sotto ogni campo input errato. Grazie all'array $_POST il form mantiene i dati inseriti all'interno dei campi anche dopo il suo invio.
-L'array di errori viene restituito in seguito alla chiamata di entrambe le api, quella di inserimento utente, e quella di inserimento documento.
-
-Non è stata implementata nell'api di inserimento utente l'invio dell'email ad un admin per la verifica e approvazione della registrazione;
-e, nel form, la possibilità di inserire più di documenti.
