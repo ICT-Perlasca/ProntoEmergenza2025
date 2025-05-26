@@ -11,17 +11,22 @@ function API_SalvaTurno($get, $post, $session) {
         // 2. Recupera dati POST
         $data = $_POST['dataTurno'] ?? null;
         $fasciaOraria = $_POST['fasciaOraria'] ?? null;
-        $oraInizio = $_POST['oraInizioEffettiva'] ?? null;
-        $oraFine = $_POST['oraFineEffettiva'] ?? null;
+        $splitFascia = explode(' - ', $fasciaOraria); //non funge
+        $oraInizio = $splitFascia[0] ?? null;
+        $oraFine = $splitFascia[1] ?? null;
+        $oraInizioEffettiva = $_POST['oraInizioEffettiva'] ?? null; //da sistemare
+        $oraFineEffettiva = $_POST['oraFineEffettiva'] ?? null;
+        if ($oraInizioEffettiva == '') $oraInizioEffettiva = $oraInizio;
+        if ($oraFineEffettiva == '') $oraFineEffettiva = $oraFine;
         $ruolo = $_POST['ruolo'] ?? null;
         $note = $_POST['note'] ?? null;
         $idUtente = $_SESSION['idUtente'];
 
         // 3. Trova idTurno118 da data e orari
         $resTurno = db_query(
-            "SELECT idTurno118 FROM turni118 WHERE data = ? AND oraInizio = ?",
-            [$data, $fasciaOraria],
-            [PDO::PARAM_STR, PDO::PARAM_STR]
+            "SELECT idTurno118 FROM turni118 WHERE data = ? AND oraInizio = ? AND oraFine = ?",
+            [$data, $oraInizio, $oraFine],
+            [PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_STR]
         );
 
         if (isset($resTurno['error']) || empty($resTurno)) {
@@ -56,7 +61,7 @@ function API_SalvaTurno($get, $post, $session) {
                         "INSERT INTO turniutenti 
                             (testoNota, oraInizioEffettiva, oraFineEffettiva, convalidato, idTurno118, idEventoProgrammato, idAssistenza, idRuolo, idUtente)
                         VALUES (?, ?, ?, 0, ?, NULL, NULL, ?, ?)",
-                        [$note, $oraInizio, $oraFine, $idTurno118, $idRuolo, $idUtente],
+                        [$note, $oraInizioEffettiva, $oraFineEffettiva, $idTurno118, $idRuolo, $idUtente],
                         [PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_INT, PDO::PARAM_INT, PDO::PARAM_INT]
                     );
 
