@@ -32,7 +32,7 @@ function generaTabella(dataStr, turni) {
     // aggiungere i td con javascript in un secondo momento
 
     let tableHTML = `
-        <div id='tabellaOrari' class="table-responsive" style="height: 75vh; display: flex; flex-direction: column;">
+        <div id='tabellaOrari' class="table-responsive" style="height: 75vh; display: flex; flex-direction: column; overflow: visible;">
             <h3 class="text-center mb-4">Schedule for ${dataStr}</h3>
             <table class="table table-bordered table-hover" style="height: 100%; table-layout: fixed;">
                 <thead class="thead-dark">
@@ -122,13 +122,28 @@ function generaTabella(dataStr, turni) {
         // Create the shift cell with rowspan
         let shiftCell = `
             <td class="text-center align-middle ${columnClass}" rowspan="${rowspan}" style="font-size: 1.5rem;">
-                ${turno.nome} ${turno.cognome}
+                <p ${ turno.testoNota ? `
+                    data-bs-toggle="popover" 
+                    data-bs-trigger="hover" 
+                    title="Nota aggiuntiva:" 
+                    data-bs-placement="right" 
+                    data-bs-content="${turno.testoNota}"
+                    ` : ""
+                }
+                >
+                    ${turno.nome} ${turno.cognome}
+
+                    ${
+                        turno.testoNota ? `
+                            <i class="bi bi-info-circle-fill text-info" style="cursor: pointer;"></i>
+                        ` : ""
+                    }
+                </p>
             </td>
         `;
 
         // Append the shift cell to the correct row
         $(`#row-${oraInizio} .${columnClass}`).replaceWith(shiftCell);
-
 
         let i = (oraInizio + 1) % 24;
         while (i != oraFine) {
@@ -136,6 +151,10 @@ function generaTabella(dataStr, turni) {
             i = (i + 1) % 24;
         }
     }
+
+            // Inizializza i popover
+            const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+            const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
 
     function getTurni(turni, oraInizio, oraFine, ruolo, index) {
         const turniFiltrati = turni.filter(

@@ -1,6 +1,9 @@
 <?php 
 require_once('./funzioniDB.php');
 require_once ("./components/Head/head.php");
+require_once ("./components/Header/header.php");
+
+session_start();
 
 // require_once '/funzioniDB.php';
 // require_once '/globals.php';
@@ -15,6 +18,7 @@ echo COMP_head();
 
 ?>
     <body>
+        <?php echo COMP_header($_SESSION); ?>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
         <script src="public/js/calendar.js"></script>
@@ -43,6 +47,7 @@ echo COMP_head();
 
             let turni = {};
 
+            // Fetch dei turni del mese corrente, per decidere i colori del calendario
             while (nextMonth.getMonth() === today.getMonth() + 1) {
                 let year = nextMonth.getFullYear();
                 let month = String(nextMonth.getMonth() + 1).padStart(2, '0');
@@ -58,6 +63,7 @@ echo COMP_head();
                 nextMonth.setDate(nextMonth.getDate() + 1);
             }
 
+            // Generazione eventi per annotare che giorni sono pieni, vuoti o parziali
             let events = [];
             for (let date in turni) {
                 if (turni[date].length == 9) {
@@ -80,6 +86,7 @@ echo COMP_head();
 
             console.log( events); // Log the events array to the console
 
+            // Generazione del calendario mensile
             let calendar = new FullCalendar.Calendar(calendarElement, {
                 locale: 'it',
                 displayEventTime: false,
@@ -123,10 +130,10 @@ echo COMP_head();
     </script>
     <body>
         <div class="container">
-            <h1>Prova</h1>
             <div class="row">
                 <div class="col-md-3">
                     <div id="calendar"></div>
+                    <!-- DEVE RITORNARE MESE E ANNO -->     
                     <button type="button" id="btnConvalida" class="btn btn-primary">
                         Convalida turni
                     </button>
