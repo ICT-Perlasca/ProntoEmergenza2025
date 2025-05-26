@@ -22,8 +22,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
 
-<h1 class="text-center text-primary my-4">Registrazione</h1>
+<div class="bg-white text-primary my-4 d-flex flex-row justify-content-center align-items-center">
+    <a href="./"  class="col-2">
+        <img src="./public/images/logo-ambulanza.png" class="w-100"/>   
+    </a>
+    <span class="col-8 text-center">
+        <h1>Registrazione</h1>
+    </span>
+    <div class="col-2"></div>
+</div>
+
+<h1 class="text-center text-primary my-4">
+</h1>
 <?php echo COMP_formRegistrazione($errori, $_POST); ?>
+
+<?php 
+    require_once ("./components/Footer/footer.php");
+    echo COMP_Footer(); 
+?>
 
 </body>
 </html>
