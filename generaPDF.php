@@ -4,17 +4,20 @@ require_once("funzioniDB.php"); // Dentro c'è la funzione API_EseguiQuery($quer
 session_start();
 
 // Ricevi la query
-if (!isset($_REQUEST['query'])) {
-    http_response_code(400);
-    echo "Errore: query non fornita.";
-    exit;
-}
+// if (!isset($_REQUEST['query'])) {
+//     http_response_code(400);
+//     echo "Errore: query non fornita.";
+//     exit;
+// }
 
-$query = $_REQUEST['query'];
-$titolo = $_REQUEST['titolo'] ?? 'Risultato Query';
+require_once("./api/ElencoMezziDisponibili.php");
+
+$query =  API_ElencoMezziDisponibili([], [], []);
+$titolo = 'Risultato Query';
 
 // Esegui la query usando la tua funzione API
-$dati = API_EseguiQuery($query); // Questa funzione DEVE restituire array di array associativi
+$dati = API_ElencoMezziDisponibili([], [], ['tipoUtente' => "admin"]);// Questa funzione DEVE restituire array di array associativi
+
 
 if (empty($dati)) {
     echo "Nessun dato disponibile.";
@@ -79,6 +82,7 @@ class PDF extends FPDF {
 // Prepara intestazioni e righe
 $intestazioni = array_keys($dati[0]);
 $righe = array_map('array_values', $dati);
+
 
 // Formatta eventuali date Y-m-d -> d-m-Y
 foreach ($righe as &$riga) {
