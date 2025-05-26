@@ -132,15 +132,19 @@ function API_inserimentoUtente($get, $post, $session) {
 
     $rows = db_query($query, $valori, $tipi);
     if (isset($rows["error"])) {
-        return $errori[] = "Errore nell'inserimento dell'utente: " . $rows["error"];
+        $errori[] = "Errore nell'inserimento dell'utente: " . $rows["error"];
+        return $errori;
     }
 	$q = "SELECT idUtente FROM utenti WHERE email=?";
 	$valori = [$post['email']];
 	$tipi = [PDO::PARAM_STR];
 	$idUtente = db_query($q, $valori, $tipi);
+    
     $res["doc"] = API_uploadDocument([], $post, ["idUtente" => $idUtente]);
+
     if (count($res["doc"]) > 0) {
-		return $errori[] = $res["doc"];
+		$errori[] = $res["doc"];
+        return $errori;
 	}
 		
     // TODO: Invio notifica via email agli admin

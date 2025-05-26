@@ -16,8 +16,11 @@ require_once "components/formRegistrazione/formRegistrazione.php";
 $errori = [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $errori = API_inserimentoUtente([], $_POST, []);
-}
 
+?>
+Successo, attendere che un amministratore convaliti la tua registrazione
+<?php
+}else{
 ?>
 
 <body>
@@ -42,4 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 </body>
+<?php
+}
+?>
 </html>

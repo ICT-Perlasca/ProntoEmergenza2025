@@ -12,7 +12,10 @@ function COMP_formRegistrazione(array $errori = [], array $valori = []) {
     };
 
     $selected = function($field, $value) use ($valori) {
-        return (isset($valori[$field]) && (string)$valori[$field] === (string)$value) ? 'selected' : '';
+        if (isset($valori[$field]))
+            return (string)$valori[$field] === (string)$value ? 'selected' : '';
+        else 
+            return $value == '0' ? 'selected' : '';
     };
 
     $hasError = !empty($errori);
@@ -126,9 +129,9 @@ function COMP_formRegistrazione(array $errori = [], array $valori = []) {
                 </div>
 
                 <div class="mb-4">
-                    <label class="form-label" for="retro">Foto del retro del documento</label>
+                    <label class="form-label" for="retro">*Foto del retro del documento</label>
                     <div class="input-group">
-                        <input type="file" id="retro" name="retro" class="d-none" onchange="document.getElementById(\'retro-label\').innerText = this.files[0].name">
+                        <input type="file" id="retro" name="retro" class="d-none" required onchange="document.getElementById(\'retro-label\').innerText = this.files[0].name">
                         <label for="retro" class="btn btn-outline-primary rounded-3 border-2">Scegli file</label>
                         <span id="retro-label" class="ms-3">Nessun file selezionato</span>
                     </div>
@@ -136,8 +139,8 @@ function COMP_formRegistrazione(array $errori = [], array $valori = []) {
                 </div>
 
                 <div class="mb-4">
-                    <label class="form-label">Data di emissione</label>
-                    <input type="date" name="dataEmissione" class="form-control rounded-3 border-2 border-primary" value="' . $val('dataEmissione') . '">
+                    <label class="form-label">*Data di emissione</label>
+                    <input type="date" name="dataEmissione" class="form-control rounded-3 border-2 border-primary" required value="' . $val('dataEmissione') . '" >
                     ' . mostraErrore('dataEmissione', $errori) . '
                 </div>
 
