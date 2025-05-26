@@ -17,10 +17,10 @@ $dataHash = md5($data);
 ?>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 10%;">
-                    <div class="navbar-brand container-fluid">
-                        <img src="./public/images/logo-ambulanza.png"  class="" style="height: 10%;width:10%;"/>
-                    </div>
-        </nav>';
+        <div class="navbar-brand container-fluid">
+            <img src="./public/images/logo-ambulanza.png"  class="" style="height: 10%;width:10%;"/>
+        </div>
+    </nav>
 <?php
 if ($idUHash === md5($idU) && $dataHash === md5($data)) {
     $dataora = new DateTime('now', new DateTimeZone('Europe/Rome'));
