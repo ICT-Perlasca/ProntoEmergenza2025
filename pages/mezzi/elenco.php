@@ -14,7 +14,7 @@ require_once ("./components/Head/head.php");
 echo COMP_head("mezzi");
 
 ?>
-        <body>
+<body>
 <?php
     require_once ("./components/Header/header.php");
     require_once ("./components/SimpleComponent/cardVeicolo.php");

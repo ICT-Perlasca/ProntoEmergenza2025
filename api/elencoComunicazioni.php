@@ -1,5 +1,5 @@
 <?php
-require_once("funzioniDB.php");
+require_once("./funzioniDB.php");
 
 //Chiamando l'API si ricevono tutte le comunicazioni che hanno idUtente associato uguale all'idUtente della sessione, oppure un messaggio di errore
 function API_elencoComunicazioni($get, $post, $session) {
@@ -19,7 +19,7 @@ function API_elencoComunicazioni($get, $post, $session) {
     ];
 
     $tipi = [
-        PDO::PARAM_INT,         // idUtente
+        PDO::PARAM_INT,
     ];
 
     $risultato = db_query($sql, $valori, $tipi);
