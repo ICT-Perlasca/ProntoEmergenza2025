@@ -47,7 +47,59 @@ Creare un PDF tabellare a partire dai dati restituiti da una funzione API che es
 
 # 6. Layout PDF
 
-- Orientamento orizzontale (L)
-- Carattere Courier
-- Intestazione: data/ora e titolo
-- Colonne adattive, con supporto a testo lungo su più righe
+- Orientamento: Orizzontale (Landscape)
+- Formato: 397mm x 210mm (formato largo A4)
+- Font: Courier
+- Intestazione: data/ora generazione
+- Colonne auto-adattive
+- Testi lunghi distribuiti su più righe
+
+  # 7. Sicurezza
+
+- Le query **non sono eseguite** direttamente.
+- La funzione API deve restituire **solo dati già validati e sicuri**.
+- Nessuna elaborazione SQL interna al sistema.
+
+---
+
+# 8. Pseudocodice Funzioni Principali
+
+```plaintext
+// Funzione principale
+generaPDFdaAPI(nomeAPI, titolo):
+    se la funzione nomeAPI esiste:
+        dati = nomeAPI(GET, POST, SESSION)
+        se dati non vuoti:
+            intestazioni = chiavi della prima riga
+            righe = valori delle righe
+            formattaDate(righe)
+            larghezze = calcolaLarghezze(intestazioni, righe)
+            creaPDF(intestazioni, righe, larghezze, titolo)
+        altrimenti:
+            mostra errore "Nessun dato"
+    altrimenti:
+        mostra errore "Funzione inesistente"
+
+// Formattazione delle date
+formattaDate(righe):
+    per ogni riga:
+        per ogni valore:
+            se è una data ISO (YYYY-MM-DD):
+                converti in formato italiano (DD-MM-YYYY)
+
+// Calcolo larghezza colonne
+calcolaLarghezze(intestazioni, righe):
+    per ogni colonna:
+        calcola la larghezza massima tra etichetta e dati
+    se larghezza totale > 397mm:
+        scala le larghezze
+
+// Creazione PDF
+creaPDF(intestazioni, righe, larghezze, titolo):
+    inizializza PDF landscape
+    aggiungi intestazione con data/ora
+    se titolo presente:
+        stampa titolo centrato
+    stampa intestazioni in grassetto
+    stampa righe con MultiCell per testi lunghi
+    output PDF al browser
