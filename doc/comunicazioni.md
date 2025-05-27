@@ -1,7 +1,3 @@
-Certo! Ecco una versione **più compatta** della documentazione, mantenendo chiarezza e struttura:
-
----
-
 # Comunicazioni
 
 ## `api/elencoComunicazioni.php`
@@ -51,5 +47,3 @@ Certo! Ecco una versione **più compatta** della documentazione, mantenendo chia
 * Rendering con `stampaArray()`
 
 ---
-
-Fammi sapere se vuoi unificare ancora di più o aggiungere una sezione extra!
