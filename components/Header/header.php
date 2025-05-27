@@ -179,6 +179,9 @@ function _adminLinks(){
             "title" => "Reportistica",
             "sub" => [
                 [
+                    "url" => "report/mezzi",
+                    "title" => "Elenco mezzi"
+                ], [
                     "url" => "report/turni-utenti",
                     "title" => "Turni utente"
                 ],
