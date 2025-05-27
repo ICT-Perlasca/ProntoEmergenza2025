@@ -2,7 +2,7 @@
 ## Autori
 Tonoli Nicola, Zanolini Giacomo, Sulmina Adelfio
 
-## Oggetto
+## GeneraPDF.php
 Creazione di una API PHP che riceve una query SQL già elaborata (tramite funzione API esterna) e genera dinamicamente un file PDF con tabella, utilizzando la libreria FPDF.
 
 ---
