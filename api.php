@@ -25,7 +25,11 @@ switch ($route) {
     case 'api/RitornaUtenti':
         require_once ("./api/RitornaUtenti.php");
         echo json_encode(API_RitornaUtenti($_GET, $_POST, $_SESSION));
-        break;            
+        break; 
+    case 'api/VisualizzaTurniUtente':
+        require_once ("./api/VisualizzaTurniUtente.php");    
+        echo json_encode(API_VisualizzaTurniUtente($_GET, $_POST, $_SESSION));
+        break;    
 
     default:
         http_response_code(404);
