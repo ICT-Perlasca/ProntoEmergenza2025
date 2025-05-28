@@ -49,16 +49,5 @@ La struttura delle cartelle è organizzata come segue:
   - `js/` → file JavaScript
 
 ## 2.6 `/uploads`
-  ### 4.1 `/uploads/documents`
-  - **Contenuto**: allegati dei documenti caricati dagli utenti.
-  - **Formato file**: `yyyymmddHHiiss_f_md5.pdf`
-    - `_f_` → fronte
-    - `_r_` → retro
-    - `md5` → hash MD5 del nome originale
-  
-  ### 4.2 `/uploads/images`
-  - **Contenuto**: immagini profilo degli utenti.
-  
-  ### 4.3 `/uploads/comunications`
-  - **Contenuto**: file PDF allegati alle comunicazioni.
-  - **Formato file**: `yyyymmddHHiiss.pdf`
+  - Cartella principale per il caricamento dei file.
+  - Vedi dettaglio nel punto successivo.
