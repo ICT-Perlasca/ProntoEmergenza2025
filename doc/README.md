@@ -2,16 +2,7 @@
 
 ---
 
-# 1. Modifica al Database
-
-## Descrizione
-È stato aggiunto un nuovo campo alla tabella `utenti`:
-- **Campo**: `immagine`
-- **Scopo**: contenere il nome o il percorso del file immagine del profilo utente.
-
----
-
-# 2. Dati memorizzati in sessione
+# 1. Dati memorizzati in sessione
 
 Dopo l'autenticazione, vengono memorizzati i seguenti dati all'interno della sessione:
 
@@ -29,7 +20,7 @@ Dopo l'autenticazione, vengono memorizzati i seguenti dati all'interno della ses
 
 ---
 
-# 3. Account utente presenti
+# 2. Account utente presenti
 
 Sono presenti due account predefiniti:
 
@@ -40,19 +31,17 @@ Sono presenti due account predefiniti:
 
 ---
 
-# 4. Organizzazione della struttura di caricamento file
+# 3. Organizzazione della struttura di caricamento file
 
 Tutti i file caricati dagli utenti vengono salvati nella cartella principale `/uploads`, che contiene tre sottocartelle:
 
 ## 4.1 `/uploads/documents`
-- **Contenuto**: allegati dei documenti caricati dagli utenti.
 - **Formato dei file**: `yyyymmddHHiiss_f_md5.pdf`
   - `yyyymmddHHiiss` → data e ora del caricamento
   - `_f_` o `_r_` → indica se il file è *fronte* o *retro*
   - `md5` → hash MD5 del nome originale del file
 
 ## 4.2 `/uploads/images`
-- **Contenuto**: immagini caricate, come ad esempio il profilo utente.
 - **Note**: I file sono legati al campo `immagine` presente nella sessione.
 
 ## 4.3 `/uploads/comunications`
