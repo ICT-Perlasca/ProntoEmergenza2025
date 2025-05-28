@@ -1,4 +1,5 @@
 ## README
+## Documentazione
 
 ---
 
@@ -6,40 +7,58 @@
 
 Dopo l'autenticazione, vengono memorizzati i seguenti dati all'interno della sessione:
 
-- `$_SESSION['idUtente']` → ID univoco dell’utente
-- `$_SESSION['username']` → Nome utente per login
-- `$_SESSION['nome']` → Nome personale
-- `$_SESSION['cognome']` → Cognome personale
-- `$_SESSION['dataNascita']` → Data di nascita dell’utente
-- `$_SESSION['email']` → Email dell’utente
-- `$_SESSION['telefono']` → Numero di telefono
-- `$_SESSION['istruttore']` → Flag per identificare l’istruttore
-- `$_SESSION['status']` → Stato dell’account
-- `$_SESSION['tipoUtente']` → Tipo (es. ADMIN, USER)
-- `$_SESSION['immagine']` → Nome del file immagine profilo
-
+- `$_SESSION['idUtente']` → ID univoco dell’utente  
+- `$_SESSION['username']` → Nome utente per login  
+- `$_SESSION['nome']` → Nome personale  
+- `$_SESSION['cognome']` → Cognome personale  
+- `$_SESSION['dataNascita']` → Data di nascita dell’utente  
+- `$_SESSION['email']` → Email dell’utente  
+- `$_SESSION['telefono']` → Numero di telefono  
+- `$_SESSION['istruttore']` → Flag per identificare l’istruttore  
+- `$_SESSION['status']` → Stato dell’account  
+- `$_SESSION['tipoUtente']` → Tipo (es. ADMIN, USER)  
+- `$_SESSION['immagine']` → Nome del file immagine profilo  
 
 ---
 
-# 3. Organizzazione della struttura di caricamento file
+# 2. Organizzazione della struttura del progetto
 
-Tutti i file caricati dagli utenti vengono salvati nella cartella principale `/uploads`, che contiene tre sottocartelle:
+La struttura delle cartelle è organizzata come segue:
 
-## 3.1 `/uploads/documents`
-- **Formato dei file**: `yyyymmddHHiiss_f_md5.pdf`
-  - `yyyymmddHHiiss` → data e ora del caricamento
-  - `_f_` o `_r_` → indica se il file è *fronte* o *retro*
-  - `md5` → hash MD5 del nome originale del file
+## 2.1 `/api`
+- Contiene tutte le API disponibili per il sistema.
+- Le funzioni sono modulari e vengono richiamate dalle varie pagine.
 
-## 3.2 `/uploads/images`
-- **Note**: I file sono legati al campo `immagine` presente nella sessione.
+## 2.2 `/components`
+- Include componenti riutilizzabili, divisi in sottocartelle:
+  - `Footer/`
+  - `Head/`
+  - `Header/`
+  - `SimpleComponent/`
 
-## 3.3 `/uploads/comunications`
-- **Contenuto**: allegati delle comunicazioni.
-- **Formato dei file**: `yyyymmddHHiiss.pdf`
-  - Nessuna parte hash o descrittiva
-  - Solo data e ora per garantire unicità
+## 2.3 `/doc`
+- Contiene i file di documentazione tecnica e manuali operativi.
 
+## 2.4 `/pages`
+- Contiene tutte le pagine dell'applicazione (es. login, dashboard, gestione utenti).
 
+## 2.5 `/public`
+- Raccoglie le risorse accessibili pubblicamente:
+  - `css/` → fogli di stile
+  - `image/` → immagini statiche
+  - `js/` → file JavaScript
 
-
+## 2.6 `/uploads`
+  ### 4.1 `/uploads/documents`
+  - **Contenuto**: allegati dei documenti caricati dagli utenti.
+  - **Formato file**: `yyyymmddHHiiss_f_md5.pdf`
+    - `_f_` → fronte
+    - `_r_` → retro
+    - `md5` → hash MD5 del nome originale
+  
+  ### 4.2 `/uploads/images`
+  - **Contenuto**: immagini profilo degli utenti.
+  
+  ### 4.3 `/uploads/comunications`
+  - **Contenuto**: file PDF allegati alle comunicazioni.
+  - **Formato file**: `yyyymmddHHiiss.pdf`
