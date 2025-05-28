@@ -6,8 +6,6 @@ $idU = $_GET['id'];
 $data = $_GET['data'];
 $idUHash = $_GET['idUHash'];
 $dataHash = $_GET['dataHash'];
-$idU = 1;
-$data = "2025-05-14 09:10:23";
 $idUHash = md5($idU);
 $dataHash = md5($data);
 ?>
