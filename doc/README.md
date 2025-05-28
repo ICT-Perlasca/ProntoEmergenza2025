@@ -18,16 +18,6 @@ Dopo l'autenticazione, vengono memorizzati i seguenti dati all'interno della ses
 - `$_SESSION['tipoUtente']` → Tipo (es. ADMIN, USER)
 - `$_SESSION['immagine']` → Nome del file immagine profilo
 
----
-
-# 2. Account utente presenti
-
-Sono presenti due account predefiniti:
-
-| Tipo    | Username     | Password     |
-|---------|--------------|--------------|
-| ADMIN   | mario.rossi  | password123  |
-| USER    | admin        | admin123     |
 
 ---
 
