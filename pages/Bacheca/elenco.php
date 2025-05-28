@@ -41,7 +41,9 @@
                     ?>
                 </div>
                 <div class="col-11 d-flex flex-column">
-                    <strong><?php echo $c["titolo"]; ?></strong>
+                    <div>
+                        <span class="text-primary"><?php echo $c["nome"]; ?></span> - <strong><?php echo $c["titolo"]; ?></strong>
+                    </div>
                     Emessa il: <?php echo date("d/m/Y", strtotime($c["dataEmissione"])); ?>
                 </div>
             </div>

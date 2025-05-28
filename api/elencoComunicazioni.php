@@ -11,8 +11,12 @@ function API_elencoComunicazioni($get, $post, $session) {
     }
         
     // Query per ottenere comunicazioni con tipo
-    $sql = "SELECT * FROM comunicazioni AS c INNER JOIN tipicomunicazione AS t ON c.idTipo = t.idTipo
-        INNER JOIN utenticomunicazioni AS u ON c.idComunicazione = u.idComunicazione WHERE u.idUtente = ? ORDER BY c.dataEmissione DESC;";
+    $sql = "SELECT c.*, t.nome, u.dataLettura
+        FROM comunicazioni AS c 
+        INNER JOIN tipicomunicazione AS t ON c.idTipo = t.idTipo
+        INNER JOIN utenticomunicazioni AS u ON c.idComunicazione = u.idComunicazione 
+        WHERE u.idUtente = ? 
+        ORDER BY c.dataEmissione DESC;";
 
     $valori = [
         $session["idUtente"]

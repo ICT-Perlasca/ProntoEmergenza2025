@@ -1,5 +1,4 @@
 <?php
-require_once("api/RitornaTipo.php");
 require_once("funzioniDB.php");
 
 //Questa funzione permette agli admin di accedere a tutte le comunicazioni presenti nel DB.
@@ -10,16 +9,17 @@ function API_tutteComunicazioni($get, $post, $session) {
         return [];
     } else {
         // Query per ottenere tutte le comunicazioni
-        $sql = "SELECT * FROM comunicazioni AS c INNER JOIN tipicomunicazione AS t ON c.idTipo = t.idTipo 
-        INNER JOIN utenticomunicazioni AS u ON c.idComunicazione = u.idComunicazione ORDER BY c.dataEmissione DESC;";
+        $sql = "SELECT c.*, t.nome, u.dataLettura
+        FROM comunicazioni AS c 
+        INNER JOIN tipicomunicazione AS t ON c.idTipo = t.idTipo 
+        INNER JOIN utenticomunicazioni AS u ON c.idComunicazione = u.idComunicazione 
+        ORDER BY c.dataEmissione DESC;";
 
         // In questo caso nessun valore da passare
         $comunicazioni = db_query($sql, null, null);
 
         return $comunicazioni;
-    }
-
-    
+    }   
 }
 
 ?>
