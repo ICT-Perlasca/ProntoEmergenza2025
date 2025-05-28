@@ -36,7 +36,7 @@ function COMP_header($user) {
                             <img src="'.$user['immagine'].'" alt="Avatar" class="rounded-circle" width="40" height="40">
                         </div>
                         <ul class="dropdown-menu" aria-labelledby="userDropdown">
-                            <li><a class="dropdown-item" href="#">Profilo</a></li>
+                            <li><a class="dropdown-item" href="utenteSingolo">Profilo</a></li>
                             <li><a class="dropdown-item" href="#">Impostazioni</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="logout">Logout</a></li>
@@ -93,8 +93,8 @@ function _adminLinks(){
                     "title" => "Elenco comunicazioni"
                 ],
                 [
-                    "url" => "bacheca/aggiunta",
-                    "title" => "Aggiunta comunicazione"
+                    "url" => "bacheca/inserimentoComunicazioni",
+                    "title" => "Inserimento comunicazione"
                 ]
             ]
         ],
@@ -205,12 +205,20 @@ function _adminLinks(){
             "title" => "Assistenza",
             "sub" => [
                 [
-                    "url" => "assistenza/aggiunta",
+                    "url" => "assistenza/eventonew",
                     "title" => "Nuovo evento"
                 ],
                 [
                     "url" => "assistenza/aggiunta-personale",
-                    "title" => "Nuovo evento personale"
+                    "title" => "aggiunta personale"
+                ],
+                [
+                    "url" => "assistenza/elenco-eventi",
+                    "title" => "elenco eventi programmati"
+                ],
+                [
+                    "url" => "assistenza/storico-eventi",
+                    "title" => "storico eventi"
                 ]
             ]
         ],
@@ -220,16 +228,16 @@ function _adminLinks(){
             "sub" => [
                 [
                     "url" => "mezzi/aggiunta",
-                    "title" => "Nuovo mezzi"
+                    "title" => "Nuovo mezzo"
                 ],
                 [
                     "url" => "mezzi/elenco",
                     "title" => "Elenco mezzi"
-                ],
+                ]/*,
                 [
                     "url" => "mezzi/storico",
                     "title" => "Storico mezzi"
-                ]
+                ]*/
             ]
         ]
     ];
