@@ -35,31 +35,21 @@ Sono presenti due account predefiniti:
 
 Tutti i file caricati dagli utenti vengono salvati nella cartella principale `/uploads`, che contiene tre sottocartelle:
 
-## 4.1 `/uploads/documents`
+## 3.1 `/uploads/documents`
 - **Formato dei file**: `yyyymmddHHiiss_f_md5.pdf`
   - `yyyymmddHHiiss` → data e ora del caricamento
   - `_f_` o `_r_` → indica se il file è *fronte* o *retro*
   - `md5` → hash MD5 del nome originale del file
 
-## 4.2 `/uploads/images`
+## 3.2 `/uploads/images`
 - **Note**: I file sono legati al campo `immagine` presente nella sessione.
 
-## 4.3 `/uploads/comunications`
+## 3.3 `/uploads/comunications`
 - **Contenuto**: allegati delle comunicazioni.
 - **Formato dei file**: `yyyymmddHHiiss.pdf`
   - Nessuna parte hash o descrittiva
   - Solo data e ora per garantire unicità
 
----
 
-# 5. Conclusione
-
-Questa struttura garantisce:
-- Un caricamento ordinato e tracciabile nel tempo
-- L’organizzazione logica per tipologia di file
-- Il supporto alla gestione documentale differenziata (comunicazioni, immagini, allegati tecnici)
-- La sicurezza tramite nomi file univoci (timestamp + hash)
-
-Ogni sezione è strettamente collegata alla gestione delle sessioni e all’autenticazione dell’utente, assicurando che i file siano sempre riconducibili a utenti specifici.
 
 
