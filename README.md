@@ -34,3 +34,5 @@ password: admin123
 
 In comunications i file saranno salvati yyyymmddHHiiss.pdf (es. 20250428083522.pdf) e conterranno i file allegati delle comunicazioni.
 In documents i file saranno salvati yyyymmddHHiiss_f_vbnmhjkiol.pdf, dove f indica fronte, r indica retro e gli ultimi caratteri sono ottenuti facendo la funzione md5 del nome del file. In documents i file saranno gli allegati dai documenti caricati.
+
+7) Nel file convalidaTurni.php l'idUtente della comunicazione è impostato a 0, probabilmente questo è sbagliato perchè la comunicazione non è associata ad un singolo utente ma a tutti.
