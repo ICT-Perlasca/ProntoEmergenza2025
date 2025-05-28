@@ -40,7 +40,7 @@
         } 
         
         return '
-            <footer class="bg-dark text-white text-center py-3 mt-5">
+            <footer class="bg-dark text-white text-center py-3">
                 <div class="container">
                     <p class="mb-0 text-center">
                     Pronto Emergenza - Organizzazione di Volontariato<br>
