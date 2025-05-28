@@ -31,7 +31,7 @@ if(!isset($_SESSION['idUtente'])){
                 </div>
             </section>
 
-            <div class="container mt-4">
+            <div class="container my-4">
                 <div class="d-flex flex-wrap justify-content-center gap-2">
                     <?php
                         echo COMP_Button('person-circle','Profilo','profiloUtente');
