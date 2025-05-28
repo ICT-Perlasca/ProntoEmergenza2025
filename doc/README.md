@@ -1,1 +1,76 @@
+## README
+
+---
+
+# 1. Modifica al Database
+
+## Descrizione
+È stato aggiunto un nuovo campo alla tabella `utenti`:
+- **Campo**: `immagine`
+- **Scopo**: contenere il nome o il percorso del file immagine del profilo utente.
+
+---
+
+# 2. Dati memorizzati in sessione
+
+Dopo l'autenticazione, vengono memorizzati i seguenti dati all'interno della sessione:
+
+- `$_SESSION['idUtente']` → ID univoco dell’utente
+- `$_SESSION['username']` → Nome utente per login
+- `$_SESSION['nome']` → Nome personale
+- `$_SESSION['cognome']` → Cognome personale
+- `$_SESSION['dataNascita']` → Data di nascita dell’utente
+- `$_SESSION['email']` → Email dell’utente
+- `$_SESSION['telefono']` → Numero di telefono
+- `$_SESSION['istruttore']` → Flag per identificare l’istruttore
+- `$_SESSION['status']` → Stato dell’account
+- `$_SESSION['tipoUtente']` → Tipo (es. ADMIN, USER)
+- `$_SESSION['immagine']` → Nome del file immagine profilo
+
+---
+
+# 3. Account utente presenti
+
+Sono presenti due account predefiniti:
+
+| Tipo    | Username     | Password     |
+|---------|--------------|--------------|
+| ADMIN   | mario.rossi  | password123  |
+| USER    | admin        | admin123     |
+
+---
+
+# 4. Organizzazione della struttura di caricamento file
+
+Tutti i file caricati dagli utenti vengono salvati nella cartella principale `/uploads`, che contiene tre sottocartelle:
+
+## 4.1 `/uploads/documents`
+- **Contenuto**: allegati dei documenti caricati dagli utenti.
+- **Formato dei file**: `yyyymmddHHiiss_f_md5.pdf`
+  - `yyyymmddHHiiss` → data e ora del caricamento
+  - `_f_` o `_r_` → indica se il file è *fronte* o *retro*
+  - `md5` → hash MD5 del nome originale del file
+
+## 4.2 `/uploads/images`
+- **Contenuto**: immagini caricate, come ad esempio il profilo utente.
+- **Note**: I file sono legati al campo `immagine` presente nella sessione.
+
+## 4.3 `/uploads/comunications`
+- **Contenuto**: allegati delle comunicazioni.
+- **Formato dei file**: `yyyymmddHHiiss.pdf`
+  - Nessuna parte hash o descrittiva
+  - Solo data e ora per garantire unicità
+
+---
+
+# 5. Conclusione
+
+Questa struttura garantisce:
+- Un caricamento ordinato e tracciabile nel tempo
+- L’organizzazione logica per tipologia di file
+- Il supporto alla gestione documentale differenziata (comunicazioni, immagini, allegati tecnici)
+- La sicurezza tramite nomi file univoci (timestamp + hash)
+
+Ogni sezione è strettamente collegata alla gestione delle sessioni e all’autenticazione dell’utente, assicurando che i file siano sempre riconducibili a utenti specifici.
+
 
