@@ -5,7 +5,6 @@ function COMP_header($user) {
     
     return '
         <link rel="stylesheet" href="./public/css/header.css" type="text/css"/>
-        <script type="text/javascript" src="./public/js/header.js"></script>
     
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="navbar-brand container-fluid">
