@@ -47,11 +47,29 @@
                     Emessa il: <?php echo date("d/m/Y", strtotime($c["dataEmissione"])); ?>
                 </div>
             </div>
+            
+            <?php
+            if(!isset($c['dataLettura'])){
+                ?>
+                <script>
+                    document.querySelector("[data-bs-target='#<?php echo $modalId; ?>']").addEventListener("click", function(){
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.open("POST", "api/segnarecomunicazioneletta", true);
+                        xhttp.withCredentials = true;
+                        xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");                        xhttp.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                                // Typical action to be performed when the document is ready
+                            }
+                        };
+                        const data = `idComunicazione=${encodeURIComponent(<?php echo  $c['idComunicazione']; ?>)}`;
+                        xhttp.send(data);
+                    })
+                </script>
+                <?php
+            }
+            ?>    
 
-            <script>
-                <!-- invio ajax lettura -->
-            </script>
-
+            
             <!-- Modal -->
             <div class="modal fade" id="<?php echo $modalId; ?>" tabindex="-1">
                 <div class="modal-dialog modal-lg modal-dialog-centered">
