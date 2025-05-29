@@ -92,13 +92,15 @@ function generaTabella(dataStr, turni) {
         }
     };
     for (let turno of turni) {
-        let oraInizio = parseInt(turno.oraInizioEffettiva.split(":")[0]); // Extract starting hour
-        let oraFine = parseInt(turno.oraFineEffettiva.split(":")[0]); // Extract ending hour
+        let oraInizio = parseInt(turno.oraInizioEffettiva.split(":")[0]);
+        let oraFine = parseInt(turno.oraFineEffettiva.split(":")[0]);
         let fascia = `${turno.oraInizio}-${turno.oraFine}`; // Shift time range
 
-        if (oraFine === 0) oraFine = 24; // Handle shifts ending at midnight (e.g., 19:00-00:00)
+        if (oraFine === 0) oraFine = 24; // Treat midnight as 24
 
-        let durata = Math.max(oraInizio, oraFine) - Math.min(oraInizio, oraFine); // Calculate the duration of the shift
+        // If the shift ends before it starts (overnight), limit to 24 (end of table)
+        let actualOraFine = oraFine > oraInizio ? oraFine : 24;
+        let durata = actualOraFine - oraInizio;
         let rowspan = durata; // Use the duration as the rowspan
 
         // Determine the role column
@@ -145,10 +147,9 @@ function generaTabella(dataStr, turni) {
         // Append the shift cell to the correct row
         $(`#row-${oraInizio} .${columnClass}`).replaceWith(shiftCell);
 
-        let i = (oraInizio + 1) % 24;
-        while (i != oraFine) {
-            $(`#row-${i} .${columnClass}`).remove(); // Remove the cells in between
-            i = (i + 1) % 24;
+        // Remove cells in between, but do not wrap after 23
+        for (let i = oraInizio + 1; i < actualOraFine && i < 24; i++) {
+            $(`#row-${i} .${columnClass}`).remove();
         }
     }
 
