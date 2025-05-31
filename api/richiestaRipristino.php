@@ -21,11 +21,13 @@ function checkEmail($email) {
 
 
 function API_richiestaRipristino($get, $post, $session) {
+    require_once("./globals.php");	
+	
     $email = $post["email"] ?? "";
 
     if (checkEmail($email) > 0) {
 
-        $link = "http://localhost/ProntoEmergenza2025/ripristino?token=".trim(base64_encode($email ."-". md5($email) ."-". time()), "=")."";
+        $link = $DOMAIN_NAME . "/ripristino?token=".trim(base64_encode($email ."-". md5($email) ."-". time()), "=")."";
 
         return $link;
         $titolo = "Ciao,";
