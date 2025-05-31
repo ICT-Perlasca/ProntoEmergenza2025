@@ -30,6 +30,14 @@ switch ($route) {
         require_once ("./api/RitornaUtenti.php");
         echo json_encode(API_RitornaUtenti($_GET, $_POST, $_SESSION));
         break;
+    case 'api/richiestaRipristino':
+        require_once ("./api/richiestaRipristino.php");
+        echo json_encode(API_richiestaRipristino($_GET, $_POST, $_SESSION));
+        break;
+    case 'api/resetPassword':
+        require_once ("./api/resetPassword.php");
+        echo json_encode(API_resetPassword($_GET, $_POST, $_SESSION));
+        break;
     default:
         http_response_code(404);
         echo json_encode(["error" => "Endpoint not found"]);
