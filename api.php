@@ -15,9 +15,9 @@ switch ($route) {
         echo json_encode(API_segnareComunicazioneLetta($_GET, $_POST, $_SESSION));
         break;
     case 'api/ElencoMezziDisponibili':
-            require_once ("./api/ElencoMezziDisponibili.php");
-            echo json_encode(API_ElencoMezziDisponibili($_GET, $_POST, $_SESSION));
-            break;
+          require_once ("./api/ElencoMezziDisponibili.php");
+          echo json_encode(API_ElencoMezziDisponibili($_GET, $_POST, $_SESSION));
+          break;
     case 'api/GetMezzo':
         require_once ("./api/GetMezzo.php");
         echo json_encode(API_GetMezzo($_GET, $_POST, $_SESSION));
@@ -29,8 +29,7 @@ switch ($route) {
     case 'api/RitornaUtenti':
         require_once ("./api/RitornaUtenti.php");
         echo json_encode(API_RitornaUtenti($_GET, $_POST, $_SESSION));
-        break;            
-
+        break;
     default:
         http_response_code(404);
         echo json_encode(["error" => "Endpoint not found"]);

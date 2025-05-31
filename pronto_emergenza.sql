@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 05, 2025 alle 13:09
+-- Creato il: Mag 12, 2025 alle 15:07
 -- Versione del server: 10.4.11-MariaDB
 -- Versione PHP: 7.4.2
 
@@ -280,9 +280,9 @@ CREATE TABLE `turni118` (
   `oraInizio` time NOT NULL COMMENT 'Ora inizio turno',
   `oraFine` time NOT NULL COMMENT 'Ora fine turno',
   `festivo` varchar(2) NOT NULL COMMENT 'Controllo per verificare i festivi',
-  `controlloAttrezzatura` tinyint(1) NOT NULL COMMENT 'Flag per controllo presenza attrezzatura',
-  `convalidato` tinyint(1) NOT NULL COMMENT 'Flag per convalida turno ',
-  `idMezzo` int(11) NOT NULL COMMENT 'Identificativo del mezzo'
+  `controlloAttrezzatura` tinyint(1) DEFAULT NULL COMMENT 'Flag per controllo presenza attrezzatura',
+  `convalidato` tinyint(1) DEFAULT NULL COMMENT 'Flag per convalida turno ',
+  `idMezzo` int(11) DEFAULT NULL COMMENT 'Identificativo del mezzo'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -469,7 +469,8 @@ ALTER TABLE `festivita`
 --
 ALTER TABLE `mezzi`
   ADD PRIMARY KEY (`idMezzo`),
-  ADD UNIQUE KEY `nomeMezzo` (`nomeMezzo`);
+  ADD UNIQUE KEY `nomeMezzo` (`nomeMezzo`),
+  ADD UNIQUE KEY `targa` (`targa`);
 
 --
 -- Indici per le tabelle `ruoli`

@@ -37,17 +37,19 @@ function generaCardUtente($utente) {
     }
 
     return '
-        <div class="card mb-3" style="width: 18rem; background-color: white; color: black; border: 2px solid black; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        <div class="card mb-3">
             <img src="' . $img . '" class="card-img-top rounded-circle mx-auto d-block" alt="Foto di ' . $nome . '" style="width: 100px; height: 100px; object-fit: cover;">
             <div class="card-body bg-white text-dark">
                 <h5 class="card-title">
                     <span id="ricerca1">' . $nome . '</span>
                     <span id="ricerca2">' . $cognome . '</span>
                 </h5>
-                <p class="card-text">Email: ' . $email . '</p>
+                <p class="card-text">' . $email . '</p>
                 <p class="card-text text-success">Ruolo: ' . $ruolo . '</p>
                 <div class="text-center">
-                    <a href="profiloUtente.php?id=' . $idUtente . '" class="text-decoration-none"> <button class="btn text-white border-dark" style="background-color: #ff6700; background-image: linear-gradient(45deg, #ff8500, #ff4500);">Visualizza Dettagli</button> </a>
+                    <a href="utenti/profiloUtente?emailUt=' . $email . '" class="text-decoration-none btn btn-primary">
+                        Visualizza Dettagli
+                    </a>
                 </div>
             </div>
         </div>';
