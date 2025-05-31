@@ -10,6 +10,10 @@ switch ($route) {
         require_once ("./api/elencoComunicazioni.php");
         echo json_encode(API_elencoComunicazioni($_GET, $_POST, $_SESSION));
         break;
+    case 'api/segnarecomunicazioneletta':
+        require_once ("./api/api_segnare_comunicazione_letta.php");
+        echo json_encode(API_segnareComunicazioneLetta($_GET, $_POST, $_SESSION));
+        break;
     case 'api/ElencoMezziDisponibili':
           require_once ("./api/ElencoMezziDisponibili.php");
           echo json_encode(API_ElencoMezziDisponibili($_GET, $_POST, $_SESSION));
