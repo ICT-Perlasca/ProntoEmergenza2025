@@ -17,10 +17,13 @@ $errori = [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $errori = API_inserimentoUtente([], $_POST, []);
 
+    if(empty($errori)){
 ?>
-Successo, attendere che un amministratore convaliti la tua registrazione
+    <div class="alert alert-success" role="alert">
+    Successo, attendere che un amministratore convaliti la tua registrazione
+    </div>
 <?php
-}else{
+}
 ?>
 
 <body>

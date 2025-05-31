@@ -4,6 +4,6 @@ $USERDB = "root";
 $PSWDB="";
 $HOST = "localhost";
 $DSN="mysql:host=" .$HOST . ";dbname=" . $DB;
-$cartellaImmagini="uploads/images";
 $DOMAIN_NAME = "localhost/ProntoEmergenza2025";
+$cartellaImmagini="uploads/images";
 ?>
