@@ -104,7 +104,11 @@
 
         <?php } ?>
         </div>
-    
+ <?php
+  echo COMP_Footer();
+ ?>
+
+
     </body>
 </html>
 
