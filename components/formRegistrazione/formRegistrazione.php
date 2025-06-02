@@ -6,7 +6,7 @@ function mostraErrore($campo, $errori) {
     return '';
 }
 
-function COMP_formRegistrazione(array $errori = [], array $valori = []) {
+function COMP_formRegistrazione(array $errori = [], array $valori = [], bool $selfReg = true) {
     $val = function($field) use ($valori) {
         return htmlspecialchars($valori[$field] ?? '');
     };
@@ -20,8 +20,29 @@ function COMP_formRegistrazione(array $errori = [], array $valori = []) {
 
     $hasError = !empty($errori);
 
+    $regbtn = '<div class="d-flex justify-content-center mt-4">
+                    <div class="px-2">
+                        <button type="submit" class="btn btn-primary">Inserisci utete</button>
+                    </div>
+                </div>';
+    if (!$selfReg) {
+        $regbtn = '<div class="d-flex justify-content-center mt-4">
+                    <div class="px-2">
+                        <button type="submit" class="btn btn-primary">Registrati</button>
+                    </div>
+                </div>';
+    }
+
+    $logbtn = '';
+    if (!$selfReg) {
+        $logbtn = '<div class="text-center mt-3">
+                    <a href="login.php" class="text-primary text-decoration-none">Hai già un account? Accedi qui</a>
+                </div>';
+    }
+
+
     return '
-    <div class="row min-vh-100 justify-content-center align-items-center bg-primary text-white py-5">
+    <div class="row min-vh-100 justify-content-center align-items-center bg-primary text-white py-5" m-0>
         <div class="col-12 col-md-8 col-lg-6 bg-white text-dark p-5 rounded shadow">
 
             ' . ($hasError ? '<div class="alert alert-danger mb-4">Si sono verificati degli errori, correggi i campi evidenziati.</div>' : '') . '
@@ -99,14 +120,14 @@ function COMP_formRegistrazione(array $errori = [], array $valori = []) {
                     <div class="row justify-content-center g-3">
                         <div class="col-md-5">
                             <label class="form-label">Disponibilità</label>
-                            <select class="form-select rounded-pill border-2 border-primary bg-light text-dark shadow-sm" name="indisponibilita" required>
+                            <select class="form-select rounded p-1 border-2 border-primary bg-light text-dark shadow-sm" name="indisponibilita" required>
                                 <option value="0" ' . $selected('indisponibilita', '0') . '>Disponibile</option>
                                 <option value="1" ' . $selected('indisponibilita', '1') . '>Non disponibile</option>
                             </select>
                         </div>
                         <div class="col-md-5">
                             <label class="form-label">Ruolo</label>
-                            <select class="form-select rounded-pill border-2 border-primary bg-light text-dark shadow-sm" name="istruttore" required>
+                            <select class="form-select rounded p-1 border-2 border-primary bg-light text-dark shadow-sm" name="istruttore" required>
                                 <option value="0" ' . $selected('istruttore', '0') . '>Non Istruttore</option>
                                 <option value="1" ' . $selected('istruttore', '1') . '>Istruttore</option>
                             </select>
@@ -183,17 +204,11 @@ function COMP_formRegistrazione(array $errori = [], array $valori = []) {
                     <input type="password" name="password" class="form-control border-primary" maxlength="20" required>
                     ' . mostraErrore('password', $errori) . '
                 </div>
-
-                <div class="d-flex justify-content-center mt-4">
-                    <div class="px-2">
-                        <button type="submit" class="btn btn-primary">Registrati</button>
-                    </div>
-                </div>
+                
+                ' . $regbtn . '
             </form>
 
-            <div class="text-center mt-3">
-                <a href="login.php" class="text-primary text-decoration-none">Hai già un account? Accedi qui</a>
-            </div>
+            ' . $logbtn . '
         </div>
     </div>';
 }
