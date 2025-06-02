@@ -22,10 +22,10 @@ function COMP_formRegistrazione(array $errori = [], array $valori = [], bool $se
 
     $regbtn = '<div class="d-flex justify-content-center mt-4">
                     <div class="px-2">
-                        <button type="submit" class="btn btn-primary">Inserisci utete</button>
+                        <button type="submit" class="btn btn-primary">Inserisci utente</button>
                     </div>
                 </div>';
-    if (!$selfReg) {
+    if ($selfReg) {
         $regbtn = '<div class="d-flex justify-content-center mt-4">
                     <div class="px-2">
                         <button type="submit" class="btn btn-primary">Registrati</button>
@@ -34,7 +34,7 @@ function COMP_formRegistrazione(array $errori = [], array $valori = [], bool $se
     }
 
     $logbtn = '';
-    if (!$selfReg) {
+    if ($selfReg) {
         $logbtn = '<div class="text-center mt-3">
                     <a href="login.php" class="text-primary text-decoration-none">Hai già un account? Accedi qui</a>
                 </div>';
