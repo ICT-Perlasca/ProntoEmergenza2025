@@ -25,11 +25,15 @@ switch ($route) {
     case 'api/RitornaUtenti':
         require_once ("./api/RitornaUtenti.php");
         echo json_encode(API_RitornaUtenti($_GET, $_POST, $_SESSION));
-        break;           
+        break;    
     case 'api/elencoTurniData':
         require_once ("./api/elencoTurniData.php");
         echo json_encode(API_elencoTurniData($_GET, $_POST, $_SESSION));
-        break; 
+        break;
+    case 'api/salvaTurno':
+        require_once ("./api/salvaTurno.php");
+        echo json_encode(API_SalvaTurno($_GET, $_POST, $_SESSION)); 
+        break;
 
     default:
         http_response_code(404);

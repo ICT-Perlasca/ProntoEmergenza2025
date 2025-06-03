@@ -1,13 +1,15 @@
 <?php 
-require_once('./funzioniDB.php');
-require_once ("./components/Head/head.php");
-require_once ("./components/Header/header.php");
-require_once ("./components/Popup/popup.php");
 
+
+//require_once $_SERVER['DOCUMENT_ROOT'].'/funzioniDB.php';
+//require_once $_SERVER['DOCUMENT_ROOT'].'/globals.php';
 session_start();
-
-// require_once '/funzioniDB.php';
-// require_once '/globals.php';
+require_once ('./funzioniDB.php');
+require_once ('./globals.php');
+require_once ('./components/Head/head.php');
+require_once ('./components/SimpleComponent/turniBottone.php');
+require_once ("./components/Header/header.php");
+//echo COMP_PopupTurno("popupTurno", $_SESSION['nome'], "2025-05-15", "confermaTurno()");
 
 ?>
 
@@ -23,6 +25,7 @@ echo COMP_head();
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
         <script src="public/js/calendar.js"></script>
+        <script src="public/js/formTurno.js"></script>
         <style>
             td: {
                 height: 25px;
@@ -129,6 +132,7 @@ echo COMP_head();
         });
 
     </script>
+    </head>
     <body>
         <div class="container">
             <div class="row">
@@ -149,5 +153,13 @@ echo COMP_head();
                 </div>
             </div>
         </div>
+        <?php 
+            $nomeUtente = $_SESSION['nome'] . ' ' . $_SESSION['cognome'];
+            //print_r('Nome utente calendar: ' . $nomeUtente);
+            echo COMP_turniBottone('2025-04-12', $nomeUtente); 
+        ?>
+        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" onclick="apriPopupTurno( <?php echo $data ?>, '<?php echo $nomeUtente ?>')">
+            Inserisci turno
+        </button> -->
     </body>
 </html>
