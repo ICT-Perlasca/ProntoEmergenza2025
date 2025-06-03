@@ -111,6 +111,7 @@ echo COMP_head();
                 dateClick: function (info) {
                     let turni = turniData(info.dateStr); // Navigate to the clicked date in the day calendar
                     generaTabella(info.dateStr, turni); 
+                    generaBtnTurno(info.dateStr, '<?php echo $_SESSION['nome'] . ' ' . $_SESSION['cognome']; ?>');
                 }, 
                 select: function (info) {
                     // Ensure only one day is selected
@@ -142,24 +143,16 @@ echo COMP_head();
                     <button type="button" id="btnConvalida" class="btn btn-primary">
                         Convalida turni
                     </button>
-
-                    <?php 
-                    echo COMP_popup("popupTurni", "Turni del mese", "popupTurniContent", "Chiudi");
-                    ?>
-
+                    <div id="btnInserisci">
+                        <button type="button" class="btn btn-primary disabled" data-bs-toggle="modal" onclick="">
+                            Inserisci turno
+                        </button>
+                    </div>
                 </div>
                 <div class="col-md-9">
                     <div id="dayCal"></div>
                 </div>
             </div>
         </div>
-        <?php 
-            $nomeUtente = $_SESSION['nome'] . ' ' . $_SESSION['cognome'];
-            //print_r('Nome utente calendar: ' . $nomeUtente);
-            echo COMP_turniBottone('2025-04-12', $nomeUtente); 
-        ?>
-        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" onclick="apriPopupTurno( <?php echo $data ?>, '<?php echo $nomeUtente ?>')">
-            Inserisci turno
-        </button> -->
     </body>
 </html>

@@ -177,6 +177,15 @@ function generaTabella(dataStr, turni) {
     // return prova;
 }
 
+function generaBtnTurno(data, nomeUtente) {
+    $("#btnInserisci").html(`
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" 
+            onclick="apriPopupTurno('${data}', '${nomeUtente}')">
+            Inserisci turno
+        </button>
+    `);
+}
+
 function getDateFormatted(dateStr) {
     return dateStr.slice(0, 10);
 }
