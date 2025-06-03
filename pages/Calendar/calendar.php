@@ -2,6 +2,7 @@
 require_once('./funzioniDB.php');
 require_once ("./components/Head/head.php");
 require_once ("./components/Header/header.php");
+require_once ("./components/Popup/popup.php");
 
 session_start();
 
@@ -137,6 +138,11 @@ echo COMP_head();
                     <button type="button" id="btnConvalida" class="btn btn-primary">
                         Convalida turni
                     </button>
+
+                    <?php 
+                    echo COMP_popup("popupTurni", "Turni del mese", "popupTurniContent", "Chiudi");
+                    ?>
+
                 </div>
                 <div class="col-md-9">
                     <div id="dayCal"></div>
