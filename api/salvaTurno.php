@@ -11,7 +11,7 @@ function API_SalvaTurno($get, $post, $session) {
         // 2. Recupera dati POST
         $data = $_POST['dataTurno'] ?? null;
         $fasciaOraria = $_POST['fasciaOraria'] ?? null;
-        $splitFascia = explode(' - ', $fasciaOraria); //non funge
+        $splitFascia = explode(' - ', $fasciaOraria);
         $oraInizio = $splitFascia[0] ?? null;
         $oraFine = $splitFascia[1] ?? null;
         $oraInizioEffettiva = $_POST['oraInizioEffettiva'] ?? null; //da sistemare
@@ -20,7 +20,7 @@ function API_SalvaTurno($get, $post, $session) {
         if ($oraFineEffettiva == '') $oraFineEffettiva = $oraFine;
         $ruolo = $_POST['ruolo'] ?? null;
         $note = $_POST['note'] ?? null;
-        $idUtente = $_SESSION['idUtente'];
+        $idUtente = $_POST['idUtente'];
 
         // 3. Trova idTurno118 da data e orari
         $resTurno = db_query(
@@ -53,7 +53,7 @@ function API_SalvaTurno($get, $post, $session) {
                     [PDO::PARAM_INT, PDO::PARAM_INT]
                 );
 
-                if (!empty($resCheck)) {
+                if (!empty($resCheck) && count($resCheck) >= 2) {
                     $response['errore'] = 'Turno già occupato per questo ruolo.';
                 } else {
                     // 6. Inserisci il turno utente

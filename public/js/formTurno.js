@@ -35,7 +35,7 @@ function confermaTurno(form) {
         url: 'api/salvaTurno',
         method: 'POST',
         async: false,
-        data: { nomeUtente: nomeUtente, dataTurno: dataTurno, fasciaOraria: fasciaOraria, oraInizioEffettiva: oraInizioEffettiva, oraFineEffettiva: oraFineEffettiva, ruolo: ruolo, note: note },
+        data: { idUtente: nomeUtente, dataTurno: dataTurno, fasciaOraria: fasciaOraria, oraInizioEffettiva: oraInizioEffettiva, oraFineEffettiva: oraFineEffettiva, ruolo: ruolo, note: note },
         dataType: "json", 
         success: function(risposta) {
             console.log("Risposta AJAX:", risposta);
@@ -66,7 +66,7 @@ function caricaUtenti() {
             const select = document.getElementById('selectUtenti');
             response.forEach(utente => {
                 const option = document.createElement('option');
-                option.value = utente.email;
+                option.value = utente.idUtente;
                 option.textContent = `${utente.cognome} ${utente.nome}`;
                 select.appendChild(option);
             });
