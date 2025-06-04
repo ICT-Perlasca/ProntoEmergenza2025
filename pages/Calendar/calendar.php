@@ -1,31 +1,36 @@
 <?php 
-require_once('./funzioniDB.php');
-require_once ("./components/Head/head.php");
-require_once ("./components/Header/header.php");
-require_once ('./components/SimpleComponent/turniBottone.php');
 
+
+//require_once $_SERVER['DOCUMENT_ROOT'].'/funzioniDB.php';
+//require_once $_SERVER['DOCUMENT_ROOT'].'/globals.php';
 session_start();
-
+require_once ('./funzioniDB.php');
+require_once ('./globals.php');
+require_once ('./components/Head/head.php');
+require_once ('./components/SimpleComponent/turniBottone.php');
+require_once ("./components/Header/header.php");
+//echo COMP_PopupTurno("popupTurno", $_SESSION['nome'], "2025-05-15", "confermaTurno()");
 
 ?>
 
 <!DOCTYPE html>
 <html>
-    <?php echo COMP_head(); ?>
+<?php
+
+echo COMP_head();
+
+?>
     <body>
+        <?php echo COMP_header($_SESSION); ?>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
         <script src="public/js/calendar.js"></script>
         <script src="public/js/formTurno.js"></script>
-
         <style>
             td: {
                 height: 25px;
             }
         </style>
-
         <script>
 
         let fullDays = 0;
@@ -106,6 +111,7 @@ session_start();
                 dateClick: function (info) {
                     let turni = turniData(info.dateStr); // Navigate to the clicked date in the day calendar
                     generaTabella(info.dateStr, turni); 
+                    generaBtnTurno(info.dateStr, '<?php echo $_SESSION['nome'] . ' ' . $_SESSION['cognome']; ?>');
                 }, 
                 select: function (info) {
                     // Ensure only one day is selected
@@ -127,6 +133,7 @@ session_start();
         });
 
     </script>
+    </head>
     <body>
         <div class="container">
             <div class="row">
@@ -136,19 +143,17 @@ session_start();
                     <button type="button" id="btnConvalida" class="btn btn-primary">
                         Convalida turni
                     </button>
+                    <div id="btnInserisci">
+                        <button type="button" class="btn btn-primary disabled" data-bs-toggle="modal" onclick="">
+                            Inserisci turno
+                        </button>
+                    </div>
                 </div>
                 <div class="col-md-9">
                     <div id="dayCal"></div>
                 </div>
             </div>
         </div>
-        <?php 
-            $nomeUtente = $_SESSION['nome'] . ' ' . $_SESSION['cognome'];
-            //print_r('Nome utente calendar: ' . $nomeUtente);
-            echo COMP_turniBottone('2025-04-12', $nomeUtente); 
-        ?>
-        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" onclick="apriPopupTurno( <?php echo $data ?>, '<?php echo $nomeUtente ?>')">
-            Inserisci turno
-        </button> -->
+        <div id="popupContainer"></div>
     </body>
 </html>
