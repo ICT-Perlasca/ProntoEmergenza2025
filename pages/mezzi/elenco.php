@@ -19,7 +19,7 @@ echo COMP_head();
     require_once ("./components/Header/header.php");
     require_once ("./components/Cards/cardVeicolo.php");
     require_once ("./components/Footer/footer.php");
-    require_once ("./api/ElencoMezziDisponibili.php");
+    require_once ("./api/API_ElencoMezziDisponibili.php");
     require_once ("./components/SimpleComponent/searchBar.php");
 
 echo COMP_header($_SESSION);

@@ -15,9 +15,9 @@ switch ($route) {
         echo json_encode(API_segnareComunicazioneLetta($_GET, $_POST, $_SESSION));
         break;
     case 'api/ElencoMezziDisponibili':
-          require_once ("./api/ElencoMezziDisponibili.php");
-          echo json_encode(API_ElencoMezziDisponibili($_GET, $_POST, $_SESSION));
-          break;
+        require_once ("./api/API_ElencoMezziDisponibili.php");
+        echo json_encode(API_ElencoMezziDisponibili($_GET, $_POST, $_SESSION));
+        break;
     case 'api/GetMezzo':
         require_once ("./api/GetMezzo.php");
         echo json_encode(API_GetMezzo($_GET, $_POST, $_SESSION));
