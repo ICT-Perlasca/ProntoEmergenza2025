@@ -4,7 +4,7 @@
     if (!isset($_SESSION['idUtente'])) {
         header("Location: ../login");
     } else {
-        require_once ("api/elencoComunicazioni.php");
+        require_once ("api/API_ElencoComunicazioni.php");
         require_once ("api/TutteComunicazioni.php");
         require_once ("components/Head/head.php");
         require_once ("components/Header/header.php");
@@ -22,7 +22,7 @@
     echo COMP_header($_SESSION);
     ?>
 
-        <div class="col-12 d-flex flex-column align-items-center pt-3">
+        <div class="col-12 d-flex flex-column align-items-center pt-3" style="min-height: 80vh;">
 
         <?php
 

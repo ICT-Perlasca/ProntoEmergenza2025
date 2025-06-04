@@ -7,7 +7,7 @@ $route = isset($_GET['route']) ? trim($_GET['route'], "/") : '';
 
 switch ($route) {
     case 'api/elencoComunicazioni':
-        require_once ("./api/elencoComunicazioni.php");
+        require_once ("./api/API_ElencoComunicazioni.php");
         echo json_encode(API_elencoComunicazioni($_GET, $_POST, $_SESSION));
         break;
     case 'api/segnarecomunicazioneletta':
