@@ -3,7 +3,7 @@ require_once("funzioniDB.php");
 require_once("API_upload_img.php");
 function API_AggiuntaComunicazione($get, $post, $session){
     $ctrlImg = upload("","", $session);
-    echo "Controllo immagine: " . $ctrlImg . "\n";
+    // echo "Controllo immagine: " . $ctrlImg . "\n";
     if($ctrlImg == false)
     {
         return ["errore" => "file non compatibile"];
