@@ -2,7 +2,7 @@
     session_start();
 
     if (!isset($_SESSION['idUtente'])) {
-        header("Location: ./login");
+        header("Location: ../login");
     } else {
         require_once ("api/elencoComunicazioni.php");
         require_once ("api/TutteComunicazioni.php");
@@ -56,7 +56,8 @@
                         var xhttp = new XMLHttpRequest();
                         xhttp.open("POST", "api/segnarecomunicazioneletta", true);
                         xhttp.withCredentials = true;
-                        xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");                        xhttp.onreadystatechange = function() {
+                        xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                        xhttp.onreadystatechange = function() {
                             if (this.readyState == 4 && this.status == 200) {
                                 // Typical action to be performed when the document is ready
                             }
@@ -69,7 +70,6 @@
             }
             ?>    
 
-            
             <!-- Modal -->
             <div class="modal fade" id="<?php echo $modalId; ?>" tabindex="-1">
                 <div class="modal-dialog modal-lg modal-dialog-centered">

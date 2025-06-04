@@ -12,10 +12,7 @@ function COMP_header($user) {
 
     $links = $user['tipoUtente'] == 'admin' ? _adminLinks() : _volontarioLinks();
     
-    return '
-        <link rel="stylesheet" href="./public/css/header.css" type="text/css"/>
-    
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    return '<nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="navbar-brand container-fluid">
                 <img src="./public/images/logo-ambulanza.png"  class="" style="height: 20%;width:20%;"/>
             </div>
@@ -149,8 +146,8 @@ function _adminLinks(){
             "title" => "Utenti",
             "sub" => [
                 [
-                    "url" => "utenti/profili",
-                    "title" => "Profili utente"
+                    "url" => "utenti/elenco",
+                    "title" => "Elenco utenti"
                 ],
                 [
                     "url" => "utenti/aggiunta",
@@ -235,12 +232,12 @@ function _adminLinks(){
             "title" => "Mezzi",
             "sub" => [
                 [
-                    "url" => "mezzi/aggiunta",
-                    "title" => "Nuovo mezzo"
-                ],
-                [
                     "url" => "mezzi/elenco",
                     "title" => "Elenco mezzi"
+                ],
+                [
+                    "url" => "mezzi/aggiunta",
+                    "title" => "Nuovo mezzo"
                 ]/*,
                 [
                     "url" => "mezzi/storico",
