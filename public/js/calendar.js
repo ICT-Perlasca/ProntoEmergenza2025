@@ -99,8 +99,9 @@ function generaTabella(dataStr, turni) {
         if (oraFine === 0) oraFine = 24; // Treat midnight as 24
 
         // If the shift ends before it starts (overnight), limit to 24 (end of table)
-        let actualOraFine = oraFine > oraInizio ? oraFine : 24;
-        let durata = actualOraFine - oraInizio;
+        // let actualOraFine = oraFine > oraInizio ? oraFine : 24;
+        let actualOraFine = fascia === "19:00:00-07:00:00" ? 6 : oraFine; // Handle overnight shifts
+        let durata = Math.abs(actualOraFine - oraInizio); // Calculate the duration of the shift
         let rowspan = durata; // Use the duration as the rowspan
 
         // Determine the role column
@@ -148,15 +149,23 @@ function generaTabella(dataStr, turni) {
         $(`#row-${oraInizio} .${columnClass}`).replaceWith(shiftCell);
 
         // Remove cells in between, but do not wrap after 23
-        for (let i = oraInizio + 1; i < actualOraFine && i < 24; i++) {
+        /*
+        for (let i = oraInizio + 1; i < actualOraFine || (i < 24); i++) {
             $(`#row-${i} .${columnClass}`).remove();
         }
-    }
+            */
+        let prev = 0;
+        for (let i = 1; i < durata && (prev != 6); i++) {
+            let nextRow = (oraInizio + i) % 24; // Wrap around after 23
+            $(`#row-${nextRow} .${columnClass}`).remove();
+            prev = nextRow;
+        }
 
             // Inizializza i popover
             const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
             const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
 
+            /*
     function getTurni(turni, oraInizio, oraFine, ruolo, index) {
         const turniFiltrati = turni.filter(
             (turno) =>
@@ -171,21 +180,23 @@ function generaTabella(dataStr, turni) {
             : `<button class="btn btn-primary btn-sm" onclick="aggiungiTurno('${oraInizio}', '${oraFine}', '${ruolo}', ${index + 1})">Aggiungi Turno</button>`;
     }
 
-    
+    */
     // // Ritorna la tabella come stringa HTML
     // let prova = $("#tabellaOrari").clone().wrap('<div/>').parent().html();
     // return prova;
+    }
 }
 
-function generaBtnTurno(data, nomeUtente) {
-    $("#btnInserisci").html(`
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" 
-            onclick="apriPopupTurno('${data}', '${nomeUtente}')">
+function generaBtnTurno(dataStr, nomeUtente) {
+    let btnHTML = `
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" onclick="apriPopupTurno('${dataStr}', '${nomeUtente}')">
             Inserisci turno
         </button>
-    `);
+    `;
+    $("#btnInserisci").html(btnHTML);
 }
 
 function getDateFormatted(dateStr) {
     return dateStr.slice(0, 10);
 }
+

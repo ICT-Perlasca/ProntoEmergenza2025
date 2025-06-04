@@ -154,5 +154,6 @@ echo COMP_head();
                 </div>
             </div>
         </div>
+        <div id="popupContainer"></div>
     </body>
 </html>

@@ -1,4 +1,5 @@
 function apriPopupTurno(data, nomeUtente) {
+    
     $.ajax({
         url: './components/SimpleComponent/popupTurno.php',
         method: 'POST',
@@ -6,7 +7,7 @@ function apriPopupTurno(data, nomeUtente) {
         dataType: 'json',
         data: { dataTurno: data, nomeUtente: nomeUtente },
         success: function(response) {
-            $('body').append(response.html);
+            $('#popupContainer').html(response.html);
             if(response.utenteIsAdmin) caricaUtenti();
             $('#popupTurno').modal('show');
         }
