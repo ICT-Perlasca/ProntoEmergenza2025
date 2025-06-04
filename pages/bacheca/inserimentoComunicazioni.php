@@ -35,10 +35,7 @@ if (!isset($_SESSION['idUtente'])) {
     <body>
         <?php
             require_once("./components/Header/header.php");
-            require_once("./components/SimpleComponent/comp.php");
-            require_once("./api/elencoComunicazioni.php");
             require_once("./components/Footer/footer.php");
-            require_once("./components/SimpleComponent/COMP_Buttons.php");
 
             echo COMP_header($_SESSION);
 
