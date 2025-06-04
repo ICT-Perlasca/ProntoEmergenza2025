@@ -20,17 +20,20 @@ function convalidaMese($anno, $mese) {
         $titolo = "Turni $mese/$anno";
         $testo = "I turni del mese $mese/$anno sono stati pubblicati. Ora puoi visualizzarli.";
         $dataScadenza = $dataFine;
-        $idTipo = 4; // eventi
-        $idUtente = 0; // ?????
+        $idTipo = 4; 
+        $utenti = db_query("SELECT idUtente FROM utenti", [], []);
 
-        db_query(
-            "INSERT INTO comunicazioni (dataEmissione, titolo, testo, dataScadenza, idTipo, idUtente) 
-             VALUES (?, ?, ?, ?, ?, ?)",
-            [$dataEmissione, $titolo, $testo, $dataScadenza, $idTipo, $idUtente],
-            [PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_INT, PDO::PARAM_INT]
-        );
+        foreach ($utenti as $utente) {
+            $idUtente = $utente['idUtente'];
+            db_query(
+                "INSERT INTO comunicazioni (dataEmissione, titolo, testo, dataScadenza, idTipo, idUtente) 
+                 VALUES (?, ?, ?, ?, ?, ?)",
+                [$dataEmissione, $titolo, $testo, $dataScadenza, $idTipo, $idUtente],
+                [PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_INT, PDO::PARAM_INT]
+            );
+        }
 
-        return "Tutti i turni del mese sono stati convalidati e la comunicazione è stata inserita.";
+        return "Tutti i turni del mese sono stati convalidati e la comunicazione è stata inserita per ogni utente.";
     }
 
     return "Attenzione: alcuni turni sono già stati convalidati oppure non ci sono turni per questo mese.";
