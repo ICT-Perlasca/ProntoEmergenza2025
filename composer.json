@@ -1,0 +1,15 @@
+{
+    "name": "therealgava/pronto-emergenza2025",
+    "description": "Sistema di gestione emergenze per il progetto 2025",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Leonardo Gavarini",
+            "email": "leogavarini@gmail.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {
+        "phpoffice/phpspreadsheet": "^4.2"
+    }
+}

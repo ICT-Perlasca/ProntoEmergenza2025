@@ -14,7 +14,6 @@ if(!isset($_SESSION['idUtente'])){
             <?php
                 require_once ("./components/Header/header.php");
                 require_once ("./components/SimpleComponent/comp.php");
-                require_once ("./api/elencoComunicazioni.php");
                 require_once ("./components/Footer/footer.php");
                 require_once ("./components/SimpleComponent/COMP_Buttons.php");
                
@@ -35,9 +34,9 @@ if(!isset($_SESSION['idUtente'])){
             <div class="container mt-4">
                 <div class="d-flex flex-wrap justify-content-center gap-2">
                     <?php
-                        echo COMP_Button('person-circle','Profilo','profiloUtente');
-                        echo COMP_Button('calendar-date','Calendario','turni');
-                        echo COMP_Button('card-list','Bacheca','bacheca');
+                        echo COMP_Button('person-circle','Profilo','utenteSingolo');
+                        echo COMP_Button('calendar-date','Calendario','turni/elenco');
+                        echo COMP_Button('card-list','Bacheca','bacheca/elenco');
                         if($_SESSION['tipoUtente'] == 'admin')
                             echo COMP_Button('people-fill','Gestione Utenti','utenti/profili');
                     ?>

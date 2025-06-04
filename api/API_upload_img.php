@@ -26,7 +26,7 @@ function upload($get, $post, $session)
         return false; 
     }
     $ts = new DateTime("now");
-    $cartella = '../uploads/images/';
+    $cartella = './uploads/images/';
     if (!file_exists($cartella)) 
     {
         mkdir($cartella, 0755, true);
@@ -36,6 +36,8 @@ function upload($get, $post, $session)
     if (move_uploaded_file($foto['tmp_name'], $percorso)) 
     {
         $result = $nomeFile;
+    }else{
+        $result = "Errore durante il caricamento del file.";
     }
 
     return $result;

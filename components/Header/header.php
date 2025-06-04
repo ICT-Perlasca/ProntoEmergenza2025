@@ -1,11 +1,19 @@
 <?php
 function COMP_header($user) {
 
+    if($user == null){
+        return '    
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="navbar-brand container-fluid">
+                <img src="./public/images/logo-ambulanza.png"  class="" style="height: 20%;width:20%;"/>
+            </div>
+        </nav>';
+    }
+
     $links = $user['tipoUtente'] == 'admin' ? _adminLinks() : _volontarioLinks();
     
     return '
         <link rel="stylesheet" href="./public/css/header.css" type="text/css"/>
-        <script type="text/javascript" src="./public/js/header.js"></script>
     
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="navbar-brand container-fluid">

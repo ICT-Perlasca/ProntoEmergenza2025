@@ -10,10 +10,14 @@ switch ($route) {
         require_once ("./api/elencoComunicazioni.php");
         echo json_encode(API_elencoComunicazioni($_GET, $_POST, $_SESSION));
         break;
+    case 'api/segnarecomunicazioneletta':
+        require_once ("./api/api_segnare_comunicazione_letta.php");
+        echo json_encode(API_segnareComunicazioneLetta($_GET, $_POST, $_SESSION));
+        break;
     case 'api/ElencoMezziDisponibili':
-            require_once ("./api/ElencoMezziDisponibili.php");
-            echo json_encode(API_ElencoMezziDisponibili($_GET, $_POST, $_SESSION));
-            break;
+          require_once ("./api/ElencoMezziDisponibili.php");
+          echo json_encode(API_ElencoMezziDisponibili($_GET, $_POST, $_SESSION));
+          break;
     case 'api/GetMezzo':
         require_once ("./api/GetMezzo.php");
         echo json_encode(API_GetMezzo($_GET, $_POST, $_SESSION));
@@ -58,7 +62,14 @@ switch ($route) {
         require_once ("./api/API_ritornaTurnoUtente_tra_due_date.php");
         echo json_encode(API_ritornaTurnoUtente_tra_due_date($_GET, $_POST, $_SESSION));
         break;
-
+    case 'api/richiestaRipristino':
+        require_once ("./api/richiestaRipristino.php");
+        echo json_encode(API_richiestaRipristino($_GET, $_POST, $_SESSION));
+        break;
+    case 'api/resetPassword':
+        require_once ("./api/resetPassword.php");
+        echo json_encode(API_resetPassword($_GET, $_POST, $_SESSION));
+        break;
     default:
         http_response_code(404);
         echo json_encode(["error" => "Endpoint not found"]);

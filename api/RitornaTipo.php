@@ -12,7 +12,7 @@ function API_RitornaTipo ($get, $post, $session) {
     ";
 
     $valoriVer = [
-        $_SESSION["idUtente"]
+        $session["idUtente"]
     ];
 
     $tipiVer = [
@@ -20,11 +20,6 @@ function API_RitornaTipo ($get, $post, $session) {
     ];
 
     $tipo = db_query($sqlVer, $valoriVer, $tipiVer);
-
-    // Controllo se c'è stato un errore nella query
-    if (isset($tipo['error'])) {
-        return ["Errore nella verifica dell'utente: " . $tipo['error']];
-    }
 
     return $tipo;
 }
