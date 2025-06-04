@@ -64,17 +64,12 @@ function generaCardMezzo($mezzo) {
         $tipoMezzo = 'Tipo sconosciuto';
     }
 
-    if (isset($mezzo['nomeMezzo'])) {
-        $nomeMezzo = htmlspecialchars($mezzo['nomeMezzo']);
-    } else {
-        $nomeMezzo = 'Non disponibile';
-    }
     return '
         <div class="col-12 col-sm-6 col-md-4 p-3">
             <div class="card mb-3 border-2 rounded-3 shadow">
                 <div class="card-body bg-white text-dark">
-                    <h4 class="card-title" id="ricerca1">' . $nomeMezzo . '</h4>
-                    <h5 class="card-title">' . $modello . '<br> (' . strtoupper($tipoMezzo) . ')</h5>
+                    <h3 class="card-title text-center" id="ricerca1">'.$modello.'</h3>
+                    <h5 class="text-success text-center">'.strtoupper($tipoMezzo).'</h5>
                     <p class="card-text" id="ricerca2"><strong>Targa:</strong> ' . $targa . '</p>
                     <p class="card-text"><strong>Immatricolazione:</strong> ' . $dataImmatricolazione . '</p>
                     <p class="card-text"><strong>Ultima Revisione:</strong> ' . $dataRevisione . '</p>
