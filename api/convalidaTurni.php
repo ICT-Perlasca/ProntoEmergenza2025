@@ -21,7 +21,7 @@ function convalidaMese($anno, $mese) {
         $testo = "I turni del mese $mese/$anno sono stati pubblicati. Ora puoi visualizzarli.";
         $dataScadenza = $dataFine;
         $idTipo = 4; // eventi
-        $idUtente = 0; // ???????
+        $idUtente = 0; // ?????
 
         db_query(
             "INSERT INTO comunicazioni (dataEmissione, titolo, testo, dataScadenza, idTipo, idUtente) 
