@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <h1>Invia una Email</h1>
-    <form method="POST" action="index.php">
+    <form method="POST" action="">
         <label for="titolo">Titolo:</label>
         <input type="text" id="titolo" name="titolo" required><br><br>
 

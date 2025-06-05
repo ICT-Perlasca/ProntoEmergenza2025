@@ -2,20 +2,28 @@
 require_once("funzioniDB.php");
 require_once("API_upload_img.php");
 function API_AggiuntaComunicazione($get, $post, $session){
+   
+    if (!isset($session['tipoUtente']) || $session['tipoUtente'] != "admin"){
+        header('HTTP/1.1 403 Forbidden');
+        echo json_encode(["errore" => "Accesso negato"]);
+        return;
+    }
     $ctrlImg = upload("","", $session);
     if($ctrlImg == false)
     {
-        return ["errore" => "file non compatibile"];
+        //da sistemare
+        $res['errore']="file non compatibile";
+//        echo json_encode(["errore" => "file non compatibile"]);
+        return $res;       
     }
-    if (!isset($session['tipoUtente']) || $session['tipoUtente'] != "admin"){
-        header('HTTP/1.1 403 Forbidden');
-        return  ["errore" => "Accesso negato"];
-    }
-
     if (!isset($post['titolo'], $post['descrizione'], $post['data_scadenza'], $post['tipo'])) {
         header('HTTP/1.1 400 Bad Request');
-        return ["errore" => "Dati mancanti"];
+        echo json_encode(["errore" => "Dati mancanti"]);
+        return;
     }
+
+
+
 
     $sql = "INSERT INTO comunicazioni (titolo, testo, dataScadenza, idTipo, dataEmissione, nomeFileAllegato, idUtente) 
             VALUES (?, ?, ?, ?, ?, ?, ?)";
@@ -41,12 +49,14 @@ function API_AggiuntaComunicazione($get, $post, $session){
     ];
 
     $risposta = db_query($sql, $valori, $tipi);
-    $sql1 = "SELECT * FROM utenti;";
-    $risposta1 = db_query($sql1, [], []);
+
     $sql2 = "SELECT comunicazioni.idComunicazione FROM comunicazioni WHERE comunicazioni.dataEmissione = ? AND comunicazioni.titolo = ?";
     $risposta2 = db_query($sql2, [date("Y-m-d"), $post['titolo']], [PDO::PARAM_STR, PDO::PARAM_STR]);
     if($_POST["destinatario"] == "tutti")
     {
+        $sql1 = "SELECT * FROM utenti;";
+        $risposta1 = db_query($sql1, [], []);
+    
         for($i = 0; $i < count($risposta1); $i++)
         {
             $sql3 = "INSERT INTO utenticomunicazioni (idComunicazione, idUtente) VALUES (?, ?)";
@@ -120,10 +130,10 @@ function API_AggiuntaComunicazione($get, $post, $session){
     }
     }
     if ($risposta) {
-        return ["successo" => true];
+        echo json_encode(["successo" => true]);
     } else {
         header('HTTP/1.1 500 Internal Server Error');
-        return ["errore" => "Errore nel database"];
+        echo json_encode(["errore" => "Errore nel database"]);
     }
 }
 ?>

@@ -89,7 +89,28 @@ if (!isset($_SESSION['idUtente'])) {
                                         oninvalid="this.setCustomValidity('Inserisci un allegato (es: link o nome file)')"
                                         oninput="this.setCustomValidity('')">
                                 </div>
-                                <button name="inserisciComunicazione" type="submit" class="btn btn-orange w-100">
+                                <div class="mb-3">
+                                    <label for="destinatario" class="form-label">Destinatario</label>
+                                    <select class="form-control" name="destinatario" id="destinatario" onchange="toggleUserField()">
+                                        <option value="tutti_user">Tutti i user</option>
+                                        <option value="tutti_admin">Tutti gli admin</option>
+                                        <option value="tutti">Tutti</option>
+                                        <option value="utente_specifico">Un solo utente specifico</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3" id="specificoField" style="display:none;">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="cognome" class="form-label">Cognome</label>
+                                            <input type="text" class="form-control" id="cognome" name="cognome" placeholder="Cognome">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="nome" class="form-label">Nome</label>
+                                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button name="inserisciComunicazione" type="submit" class="btn btn-primary w-100">
                                     <i class="fas fa-paper-plane me-2"></i> Invia Comunicazione
                                 </button>
                             </form>

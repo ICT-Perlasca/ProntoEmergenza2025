@@ -1,11 +1,12 @@
 <?php
-$DB = "pronto_emergenza";
-$USERDB = "root";
+$DB = "my_profprati";
+$USERDB = "profprati";
 $PSWDB="";
 $HOST = "localhost";
 $DSN="mysql:host=" .$HOST . ";dbname=" . $DB;
-$DOMAIN_NAME = "http://localhost/ProntoEmergenza2025";
+$DOMAIN_NAME = "http://profprati.altervista.org";
 $cartellaImmagini="uploads/images";
+$logo_email=$DOMAIN_NAME."/prontoemergenza2025/public/images";
 
 /*
 Idea generale: stabilire format delle email generali con queste variabili che si renderanno disponibili 
@@ -23,7 +24,7 @@ Se il link non funziona, puoi copiarlo e incollarlo nel tuo browser.<br>
 Se non hai effettuato questa registrazione, ignora questo messaggio.<br>
 Grazie ancora e benvenuto a nome di tutta l'associazione!<br>
 Cordiali saluti,<br>
-Il team di ProntoEmergenza di Agnosine(BS)",
+Il team di ProntoEmrgenza di Agnosine(BS)",
     "oggetto"=>" Grazie per esserti registrato su Pronto Emergenza!!",
 
 ];
@@ -33,16 +34,16 @@ $cambioPsw=[
 Se hai richiesto tu questo cambio password, ora puoi accedere al tuo account con la nuova password. 
 Se non hai richiesto questo cambio o sospetti un accesso non autorizzato, ti invitiamo a contattare il nostro team di supporto all'indirizzo info@prontoemergenza.it o al numero 0365/826210.<br>
 Grazie,<br>
-Il team di ProntoEmergenza di Agnosine(BS)<br>
+Il team di ProntoEmrgenza di Agnosine(BS)<br>
 Associazione di Volontariato",
-    "oggetto"=>"Pronto Emergenza: Conferma cambio password"
+    "oggetto"=>"Conferma cambio password"
 ];
 $nuovomeseProgrammazione=[
     "titolo"=>"Mese in programmazione {mese}",
     "testo"=>"Gentile utente. Ti inviatiamo ad inserire i turni per cui ti vuoi rendere disponibile nel nuovo mese in programmazio: {nomeMese}.
-Grazie,<br>
-Il team di ProntoEmergenza di Agnosine(BS)<br>
-Associazione di Volontariato",
-    "oggetto"=>"ProntoEmergenza: Nuovo mese in programmazione"
+Grazie,
+Pronto Emergenza
+Associazione di volontariato",
+    "oggetto"=>"Conferma cambio password"
 ];
 ?>

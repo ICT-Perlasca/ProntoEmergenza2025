@@ -1,5 +1,5 @@
 <?php
-function API_uploadDocument($get, $post, $session) {
+function API_uploadDocument($get, $post, $session,$allowedTypes = ['jpg', 'jpeg', 'png', 'pdf']) {
     $errors = [];
 
     // Validazioni iniziali

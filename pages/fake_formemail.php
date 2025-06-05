@@ -6,7 +6,7 @@
 </head>
 <body>
     <h2>Invio Email Personalizzata</h2>
-    <form action="invioemail.php" method="post">
+    <form action="fake_invioemail.php" method="post">
         <label for="titolo">Titolo:</label><br>
         <input type="text" name="titolo" id="titolo" required><br><br>
 
