@@ -88,5 +88,13 @@ if(!isset($_POST['inserisciComunicazione']) && $_SESSION['tipoUtente'] == "admin
 else if(isset($_POST['inserisciComunicazione']) && $_SESSION['tipoUtente'] == "admin")
 {
     $datiMezzo = explode("-", $_POST['mezzo']);
-    $q = "INSERT INTO eventiprogrammati"
+    $q = "INSERT INTO eventiprogrammati(data, oraInizio, oraFine, luogo, nomeRichiedente, cognomeRichiedente, idMezzo)
+    VALUES (?, ?, ?, ?, ?, ?, ?);";
+    $tipi = ['PDO::PARAM_STR', 'PDO::PARAM_STR', 'PDO::PARAM_STR', 'PDO::PARAM_STR', 'PDO::PARAM_STR', 'PDO::PARAM_STR', 'PDO::PARAM_INT'];
+    $values = [$_POST['dataEvento'], $_POST['oraInizio'], $_POST['oraFine'], $_POST['luogo'], $_POST['nome'], $_POST['cognome'], $datiMezzo[0]];
+    db_query($q, $values, $tipi);
+}
+else
+{
+    header("location: login");
 }
