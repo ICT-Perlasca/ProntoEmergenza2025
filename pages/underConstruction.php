@@ -14,8 +14,7 @@ echo COMP_head();
         <body>
 <?php
 require_once ("./components/Header/header.php");
-require_once ("./components/SimpleComponent/comp.php");
-require_once ("./api/elencoComunicazioni.php");
+//require_once ("./api/elencoComunicazioni.php");
 require_once ("./components/Footer/footer.php");
 
 echo COMP_header($_SESSION);
