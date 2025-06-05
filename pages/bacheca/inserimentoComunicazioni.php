@@ -11,11 +11,8 @@ if (!isset($_SESSION['idUtente'])) {
         require("././api/apiINScom.php");
         require_once("./components/Head/head.php");
         echo COMP_head();
-        $c = 0;
     ?>
     <head>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
         <style>
             body {
@@ -25,18 +22,6 @@ if (!isset($_SESSION['idUtente'])) {
             .card {
                 border: none;
                 border-radius: 1rem;
-            }
-            .form-control:focus {
-                box-shadow: 0 0 0 0.2rem rgba(253,126,20,.25);
-                border-color: #fd7e14;
-            }
-            .btn-orange {
-                background-color: #fd7e14;
-                color: white;
-                border: none;
-            }
-            .btn-orange:hover {
-                background-color: #e96a0a;
             }
             .fa-paper-plane {
                 animation: float 1.5s infinite ease-in-out;
@@ -50,10 +35,7 @@ if (!isset($_SESSION['idUtente'])) {
     <body>
         <?php
             require_once("./components/Header/header.php");
-            require_once("./components/SimpleComponent/comp.php");
-            require_once("./api/elencoComunicazioni.php");
             require_once("./components/Footer/footer.php");
-            require_once("./components/SimpleComponent/COMP_Buttons.php");
 
             echo COMP_header($_SESSION);
 
@@ -66,7 +48,7 @@ if (!isset($_SESSION['idUtente'])) {
                     <div class="card shadow-lg animate__animated animate__fadeInDown">
                         <div class="card-body p-4">
                             <h3 class="text-center mb-4">
-                                <i class="fas fa-bullhorn me-2" style="color: #fd7e14;"></i> Inserisci Comunicazione
+                                <i class="fas fa-bullhorn me-2 text-primary"></i> Inserisci Comunicazione
                             </h3>
                             <form method="POST" action="" class="needs-validation" enctype="multipart/form-data">
                                 <div class="mb-3">
@@ -84,7 +66,7 @@ if (!isset($_SESSION['idUtente'])) {
                                         oninput="this.setCustomValidity('')"></textarea>
                                 </div>
                                 <div class="mb-3">
-                                    <select name="tipo">
+                                    <select name="tipo" class="form-select p-1">
                                         <option>Scegli tipo Comunicazione</option>
                                         <?php
                                             foreach ($tipi as $tipo) {
@@ -107,7 +89,28 @@ if (!isset($_SESSION['idUtente'])) {
                                         oninvalid="this.setCustomValidity('Inserisci un allegato (es: link o nome file)')"
                                         oninput="this.setCustomValidity('')">
                                 </div>
-                                <button name="inserisciComunicazione" type="submit" class="btn btn-orange w-100">
+                                <div class="mb-3">
+                                    <label for="destinatario" class="form-label">Destinatario</label>
+                                    <select class="form-control" name="destinatario" id="destinatario" onchange="toggleUserField()">
+                                        <option value="tutti_user">Tutti i user</option>
+                                        <option value="tutti_admin">Tutti gli admin</option>
+                                        <option value="tutti">Tutti</option>
+                                        <option value="utente_specifico">Un solo utente specifico</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3" id="specificoField" style="display:none;">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="cognome" class="form-label">Cognome</label>
+                                            <input type="text" class="form-control" id="cognome" name="cognome" placeholder="Cognome">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="nome" class="form-label">Nome</label>
+                                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button name="inserisciComunicazione" type="submit" class="btn btn-primary w-100">
                                     <i class="fas fa-paper-plane me-2"></i> Invia Comunicazione
                                 </button>
                             </form>
@@ -116,9 +119,49 @@ if (!isset($_SESSION['idUtente'])) {
                 </div>
             </div>
         </div>
+                <script>
+            function toggleUserField() {
+                const destinatario = document.getElementById('destinatario').value;
+                const specificoField = document.getElementById('specificoField');
+                
+                if (destinatario === 'utente_specifico') {
+                    specificoField.style.display = 'block';
+                    document.getElementById('cognome').setAttribute('required', '');
+                    document.getElementById('nome').setAttribute('required', '');
+                } else {
+                    specificoField.style.display = 'none';
+                    document.getElementById('cognome').removeAttribute('required');
+                    document.getElementById('nome').removeAttribute('required');
+                }
+            }
+
+            // Validazione form lato client
+            document.getElementById('comunicazioneForm').addEventListener('submit', function(e) {
+                const fileInput = document.getElementById('allegato');
+                const allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+                
+                if (fileInput.files.length > 0) {
+                    if (!allowedExtensions.exec(fileInput.value)) {
+                        alert('Per favore carica solo file con estensione .jpg, .jpeg o .png');
+                        e.preventDefault();
+                        return false;
+                    }
+                }
+            });
+        </script>
         <?php
             } else {
-                $c = API_AggiuntaComunicazione($_GET, $_POST, $_SESSION);
+                $res = API_AggiuntaComunicazione($_GET, $_POST, $_SESSION);
+
+                if(isset($res['errore'])){
+                    echo '<div class="alert alert-danger" role="alert">'.
+                        $res['errore'].
+                    '</div>';
+                }else{
+                    echo '<div class="alert alert-success" role="alert">
+                        Comunicazione inserita
+                    </div>';
+                }
             }
 
             echo COMP_Footer();
