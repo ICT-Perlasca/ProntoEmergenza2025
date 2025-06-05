@@ -89,7 +89,7 @@ if (!isset($_SESSION['idUtente'])) {
                                         oninvalid="this.setCustomValidity('Inserisci un allegato (es: link o nome file)')"
                                         oninput="this.setCustomValidity('')">
                                 </div>
-                                <button name="inserisciComunicazione" type="submit" class="btn btn-primary w-100">
+                                <button name="inserisciComunicazione" type="submit" class="btn btn-orange w-100">
                                     <i class="fas fa-paper-plane me-2"></i> Invia Comunicazione
                                 </button>
                             </form>
@@ -98,6 +98,36 @@ if (!isset($_SESSION['idUtente'])) {
                 </div>
             </div>
         </div>
+                <script>
+            function toggleUserField() {
+                const destinatario = document.getElementById('destinatario').value;
+                const specificoField = document.getElementById('specificoField');
+                
+                if (destinatario === 'utente_specifico') {
+                    specificoField.style.display = 'block';
+                    document.getElementById('cognome').setAttribute('required', '');
+                    document.getElementById('nome').setAttribute('required', '');
+                } else {
+                    specificoField.style.display = 'none';
+                    document.getElementById('cognome').removeAttribute('required');
+                    document.getElementById('nome').removeAttribute('required');
+                }
+            }
+
+            // Validazione form lato client
+            document.getElementById('comunicazioneForm').addEventListener('submit', function(e) {
+                const fileInput = document.getElementById('allegato');
+                const allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+                
+                if (fileInput.files.length > 0) {
+                    if (!allowedExtensions.exec(fileInput.value)) {
+                        alert('Per favore carica solo file con estensione .jpg, .jpeg o .png');
+                        e.preventDefault();
+                        return false;
+                    }
+                }
+            });
+        </script>
         <?php
             } else {
                 $res = API_AggiuntaComunicazione($_GET, $_POST, $_SESSION);
