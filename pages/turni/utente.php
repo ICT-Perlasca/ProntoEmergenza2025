@@ -9,18 +9,34 @@ require_once ('funzioniDB.php');
         <head>
             <title>elenco turni</title>
             <script type="text/javascript" src="./public/js/VisualizzaturniUtente.js"></script>
+            <?php
+                require_once ("./components/Footer/footer.php");
+                require_once ("./components/Header/header.php");
+            ?>
         </head>
+        <?php
+            require_once ("./components/Head/head.php");
+            echo COMP_head();
+        ?>
         <body>
-            <form name = elenco onsubmit="getTurni(elenco);return false;">
-                <label>inserisci l'utente</label>
-                <selcet name = utente>
-                    <?php
-                    foreach($utenti as $u)
-                    ?>
-                        <option value = <?php $u['idUtente'] ?>><?php $u['idUtente']." ".$u['cognome']." ".$u['nome'] ?></option>
+            <?php echo COMP_header($_SESSION); ?>
+            
+            <form name="elenco" onsubmit="getTurni(this); return false;">
+                <label>Inserisci l'utente</label>
+                <select name="utente">
+                    <?php foreach ($utenti as $u): ?>
+                        <option value="<?= $u['idUtente'] ?>">
+                            <?= $u['idUtente'] . " " . $u['cognome'] . " " . $u['nome'] ?>
+                        </option>
+                    <?php endforeach; ?>
                 </select>
             </form>
+
             <div id="ris"></div>
+            <?php 
+                echo COMP_Footer(); 
+            ?>
+            
         </body>
     </html>
 <?php
