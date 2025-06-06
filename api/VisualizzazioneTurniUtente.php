@@ -1,9 +1,11 @@
 <?php
     function API_VisualizzaTurniUtente($get, $post, $session){
-        if(isset()){
+        if(isset($post['utente'])){
             require "funzioni.php";
             $strSql = "     ";
-            $ris = elaboraDati();
+            $valori = [];
+            $tipi = [];
+            $ris = db_query($strSql, $valori, $tipi);
             return $risposta;
         }
         else{
