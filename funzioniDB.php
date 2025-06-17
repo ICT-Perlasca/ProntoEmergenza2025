@@ -6,15 +6,29 @@ function db_query($strquery,$valori, $tipi){
     try{
         $conn=new PDO($DSN,$USERDB,$PSWDB);
         $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        $stm=$conn->prepare($strquery);
-        if (!empty($valori)) {
-            for($i=0;$i<count($valori);$i++){
-                $stm->bindParam($i+1,$valori[$i],$tipi[$i]);
-            }
+        //byprati aggiunto try catch x gestioni transazioni
+        try {
+                $conn->beginTransaction();
+                $stm=$conn->prepare($strquery);
+                if (!empty($valori)) {
+                    for($i=0;$i<count($valori);$i++){
+                        $stm->bindParam($i+1,$valori[$i],$tipi[$i]);
+                    }
+                }
+                $stm->execute();
+
+                
+                //recupero ultimo id inserito nel caso di insert
+                if (stripos($strquery, "INSERT") === 0)
+                    $ris['lastId']=$conn->lastInsertId();
+
+                $conn->commit();
+        } catch(PDOExecption $e) {
+                $conn->rollback();
+                $ris['error']= "errore transazione su db_query: " . $e->getMessage() . "</br>";
         }
-        $stm->execute();
         if (stripos($strquery, "INSERT") === 0 || stripos($strquery, "UPDATE") === 0 || stripos($strquery, "DELETE") === 0) {
-            $ris= $stm->rowCount();
+            $ris['numRow']= $stm->rowCount();
         } elseif (stripos($strquery, "SELECT") === 0) {
             $ris= $stm->fetchAll(PDO::FETCH_NAMED);
         } else {
@@ -25,7 +39,7 @@ function db_query($strquery,$valori, $tipi){
         $conn=null;
     }
     catch(Exception $e){
-        $ris['error']=$e->getMessage();
+        $ris['error']="<br>errore connessione al database: ".$e->getMessage()."</br>";
     }
     return $ris;
 }
