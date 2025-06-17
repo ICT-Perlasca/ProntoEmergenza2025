@@ -1,5 +1,5 @@
 <?php
-function creaLink($get, $post, $session) {
+function api_creaLink($get, $post, $session) {
     require_once ("./globals.php");
 
     $idUHash = md5($post['idU']);

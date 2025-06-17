@@ -1,4 +1,34 @@
 <?php
+// Funzione per processare un singolo file
+    function processFile(array $file, string $uploadDir, string $role, array $allowedTypes) {
+		// Verifica se i dati del file sono presenti e se non ci sono errori
+		if (!isset($file["name"], $file["tmp_name"]) || $file["error"] !== UPLOAD_ERR_OK) {
+			return false;
+		}
+
+		// Estrai e normalizza l'estensione del file
+		$extension = strtolower(pathinfo($file["name"], PATHINFO_EXTENSION));
+
+		// Verifica che il tipo di file sia consentito
+		if (!in_array($extension, $allowedTypes, true)) {
+			return false;
+		}
+
+		$timestamp = date("YmdHis");
+		$safeRole = strtolower($role) === "fronte" ? "f" : "r";
+		$originalName = $file["name"];
+		$hashedName = md5($originalName);
+		$fileName = "{$timestamp}_{$safeRole}_{$hashedName}.{$extension}";
+		$destination = "$uploadDir/$fileName";
+
+		// Sposta il file caricato nella destinazione desiderata
+		if (!move_uploaded_file($file["tmp_name"], $destination)) {
+			return false;
+		}
+
+		return $fileName;
+	}
+
 function API_uploadDocument($get, $post, $session,$allowedTypes = ['jpg', 'jpeg', 'png', 'pdf']) {
     $errors = [];
 
@@ -36,36 +66,7 @@ function API_uploadDocument($get, $post, $session,$allowedTypes = ['jpg', 'jpeg'
     $allowedTypes = ['jpg', 'jpeg', 'png', 'pdf'];
     $uploadedFiles = [];
 
-    // Funzione per processare un singolo file
-    function processFile(array $file, string $uploadDir, string $role, array $allowedTypes) {
-		// Verifica se i dati del file sono presenti e se non ci sono errori
-		if (!isset($file["name"], $file["tmp_name"]) || $file["error"] !== UPLOAD_ERR_OK) {
-			return false;
-		}
-
-		// Estrai e normalizza l'estensione del file
-		$extension = strtolower(pathinfo($file["name"], PATHINFO_EXTENSION));
-
-		// Verifica che il tipo di file sia consentito
-		if (!in_array($extension, $allowedTypes, true)) {
-			return false;
-		}
-
-		$timestamp = date("YmdHis");
-		$safeRole = strtolower($role) === "fronte" ? "f" : "r";
-		$originalName = $file["name"];
-		$hashedName = md5($originalName);
-		$fileName = "{$timestamp}_{$safeRole}_{$hashedName}.{$extension}";
-		$destination = "$uploadDir/$fileName";
-
-		// Sposta il file caricato nella destinazione desiderata
-		if (!move_uploaded_file($file["tmp_name"], $destination)) {
-			return false;
-		}
-
-		return $fileName;
-	}
-
+    
 
     // Fronte obbligatorio
     $fronteResult = processFile($_FILES["fronte"], $uploadDir, "fronte", $allowedTypes);
