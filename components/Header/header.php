@@ -116,7 +116,7 @@ function _adminLinks(){
                     "title" => "Visualizza disponibilità"
                 ],
                 [
-                    "url" => "turni/inserimento",
+                    "url" => "calendar/calendar",
                     "title" => "Inserimento turno"
                 ],
                 [
