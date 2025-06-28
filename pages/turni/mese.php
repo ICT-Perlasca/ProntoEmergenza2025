@@ -1,7 +1,7 @@
 <?php
     //ATTENZIONE: LA GRAFICA NON E' STATA PERFEZIONATA
     require_once("./funzioniDB.php");
-    require_once ("./api/SlotTurni.php");
+    require_once ("./api/API_SlotTurni.php");
 
     session_start();
 
@@ -27,7 +27,7 @@ echo COMP_head();  //stampa dell'head
 <body>
 <?php
     require_once ("./components/Header/header.php");
-    require_once ("./components/SimpleComponent/popup.php");
+  //  require_once ("./components/SimpleComponent/popup.php");
     require_once ("./components/Footer/footer.php");
 
 echo COMP_header($_SESSION); //stampa dell'header
@@ -42,25 +42,25 @@ for($i=1; $i<=12; $i++) {
     echo '</option>';
 }
 echo '</select>';
-echo '<button type=submit>Prova</button>'; //bottone per inviare i dati (usato solamente per testare il corretto funzioamento del codice)
-echo '</form>';
-echo '<div>' .$esito. '</div>'; //stampa dell'esito
-echo '<br><br>';
+//echo '<button type=submit>Prova</button>'; //bottone per inviare i dati (usato solamente per testare il corretto funzioamento del codice)
 
-echo COMP_Popup(  //stampa bottone di popup (ATTENZIONE: non è stato realizzato il poter inserire i turni tramite questo bottone)
+
+/*echo COMP_Popup(  //stampa bottone di popup (ATTENZIONE: non è stato realizzato il poter inserire i turni tramite questo bottone)
     'popupConferma',
     'Sei sicuro?',
     'Vuoi davvero procedere con questa azione?',
     "alert('Hai confermato!')"
-);
+);*/
 ?>
 <!-- Bottone per aprire il popup -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#popupConferma">
+<button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#popupConferma">
     Conferma mese
 </button>
 
 <?php
-
+echo '</form>';
+//echo '<div>' .$esito. '</div>'; //stampa dell'esito
+echo '<br><br>';
 echo COMP_Footer(); //stampa del footer
 ?>
 </body>
