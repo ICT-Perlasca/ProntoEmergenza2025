@@ -43,5 +43,14 @@ function db_query($strquery,$valori, $tipi){
     }
     return $ris;
 }
+function isFestivo($data){ //parametro data di tipo stringa
+    $sqlFest = "SELECT * from festivita WHERE data =?;"; //query per ricavare le festività
+    $festivo= db_query($sqlFest, [$data], [PDO::PARAM_STR]); //festività del mese selezionato
+    $dataObj=new DateTime($data);
+    if (isset($festivo['data']) || $dataObj->format('w')==0) //se è una data appartenente alle festività annuali o è una domenica
+        return true;
+    else
+        return false; 
+}
  
 ?>

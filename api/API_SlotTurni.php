@@ -1,6 +1,8 @@
 <?php
-    require_once("./funzioniDB.php");
+    require_once("./funzioniDB.php");//implicito require di globals...
 function API_SlotTurni($get, $post, $session){
+    global $turni;
+
     if (!isset($session['tipoUtente']) || $session['tipoUtente'] != "admin"){
         header("HTTP/1.1 403 Forbidden");
         return [];
@@ -9,68 +11,64 @@ function API_SlotTurni($get, $post, $session){
         return [];
     }
     else{
-        $anno = 2024;//anno della data attuale
-        $mese = $post;
+        /*byprati:
+        calcolo data inizio e data fine (dal 1-mese-anno al 30 o 31-mese-anno)
+        controllo se esistono già slot inseriti
+        se nella tabella turni118 esiste gia almeno uno slot per tale mese-anno
+        allora
+            messaggio[status]='nok'
+            messaggio[testo]= "Il mese è gia stato programmato. Puoi inserire i turni"
+        altrimenti
+            per ogni giorno tra data inizio e data fine
+                 inserisco i 3 slot per la data nella tabella turni118
+            fciclo
+            messaggio[status]=ok
+            messaggio[testo] "inserimento con successo dei turni dal xxxx(datainizio) al yyyy(datafine)"
+
+        fse
+        ritorno array messaggio
+        */
+        $anno = $post['anno'];//anno della data attuale
+        $mese = $post['mese'];
 
         $dataInizioMeseSel = (new DateTime("$anno-$mese-01"))->format('Y-m-01'); //data del primo giorno del mese selezionato
-        $dataFineMeseSel = (new DateTime("$dataInizioMeseSel"))->format('Y-m-t'); //data dell'ultimo giorno del mese selezionato
-        $dataInizioMeseSucc = (new DateTime("$dataInizioMeseSel"))->modify('+1 month')->format('Y-m-01'); //data del primo giorno del mese successivo
-        $dataFineMeseSucc = (new DateTime("$dataInizioMeseSucc"))->format('Y-m-t'); //data dell'ultimo giorno del mese successivo
-        
+        $dataFineMeseSel = (new DateTime("$dataInizioMeseSel"))->format('Y-m-t'); 
+        //echo $dataInizioMeseSel."<br>".$dataFineMeseSel."<br>";//data dell'ultimo giorno del mese selezionato
+     
         $sqlControllaTurni = "SELECT COUNT(*) AS numTurni FROM turni118 WHERE data BETWEEN ? AND ?"; //conteggio turni
         $turniMeseSel = db_query($sqlControllaTurni, [$dataInizioMeseSel, $dataFineMeseSel], [PDO::PARAM_STR, PDO::PARAM_STR]); //numero turni del mese selezionato
-        $turniMeseSucc = db_query($sqlControllaTurni, [$dataInizioMeseSucc, $dataFineMeseSucc], [PDO::PARAM_STR, PDO::PARAM_STR]); //numero turni del mese successivo
         
-        if(isset($turniMeseSel[0]['numTurni']) && $turniMeseSel[0]['numTurni']>0 || isset($turniMeseSucc[0]['numTurni']) && $turniMeseSucc[0]['numTurni']>0) //se ci sono già dei turni in questo mese non verranno inseriti
-            return [];
+        if(isset($turniMeseSel[0]['numTurni']) && $turniMeseSel[0]['numTurni']>0){ //se ci sono già dei turni in questo mese non verranno inseriti
+            $messaggio['status']='nok';
+            $messaggio['testo']= "Il mese è gia stato programmato. Devi solo iniziare ad inserire i turni";
+        }
         else{
-            $sqlFest = "SELECT data from festivita WHERE data BETWEEN ? AND ? ORDER BY data;"; //query per ricavare le festività
-            $festivitaMeseSel = db_query($sqlFest, [$dataInizioMeseSel, $dataFineMeseSel], [PDO::PARAM_STR, PDO::PARAM_STR]); //festività del mese selezionato
-            $festivitaMeseSucc = db_query($sqlFest, [$dataInizioMeseSucc, $dataFineMeseSucc], [PDO::PARAM_STR, PDO::PARAM_STR]); //festività del mese successivo
-            $fest = [];
-            foreach ($festivitaMeseSel as $f) {
-                $fest[] = $f['data'];
-            }
-            foreach ($festivitaMeseSucc as $f) {
-                $fest[] = $f['data'];
-            }
-
-            $turni = [
-                ['07:00:00', '15:00:00'],
-                ['15:00:00', '23:00:00'],
-                ['23:00:00', '07:00:00']
-            ]; //turni da inserire (mattina, pomeriggio e notte)
-            
-
-            if ($mese == 12) {  //se il mese è dicembre, bisogna passare all'anno successivo aggiungendo 1 alla variabile $anno
-                $meseSucc = 1;
-                $annoSucc = $anno + 1;
-            } else {
-                $meseSucc = $mese + 1;
-                $annoSucc = $anno;
-            }
-            $dataCorrente = new DateTime("$anno-$mese-01");
-            $ultimoGiornoMeseSucc = cal_days_in_month(CAL_GREGORIAN, $meseSucc, $annoSucc); //ultimo giorno del mese successivo
-            $dataFine = (new DateTime("$annoSucc-$meseSucc-$ultimoGiornoMeseSucc"))->format('Y-m-d');
-            while($dataCorrente <= $dataFine){  //inserimento dei turni nel mese selezionato e in quello successivo
-                $dataCorrStr = $dataCorrente->format('Y-m-d');
-                if (in_array($dataCorrStr, $fest)) //se è festivo, il campo 'festivo' viene settato a 1
+            //echo"nn ho trovato slot <br>";          
+            $dataCorrente=$dataInizioMeseSel;
+            while($dataCorrente <= $dataFineMeseSel){  //inserimento dei turni nel mese selezionato e in quello successivo
+                
+                if (isFestivo($dataCorrente)) //se è festivo (ossia anche domenica), il campo 'festivo' viene settato a 1
                     $isFestivo = 1;
                 else
                     $isFestivo = 0;
 
-                if(!in_array($dataCorrStr, $fest)){ //se non è un giorno festivo, viene inserito il turno
-                    foreach($turni as [$oraInizio, $oraFine]){
-                        $sqlTurni = "INSERT INTO turni118 (data, oraInizio, oraFine, festivo)
-                            VALUES (?, ?, ?, ?);";
-                        $inserimentoTurni = db_query($sqlTurni, [$dataInizioMeseSel, $oraInizio, $oraFine, $isFestivo], [PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_INT]);
-                    }
+                foreach($turni as [$oraInizio, $oraFine]){
+                    $sqlTurni = "INSERT INTO turni118 (data, oraInizio, oraFine, festivo) VALUES (?, ?, ?, ?);";
+                    $insSlot= db_query($sqlTurni, [$dataCorrente, $oraInizio, $oraFine, $isFestivo], [PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_INT]);
+                   //echo "npla nuova num.".$insSlot['numRow']."- ".$dataCorrente."<br>".$oraInizio." ".$oraFine."<br>";
+
                 }
-                $dataCorrente->modify('+1 day'); //passaggio al giorno successivo
+                $dataCorrObj = new DateTime($dataCorrente);
+                $dataCorrObj->modify('+1 day'); //passaggio al giorno successivo
+                $dataCorrente=$dataCorrObj->format('Y-m-d');//trasforma in stringa
             }
+            $messaggio['status']='ok';
+            $messaggio['testo']= "Il mese in programmazione dal ".$dataInizioMeseSel." al ".$dataFineMeseSel. "è stato impostato con successo";
+
         }
+        return $messaggio;
     }
-    return $inserimentoTurni;
+   
 }
 
 ?>

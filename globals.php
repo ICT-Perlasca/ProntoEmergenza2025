@@ -7,6 +7,12 @@ $DSN="mysql:host=" .$HOST . ";dbname=" . $DB;
 $DOMAIN_NAME = "http://localhost/ProntoEmergenza2025";
 $cartellaImmagini="uploads/images";
 
+//turni da inserire (mattina, pomeriggio e notte)
+$turni = [
+    ['07:00:00', '15:00:00'],
+    ['15:00:00', '23:00:00'],
+    ['23:00:00', '07:00:00']
+]; 
 /*
 Idea generale: stabilire format delle email generali con queste variabili che si renderanno disponibili 
 per i codici php che includeranno il file per usare la funzione invio email. i dati tra le {} dovranno
