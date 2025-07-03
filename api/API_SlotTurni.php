@@ -55,7 +55,7 @@ function API_SlotTurni($get, $post, $session){
                 foreach($turni as [$oraInizio, $oraFine]){
                     $sqlTurni = "INSERT INTO turni118 (data, oraInizio, oraFine, festivo) VALUES (?, ?, ?, ?);";
                     $insSlot= db_query($sqlTurni, [$dataCorrente, $oraInizio, $oraFine, $isFestivo], [PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_INT]);
-                   //echo "npla nuova num.".$insSlot['numRow']."- ".$dataCorrente."<br>".$oraInizio." ".$oraFine."<br>";
+                   //echo "npla - ".$dataCorrente."<br>".$oraInizio." ".$oraFine."<br>";
 
                 }
                 $dataCorrObj = new DateTime($dataCorrente);
