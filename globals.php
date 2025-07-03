@@ -9,8 +9,8 @@ $cartellaImmagini="uploads/images";
 
 //turni da inserire (mattina, pomeriggio e notte)
 $turni = [
-    ['07:00:00', '15:00:00'],
-    ['15:00:00', '23:00:00'],
+    ['07:00:00', '13:00:00'],
+    ['13:00:00', '23:00:00'],
     ['23:00:00', '07:00:00']
 ]; 
 /*

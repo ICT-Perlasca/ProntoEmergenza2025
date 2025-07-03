@@ -141,14 +141,18 @@ echo COMP_head();
             <div class="row">
                 <div class="col-md-3">
                     <div id="calendar"></div>
-                    <!-- DEVE RITORNARE MESE E ANNO -->     
-                    <button type="button" id="btnConvalida" class="btn btn-primary">
-                        Convalida turni
-                    </button>
-                    <div id="btnInserisci">
-                        <button type="button" class="btn btn-primary disabled" data-bs-toggle="modal" onclick="">
-                            Inserisci turno
+                    <div class="row">
+                    <!-- DEVE RITORNARE MESE E ANNO -->  
+                     <div id="btnConvalida" class="col-md-6">   
+                        <button type="button" id="btnConvalida" class="btn btn-primary">
+                            Convalida turni
                         </button>
+                    </div>
+                    <div id="btnInserisci" class="col-md-6">
+                        <button type="button" class="btn btn-primary disabled" data-bs-toggle="modal" onclick="">
+                                Inserisci turno
+                        </button>
+                    </div>
                     </div>
                 </div>
                 <div class="col-md-9">

@@ -43,8 +43,8 @@
 
                     <div class="mb-2">
                         <label class="form-label">Fascia oraria</label>
-                        <select name="fasciaOraria" class="form-select">
-                            <option value="7:00:00 - 13:00:00">7:00 - 13:00</option>
+                        <select name="fasciaOraria" class="form-select" onchange="aggiornaOra(this)">
+                            <option value="07:00:00 - 13:00:00">7:00 - 13:00</option>
                             <option value="13:00:00 - 19:00:00">13:00 - 19:00</option>
                             <option value="19:00:00 - 7:00:00">19:00 - 7:00</option>
                         </select>
@@ -52,12 +52,12 @@
 
                     <div class="mb-2">
                         <label class="form-label">Ora inizio effettiva</label>
-                        <input type="time" name="oraInizioEffettiva" class="form-control">
+                        <input type="time" name="oraInizioEffettiva" class="form-control" value="07:00">
                     </div>
 
                     <div class="mb-2">
                         <label class="form-label">Ora fine effettiva</label>
-                        <input type="time" name="oraFineEffettiva" class="form-control">
+                        <input type="time" name="oraFineEffettiva" class="form-control" value="13:00">
                     </div>
 
                     <div class="mb-2">

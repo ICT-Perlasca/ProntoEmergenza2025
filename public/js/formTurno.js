@@ -1,3 +1,10 @@
+//byprati: nel form x ins Turno ogni scelta dello slot modifica in autmatico i campi ora inizio effettiva ed ora fine effettiva
+function aggiornaOra(formIns){
+    valIntervallo=formIns.fasciaOraria.value;
+    parti=valIntervallo.split();
+    formIns.oraInizioEffettiva.value=trim(valIntervallo[0]);
+    formIns.oraFineEffettiva.value=trim(valIntervallo[1]);
+}
 function apriPopupTurno(data, nomeUtente) {
     
     $.ajax({
