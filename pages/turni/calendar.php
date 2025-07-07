@@ -73,12 +73,12 @@ echo COMP_head();
             let events = [];
             for (let date in turni) {
                 if (turni[date].length == 9) {
-                    color = '#66ff66';  
+                    color = '#66ff66';  //VERDE
                     fullDays++;
                 } else if (turni[date].length == 0) {
-                    color = '#ff3300'; // Color for no shifts
+                    color = '#ff3300'; // Color for no shifts ROSSO_ARANCIO
                 } else {
-                    color = '#ff9933'; // Default color for other cases
+                    color = '#ff9933'; // Default color ZAFFERANO for other cases
                 }
 
                 let event = { 

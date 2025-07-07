@@ -21,7 +21,11 @@ function API_SalvaTurno($get, $post, $session) {
         $ruolo = $_POST['ruolo'] ?? null;
         $note = $_POST['note'] ?? null;
         $idUtente = $_POST['idUtente'];
-
+//byprati: se utente assume un ruolo che non gli compete, ossia autista senza èoterlo essere
+// allora "errore"
+//altrimenti
+// tutti gli altri controlli già in essere
+//fse
         // 3. Trova idTurno118 da data e orari
         $resTurno = db_query(
             "SELECT idTurno118 FROM turni118 WHERE data = ? AND oraInizio = ? AND oraFine = ?",

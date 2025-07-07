@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabella con Rowspan</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 20px auto;
+    }
+    td, th {
+      border: 3px solid #333; /* Linee più spesse */
+      padding: 10px;
+      text-align: center;
+    }
+    .rowspan-cell {
+      background-color: #fff9c4; /* Giallo tenue */
+    }
+  </style>
+</head>
+<body>
+
+<table id="miaTabella">
+  <!-- Verrà popolata da jQuery -->
+</table>
+
+<script>
+$(document).ready(function () {
+  const $table = $("#miaTabella");
+
+  // Aggiungi intestazione
+  $table.append(`
+    <tr>
+      <th>Colonna A</th>
+      <th>Colonna B</th>
+    </tr>
+  `);
+
+  // Aggiungi 6 righe con una cella con rowspan = 6
+  for (let i = 0; i < 6; i++) {
+    let row = "<tr>";
+    if (i === 0) {
+      row += `<td class="rowspan-cell" rowspan="6">Cella con rowspan=6</td>`;
+    }
+    row += `<td>Riga ${i + 1} - Colonna B</td>`;
+    row += "</tr>";
+    $table.append(row);
+  }
+});
+</script>
+
+</body>
+</html>

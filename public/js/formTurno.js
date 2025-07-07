@@ -1,12 +1,12 @@
 //byprati: nel form x ins Turno ogni scelta dello slot modifica in autmatico i campi ora inizio effettiva ed ora fine effettiva
-function aggiornaOra(formIns){
-    valIntervallo=formIns.fasciaOraria.value;
-    parti=valIntervallo.split();
-    formIns.oraInizioEffettiva.value=trim(valIntervallo[0]);
-    formIns.oraFineEffettiva.value=trim(valIntervallo[1]);
+function aggiornaOra(form){
+    let valIntervallo=form.fasciaOraria.value;
+    let parti=valIntervallo.split('-');
+    //alert("fascia letta dal form evento onChange -"+parti[0]+"-"+parti[1]+"-");
+    form.oraInizioEffettiva.value=parti[0].trim();
+    form.oraFineEffettiva.value=parti[1].trim();
 }
 function apriPopupTurno(data, nomeUtente) {
-    
     $.ajax({
         url: './components/SimpleComponent/popupTurno.php',
         method: 'POST',
@@ -49,7 +49,12 @@ function confermaTurno(form) {
             if (risposta.success) {
                 alert(risposta.messaggio || "Turno salvato!");
                 $('#popupTurno').modal('hide');
+                $('##popupTurno').on("hidden", function() {
+                    location.reload();;
+                });
                 $('#popupTurno').remove();
+                //byprati calendar.dateclick??? a ggiornare pagina del turno inserito???
+               
             }else{
                 alert(risposta.errore || "Turno non salvato!");
             }

@@ -27,7 +27,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
             </div>
             <div class="modal-body">
-                <form id="formTurnoUtente">
+                <form id="formTurnoUtente" name='formInsTurno'>
                     <input type="hidden" name="dataTurno" value="<?php echo htmlspecialchars($data); ?>">
 
                     <div class="mb-2">
@@ -43,10 +43,10 @@
 
                     <div class="mb-2">
                         <label class="form-label">Fascia oraria</label>
-                        <select name="fasciaOraria" class="form-select" onchange="aggiornaOra(this)">
+                        <select name="fasciaOraria" class="form-select" onchange="aggiornaOra(this.form)">
                             <option value="07:00:00 - 13:00:00">7:00 - 13:00</option>
                             <option value="13:00:00 - 19:00:00">13:00 - 19:00</option>
-                            <option value="19:00:00 - 7:00:00">19:00 - 7:00</option>
+                            <option value="19:00:00 - 07:00:00">19:00 - 07:00</option>
                         </select>
                     </div>
 
