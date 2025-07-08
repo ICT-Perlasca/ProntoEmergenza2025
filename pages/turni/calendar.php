@@ -26,14 +26,20 @@ echo COMP_head();
         <?php echo COMP_header($_SESSION); ?>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
-        <script src="public/js/calendar.js"></script>
         <script src="public/js/formTurno.js"></script>
+        <script src="public/js/calendar.js"></script>
         <style>
-            td: {
+            td {
                 height: 25px;
             }
         </style>
         <script>
+//by prati: gestione del click sulla data di calendar
+window.handleCalendarDateClick = function(info) {
+                    let turni = turniData(info.dateStr); // Navigate to the clicked date in the day calendar
+                    generaTabella(info.dateStr, turni); 
+                    generaBtnTurno(info.dateStr, '<?php echo $_SESSION['nome'] . ' ' . $_SESSION['cognome']; ?>');
+}
 
         let fullDays = 0;
         let daysOfMonth = 0;
@@ -73,10 +79,10 @@ echo COMP_head();
             let events = [];
             for (let date in turni) {
                 if (turni[date].length == 9) {
-                    color = '#66ff66';  //VERDE
+                    color = '#00ff00';  //VERDE
                     fullDays++;
                 } else if (turni[date].length == 0) {
-                    color = '#ff3300'; // Color for no shifts ROSSO_ARANCIO
+                    color = '#ff0000'; // Color for no shifts ROSSO
                 } else {
                     color = '#ff9933'; // Default color ZAFFERANO for other cases
                 }
@@ -110,11 +116,7 @@ echo COMP_head();
                 },
                 aspectRatio: 0.7,
                 selectable: true,
-                dateClick: function (info) {
-                    let turni = turniData(info.dateStr); // Navigate to the clicked date in the day calendar
-                    generaTabella(info.dateStr, turni); 
-                    generaBtnTurno(info.dateStr, '<?php echo $_SESSION['nome'] . ' ' . $_SESSION['cognome']; ?>');
-                }, 
+                dateClick: handleCalendarDateClick, //funzione in formTurno.js
                 select: function (info) {
                     // Ensure only one day is selected
                     let start = new Date(info.start);

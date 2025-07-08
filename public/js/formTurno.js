@@ -6,6 +6,7 @@ function aggiornaOra(form){
     form.oraInizioEffettiva.value=parti[0].trim();
     form.oraFineEffettiva.value=parti[1].trim();
 }
+
 function apriPopupTurno(data, nomeUtente) {
     $.ajax({
         url: './components/SimpleComponent/popupTurno.php',
@@ -49,12 +50,19 @@ function confermaTurno(form) {
             if (risposta.success) {
                 alert(risposta.messaggio || "Turno salvato!");
                 $('#popupTurno').modal('hide');
-                $('##popupTurno').on("hidden", function() {
-                    location.reload();;
-                });
+               // $('#popupTurno').on("hidden", function() {
+                    //location.reload();
+                  //  handleCalendareDateClick(new Date(dataTurno));
+                //});
                 $('#popupTurno').remove();
                 //byprati calendar.dateclick??? a ggiornare pagina del turno inserito???
-               
+                $('#dayCal').html('');//cancella calendario di 1 giorno
+                const fakeInfo = {
+                    dateStr: dataTurno,
+                    date: new Date(dataTurno)
+                };
+                handleCalendareDateClick(fakeInfo);//ricostruirsce calendario di un giorno
+
             }else{
                 alert(risposta.errore || "Turno non salvato!");
             }
