@@ -34,7 +34,7 @@ echo COMP_head();
             }
         </style>
         <script>
-//by prati: gestione del click sulla data di calendar
+//by prati: gestione del click sulla data di calendar: funzione globale
 window.handleCalendarDateClick = function(info) {
                     let turni = turniData(info.dateStr); // Navigate to the clicked date in the day calendar
                     generaTabella(info.dateStr, turni); 
@@ -116,7 +116,7 @@ window.handleCalendarDateClick = function(info) {
                 },
                 aspectRatio: 0.7,
                 selectable: true,
-                dateClick: handleCalendarDateClick, //funzione in formTurno.js
+                dateClick: handleCalendarDateClick, //funzione in calendar.php
                 select: function (info) {
                     // Ensure only one day is selected
                     let start = new Date(info.start);

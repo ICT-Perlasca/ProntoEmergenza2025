@@ -61,7 +61,7 @@ function confermaTurno(form) {
                     dateStr: dataTurno,
                     date: new Date(dataTurno)
                 };
-                handleCalendareDateClick(fakeInfo);//ricostruirsce calendario di un giorno
+                handleCalendarDateClick(fakeInfo);//ricostruirsce calendario di un giorno
 
             }else{
                 alert(risposta.errore || "Turno non salvato!");
