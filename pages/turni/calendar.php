@@ -1,8 +1,5 @@
 <?php 
 
-
-
-
 //require_once $_SERVER['DOCUMENT_ROOT'].'/funzioniDB.php';
 //require_once $_SERVER['DOCUMENT_ROOT'].'/globals.php';
 session_start();

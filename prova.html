@@ -25,8 +25,60 @@
 <table id="miaTabella">
   <!-- Verrà popolata da jQuery -->
 </table>
+<div id="myTable">
+
+</div>
 
 <script>
+  
+function generaTabella(dataStr) {
+
+    let tableHTML = `
+        <div id='tabellaOrari' class="table-responsive" style="height: 75vh; display: flex; flex-direction: column; overflow: visible;">
+            <h3 class="text-center mb-4">Schedule for ${dataStr}</h3>
+            <table class="table table-bordered table-hover table-striped" style="height: 100%; table-layout: fixed;">
+                <thead class="thead-dark">
+                    <tr>
+                        <th class="text-center align-middle" style="font-size: 1.5rem; width: 20%;">Time</th>
+                        <th class="text-center align-middle" colspan="2" style="font-size: 1.5rem;">Soccorritore</th>
+                        <th class="text-center align-middle" style="font-size: 1.5rem;">Autista</th>
+                        <th class="text-center align-middle" style="font-size: 1.5rem;">Corsista</th>
+                    </tr>
+                </thead>
+                <tbody style="height: 100%;">
+                `;
+    
+    for (let ora = 0; ora < 24; ora++) {
+        tableHTML += `<tr id="row-${(ora+7)%24}">
+            <td class="text-center align-middle time" style="font-size: 1.5rem;"></td>
+            <td class="text-center align-middle soccorritore-1" style="height: 25px; font-size: 1.5rem;"></td>
+            <td class="text-center align-middle soccorritore-2" style="height: 25px; font-size: 1.5rem;"></td>
+            <td class="text-center align-middle autista" style="height: 25px; font-size: 1.5rem;"></td>
+            <td class="text-center align-middle corsista" style="height: 25px; font-size: 1.5rem;"></td>
+        </tr>`;
+    }
+
+    tableHTML += `</tbody>
+            </table>
+        </div>
+    `;
+
+    let table = $.parseHTML(tableHTML);
+    $("#myTable").html(table);
+
+    let fascia1 = $.parseHTML(`<th rowspan='6' class="text-center align-middle table-primary" style="font-size: 1.5rem;">07:00-13:00</th>`);
+    let fascia2 = $.parseHTML(`<th rowspan='6' class="text-center align-middle table-secondary" style="font-size: 1.5rem;">13:00-19:00</th>`);
+    let fascia3 = $.parseHTML(`<th rowspan='12' class="text-center align-middle table-primary" style="font-size: 1.5rem;">19:00-07:00</th>`);
+
+    $("#row-7 .time").replaceWith(fascia1);
+    $("#row-13 .time").replaceWith(fascia2);
+    $("#row-19 .time").replaceWith(fascia3);
+
+    for (let ora = 0; ora < 24; ora++) {
+        $(`#row-${(ora+7)%24} .time`).remove();
+    }
+  }
+
 $(document).ready(function () {
   const $table = $("#miaTabella");
 
@@ -48,6 +100,7 @@ $(document).ready(function () {
     row += "</tr>";
     $table.append(row);
   }
+generaTabella('2025-08-10');
 });
 </script>
 

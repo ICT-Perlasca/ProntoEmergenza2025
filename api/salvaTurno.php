@@ -14,14 +14,18 @@ function API_SalvaTurno($get, $post, $session) {
         $splitFascia = explode(' - ', $fasciaOraria);
         $oraInizio = $splitFascia[0] ?? null;
         $oraFine = $splitFascia[1] ?? null;
+        
         $oraInizioEffettiva = $_POST['oraInizioEffettiva'] ?? null; //da sistemare
         $oraFineEffettiva = $_POST['oraFineEffettiva'] ?? null;
-        if ($oraInizioEffettiva == '') $oraInizioEffettiva = $oraInizio;
+        if (isnull($oraInizioEffettiva) || $oraInizioEffettiva == '') $oraInizioEffettiva = $oraInizio;
         if ($oraFineEffettiva == '') $oraFineEffettiva = $oraFine;
-        $ruolo = $_POST['ruolo'] ?? null;
+        
+        $ruolo = $_POST['ruolo'] ?? null; //nome del ruolo
         $note = $_POST['note'] ?? null;
         $idUtente = $_POST['idUtente'];
-//byprati: se utente assume un ruolo che non gli compete, ossia autista senza èoterlo essere
+//byprati:
+//SELECT * FROM utentiruoli as ur inner join ruoli as r on ur.idRuolo=r.idRuolo where ur.idUtente=1 and ur.idRuolo=1 
+// se utente assume un ruolo che non gli compete, ossia autista senza esserlo oppure soccorritore senza esserlo
 // allora "errore"
 //altrimenti
 // tutti gli altri controlli già in essere
