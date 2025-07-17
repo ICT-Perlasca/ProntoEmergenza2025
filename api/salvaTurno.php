@@ -17,7 +17,7 @@ function API_SalvaTurno($get, $post, $session) {
         
         $oraInizioEffettiva = $_POST['oraInizioEffettiva'] ?? null; //da sistemare
         $oraFineEffettiva = $_POST['oraFineEffettiva'] ?? null;
-        if (isnull($oraInizioEffettiva) || $oraInizioEffettiva == '') $oraInizioEffettiva = $oraInizio;
+        if ($oraInizioEffettiva == '') $oraInizioEffettiva = $oraInizio;
         if ($oraFineEffettiva == '') $oraFineEffettiva = $oraFine;
         
         $ruolo = $_POST['ruolo'] ?? null; //nome del ruolo

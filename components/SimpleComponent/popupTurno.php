@@ -5,6 +5,8 @@
 
     // Ruolo dell'utente corrente
     $ruoloUtente = $_SESSION['tipoUtente'] ?? 'user'; 
+    //byprati: recupero id utente dalla sessione (lo metterò come campo nascosto se utente non è admin)
+    $idUtente=$_SESSION['idUtente'];
     /*print_r('tipoUtente: ' . $_SESSION['tipoUtente'] );
     print_r('Ruolo utente: ' . $ruoloUtente);*/
     ob_start();
@@ -36,8 +38,9 @@
                             <select class="form-select" name="nomeUtente" id="selectUtenti" required>
                                 <option value="">-- Seleziona utente --</option>
                             </select>
-                        <?php else: ?>
+                        <?php else: //utente non è admin quindi il suo id è memorizzato in campo nascosto?>
                             <input type="text" class="form-control" name="nomeUtente" value="<?php echo htmlspecialchars($nomeUtente); ?>" readonly>
+                            <input type=hidden value="<?php echo htmlspecialchars($idUtente);?>" id=idUtente>
                         <?php endif; ?>
                     </div>
 
@@ -59,7 +62,7 @@
                         <label class="form-label">Ora fine effettiva</label>
                         <input type="time" name="oraFineEffettiva" class="form-control" value="13:00">
                     </div>
-//byprati: inserire qui elenco dei ruoli che è possiile selezionali prendendoli dalla tabella ruoli del DB
+//byprati: inserire qui elenco dei ruoli che è possibile selezionare prendendoli dalla tabella ruoli del DB
                     <div class="mb-2">
                         <label class="form-label">Ruolo</label>
                         <select name="ruolo" class="form-select">

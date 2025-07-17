@@ -30,7 +30,20 @@ function confermaTurno(form) {
     let oraFineEffettiva = form.oraFineEffettiva.value;
     let ruolo = form.ruolo.value;
     let note = form.note.value;
-
+/* by prati
+se esiste il campo con id=idUtente 
+allora utente loggato non è admin
+     idUtente da testo hidden del fomr con name=idUtente
+altrimenti
+    idUtente dalla value della select con id=selectUtenti
+fse
+*/
+    let idUtente;
+    if (document.getElementById('idUtente'))
+        idUtente=document.getElementById('idUtente').value;
+    else
+        idUtente=document.getElementById('selectUtenti').value;
+    console.log("idUtente:",idUtente);
     console.log("Nome Utente:", nomeUtente);
     console.log("Data Turno:", dataTurno); 
     console.log("Fascia Oraria:", fasciaOraria);
@@ -43,7 +56,7 @@ function confermaTurno(form) {
         url: 'api/salvaTurno',
         method: 'POST',
         async: false,
-        data: { idUtente: nomeUtente, dataTurno: dataTurno, fasciaOraria: fasciaOraria, oraInizioEffettiva: oraInizioEffettiva, oraFineEffettiva: oraFineEffettiva, ruolo: ruolo, note: note },
+        data: { idUtente: idUtente, dataTurno: dataTurno, fasciaOraria: fasciaOraria, oraInizioEffettiva: oraInizioEffettiva, oraFineEffettiva: oraFineEffettiva, ruolo: ruolo, note: note },
         dataType: "json", 
         success: function(risposta) {
             console.log("Risposta AJAX:", risposta);

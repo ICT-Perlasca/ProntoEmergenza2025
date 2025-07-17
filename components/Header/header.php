@@ -275,8 +275,8 @@ function _volontarioLinks(){
                     "url" => "turni/elenco",
                     "title" => "Elenco turni"
                 ],
-                [
-                    "url" => "turni/inserimento",
+               [
+                    "url" => "turni/calendar",
                     "title" => "Inserimento turno"
                 ],
                 [

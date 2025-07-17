@@ -15,7 +15,7 @@ function turniData(dataStr) {
         },
         error: function (error) {
             console.error("Error fetching shifts:", error);
-            $("#dayCal").html("<p>Error loading shifts.</p>");
+            $("#dayCal").html("<p>Errore caricamento turni</p>");
         }
     });
 
@@ -151,6 +151,10 @@ function generaTabella(dataStr, turni) {
                         turno.testoNota ? `
                             <i class="bi bi-info-circle-fill text-info" style="cursor: pointer;"></i>
                         ` : ""
+                        //se utente è admin allora compare la X per poter cancellare utente dal turno
+                        /*
+                        <i class="bi bi-x-square" onclick=funzione a cui passo idUtente del turno, dataTurno, orainizioeffettiva ed ora fine effettiva e ruolo per chedere se vuole cancellare></i>
+                        */
                     }
                 </p>
             </td>
