@@ -34,7 +34,7 @@ echo COMP_head();
 //by prati: gestione del click sulla data di calendar: funzione globale
 window.handleCalendarDateClick = function(info) {
                     let turni = turniData(info.dateStr); // Navigate to the clicked date in the day calendar
-                    generaTabella(info.dateStr, turni); 
+                    generaTabella(info.dateStr, turni,'<?php echo$_SESSION['tipoUtente'];?>'); 
                     generaBtnTurno(info.dateStr, '<?php echo $_SESSION['nome'] . ' ' . $_SESSION['cognome']; ?>');
 }
 

@@ -24,7 +24,7 @@ function turniData(dataStr) {
 
 
 
-function generaTabella(dataStr, turni) {
+function generaTabella(dataStr, turni, tipoUtenteLoggato) {
 
     let tableHTML = `
         <div id='tabellaOrari' class="table-responsive" style="height: 75vh; display: flex; flex-direction: column; overflow: visible;">
@@ -148,13 +148,20 @@ function generaTabella(dataStr, turni) {
                     ${turno.nome} ${turno.cognome}
 
                     ${
-                        turno.testoNota ? `
+                        (turno.testoNota && tipoUtenteLoggato==='admin')? `
                             <i class="bi bi-info-circle-fill text-info" style="cursor: pointer;"></i>
                         ` : ""
-                        //se utente è admin allora compare la X per poter cancellare utente dal turno
+                    
+                    }
+   
+                    ${
+                         //se utente è admin allora compare la X per poter cancellare utente dal turno
                         /*
-                        <i class="bi bi-x-square" onclick=funzione a cui passo idUtente del turno, dataTurno, orainizioeffettiva ed ora fine effettiva e ruolo per chedere se vuole cancellare></i>
+                        <i class="bi bi-pencil-square" on click=funzione a cui passo idUtente del turno, dataTurno, orainizioeffettiva ed ora fine effettiva e ruolo per chedere se vuole cancellare></i>
                         */
+                        tipoUtenteLoggato==='admin'?
+                        `<i class="bi bi-pencil-square" onclick="apriPopupModificaTurno( ${turno.idT});"></i>`
+                        :""
                     }
                 </p>
             </td>
@@ -214,4 +221,21 @@ function generaBtnTurno(dataStr, nomeUtente) {
 function getDateFormatted(dateStr) {
     return dateStr.slice(0, 10);
 }
+//byprati: funzione richiamata sul click sulla matita se utente che insersce i turni è admin e vuole modiifcare orario turno o cancellare turno
+function apriPopupModificaTurno(idTurnoDaModificare) {
+    alert('sono in popupModificaTurno');
+    $.ajax({
+        url: './components/SimpleComponent/popupModificaTurno.php',
+        method: 'POST',
+        async: false,
+        dataType: 'json',
+        data: { idTurno118: idTurnoDaModificare },
+        success: function(response) {
+            $('#popupContainer').html(response.html);
+            // da fare dentro al php if(response.utenteIsAdmin) caricaUtenti();
+            $('#popupModificaTurno').modal('show');
+        }
+    });
+
+    }
 

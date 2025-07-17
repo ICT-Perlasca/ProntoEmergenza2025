@@ -62,7 +62,7 @@
                         <label class="form-label">Ora fine effettiva</label>
                         <input type="time" name="oraFineEffettiva" class="form-control" value="13:00">
                     </div>
-//byprati: inserire qui elenco dei ruoli che è possibile selezionare prendendoli dalla tabella ruoli del DB
+                    //byprati: inserire qui elenco dei ruoli che è possibile selezionare prendendoli dalla tabella ruoli del DB
                     <div class="mb-2">
                         <label class="form-label">Ruolo</label>
                         <select name="ruolo" class="form-select">
