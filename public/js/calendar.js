@@ -147,7 +147,7 @@ function generaTabella(dataStr, turni, tipoUtenteLoggato) {
                 >
                     ${turno.nome} ${turno.cognome}
 
-                    ${
+                    ${  //se utente è admin allora compare la "i" per le info se esiste il campo note compilato
                         (turno.testoNota && tipoUtenteLoggato==='admin')? `
                             <i class="bi bi-info-circle-fill text-info" style="cursor: pointer;"></i>
                         ` : ""
@@ -155,12 +155,12 @@ function generaTabella(dataStr, turni, tipoUtenteLoggato) {
                     }
    
                     ${
-                         //se utente è admin allora compare la X per poter cancellare utente dal turno
-                        /*
-                        <i class="bi bi-pencil-square" on click=funzione a cui passo idUtente del turno, dataTurno, orainizioeffettiva ed ora fine effettiva e ruolo per chedere se vuole cancellare></i>
-                        */
+                         //se utente è admin allora compare la matita per poter modificare il turno dell'utente o cancellarlo
+                        
                         tipoUtenteLoggato==='admin'?
-                        `<i class="bi bi-pencil-square" onclick="apriPopupModificaTurno( ${turno.idT});"></i>`
+                        `<br><i class="bi bi-x-square" onclick="apriPopupCancellaTurno( ${turno.idT}, '${turno.data}','${turno.nome} ${turno.cognome}');"></i>
+                        <i class="bi bi-pencil-square" onclick="apriPopupModificaTurno( ${turno.idT});"></i>
+                        `
                         :""
                     }
                 </p>
@@ -221,21 +221,90 @@ function generaBtnTurno(dataStr, nomeUtente) {
 function getDateFormatted(dateStr) {
     return dateStr.slice(0, 10);
 }
-//byprati: funzione richiamata sul click sulla matita se utente che insersce i turni è admin e vuole modiifcare orario turno o cancellare turno
-function apriPopupModificaTurno(idTurnoDaModificare) {
-    alert('sono in popupModificaTurno');
-    $.ajax({
+//byPrati NEW: si richiama questa funzione alla pressione della X per la cancellazione del turno!!! 
+//bypratiOLD: funzione richiamata sul click sulla matita se utente che insersce i turni è admin e vuole modiifcare orario turno o cancellare turno
+function apriPopupCancellaTurno(idTurnoDaModificare, data, noCoUtente) {
+    if (confirm(`sei sicuro di voler cancellare il turno ${idTurnoDaModificare.toString()} di ${noCoUtente} del giorno ${data}??`))
+    {//ok
+        $.ajax({
+                url: 'api/cancellaTurno',
+                method: 'POST',
+                async: false,
+                dataType: "json",
+                data: { idTurnoUtente: idTurnoDaModificare },
+                success: function(response) {
+                    //$('#popupContainer').html(response.html);
+                    //console.log(responde.html);
+                    // da fare dentro al php if(response.utenteIsAdmin) caricaUtenti();
+                    //$('#popupModificaTurno').modal('show');
+                    if (response.numRow==1){
+                        alert("Cancellazione effettuata con successo");
+                        location.reload(true);//ricarica la pagina attuale
+                    } 
+                    else
+                        alert("Errori nella cancellazione:"+response.error);
+                },
+            error:function(xhr, status, error) {
+                    console.error("Errore AJAX:", xhr.responseText);
+                    console.error("Errore AJAX:", status);
+                    console.error("Errore AJAX:", error);
+                    alert("Errore durante las cancellazione del turno.");
+                }
+            });
+            
+    }
+    else {
+        alert('Cancellazione annullata!!');
+    }
+}
+
+function apriPopupModificaTurno(idT) {
+    if (confirm('sei sicuro di voler modificare il turno'+idT.toString()+' ??'))// di '+datiTurno.nome +' '+datiTurno.cognome +' del giorno '+datiTurno.data+'??'))
+    {//ok
+    /*    $.ajax({
+                url: 'api/cancellaTurno',
+                method: 'POST',
+                async: false,
+                dataType: "json",
+                data: { idTurnoUtente: idTurnoDaModificare },
+                success: function(response) {
+                    //$('#popupContainer').html(response.html);
+                    //console.log(responde.html);
+                    // da fare dentro al php if(response.utenteIsAdmin) caricaUtenti();
+                    //$('#popupModificaTurno').modal('show');
+                    if (response.numRow==1){
+                        alert("Cancellazione effettuata con successo");
+                        location.reload(true);//ricarica la pagina attuale
+                    } 
+                    else
+                        alert("Errori nella cancellazione:"+response.error);
+                },
+            error:function(xhr, status, error) {
+                    console.error("Errore AJAX:", xhr.responseText);
+                    console.error("Errore AJAX:", status);
+                    console.error("Errore AJAX:", error);
+                    alert("Errore durante las cancellazione del turno.");
+                }
+            });
+            */
+    }
+    else {
+        alert('Modifica annullata!!');
+    }
+ /*   $.ajax({
         url: './components/SimpleComponent/popupModificaTurno.php',
         method: 'POST',
         async: false,
         dataType: 'json',
-        data: { idTurno118: idTurnoDaModificare },
+        data: { idTurnoUtente: idTurnoDaModificare },
         success: function(response) {
             $('#popupContainer').html(response.html);
+            console.log(responde.html);
             // da fare dentro al php if(response.utenteIsAdmin) caricaUtenti();
             $('#popupModificaTurno').modal('show');
         }
     });
 
     }
-
+*/
+}
