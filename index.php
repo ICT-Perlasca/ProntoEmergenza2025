@@ -5,7 +5,8 @@ $pageFile = "./pages/{$route}.php";
 if (file_exists($pageFile)) {
     include $pageFile;
 } else {
-    http_response_code(404);
-    include "./pages/underConstruction.php";
+   // echo "-route:".$route."-pageFile".$pageFile."<br>";
+   http_response_code(404);
+   include "./pages/underConstruction.php";
 }
 ?>

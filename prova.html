@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
@@ -23,8 +23,8 @@
 <body>
 
 <table id="miaTabella">
-  <!-- Verrà popolata da jQuery -->
-</table>
+ Verrà popolata da jQuery -->
+<!--</table>
 <div id="myTable">
 
 </div>
@@ -105,4 +105,133 @@ generaTabella('2025-08-10');
 </script>
 
 </body>
+</html>
+-->
+<html>
+<head>
+                <base href='./../../' />
+                <link href='./public/css/bootstrap.min.css' rel='stylesheet'/>
+                <link rel='icon' type='image/x-icon' href='/prontoemergenza2025/public/images/favicon.png'>
+                <script src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js'></script>
+                <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js'></script>
+                <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+                <link href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css' rel='stylesheet'>
+            </head>        <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="navbar-brand container-fluid">
+                <img src="./public/images/logo-ambulanza.png"  class="" style="height: 20%;width:20%;"/>
+            </div>
+            <button 
+                class="navbar-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav" 
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                <a class="nav-link" href="home">Home</a>
+            </li><li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" 
+                    href="bacheca" 
+                    id="headerDropdown1" 
+                    role="button" 
+                    data-bs-toggle="dropdown"
+                >
+                    Bacheca
+                </a>
+                <div class="dropdown-menu" aria-labelledby="headerDropdown1"><a class="dropdown-item" href="bacheca/elenco">Elenco comunicazioni</a><a class="dropdown-item" href="bacheca/inserimentoComunicazioni">Inserimento comunicazione</a>
+                </div>
+            </li><li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" 
+                    href="turni" 
+                    id="headerDropdown2" 
+                    role="button" 
+                    data-bs-toggle="dropdown"
+                >
+                    Turni
+                </a>
+                <div class="dropdown-menu" aria-labelledby="headerDropdown2"><a class="dropdown-item" href="turni/utente">Elenco turni di un utente</a><a class="dropdown-item" href="turni/visualizza-disponibilita">Visualizza disponibilità</a><a class="dropdown-item" href="turni/calendar">Inserimento turno</a><a class="dropdown-item" href="turni/scoperti">Turni scoperti</a><a class="dropdown-item" href="turni/fissi">Turni fissi</a><a class="dropdown-item" href="turni/convalida">Convalida turni</a><a class="dropdown-item" href="turni/mese">Scelta mese</a><a class="dropdown-item" href="turni/disponibilita">Inserimento disponibilità</a>
+                </div>
+            </li><li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" 
+                    href="utenti" 
+                    id="headerDropdown3" 
+                    role="button" 
+                    data-bs-toggle="dropdown"
+                >
+                    Utenti
+                </a>
+                <div class="dropdown-menu" aria-labelledby="headerDropdown3"><a class="dropdown-item" href="utenti/elenco">Elenco utenti</a><a class="dropdown-item" href="utenti/aggiunta">Aggiunta utente</a><a class="dropdown-item" href="utenti/vidimazione">Vidimazione utente</a><a class="dropdown-item" href="utenti/assenze">Inserimento assenze</a><a class="dropdown-item" href="utenti/ore">Conteggio ore</a><a class="dropdown-item" href="utenti/permessi">Visualizzazione permessi</a><a class="dropdown-item" href="utenti/straordinarie">Visualizzazione straordinarie</a><a class="dropdown-item" href="utenti/ore-minime">Modifica ore minime</a>
+                </div>
+            </li><li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" 
+                    href="report" 
+                    id="headerDropdown4" 
+                    role="button" 
+                    data-bs-toggle="dropdown"
+                >
+                    Reportistica
+                </a>
+                <div class="dropdown-menu" aria-labelledby="headerDropdown4"><a class="dropdown-item" href="report/turni-utenti">Turni utente</a><a class="dropdown-item" href="report/turni-convalidati">Turni convalidati</a><a class="dropdown-item" href="report/turni">Storico turni</a><a class="dropdown-item" href="report/compleanni">Compleanni nel mese</a><a class="dropdown-item" href="report/eventi">Eventi</a>
+                </div>
+            </li><li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" 
+                    href="assistenza" 
+                    id="headerDropdown5" 
+                    role="button" 
+                    data-bs-toggle="dropdown"
+                >
+                    Assistenza
+                </a>
+                <div class="dropdown-menu" aria-labelledby="headerDropdown5"><a class="dropdown-item" href="assistenza/eventonew">Nuovo evento</a><a class="dropdown-item" href="assistenza/aggiunta-personale">aggiunta personale</a><a class="dropdown-item" href="assistenza/elenco-eventi">elenco eventi programmati</a><a class="dropdown-item" href="assistenza/storico-eventi">storico eventi</a>
+                </div>
+            </li><li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" 
+                    href="mezzi" 
+                    id="headerDropdown6" 
+                    role="button" 
+                    data-bs-toggle="dropdown"
+                >
+                    Mezzi
+                </a>
+                <div class="dropdown-menu" aria-labelledby="headerDropdown6"><a class="dropdown-item" href="mezzi/elenco">Elenco mezzi</a><a class="dropdown-item" href="mezzi/aggiunta">Nuovo mezzo</a>
+                </div>
+            </li>
+                </ul>
+
+                <ul class="navbar-nav pl-md-3">
+                    <li class="nav-item dropdown d-flex justify-content-end">
+                        <div class="nav-link dropdown-toggle d-flex align-items-center" 
+                            id="userDropdown" 
+                            role="button" data-bs-toggle="dropdown"
+                        >
+                            <span class="mx-2">
+                                Rossi Mario
+                            </span>
+                            <img src="./uploads/images/bici.jpg" alt="Avatar" class="rounded-circle" width="40" height="40">
+                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="utenti/profiloUtente">Profilo</a></li>
+                            <li><a class="dropdown-item" href="#">Impostazioni</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="logout">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav><img src="/prontoemergenza2025/public/images/underConstruction.jpeg" class="img-fluid rounded d-block mx-auto" alt="Under Construction.......">
+            <footer class="bg-dark text-white text-center py-3">
+                <div class="container">
+                    <p class="mb-0 text-center">
+                    Pronto Emergenza - Organizzazione di Volontariato<br>
+                    Loc.tà Fondi, 1, 25071 Agnosine (BS)<br>
+                    Tel. 0365/826210 - Fax: 0365/1871098<br>
+                    C.F. 96022920175</p>
+                    <div class="mt-2 d-flex justify-content-center gap-3 flex-wrap"><a href=https://www.prontoemergenza.it/ class="text-white me-2"  target=_blank><i class="fas fa-globe"></i></a>&nbsp;<a href=mailto:info@prontoemergenza.it class="text-white me-2"  target=_blank><i class="fas fa-envelope"></i></a>&nbsp;<a href=https://www.prontoemergenza.it/contatti/ class="text-white me-2"  target=_blank><i class="fas fa-phone"></i></a>&nbsp;<a href=https://www.prontoemergenza.it/servizi/ class="text-white me-2"  target=_blank><i class="fas fa-briefcase-medical"></i></a>&nbsp;<a href=https://www.facebook.com/prontoemergenzaorganizzazionedivolontariato/ class="text-white me-2"  target=_blank><i class="fab fa-facebook"></i></a>&nbsp;<a href=https://www.instagram.com/pronto_emergenza_odv/ class="text-white me-2"  target=_blank><i class="fab fa-instagram"></i></a>&nbsp;<a href=https://www.tiktok.com/@prontoemergenza?_t=ZN-8vMvuRcE8vO&_r=1 class="text-white me-2"  target=_blank><i class="fab fa-instagram"></i></a>&nbsp;
+                    </div>
+                </div>
+            </footer></body>
 </html>

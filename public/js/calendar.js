@@ -261,32 +261,33 @@ function apriPopupCancellaTurno(idTurnoDaModificare, data, noCoUtente) {
 function apriPopupModificaTurno(idT) {
     if (confirm('sei sicuro di voler modificare il turno'+idT.toString()+' ??'))// di '+datiTurno.nome +' '+datiTurno.cognome +' del giorno '+datiTurno.data+'??'))
     {//ok
-    /*    $.ajax({
-                url: 'api/cancellaTurno',
+        /*byprati:
+        recupera i dati del turno tramite id con api elencoDatiTurnoSingolo
+        visualizza dialog modale
+        */
+       $.ajax({
+                url: './components/SimpleComponent/popupModificaTurno.php',
                 method: 'POST',
                 async: false,
                 dataType: "json",
-                data: { idTurnoUtente: idTurnoDaModificare },
+                data: { idTurno: idT },
                 success: function(response) {
                     //$('#popupContainer').html(response.html);
                     //console.log(responde.html);
                     // da fare dentro al php if(response.utenteIsAdmin) caricaUtenti();
                     //$('#popupModificaTurno').modal('show');
-                    if (response.numRow==1){
-                        alert("Cancellazione effettuata con successo");
-                        location.reload(true);//ricarica la pagina attuale
-                    } 
-                    else
-                        alert("Errori nella cancellazione:"+response.error);
+                    $('#popupContainer').html(response.html);
+                    $('#popupModificaTurno').modal('show');
+                        //location.reload(true);//ricarica la pagina attuale
                 },
             error:function(xhr, status, error) {
                     console.error("Errore AJAX:", xhr.responseText);
                     console.error("Errore AJAX:", status);
                     console.error("Errore AJAX:", error);
-                    alert("Errore durante las cancellazione del turno.");
+                    alert("Errore durante la visualizzazione del popup di modifica del turno.");
                 }
             });
-            */
+            
     }
     else {
         alert('Modifica annullata!!');

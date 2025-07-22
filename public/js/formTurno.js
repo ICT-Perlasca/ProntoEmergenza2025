@@ -109,3 +109,65 @@ function caricaUtenti() {
         }
     });
 }
+function ModificaTurno(form){
+    
+    let nomeUtente = form.nomeUtente.value;
+    let idTurno=form.idTurno.value;
+    let dataTurno = form.dataTurno.value;
+    let fasciaOraria = form.fasciaOraria.value;
+    let oraInizioEffettiva = form.oraInizioEffettiva.value;
+    let oraFineEffettiva = form.oraFineEffettiva.value;
+    let ruolo = form.ruolo.value;
+    let note = form.note.value;
+
+    let idUtente;
+    if (document.getElementById('idUtente'))
+        idUtente=document.getElementById('idUtente').value;
+    else
+        idUtente=document.getElementById('selectUtenti').value;
+    console.log("idUtente:",idUtente);
+    console.log("Nome Utente:", nomeUtente);
+    console.log("Data Turno:", dataTurno); 
+    console.log("Fascia Oraria:", fasciaOraria);
+    console.log("Ora Inizio Effettiva:", oraInizioEffettiva);
+    console.log("Ora Fine Effettiva:", oraFineEffettiva);
+    console.log("Ruolo:", ruolo);
+    console.log("Note:", note);
+
+    $.ajax({
+        url: 'api/salvaTurno',
+        method: 'POST',
+        async: false,
+        data: { idUtente: idUtente, dataTurno: dataTurno, fasciaOraria: fasciaOraria, oraInizioEffettiva: oraInizioEffettiva, oraFineEffettiva: oraFineEffettiva, ruolo: ruolo, note: note },
+        dataType: "json", 
+        success: function(risposta) {
+            console.log("Risposta AJAX:", risposta);
+            if (risposta.success) {
+                alert(risposta.messaggio || "Turno salvato!");
+                $('#popupTurno').modal('hide');
+               // $('#popupTurno').on("hidden", function() {
+                    //location.reload();
+                  //  handleCalendareDateClick(new Date(dataTurno));
+                //});
+                $('#popupTurno').remove();
+                //byprati calendar.dateclick??? a ggiornare pagina del turno inserito???
+                $('#dayCal').html('');//cancella calendario di 1 giorno
+                const fakeInfo = {
+                    dateStr: dataTurno,
+                    date: new Date(dataTurno)
+                };
+                handleCalendarDateClick(fakeInfo);//ricostruirsce calendario di un giorno
+
+            }else{
+                alert(risposta.errore || "Turno non salvato!");
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error("Errore AJAX:", xhr.responseText);
+            console.error("Errore AJAX:", status);
+            console.error("Errore AJAX:", error);
+            alert("Errore durante il salvataggio del turno.");
+        }
+    });
+}
+}
