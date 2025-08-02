@@ -35,7 +35,7 @@
             <div class="modal-body">
                 <form id="formModificaTurnoUtente" name='formModificaTurno'>
                     <input type="hidden" name="dataTurno" value="<?php echo htmlspecialchars($datiTurno[0]['data']); ?>">
-                    <input type="hidden" name ='idTurno' value="<?php echo $datiTurno[0]['idTurno'];?>">
+                    <input type="hidden" name ='idTurno' value="<?php echo $datiTurno[0]['idT'];?>">
                     <div class="mb-12">
                         <label class="form-label">Nome utente</label>
                         <select class="form-select" name="nomeUtente" id="selectUtenti" required>

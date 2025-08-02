@@ -42,6 +42,10 @@ switch ($route) {
         require_once ("./api/salvaTurno.php");
         echo json_encode(API_SalvaTurno($_GET, $_POST, $_SESSION)); 
         break;
+    case 'api/API_modificaTurno':
+        require_once ("./api/API_modificaTurno.php");
+        echo json_encode(API_modificaTurno($_GET, $_POST, $_SESSION)); 
+        break;
     case 'api/cancellaTurno':
         require_once ("./api/API_cancellaTurno.php");
         echo json_encode(API_cancellaTurno($_GET, $_POST, $_SESSION)); 

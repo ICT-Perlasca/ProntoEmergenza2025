@@ -112,7 +112,7 @@ function caricaUtenti() {
 function ModificaTurno(form){
     
     let nomeUtente = form.nomeUtente.value;
-    let idTurno=form.idTurno.value;
+    let idTurnoUtente=form.idTurno.value;
     let dataTurno = form.dataTurno.value;
     let fasciaOraria = form.fasciaOraria.value;
     let oraInizioEffettiva = form.oraInizioEffettiva.value;
@@ -135,15 +135,15 @@ function ModificaTurno(form){
     console.log("Note:", note);
 
     $.ajax({
-        url: 'api/salvaTurno',
+        url: 'api/API_modificaTurno',
         method: 'POST',
         async: false,
-        data: { idUtente: idUtente, dataTurno: dataTurno, fasciaOraria: fasciaOraria, oraInizioEffettiva: oraInizioEffettiva, oraFineEffettiva: oraFineEffettiva, ruolo: ruolo, note: note },
+        data: { idTurnoUtente:idTurnoUtente, idUtente: idUtente, dataTurno: dataTurno, fasciaOraria: fasciaOraria, oraInizioEffettiva: oraInizioEffettiva, oraFineEffettiva: oraFineEffettiva, ruolo: ruolo, note: note },
         dataType: "json", 
         success: function(risposta) {
             console.log("Risposta AJAX:", risposta);
             if (risposta.success) {
-                alert(risposta.messaggio || "Turno salvato!");
+                alert("Turno modificato!");
                 $('#popupTurno').modal('hide');
                // $('#popupTurno').on("hidden", function() {
                     //location.reload();
@@ -159,15 +159,14 @@ function ModificaTurno(form){
                 handleCalendarDateClick(fakeInfo);//ricostruirsce calendario di un giorno
 
             }else{
-                alert(risposta.errore || "Turno non salvato!");
+                alert(risposta.errore || "Turno non modificato!");
             }
         },
         error: function(xhr, status, error) {
             console.error("Errore AJAX:", xhr.responseText);
             console.error("Errore AJAX:", status);
             console.error("Errore AJAX:", error);
-            alert("Errore durante il salvataggio del turno.");
+            alert("Errore durante la modifica del turno.");
         }
     });
-}
 }
