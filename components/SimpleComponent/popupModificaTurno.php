@@ -1,26 +1,27 @@
 <?php
-//byprati: questo file viene richiamato SOLO se utente è admin!!! (al click sulla matita accanto al nome del volontario/lavoratorio inserito nel turno da modificare)
-//l'html viene restituito come API (nel valore html dell'array response) e verrà visualizzato dallo scrito js che lo ha richiamato (apripopupModificaTurno in calendar.js)
+//byprati: questo file viene richiamato se utente è admin oppure è user e sta modificando uno dei suoi stessi turni!!! (al click sulla matita accanto al nome del volontario/lavoratorio inserito nel turno da modificare)
+//l'html viene restituito come API (nel valore html dell'array response) e verrà visualizzato dallo scritp js che lo ha richiamato (apripopupModificaTurno in calendar.js)
    
-/*
-    // Ruolo dell'utente corrente: sicuramente admin
-    $ruoloUtente = 'admin'; //$_SESSION['tipoUtente'] ?? 'user'; 
-   
- 
-    require_once ('./api/elencoDatiTurnoSingolo.php');
-    $datiTurno=API_elencoDatiTurnoSingolo([],[$idTurnoDaModificare],[]);
-    //byprati:non dovrebbe essere vuoto!!!!
-  */
+
     require_once('../../api/API_elencoDatiTurnoSingolo.php');
     require_once('../../api/API_elencoUtentiRuolo.php');
     session_start();
     $idT = $_POST['idTurno'];
     
     // Ruolo dell'utente corrente
-    $ruoloUtente = 'admin';//$_SESSION['tipoUtente'] ?? 'user'; 
+    $ruoloUtente = $_SESSION['tipoUtente']; 
     $datiTurno=API_elencoDatiTurnoSingolo([],['idTurno'=>$idT],$_SESSION);
     //print_r($datiTurno);
-    $utenti=API_elencoUtentiRuolo([],['ruolo'=>$datiTurno[0]['ruolo']],$_SESSION);
+    //byprati 31-08: se sono admin devo ottenere elenco degli utenti con il ruolo che si sta modificando
+    // se sono user: negli utenti deve comparire solo nome e id dell'utente loggato
+    if ($ruoloUtente==='admin')
+        $utenti=API_elencoUtentiRuolo([],['ruolo'=>$datiTurno[0]['ruolo']],$_SESSION);
+    else{
+        $utenti[0]['idUtente']=$_SESSION['idUtente'];
+        $utenti[0]['cognome']=$_SESSION['cognome'];
+        $utenti[0]['nome']=$_SESSION['nome'];
+    }
+
     //si permette di modificare nome della persona, orario di inzio e di fine ma NON il ruolo!!!
    ob_start();
 
@@ -38,7 +39,7 @@
                     <input type="hidden" name ='idTurno' value="<?php echo $datiTurno[0]['idT'];?>">
                     <div class="mb-12">
                         <label class="form-label">Nome utente</label>
-                        <select class="form-select" name="nomeUtente" id="selectUtenti" required>
+                        <select class="form-select" name="nomeUtente" id="selectUtenti" <?php echo ($ruoloUtente==='admin')?'required':'disabled';?>>
                             <!--<option value="">-- Seleziona utente </option>-->
                             <?php
                             foreach($utenti as $ut){
@@ -71,9 +72,11 @@
                    
                     <div class="mb-2">
                         <label class="form-label">Ruolo</label>
+                        <!-- byprati: nella Modifica del >Turno si visualizza solo il ruolo attuale, sena possibilitàdi modifica (si modifica la persiona su quel ruolo)
+                        -->
                         <select name="ruolo" class="form-select" disabled>
-                            <option value="autista" <?php echo $datiTurno[0]['ruolo']==='autista'?'selected':'';?>>Autista</option>
-                            <option value="soccorritore" <?php echo $datiTurno[0]['ruolo']==='soccorritore'?'selected':'';?>>Soccorritore</option>
+                            <option value=<?php echo $datiTurno[0]['idRuolo'];?>> <?php echo $datiTurno[0]['ruolo'];?></option>
+<!--                          <option value="soccorritore" <?php //echo $datiTurno[0]['ruolo']==='soccorritore'?'selected':'';?>>Soccorritore</option>-->
                         </select>
                     </div>
 

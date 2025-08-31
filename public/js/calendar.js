@@ -24,7 +24,7 @@ function turniData(dataStr) {
 
 
 
-function generaTabella(dataStr, turni, tipoUtenteLoggato) {
+function generaTabella(dataStr, turni, tipoUtenteLoggato,idUtenteLoggato) {
 
     let tableHTML = `
         <div id='tabellaOrari' class="table-responsive" style="height: 75vh; display: flex; flex-direction: column; overflow: visible;">
@@ -33,7 +33,7 @@ function generaTabella(dataStr, turni, tipoUtenteLoggato) {
                 <thead class="thead-dark">
                     <tr>
                         <th class="text-center align-middle" style="font-size: 1.5rem; width: 20%;">Time</th>
-                        <th class="text-center align-middle" colspan="2" style="font-size: 1.5rem;">Soccorritore</th>
+                        <th class="text-center align-middle" colspan="2" style="font-size: 1.5rem;">Soccorritore/Istruttore</th>
                         <th class="text-center align-middle" style="font-size: 1.5rem;">Autista</th>
                         <th class="text-center align-middle" style="font-size: 1.5rem;">Corsista</th>
                     </tr>
@@ -114,7 +114,7 @@ function generaTabella(dataStr, turni, tipoUtenteLoggato) {
         // Determine the role column
         let columnClass = ""; // Class for the column
 
-        if (turno.ruolo.toLowerCase() === "soccorritore") {
+        if (turno.ruolo.toLowerCase() === "soccorritore" || turno.ruolo.toLowerCase()==="istruttore") {
             // Check if the first Soccorritore column has already been replaced
             if (turniBase[fascia][`soccorritore-1`] == false) {
                 turniBase[fascia][`soccorritore-1`] = true; // Mark the first column as filled
@@ -148,7 +148,7 @@ function generaTabella(dataStr, turni, tipoUtenteLoggato) {
                     ${turno.nome} ${turno.cognome}
 
                     ${  //se utente è admin allora compare la "i" per le info se esiste il campo note compilato
-                        (turno.testoNota && tipoUtenteLoggato==='admin')? `
+                        (turno.testoNota && (tipoUtenteLoggato==='admin'|| (idUtenteLoggato===turno.idUtente)))? `
                             <i class="bi bi-info-circle-fill text-info" style="cursor: pointer;"></i>
                         ` : ""
                     
@@ -157,7 +157,7 @@ function generaTabella(dataStr, turni, tipoUtenteLoggato) {
                     ${
                          //se utente è admin allora compare la matita per poter modificare il turno dell'utente o cancellarlo
                         
-                        tipoUtenteLoggato==='admin'?
+                        tipoUtenteLoggato==='admin' || (idUtenteLoggato===turno.idUtente)?
                         `<br><i class="bi bi-x-square" onclick="apriPopupCancellaTurno( ${turno.idT}, '${turno.data}','${turno.nome} ${turno.cognome}');"></i>
                         <i class="bi bi-pencil-square" onclick="apriPopupModificaTurno( ${turno.idT});"></i>
                         `
@@ -184,9 +184,10 @@ function generaTabella(dataStr, turni, tipoUtenteLoggato) {
         }
 
             // Inizializza i popover
+        if (turno.testoNota && (tipoUtenteLoggato==='admin'|| (idUtenteLoggato===turno.idUtente))){
             const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
             const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
-
+        }
             /*
     function getTurni(turni, oraInizio, oraFine, ruolo, index) {
         const turniFiltrati = turni.filter(

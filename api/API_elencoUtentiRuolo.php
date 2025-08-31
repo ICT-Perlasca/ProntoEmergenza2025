@@ -2,10 +2,11 @@
 require_once("../../funzioniDB.php");
 function API_elencoUtentiRuolo($get, $post, $session){
   // if(!isset($post['emailUt']) || !isset($session['tipoUtente']) || $session['tipoUtente'] != "admin"){
-  //situazione di errore x cui non restituisco i dati dell'utente
-  // non sono loggato oppure (sono loggato e non sono admin e email passata e diversa da email in sessione)
+  
+  //situazione di errore x cui non restituisco i dati dell'utente: solo se non sono loggato
+  // perchè se non sono admin ma user e sono qui significa che ho già controllato di poter accedere ai ruoli degli utenti per aggiornare un turno
 
-   if (!isset($session['tipoUtente'])||(isset($session['tipoUtente']) && $session['tipoUtente']!="admin" && $email!=$session['email'])){
+   if (!isset($session['tipoUtente'])){ //||(isset($session['tipoUtente']) && $session['tipoUtente']!="admin" && $email!=$session['email'])){
         header("HTTP/1.1 403 Forbidden");
         return [];
     }

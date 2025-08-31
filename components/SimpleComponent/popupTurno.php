@@ -1,25 +1,29 @@
 <?php
+   // require_once('../../api/API_elencoUtentiRuolo.php');
+    require_once('../../api/API_elencoRuoli.php');
     session_start();
     $nomeUtente = $_POST['nomeUtente'] ?? null;
     $data = $_POST['dataTurno'] ?? null;
 
     // Ruolo dell'utente corrente
-    $ruoloUtente = $_SESSION['tipoUtente'] ?? 'user'; 
+    $tipoUtente = $_SESSION['tipoUtente'];//prati ?? 'user'; 
     //byprati: recupero id utente dalla sessione (lo metterò come campo nascosto se utente non è admin)
     $idUtente=$_SESSION['idUtente'];
     /*print_r('tipoUtente: ' . $_SESSION['tipoUtente'] );
     print_r('Ruolo utente: ' . $ruoloUtente);*/
-    ob_start();
+   
+    /* prati: elenco ruoli da visualizzare
+    chiamo API_elencoRuoli passando idutente solo se utente non è admin
+    su evento change del ruolo chiamo API che carica tutti utenti con tale ruolo nella select
+    */
+    if ($tipoUtente==='admin')
+        $ruoli=API_elencoRuoli([],[],$_SESSION);
+    else
+        $ruoli=API_elencoRuoli([],['idUtente'=>$idUtente],$_SESSION);
+
+     ob_start();
+
 ?>
-<!--
-<script>  
-    document.addEventListener('DOMContentLoaded', () => {
-        <?php if ($ruoloUtente === 'admin'): ?>
-            caricaUtenti();
-        <?php endif; ?>
-    });
-</script>
-        -->
 
 <div class="modal fade" id="popupTurno" tabindex="-1" aria-labelledby="popupTurnoLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -31,10 +35,23 @@
             <div class="modal-body">
                 <form id="formTurnoUtente" name='formInsTurno'>
                     <input type="hidden" name="dataTurno" value="<?php echo htmlspecialchars($data); ?>">
+  <!--byprati: inserire qui elenco dei ruoli che è possibile selezionare prendendoli dalla tabella ruoli del DB
+                        -->
+                    <div class="mb-2">
+                        <label class="form-label">Ruolo</label>
+                        <select name="ruolo" class="form-select" onchange="aggiornaUtenti(this.form)">
+                        <?php
+                        foreach($ruoli as $r ){
+                            echo "<option value={$r['idRuolo']}>{$r['nome']}</option>";
+                        }
+                        ?>    
+                        
+                        </select>
+                    </div>
 
                     <div class="mb-2">
                         <label class="form-label">Nome utente</label>
-                        <?php if ($ruoloUtente === 'admin'): ?>
+                        <?php if ($tipoUtente === 'admin'): ?>
                             <select class="form-select" name="nomeUtente" id="selectUtenti" required>
                                 <option value="">-- Seleziona utente --</option>
                             </select>
@@ -62,16 +79,7 @@
                         <label class="form-label">Ora fine effettiva</label>
                         <input type="time" name="oraFineEffettiva" class="form-control" value="13:00">
                     </div>
-                    <!--byprati: inserire qui elenco dei ruoli che è possibile selezionare prendendoli dalla tabella ruoli del DB
-                        -->
-                    <div class="mb-2">
-                        <label class="form-label">Ruolo</label>
-                        <select name="ruolo" class="form-select">
-                            <option value="autista">Autista</option>
-                            <option value="soccorritore">Soccorritore</option>
-                        </select>
-                    </div>
-
+                  
                     <div class="mb-2">
                         <label class="form-label">Note</label>
                         <textarea name="note" class="form-control" rows="3"></textarea>
@@ -92,8 +100,10 @@
 
     $response = [
         'html' => $html,
-        'utenteIsAdmin' => ($ruoloUtente === 'admin')
+        'utenteIsAdmin' => ($tipoUtente === 'admin')
     ];
 
     header('Content-Type: application/json');
     echo json_encode($response);
+    
+?>

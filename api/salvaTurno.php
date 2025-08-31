@@ -20,7 +20,7 @@ function API_SalvaTurno($get, $post, $session) {
         if ($oraInizioEffettiva == '') $oraInizioEffettiva = $oraInizio;
         if ($oraFineEffettiva == '') $oraFineEffettiva = $oraFine;
         
-        $ruolo = $_POST['ruolo'] ?? null; //nome del ruolo
+        $ruolo = $_POST['ruolo'] ?? null; //byprati: qui arriva id del ruolo
         $note = $_POST['note'] ?? null;
         $idUtente = $_POST['idUtente'];
 //byprati:
@@ -42,7 +42,8 @@ function API_SalvaTurno($get, $post, $session) {
         } else {
             $idTurno118 = $resTurno[0]['idTurno118'];
 
-            // 4. Trova idRuolo dal nome
+            // 4. Trova idRuolo dal nome byprati: ora arriva già id del ruolo
+            /*
             $resRuolo = db_query(
                 "SELECT idRuolo FROM ruoli WHERE LOWER(nome) = LOWER(?)",
                 [$ruolo],
@@ -53,7 +54,8 @@ function API_SalvaTurno($get, $post, $session) {
                 $response['errore'] = 'Ruolo non valido.';
             } else {
                 $idRuolo = $resRuolo[0]['idRuolo'];
-
+*/
+            $idRuolo=$ruolo;
                 // 5. Verifica che il turno non sia già occupato per quel ruolo e turno118
                 $resCheck = db_query(
                     "SELECT idTurnoUtente FROM turniutenti WHERE idTurno118 = ? AND idRuolo = ?",
@@ -80,7 +82,7 @@ function API_SalvaTurno($get, $post, $session) {
                         $response['messaggio'] = 'Turno inserito correttamente.';
                     }
                 }
-            }
+            //}
         }
     }
 

@@ -6,6 +6,20 @@ function aggiornaOra(form){
     form.oraInizioEffettiva.value=parti[0].trim();
     form.oraFineEffettiva.value=parti[1].trim();
 }
+function aggiornaUtenti(form){
+   $.ajax({
+        url: '/api/ritornaUtenti',
+        method: 'POST',
+        async: false,
+        dataType: 'json',
+        data: { ruolo: form.ruolo.value},//vien passato direttamente id del ruolo
+        success: function(response) {
+            $('#popupContainer').html(response.html);
+           //byprati: gli utenti sono caricati all'evento change del ruolo (dinamicamente) se utente è admin if(response.utenteIsAdmin) caricaUtenti();
+            $('#popupTurno').modal('show');
+        }
+    }); 
+}
 
 function apriPopupTurno(data, nomeUtente) {
     $.ajax({
@@ -15,9 +29,16 @@ function apriPopupTurno(data, nomeUtente) {
         dataType: 'json',
         data: { dataTurno: data, nomeUtente: nomeUtente },
         success: function(response) {
+            //console.log(response.html);
             $('#popupContainer').html(response.html);
-            if(response.utenteIsAdmin) caricaUtenti();
+           //byprati: gli utenti sono caricati all'evento change del ruolo (dinamicamente) se utente è admin if(response.utenteIsAdmin) caricaUtenti();
             $('#popupTurno').modal('show');
+        },
+        error: function(xhr, status, error) {
+            console.error("Errore AJAX:", xhr.responseText);
+            console.error("Errore AJAX:", status);
+            console.error("Errore AJAX:", error);
+            alert("Errore durante l'apertura del popup x inserimento Turno.");
         }
     });
 }
