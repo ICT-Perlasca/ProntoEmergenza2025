@@ -39,7 +39,8 @@
                         -->
                     <div class="mb-2">
                         <label class="form-label">Ruolo</label>
-                        <select name="ruolo" class="form-select" onchange="aggiornaUtenti(this.form)">
+                        <select name="ruolo" class="form-select" onchange="caricaUtenti(this.form)">
+                        <option value="">-- Seleziona un ruolo --</option>
                         <?php
                         foreach($ruoli as $r ){
                             echo "<option value={$r['idRuolo']}>{$r['nome']}</option>";

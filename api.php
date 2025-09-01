@@ -26,9 +26,9 @@ switch ($route) {
         require_once ("./api/GetUtente.php");
         echo json_encode(API_GetUtente($_GET, $_POST, $_SESSION));
         break;
-    case 'api/RitornaUtenti':
-        require_once ("./api/RitornaUtenti.php");
-        echo json_encode(API_RitornaUtenti($_GET, $_POST, $_SESSION));
+    case 'api/ritornaUtenti':
+        require_once ("./api/API_RitornaUtenti.php");
+        echo json_encode(API_ritornaUtenti($_GET, $_POST, $_SESSION));
         break;    
     case 'api/elencoTurniData':
         require_once ("./api/elencoTurniData.php");

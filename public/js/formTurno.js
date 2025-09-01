@@ -6,20 +6,28 @@ function aggiornaOra(form){
     form.oraInizioEffettiva.value=parti[0].trim();
     form.oraFineEffettiva.value=parti[1].trim();
 }
-function aggiornaUtenti(form){
+/*function aggiornaUtenti(form){
    $.ajax({
         url: '/api/ritornaUtenti',
         method: 'POST',
         async: false,
         dataType: 'json',
-        data: { ruolo: form.ruolo.value},//vien passato direttamente id del ruolo
+        data: { idRuolo: form.ruolo.value},//vien passato direttamente id del ruolo
         success: function(response) {
-            $('#popupContainer').html(response.html);
-           //byprati: gli utenti sono caricati all'evento change del ruolo (dinamicamente) se utente è admin if(response.utenteIsAdmin) caricaUtenti();
-            $('#popupTurno').modal('show');
+            let str="";
+
+            $('#selectUtenti').html();
+          
+          //  $('#popupTurno').modal('show');
+        },
+        error: function(xhr, status, error) {
+            console.error("Errore AJAX:", xhr.responseText);
+            console.error("Errore AJAX:", status);
+            console.error("Errore AJAX:", error);
+            alert("Errore durante la ricerca dell'elenco degli utenti sulla base del ruolo in inserimento turno (aggiornaUtenti in formTurno.js).");
         }
     }); 
-}
+}*/
 
 function apriPopupTurno(data, nomeUtente) {
     $.ajax({
@@ -110,14 +118,17 @@ fse
     });
 }
 
-function caricaUtenti() {
+function caricaUtenti(form) {
+   // alert("sonoin carica utenti!!");
     $.ajax({
-        url: 'api/RitornaUtenti',
+        url: 'api/ritornaUtenti',
         method: 'POST',
         dataType: 'json',
+        data: { idRuolo: form.ruolo.value},
         async: false,
         success: function(response) {
             const select = document.getElementById('selectUtenti');
+            select.innerHTML="";
             response.forEach(utente => {
                 const option = document.createElement('option');
                 option.value = utente.idUtente;
@@ -126,7 +137,7 @@ function caricaUtenti() {
             });
         },
         error: function(xhr, status, error) {
-            console.error('Errore durante il caricamento degli utenti:', error);
+            console.error('Errore durante il caricamento degli utenti in caricaUtenti in formTurno.js da inseirmento nuovo turno x admin:', error);
         }
     });
 }
