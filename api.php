@@ -39,8 +39,8 @@ switch ($route) {
         echo json_encode(API_elencoDatiTurnoSingolo($_GET, $_POST, $_SESSION));
         break;
     case 'api/salvaTurno':
-        require_once ("./api/salvaTurno.php");
-        echo json_encode(API_SalvaTurno($_GET, $_POST, $_SESSION)); 
+        require_once ("./api/API_salvaTurno.php");
+        echo json_encode(API_salvaTurno($_GET, $_POST, $_SESSION)); 
         break;
     case 'api/API_modificaTurno':
         require_once ("./api/API_modificaTurno.php");

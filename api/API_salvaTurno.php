@@ -1,7 +1,7 @@
 <?php
 //session_start();
 require_once "funzioniDB.php";
-function API_SalvaTurno($get, $post, $session) {
+function API_salvaTurno($get, $post, $session) {
     $response = ['success' => false];
 
     // 1. Controlla che l'utente sia loggato
@@ -20,16 +20,10 @@ function API_SalvaTurno($get, $post, $session) {
         if ($oraInizioEffettiva == '') $oraInizioEffettiva = $oraInizio;
         if ($oraFineEffettiva == '') $oraFineEffettiva = $oraFine;
         
-        $ruolo = $_POST['ruolo'] ?? null; //byprati: qui arriva id del ruolo
+        $idRuolo = $_POST['ruolo'] ?? null; //byprati: qui arriva id del ruolo
         $note = $_POST['note'] ?? null;
         $idUtente = $_POST['idUtente'];
-//byprati:
-//SELECT * FROM utentiruoli as ur inner join ruoli as r on ur.idRuolo=r.idRuolo where ur.idUtente=1 and ur.idRuolo=1 
-// se utente assume un ruolo che non gli compete, ossia autista senza esserlo oppure soccorritore senza esserlo
-// allora "errore"
-//altrimenti
-// tutti gli altri controlli già in essere
-//fse
+
         // 3. Trova idTurno118 da data e orari
         $resTurno = db_query(
             "SELECT idTurno118 FROM turni118 WHERE data = ? AND oraInizio = ? AND oraFine = ?",
@@ -42,30 +36,42 @@ function API_SalvaTurno($get, $post, $session) {
         } else {
             $idTurno118 = $resTurno[0]['idTurno118'];
 
-            // 4. Trova idRuolo dal nome byprati: ora arriva già id del ruolo
-            /*
-            $resRuolo = db_query(
-                "SELECT idRuolo FROM ruoli WHERE LOWER(nome) = LOWER(?)",
-                [$ruolo],
-                [PDO::PARAM_STR]
-            );
-
-            if (isset($resRuolo['error']) || empty($resRuolo)) {
-                $response['errore'] = 'Ruolo non valido.';
-            } else {
-                $idRuolo = $resRuolo[0]['idRuolo'];
-*/
-            $idRuolo=$ruolo;
-                // 5. Verifica che il turno non sia già occupato per quel ruolo e turno118
-                $resCheck = db_query(
+            // 4. Verifica che il turno non sia già occupato per quel ruolo e turno118
+            $resCheck = db_query(
                     "SELECT idTurnoUtente FROM turniutenti WHERE idTurno118 = ? AND idRuolo = ?",
                     [$idTurno118, $idRuolo],
                     [PDO::PARAM_INT, PDO::PARAM_INT]
-                );
+            );
 
-                if (!empty($resCheck) && count($resCheck) >= 2) {
+            if (!empty($resCheck) && count($resCheck) >= 2) {
                     $response['errore'] = 'Turno già occupato per questo ruolo.';
-                } else {
+            } else {
+                    //5. verifica se sto inserendo corsista e NON esiste già istruttore
+                    $insert=false;
+                    //ritrova idRuolo associato a corsista
+                    $idCorsista=db_query("select idRuolo from ruoli where nome='corsista'",[],[]);
+                    if ($idCorsista[0]['idRuolo']==$idRuolo){
+                        //se esiste un instruttore nel turno OK altrimenti NON si può inserire il turno
+                        $checkIstruttore=db_query(
+                            "select * from (((turni118 as t118 inner join turniutenti as tu on t118.idTurno118=tu.idTurno118) 
+                                             inner join utenti as u on tu.idUtente=u.idUtente) 
+                                             inner join utentiruoli as ur on u.idUtente=ur.idUtente)
+                                             inner join ruoli as r on ur.idRuolo=r.idRuolo
+                                        where r.nome='istruttore' and t118.idTurno118=?",
+                            [ $idTurno118],
+                            [PDO::PARAM_INT]
+                        );
+                        if (!empty($checkIstruttore) && count($checkIstruttore) >= 1) 
+                            $insert=true;
+                        else
+                            $insert=false; //errore causa mancanza di un istruttore!!
+                    } else {
+                        $insert=true;//posso inserire perchè non è un corsista ed ho già superato gli altri controlli
+                    }
+                   if ($insert==false) {//manca istruttore nel turno
+                        $response['errore'] = 'Errore durante inserimento: non è possibile inserire il corsista perchè manca un istruttore nel turno!!';
+                   }
+                   else{ //esiste istruttore se corsista, oppure non si sta inserendo un corsista
                     // 6. Inserisci il turno utente
                     $resInsert = db_query(
                         "INSERT INTO turniutenti 
@@ -81,6 +87,7 @@ function API_SalvaTurno($get, $post, $session) {
                         $response['success'] = true;
                         $response['messaggio'] = 'Turno inserito correttamente.';
                     }
+                   }
                 }
             //}
         }
