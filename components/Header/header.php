@@ -108,7 +108,7 @@ function _adminLinks(){
             "title" => "Turni",
             "sub" => [
                 [
-                    "url" => "turni/utente",
+                    "url" => "turni/turni-utente",
                     "title" => "Elenco turni di un utente"
                 ],
                 [
@@ -132,12 +132,20 @@ function _adminLinks(){
                     "title" => "Convalida turni"
                 ],
                 [
+                    "url" => "turni/turni-convalidati",
+                    "title" => "Elenco turni convalidati"
+                ],
+                [
                     "url" => "turni/mese",
                     "title" => "Scelta mese"
                 ],
                 [
                     "url" => "turni/disponibilita",
                     "title" => "Inserimento disponibilità"
+                ],
+                [
+                    "url" =>"turni/storicoTurni",
+                    "title" => "Storico turni"
                 ]
             ]
         ],
@@ -166,8 +174,8 @@ function _adminLinks(){
                     "title" => "Conteggio ore"
                 ],
                 [
-                    "url" => "utenti/permessi",
-                    "title" => "Visualizzazione permessi"
+                    "url" => "utenti/turni-convalidati-utente",
+                    "title" => "Visualizzazione turni convalidati di un utente"
                 ],
                 [
                     "url" => "utenti/straordinarie",
@@ -176,32 +184,10 @@ function _adminLinks(){
                 [
                     "url" => "utenti/ore-minime",
                     "title" => "Modifica ore minime"
-                ]
-            ]
-        ],
-        [
-            "url" => "report",
-            "title" => "Reportistica",
-            "sub" => [
-                [
-                    "url" => "report/turni-utenti",
-                    "title" => "Turni utente"
                 ],
                 [
-                    "url" => "report/turni-convalidati",
-                    "title" => "Turni convalidati"
-                ],
-                [
-                    "url" => "report/turni",
-                    "title" => "Storico turni"
-                ],
-                [
-                    "url" => "report/compleanni",
+                    "url" => "utenti/compleanni",
                     "title" => "Compleanni nel mese"
-                ],
-                [
-                    "url" => "report/eventi",
-                    "title" => "Eventi"
                 ]
             ]
         ],
@@ -222,7 +208,7 @@ function _adminLinks(){
                     "title" => "elenco eventi programmati"
                 ],
                 [
-                    "url" => "assistenza/storico-eventi",
+                    "url" => "assistenza/storicoEventi",
                     "title" => "storico eventi"
                 ]
             ]
