@@ -1,10 +1,11 @@
 /*file contenente le funzioni ajax per le richieste dei turni convalidati
 Percorso: ProntoEmergenza2025/public/js
 */
+var array; // byprati: resa globale percè il suo contenuto caricato in GetTurniMese deve essere visibile anche in RispostaGetTurniMese
 function GetTurniMese(form){
 	let tipo=form.tipo.value;
 	let meseAnno=form.meseAnno.value;
-	let array=meseAnno.split('-');
+	array=meseAnno.split('-');
 	const conn= new XMLHttpRequest();
 	conn.open("POST","./api/API_ElencoTurniConvalidatiMensile");
 	conn.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -21,10 +22,14 @@ function rispostaGetTurniMesi(xhttp){
 	}else if(risposta==null){
 		document.getElementById('tableTurni').innerHTML="ERRORE di connessione al database";
 	}else{
-		document.getElementById('hiddenJson').value=xhttp.responseText;
+		//document.getElementById('hiddenJson').value=xhttp.responseText;
 //		let str="<nav><button><i class='bi bi-filetype-xml'></i></button><button><i class='bi bi-file-pdf'></i></button></nav><br><br><table border=1 class=table><tr><th>Data</th><th>Ora Inizio</th><th>Ora Fine</th><th>Nome</th><th>Cognome</th><th>Ruolo</th></tr>";
-		let str=`<nav><button class="btn" onclick="creaExcel('hiddenJson','Elenco Turni Convalidati in');"><img src="./public/images/excel-48.png"></button><button class="btn"><img src="./public/images/pdf-50.png"></button></nav><br><br><table border=1 class=table><tr><th>Data</th><th>Ora Inizio</th><th>Ora Fine</th><th>Nome</th><th>Cognome</th><th>Ruolo</th></tr>`;
-
+		let str="<form name=frmBottoniApp method=POST action=elencoApp>";
+		str+="<input type=hidden name=json value='"+xhttp.response+"'>";
+        str+="<input type=hidden name=title value='Elenco turni convalidati'>";
+		str+=`<nav><button type=submit class="btn" name=excel><img src="./public/images/excel-48.png"></button><button class="btn" type=submit name=pdf><img src="./public/images/pdf-50.png"></button></nav>`;
+//		str+=`<nav><button class="btn" onclick="creaExcel('hiddenJson','Elenco Turni Convalidati in');"><img src="./public/images/excel-48.png"></button><button class="btn"><img src="./public/images/pdf-50.png"></button></nav><br><br><table border=1 class=table><tr><th>Data</th><th>Ora Inizio</th><th>Ora Fine</th><th>Nome</th><th>Cognome</th><th>Ruolo</th></tr>`;
+		str+="</form><br><br><table border=1 class=table><tr><th>Data</th><th>Ora Inizio</th><th>Ora Fine</th><th>Nome</th><th>Cognome</th><th>Ruolo</th></tr>";
 		for(let i=0;i<risposta.length; i++){
 			str=str+"<tr>";
 			str=str+"<td>"+risposta[i]['data']+"</td>";
@@ -82,11 +87,11 @@ function getTurniMeseUtente(form){
 	}
 	conn.send("tipo="+tipo+"&year="+array[0]+"&month="+array[1]+"&nome="+arrayutente[0]+"&cognome="+arrayutente[1]);
 }
-
+/*
 function creaExcel(idHiddenJson,titolo){
 	let strJson=document.getElementById(idHiddenJson).value;
 //	alert("chiamata di CreaExcel con questi Dati:--->"+strJson+"<------>"+titolo);
-/*	 $.ajax({
+	 $.ajax({
                 url: './api/API_elaboraExcel.php',
                 method: 'POST',
                 async: false,
@@ -102,7 +107,7 @@ function creaExcel(idHiddenJson,titolo){
                     alert("Errore durante la creazione del foglio excel con elenco turni convalidati");
                 }
             });
-			*/
+			
 	$.ajax({ //byprati: preso dal sito https://www.mattepuffo.com/blog/articolo/2155-download-dei-file-tramite-ajax.html
         type: "POST",
         url: "./api/API_elaboraExcel.php",
@@ -122,4 +127,4 @@ function creaExcel(idHiddenJson,titolo){
     }).fail(function (err) {
         alert("ERRORE raber: " + err);
     });
-}
+}*/
