@@ -55,13 +55,16 @@ function DataToExcel(array $dati, string $nomeFile, string $formato) {
         header("Content-Disposition: attachment; filename={$nomeFile}.{$formato}");
         header("Content-Type: application/octet-stream");
         header("Content-Transfer-Encoding: binary");
+        header('Cache-Control: must-revalidate'); //aggiunto by prati
         header('Content-Length: ' . filesize($tmpFile));
 
         readfile($tmpFile);
         unlink($tmpFile);
-        exit;
+       // $ret['ok']='ok';
+    
 
     } catch (Exception $e) {
         die('Errore durante la generazione del file: ' . $e->getMessage());
     }
+
 }

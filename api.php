@@ -50,6 +50,10 @@ switch ($route) {
         require_once ("./api/API_cancellaTurno.php");
         echo json_encode(API_cancellaTurno($_GET, $_POST, $_SESSION)); 
         break;
+    case 'api/API_elaboraExcel':
+        require_once ("./api/API_elaboraExcel.php");
+        API_elaboraExcel($_GET, $_POST, $_SESSION); //questa funzione ritorna il file come download e non dati json
+        break;
     case 'api/API_ElencoCompleanni':
         require_once ("./api/API_ElencoCompleanni.php");
         echo json_encode(API_ElencoCompleanni($_GET, $_POST, $_SESSION));

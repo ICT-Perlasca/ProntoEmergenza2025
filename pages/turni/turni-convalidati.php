@@ -14,6 +14,7 @@
 	<html>
 	<?php 
 		echo COMP_head();	
+		
 	?>
 		<body>
 <?php
@@ -21,6 +22,7 @@
 	echo COMP_Header($_SESSION);
 ?>	
 			<script type="text/javascript" src="./public/js/scriptTurniConvalidati.js"></script>
+			 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 			<center>
 				<div class="container py-5">
 					<div class="row justify-content-center align-items-center min-vh-40">
@@ -42,6 +44,7 @@
 										</div>
 										<div class="mb-3" id=selectMeseAnno></div>
 										<input name="inserisciComunicazione" value="Ricerca Turni" type="submit" id="btnRicercaTurni" class="btn btn-primary w-50" disabled>
+										<input type=hidden id=hiddenJson value="">
 									</form>
 								</div>
 							</div>

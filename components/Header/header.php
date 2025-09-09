@@ -135,6 +135,10 @@ function _adminLinks(){
                     "url" => "turni/turni-convalidati",
                     "title" => "Elenco turni convalidati"
                 ],
+                 [
+                    "url" => "fake_test_excel",
+                    "title" => "Fake-Elenco turni convalidati su excel"
+                 ],
                 [
                     "url" => "turni/mese",
                     "title" => "Scelta mese"

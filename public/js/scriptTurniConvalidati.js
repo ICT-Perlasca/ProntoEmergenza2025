@@ -21,7 +21,10 @@ function rispostaGetTurniMesi(xhttp){
 	}else if(risposta==null){
 		document.getElementById('tableTurni').innerHTML="ERRORE di connessione al database";
 	}else{
-		let str="<nav><button><i class='bi bi-filetype-xml'></i></button><button><i class='bi bi-file-pdf'></i></button></nav><br><br><table border=1 class=table><tr><th>Data</th><th>Ora Inizio</th><th>Ora Fine</th><th>Nome</th><th>Cognome</th><th>Ruolo</th></tr>";
+		document.getElementById('hiddenJson').value=xhttp.responseText;
+//		let str="<nav><button><i class='bi bi-filetype-xml'></i></button><button><i class='bi bi-file-pdf'></i></button></nav><br><br><table border=1 class=table><tr><th>Data</th><th>Ora Inizio</th><th>Ora Fine</th><th>Nome</th><th>Cognome</th><th>Ruolo</th></tr>";
+		let str=`<nav><button class="btn" onclick="creaExcel('hiddenJson','Elenco Turni Convalidati in');"><img src="./public/images/excel-48.png"></button><button class="btn"><img src="./public/images/pdf-50.png"></button></nav><br><br><table border=1 class=table><tr><th>Data</th><th>Ora Inizio</th><th>Ora Fine</th><th>Nome</th><th>Cognome</th><th>Ruolo</th></tr>`;
+
 		for(let i=0;i<risposta.length; i++){
 			str=str+"<tr>";
 			str=str+"<td>"+risposta[i]['data']+"</td>";
@@ -78,4 +81,45 @@ function getTurniMeseUtente(form){
 		rispostaGetTurniMesi(this);
 	}
 	conn.send("tipo="+tipo+"&year="+array[0]+"&month="+array[1]+"&nome="+arrayutente[0]+"&cognome="+arrayutente[1]);
+}
+
+function creaExcel(idHiddenJson,titolo){
+	let strJson=document.getElementById(idHiddenJson).value;
+//	alert("chiamata di CreaExcel con questi Dati:--->"+strJson+"<------>"+titolo);
+/*	 $.ajax({
+                url: './api/API_elaboraExcel.php',
+                method: 'POST',
+                async: false,
+                dataType: "json",
+                data: { json: strJson,tit: titolo },
+                success: function(response) {
+                  
+                },
+            error:function(xhr, status, error) {
+                    console.error("Errore AJAX:", xhr.responseText);
+                    console.error("Errore AJAX:", status);
+                    console.error("Errore AJAX:", error);
+                    alert("Errore durante la creazione del foglio excel con elenco turni convalidati");
+                }
+            });
+			*/
+	$.ajax({ //byprati: preso dal sito https://www.mattepuffo.com/blog/articolo/2155-download-dei-file-tramite-ajax.html
+        type: "POST",
+        url: "./api/API_elaboraExcel.php",
+        headers: {
+            Accept: 'application/octet-stream',
+        }
+    }).done(function (res) {
+        const a = document.createElement('a');
+        a.style = 'display: none';
+        document.body.appendChild(a);
+        const blob = new Blob([res], {type: 'octet/stream'});
+        const url = URL.createObjectURL(blob);
+        a.href = url;
+        a.download = titolo;
+        a.click();
+        URL.revokeObjectURL(url);
+    }).fail(function (err) {
+        alert("ERRORE raber: " + err);
+    });
 }
