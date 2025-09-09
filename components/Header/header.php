@@ -205,15 +205,15 @@ function _adminLinks(){
                 ],
                 [
                     "url" => "assistenza/aggiunta-personale",
-                    "title" => "aggiunta personale"
+                    "title" => "Aggiunta personale"
                 ],
                 [
                     "url" => "assistenza/elenco-eventi",
-                    "title" => "elenco eventi programmati"
+                    "title" => "Elenco eventi programmati"
                 ],
                 [
                     "url" => "assistenza/storicoEventi",
-                    "title" => "storico eventi"
+                    "title" => "Storico eventi"
                 ]
             ]
         ],

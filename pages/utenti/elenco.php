@@ -20,7 +20,7 @@ echo COMP_head();
     require_once ("./components/Cards/cardUtente.php");
     require_once ("./components/SimpleComponent/searchBar.php");
     require_once ("./components/Footer/footer.php");
-    require_once ("./api/RitornaUtenti.php");
+    require_once ("./api/API_ritornaUtenti.php");
 
 echo COMP_header($_SESSION);
 echo CMP_SearchBar("utenti");

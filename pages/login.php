@@ -25,7 +25,8 @@ else {
             $_SESSION['istruttore']=$ris[0]['istruttore'];
             $_SESSION['status']=$ris[0]['status'];
             $_SESSION['tipoUtente']=$ris[0]['tipoUtente'];
-            $_SESSION['immagine']=(!is_null($ris[0]['immagine'])&&$ris[0]['immagine']!="")?"./".$cartellaImmagini."/".$ris[0]['immagine']:"./public/images/avatar.jpg";
+            $_SESSION['immagine']=(!is_null($ris[0]['immagine'])&&$ris[0]['immagine']!="")?"./".$cartellaImmagini."/".$ris[0]['immagine']:"./public/images/".$imgAvatar;
+            //"./".$cartellaImmagini."/".$ris[0]['immagine']:"./public/images/avatar.jpg";
             header("location:/ProntoEmergenza2025");
         }
             

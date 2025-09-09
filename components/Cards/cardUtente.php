@@ -1,5 +1,8 @@
 <?php
+require_once("./globals.php");
 function generaCardUtente($utente) {
+  global $cartellaImmagini,$imgAvatar;
+
     if (isset($utente['idUtente'])) {
         $idUtente = htmlspecialchars($utente['idUtente']);
     } else {
@@ -31,9 +34,9 @@ function generaCardUtente($utente) {
     }
 
     if (!empty($utente['immagine'])) {
-        $img = './uploads/images/' . htmlspecialchars($utente['immagine']);
+        $img = "./".$cartellaImmagini."/".htmlspecialchars($utente['immagine']);
     } else {
-        $img = './public/images/avatar.jpg';
+        $img ="./public/images/".$imgAvatar;
     }
 
     return '
@@ -45,7 +48,7 @@ function generaCardUtente($utente) {
                     <span id="ricerca2">' . $cognome . '</span>
                 </h5>
                 <p class="card-text">' . $email . '</p>
-                <p class="card-text text-success">Ruolo: ' . $ruolo . '</p>
+                <p class="card-text text-success">Status: ' . $ruolo . '</p>
                 <div class="text-center">
                     <a href="utenti/profiloUtente?emailUt=' . $email . '" class="text-decoration-none btn btn-primary">
                         Visualizza Dettagli
