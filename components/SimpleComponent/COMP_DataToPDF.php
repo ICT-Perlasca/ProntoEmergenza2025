@@ -15,9 +15,10 @@ function DataToPDF(){//array $dati, string $nomeFile, string $formato) {
         
     }
     */
+    
     try {
 
-
+/*
             use Dompdf\Dompdf;
 
         $dompdf = new Dompdf();
