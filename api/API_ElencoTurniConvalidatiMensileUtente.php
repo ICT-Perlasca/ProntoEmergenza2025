@@ -11,21 +11,21 @@ function API_ElencoTurniConvalidatiMensileUtente($get, $post, $session){
         if($post['tipo']=="turni118"){
 			$sql="SELECT t.data, t.oraInizio, t.oraFine, u.nome, u.cognome, r.nome as m from
 			 turniutenti as tu inner join turni118 as t on tu.idTurno118=t.idTurno118 inner join utenti as u on tu.idUtente=u.idUtente inner join Ruoli as r on tu.idRuolo=r.idRuolo
-			 where YEAR(t.data) = ? AND MONTH(t.data) = ? AND u.nome=? AND u.cognome=?
+			 where YEAR(t.data) = ? AND MONTH(t.data) = ? AND u.idUtente=?
 			 order by t.data;";
 		}else if($post['tipo']=="programmati"){
 			$sql="SELECT t.data, t.oraInizio, t.oraFine, u.nome, u.cognome, r.nome as m from
 			 turniutenti as tu inner join eventiprogrammati as t on tu.idEventoProgrammato=t.idEventoProgrammato inner join utenti as u on tu.idUtente=u.idUtente inner join Ruoli as r on tu.idRuolo=r.idRuolo
-			 where YEAR(t.data) = ? AND MONTH(t.data) = ?AND u.nome=? AND u.cognome=?
+			 where YEAR(t.data) = ? AND MONTH(t.data) = ?AND u.idUtente=?
 			 order by t.data;";
 		}else if($post['tipo']=="assistenza"){
 			$sql="SELECT t.data, t.oraInizio, t.oraFine, u.nome, u.cognome, r.nome as m from
 			 turniutenti as tu inner join assistenze as t on tu.idAssistenza=t.idAssistenza inner join utenti as u on tu.idUtente=u.idUtente inner join Ruoli as r on tu.idRuolo=r.idRuolo
-			 where YEAR(t.data) = ? AND MONTH(t.data) = ? AND u.nome=? AND u.cognome=?
+			 where YEAR(t.data) = ? AND MONTH(t.data) = ? AND u.idUtente=?
 			 order by t.data;";
 		}
-        $valori = [$post['year'], $post['month'], $post['nome'],$post['cognome']];
-        $tipi = [PDO::PARAM_STR,PDO::PARAM_STR,PDO::PARAM_STR,PDO::PARAM_STR];
+        $valori = [$post['year'], $post['month'], $post['idUtente']];
+        $tipi = [PDO::PARAM_INT,PDO::PARAM_INT,PDO::PARAM_INT];
         $risposta = db_query($sql, $valori, $tipi);
         return $risposta;
     }

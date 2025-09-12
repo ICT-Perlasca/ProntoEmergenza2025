@@ -8,15 +8,19 @@ function COMP_formContainerHeader($titolo,$hasMsg,$txtMessage) {
         $formHEader.= "<div class='alert alert-danger mb-4'>$$txtMessage</div>";
     return $formHeader;
 }
-function COMP_formFooter($testoBottone,$linkReset){ //bottoni finali di u qualsiasi form
-return "<div class='d-flex justify-content-center mt-4'>
+function COMP_formFooter($testoBottone,$idBottone,$hasLink,$linkReset){ //bottoni finali di un qualsiasi form
+    $formFooter= "<div class='d-flex justify-content-center mt-4'>
+        <div class='px-2'>";
+    if ($hasLink)
+            $formFooter.="<button type='reset' onClick=window.location.assign('".$linkReset."') class='btn btn-primary'>Annulla</button>";
+    else
+        $formFooter.="<button type='reset' onClick=location.reload() class='btn btn-primary'>Annulla</button>";
+    $formFooter.="</div>
         <div class='px-2'>
-            <button type='reset' onClick=window.location.assign('".$linkReset."') class='btn btn-primary'>ANNULLA</button>
-        </div>
-        <div class='px-2'>
-            <button type='submit' class='btn btn-primary'>$testoBottone</button>
+            <button type='submit' class='btn btn-primary' id=$idBottone disabled>$testoBottone</button>
         </div>
     </div>";
+    return $formFooter;
     
 }
 function COMP_formContainerFooter(){

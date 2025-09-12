@@ -74,6 +74,10 @@ switch ($route) {
         require_once ("./api/API_ElencoTurniConvalidatiMensile.php");
         echo json_encode(API_ElencoTurniConvalidatiMensile($_GET, $_POST, $_SESSION));
         break;
+    case 'api/API_ElencoTurniConvalidatiMensileUtente':
+        require_once ("./api/API_ElencoTurniConvalidatiMensileUtente.php");
+        echo json_encode(API_ElencoTurniConvalidatiMensileUtente($_GET, $_POST, $_SESSION));
+        break;
     case 'api/API_ElencoTurniConvalidatiUtente':
         require_once ("./api/API_ElencoTurniConvalidatiUtente.php");
         echo json_encode(API_ElencoTurniConvalidatiUtente($_GET, $_POST, $_SESSION));

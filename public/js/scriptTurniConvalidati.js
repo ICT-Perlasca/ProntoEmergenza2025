@@ -22,13 +22,10 @@ function rispostaGetTurniMesi(xhttp){
 	}else if(risposta==null){
 		document.getElementById('tableTurni').innerHTML="ERRORE di connessione al database";
 	}else{
-		//document.getElementById('hiddenJson').value=xhttp.responseText;
-//		let str="<nav><button><i class='bi bi-filetype-xml'></i></button><button><i class='bi bi-file-pdf'></i></button></nav><br><br><table border=1 class=table><tr><th>Data</th><th>Ora Inizio</th><th>Ora Fine</th><th>Nome</th><th>Cognome</th><th>Ruolo</th></tr>";
 		let str="<form name=frmBottoniApp method=POST action=elencoApp>";
-		str+="<input type=hidden name=json value='"+xhttp.response+"'>";
+		str+="<input type=hidden name=json value='"+xhttp.responseText+"'>";
         str+="<input type=hidden name=title value='Elenco turni convalidati'>";
 		str+=`<nav><button type=submit class="btn" name=excel><img src="./public/images/excel-48.png"></button><button class="btn" type=submit name=pdf><img src="./public/images/pdf-50.png"></button></nav>`;
-//		str+=`<nav><button class="btn" onclick="creaExcel('hiddenJson','Elenco Turni Convalidati in');"><img src="./public/images/excel-48.png"></button><button class="btn"><img src="./public/images/pdf-50.png"></button></nav><br><br><table border=1 class=table><tr><th>Data</th><th>Ora Inizio</th><th>Ora Fine</th><th>Nome</th><th>Cognome</th><th>Ruolo</th></tr>`;
 		str+="</form><br><br><table border=1 class=table><tr><th>Data</th><th>Ora Inizio</th><th>Ora Fine</th><th>Nome</th><th>Cognome</th><th>Ruolo</th></tr>";
 		for(let i=0;i<risposta.length; i++){
 			str=str+"<tr>";
@@ -46,7 +43,8 @@ function rispostaGetTurniMesi(xhttp){
 }
 function GetMesi(tipoSelect){
 	let tipo=tipoSelect.value;
-//	alert("tipo turno richiesto:"+tipo);
+//alert("cancello div");
+	document.getElementById('tableTurni').innerHTML="";
 	const conn=new XMLHttpRequest();
 	conn.open("POST", "./api/API_GetMesi");
 	conn.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -58,6 +56,7 @@ function GetMesi(tipoSelect){
 	}
 function rispostaGetMesi(xhttp){
 	let risposta=JSON.parse(xhttp.responseText);
+	
 	if(risposta.length==0){
 		document.getElementById("selectMeseAnno").innerHTML="Nessun Mese Trovato";
 	}else if(risposta==null){
@@ -77,15 +76,16 @@ function getTurniMeseUtente(form){
 	let tipo=form.tipo.value;
 	let meseAnno=form.meseAnno.value;
 	let array=meseAnno.split('-');
-	let utente=form.utente.value;
-	let arrayutente=utente.split(' ');
+	//let utente=form.utente.value;
+	//let arrayutente=utente.split(' ');
+	let idUtente=form.idUtente.value;
 	const conn= new XMLHttpRequest();
 	conn.open("POST","./api/API_ElencoTurniConvalidatiMensileUtente");
 	conn.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	conn.onload= function(){
 		rispostaGetTurniMesi(this);
 	}
-	conn.send("tipo="+tipo+"&year="+array[0]+"&month="+array[1]+"&nome="+arrayutente[0]+"&cognome="+arrayutente[1]);
+	conn.send("tipo="+tipo+"&year="+array[0]+"&month="+array[1]+"&idUtente="+idUtente);
 }
 /*
 function creaExcel(idHiddenJson,titolo){
