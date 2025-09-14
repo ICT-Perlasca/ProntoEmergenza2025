@@ -6,7 +6,7 @@ function API_salvaTurno($get, $post, $session) {
 
     // 1. Controlla che l'utente sia loggato
     if (!isset($_SESSION['idUtente'])) {
-        $response['errore'] = 'Utente non autenticato.';
+        $response['error'] = 'Utente non autenticato.';
     } else {
         // 2. Recupera dati POST
         $data = $_POST['dataTurno'] ?? null;
@@ -32,7 +32,7 @@ function API_salvaTurno($get, $post, $session) {
         );
 
         if (isset($resTurno['error']) || empty($resTurno)) {
-            $response['errore'] = 'Turno118 non trovato per la data e fascia oraria fornita.';
+            $response['error'] = 'Turno118 non trovato per la data e fascia oraria fornita.';
         } else {
             $idTurno118 = $resTurno[0]['idTurno118'];
 
@@ -44,7 +44,7 @@ function API_salvaTurno($get, $post, $session) {
             );
 
             if (!empty($resCheck) && count($resCheck) >= 2) {
-                    $response['errore'] = 'Turno già occupato per questo ruolo.';
+                    $response['error'] = 'Turno già occupato per questo ruolo.';
             } else {
                     //5. verifica se sto inserendo corsista e NON esiste già istruttore
                     $insert=false;
@@ -69,7 +69,7 @@ function API_salvaTurno($get, $post, $session) {
                         $insert=true;//posso inserire perchè non è un corsista ed ho già superato gli altri controlli
                     }
                    if ($insert==false) {//manca istruttore nel turno
-                        $response['errore'] = 'Errore durante inserimento: non è possibile inserire il corsista perchè manca un istruttore nel turno!!';
+                        $response['error'] = 'Errore durante inserimento: non è possibile inserire il corsista perchè manca un istruttore nel turno!!';
                    }
                    else{ //esiste istruttore se corsista, oppure non si sta inserendo un corsista
                     // 6. Inserisci il turno utente
@@ -82,7 +82,7 @@ function API_salvaTurno($get, $post, $session) {
                     );
 
                     if (isset($resInsert['error'])) {
-                        $response['errore'] = 'Errore durante l\'inserimento: ' . $resInsert['error'];
+                        $response['error'] = 'Errore durante l\'inserimento: ' . $resInsert['error'];
                     } else {
                         $response['success'] = true;
                         $response['messaggio'] = 'Turno inserito correttamente.';

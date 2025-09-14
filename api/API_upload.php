@@ -1,14 +1,14 @@
 <?php
-require_once("./globals.php");
-function API_upload($get, $post, $session)
+//require_once("./globals.php");
+function API_upload($cartella,$fileUp,$get, $post, $session)
 {
-    global $cartellaImmagini;
-    if (!isset($_FILES['file'])) 
+    //global $cartellaImmagini;
+    if (!isset($fileUp['name'])) 
     {
         return (['error'=>'non è stato trasferito alcun file']); 
     }
 
-    $fileUp = $_FILES['fileUp'];
+    //$fileUp = $_FILES['fileUp'];
     $estensioni = ['jpg', 'jpeg', 'png','pdf'];
     $dimensioneMassima = 3 * 1024 * 1024; // 3MB
     $percorso = "";
@@ -28,7 +28,7 @@ function API_upload($get, $post, $session)
         return (['error'=>'sul server non è stato trasferito alcun file']); 
     }
     $ts = new DateTime("now");
-    $cartella = "./$cartellaImmagini/";
+    //$cartella = "./$cartellaImmagini/";
     if (!file_exists($cartella)) 
     {
         mkdir($cartella, 0755, true);

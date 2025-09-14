@@ -6,7 +6,7 @@ function API_modificaTurno($get, $post, $session) {
 
     // 1. Controlla che l'utente sia loggato
     if (!isset($_SESSION['idUtente'])) {
-        $response['errore'] = 'Utente non autenticato.';
+        $response['error'] = 'Utente non autenticato.';
     } else {
         // 2. Recupera dati POST
         $idTurnoUtente=$_POST['idTurnoUtente'];
@@ -30,7 +30,7 @@ function API_modificaTurno($get, $post, $session) {
                                     [PDO::PARAM_STR,PDO::PARAM_STR,PDO::PARAM_STR,PDO::PARAM_INT,PDO::PARAM_INT]);
 
         if (isset($resUpdate['error'])) {
-            $response['errore'] = "Errore nell'aggiornamento del turno-utente num.  $idTurnoUtente Errore dalla query:".$resUpdate['error'];
+            $response['error'] = "Errore nell'aggiornamento del turno-utente num.  $idTurnoUtente Errore dalla query:".$resUpdate['error'];
         } else {
             $response['success']=true;
         }

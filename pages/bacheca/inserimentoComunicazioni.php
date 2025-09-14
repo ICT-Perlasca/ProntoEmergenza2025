@@ -37,7 +37,8 @@ if (!isset($_SESSION['idUtente'])) {
         <?php
             require_once("./components/Header/header.php");
             require_once("./components/Footer/footer.php");
-
+            require_once("./components/SimpleComponent/COMP_Alert.php");
+            
             echo COMP_header($_SESSION);
 
             if (!isset($_POST["btnInserisciComunicazione"])) {
@@ -90,7 +91,6 @@ if (!isset($_SESSION['idUtente'])) {
                 <div class="mb-3">
                     <label for="allegato" class="form-label">Allegato</label>
                     <input type="file" class="form-control" id="allegato" name="fileUp"
-                        required
                         oninvalid="this.setCustomValidity('Inserisci un allegato (es: link o nome file)')"
                         oninput="this.setCustomValidity('')">
                 </div>
@@ -174,14 +174,12 @@ if (!isset($_SESSION['idUtente'])) {
             } else {
                 $res = API_AggiuntaComunicazione($_GET, $_POST, $_SESSION);
 
-                if(isset($res['errore'])){
-                    echo '<div class="alert alert-danger" role="alert">'.
-                        $res['errore'].
-                    '</div>';
-                }else{
-                    echo '<div class="alert alert-success" role="alert">
-                        Comunicazione inserita
-                    </div>';
+                if(isset($res['error'])){
+                    echo COMP_Alert("alert-danger",$res['error']);
+                }
+                else{
+                   // print_r($res);
+                    echo COMP_Alert("alert-success",$res['msgio']);
                 }
             }
 

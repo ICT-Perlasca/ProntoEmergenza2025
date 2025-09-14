@@ -94,13 +94,14 @@ function _adminLinks(){
             "title" => "Bacheca",
             "sub" => [
                 [
-                    "url" => "bacheca/elenco",
-                    "title" => "Elenco comunicazioni"
-                ],
-                [
                     "url" => "bacheca/inserimentoComunicazioni",
                     "title" => "Inserimento comunicazione"
+                ],
+                [
+                    "url" => "bacheca/elenco",
+                    "title" => "Elenco comunicazioni"
                 ]
+                
             ]
         ],
         [
