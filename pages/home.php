@@ -33,11 +33,11 @@ if(!isset($_SESSION['idUtente'])){
             <div class="container mt-4">
                 <div class="d-flex flex-wrap justify-content-center gap-2">
                     <?php
-                        echo COMP_Button('person-circle','Profilo','utenteSingolo');
-                        echo COMP_Button('calendar-date','Calendario','turni/elenco');
+                        echo COMP_Button('person-circle','Profilo','utenti/profiloUtente');
+                        echo COMP_Button('calendar-date','Calendario','turni/calendar');
                         echo COMP_Button('card-list','Bacheca','bacheca/elenco');
                         if($_SESSION['tipoUtente'] == 'admin')
-                            echo COMP_Button('people-fill','Gestione Utenti','utenti/profili');
+                            echo COMP_Button('people-fill','Gestione Utenti','utenti/elenco');
                     ?>
                 </div>
             </div>

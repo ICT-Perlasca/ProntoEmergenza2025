@@ -79,7 +79,7 @@ echo '</select>';
 
 echo '</form>';
 */
-            echo COMP_formFooter("Conferma Mese","/ProntoEmergenza2025");
+            echo COMP_formFooter("Conferma Mese","btn",false,"/ProntoEmergenza2025");
 //echo '<div>' .$esito. '</div>'; //stampa dell'esito
 /*echo COMP_Popup(  //stampa bottone di popup (ATTENZIONE: non è stato realizzato il poter inserire i turni tramite questo bottone)
     'popupConferma',

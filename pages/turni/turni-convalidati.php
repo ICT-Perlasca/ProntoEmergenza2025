@@ -49,7 +49,7 @@
 					<div class="mb-3" id=selectMeseAnno></div>
 <!--					<input name="inserisciComunicazione" value="Ricerca Turni" type="submit" id="btnRicercaTurni" class="btn btn-primary w-50" disabled>
 	-->
-					<?php echo COMP_formFooter('Ricerca Turni','btnRicercaTurni',false,'');?>
+					<?php echo COMP_formFooter('Ricerca Turni','btnRicercaTurni',true);?>
 					<input type=hidden id=hiddenJson value="">
 				</form>
 				<?php echo COMP_formContainerFooter();?>

@@ -53,7 +53,7 @@
 			</div>
 <!--		<input name="inserisciComunicazione" value="Ricerca Turni" type="submit" class="btn btn-primary w-50">
 -->
-				<?php echo COMP_formFooter('Ricerca Turni','btnRicercaTurni',false,'');?>
+				<?php echo COMP_formFooter('Ricerca Turni','btnRicercaTurni',true);?>
 			<input type=hidden id=hiddenJson value="">
 		</form>
 		<?php echo COMP_formContainerFooter();?>

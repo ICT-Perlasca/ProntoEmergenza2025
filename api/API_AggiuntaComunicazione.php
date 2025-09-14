@@ -1,30 +1,52 @@
 <?php
 require_once("funzioniDB.php");
-require_once("API_upload_img.php");
+require_once("API_upload.php");
+//require_once("./globals.php");
 function API_AggiuntaComunicazione($get, $post, $session){
+    //global $cartellaImmagini;
    
     if (!isset($session['tipoUtente']) || $session['tipoUtente'] != "admin"){
-        header('HTTP/1.1 403 Forbidden');
-        echo json_encode(["errore" => "Accesso negato"]);
-        return;
+        header("HTTP/1.1 403 Forbidden");
+        return [];
     }
-    $ctrlImg = upload("","", $session);
-    if($ctrlImg == false)
+    $ctrlImg = API_upload([],[], $session,$_FILES);
+    if(isset($ctrlImg['error']))
     {
         //da sistemare
-        $res['errore']="file non compatibile";
+        //$res['errore']="file non compatibile";
 //        echo json_encode(["errore" => "file non compatibile"]);
-        return $res;       
+        return $ctrlImg; //ritorn lo stesso errore fornito da API_upload       
     }
+    else
+        $nomeFile=(isset($ctrlImg['nomeFile']))?$ctrlImg['nomeFile']:"nessun file";
+
     if (!isset($post['titolo'], $post['descrizione'], $post['data_scadenza'], $post['tipo'])) {
-        header('HTTP/1.1 400 Bad Request');
-        echo json_encode(["errore" => "Dati mancanti"]);
-        return;
+        //header('HTTP/1.1 400 Bad Request');
+        $res["errore"] = "Dati mancanti";
+        return $res;
     }
 
-
-
-
+/*
+arrivo qui se non ci sono errori che mi fanno uscire.
+inserisci comunicazione in DB e preleva dal risultato lastId (id ultima counicazione inserita)
+se esci on errore allora esci con errore dalla procedura
+altrimenti
+    switch su destinatari in POST 
+        se="tutti": metto in $elencoUtenti gli id di tutti gli utenti
+        se="tutti_admin": metto in $elencoUtenti gli id di tutti gli utenti con tipoUtente="admin"
+        se="tutti_user": metto in $elencoUtenti gli id di tutti gli utenti con tipoUtente="user"
+        se="utente_specifico": metto in $elencoUtenti gli id di tutti gli utenti con nome e cgnome= ai dati in POST
+    fswitch
+    per ogni elemento (id) di $elencoUtenti
+        crea query di insert in utenticomunicazioni
+        esegui query
+    fciclo
+    se esci con errore 
+    allora esci con errore dalla procedura
+    altrimenti esci con success=true
+    fse
+fse
+    */
     $sql = "INSERT INTO comunicazioni (titolo, testo, dataScadenza, idTipo, dataEmissione, nomeFileAllegato, idUtente) 
             VALUES (?, ?, ?, ?, ?, ?, ?)";
 
@@ -34,7 +56,7 @@ function API_AggiuntaComunicazione($get, $post, $session){
         $post['data_scadenza'],
         $post['tipo'],
         date("Y-m-d"),
-        $ctrlImg,
+        $nomeFile,
         $session['idUtente']
     ];
 
@@ -49,8 +71,42 @@ function API_AggiuntaComunicazione($get, $post, $session){
     ];
 
     $risposta = db_query($sql, $valori, $tipi);
-
-    $sql2 = "SELECT comunicazioni.idComunicazione FROM comunicazioni WHERE comunicazioni.dataEmissione = ? AND comunicazioni.titolo = ?";
+    if (isset($risposta['error']))
+        return $risposta;
+    else{
+        $idLastComunicazione=$risposta['lastId'];
+        switch($_POST["destinatario"]){
+            case 'tutti':
+                $strsql = "SELECT * FROM utenti;";
+                $elencoUtenti = db_query($strsql, [], []);
+                break;
+            case 'tutti_admin':
+                $strsql = "SELECT idUtente FROM utenti WHERE tipoUtente = 'admin'";
+                $elencoUtenti = db_query($strsql, [], []);
+                break;
+            case 'tutti_user':
+                $strsql = "SELECT idUtente FROM utenti WHERE tipoUtente = 'user'";
+                $elencoUtenti = db_query($strsql, [], []);
+                break;
+            case 'utente_specifico':
+                $strsql = "SELECT idUtente FROM utenti WHERE cognome = ? AND nome = ?";
+                $elencoUtenti = db_query($strsql, [$_POST['cognome'], $_POST['nome']], [PDO::PARAM_STR, PDO::PARAM_STR]);
+                break;
+        }
+        
+        for($i = 0; $i < count($elencoUtenti); $i++)
+        {
+            $strsql = "INSERT INTO utenticomunicazioni (idComunicazione, idUtente) VALUES (?, ?)";
+            $valori = [$idLastComunicazione, $elencoUtenti[$i]['idUtente']];
+            $tipi = [PDO::PARAM_INT,PDO::PARAM_INT];
+            $risposta = db_query($strsql, $valori, $tipi);
+        }
+         if (isset($risposta['error']))
+            return $risposta;
+        else
+            return(['success'=>true]);
+    }
+        /*    $sql2 = "SELECT comunicazioni.idComunicazione FROM comunicazioni WHERE comunicazioni.dataEmissione = ? AND comunicazioni.titolo = ?";
     $risposta2 = db_query($sql2, [date("Y-m-d"), $post['titolo']], [PDO::PARAM_STR, PDO::PARAM_STR]);
     if($_POST["destinatario"] == "tutti")
     {
@@ -135,5 +191,6 @@ function API_AggiuntaComunicazione($get, $post, $session){
         header('HTTP/1.1 500 Internal Server Error');
         echo json_encode(["errore" => "Errore nel database"]);
     }
+        */
 }
 ?>

@@ -1,6 +1,7 @@
 <?php
 require_once('./api/API_GetUtenteByEmail.php');
 require_once('./components/SimpleComponent/COMP_Buttons.php');
+require_once ("./globals.php");
 function CMP_profiloUtenteSingolo($emailUt){
 	$utente = API_GetUtente([], array("emailUt" => $emailUt), $_SESSION);
 	
@@ -90,12 +91,15 @@ function calcolaEta($dataN){
 }
 
 function ritornaImmagine($immagine){  
-	$path = "./uploads/images/";
+
+	global $imgAvatar, $cartellaImmagini;
+
+	$path = "./$cartellaImmagini/";
 	$img = "";
 	
 	if ($immagine!="" && file_exists($path.$immagine))
 		$img = $path.$immagine;
 	else
-		$img = "./public/images/avatar.jpg";
+		$img = "./public/images/$imgAvatar";
 	return $img;
 }
