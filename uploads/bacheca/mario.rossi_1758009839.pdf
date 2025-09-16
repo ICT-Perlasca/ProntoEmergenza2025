@@ -1,0 +1,1923 @@
+%PDF-1.3
+3 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/Annots []
+/Contents 4 0 R>>
+endobj
+4 0 obj
+<</Length 11374>>
+stream
+q
+1.000 0.000 0.000 -1.000 0.000 841.890 cm
+2 J
+0.57 w
+BT /F2 16.00 Tf ET
+0 G
+0 g
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 38.82 Tm 0 Tr (  1  ) Tj  ET Q
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 55.03 38.82 Tm 0 Tr (#include <iostream>) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 50.15 Tm 0 Tr (  2  ) Tj  ET Q
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 55.03 50.15 Tm 0 Tr (#include<limit.h>) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 61.49 Tm 0 Tr (  3  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 72.83 Tm 0 Tr (  4  ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 55.03 72.83 Tm 0 Tr (using namespace ) Tj  ET Q
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 193.75 72.83 Tm 0 Tr (std) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 217.75 72.83 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 84.17 Tm 0 Tr (  5  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 95.51 Tm 0 Tr (  6  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 55.03 95.51 Tm 0 Tr (/*) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 106.85 Tm 0 Tr (  7  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 55.03 106.85 Tm 0 Tr (Giovanni Ronchi 3BI) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 118.19 Tm 0 Tr (  8  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 129.52 Tm 0 Tr (  9  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 55.03 129.52 Tm 0 Tr (Gestire una squadra di calcio composta da n calciatori \(nome,) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 28.35 140.86 Tm 0 Tr (cognome, ruolo, altezza >1,60 e anno di nascita >=1995\).Realizzare un) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 28.35 152.20 Tm 0 Tr (programma che:) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 163.54 Tm 0 Tr ( 10  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 163.54 Tm 0 Tr (. Dati input nome e cognome restituisca ruolo del calciatore.) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 174.88 Tm 0 Tr ( 11  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 174.88 Tm 0 Tr (. Visualizzare i nomi dei calciatori con altezza max) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 186.22 Tm 0 Tr ( 12  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 186.22 Tm 0 Tr (. Visualizzare i calciatori con altezza compresa tra 1,80 e 1,90) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 197.56 Tm 0 Tr ( 13  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 197.56 Tm 0 Tr (. Visualizzare il calciatore con età minore) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 208.89 Tm 0 Tr ( 14  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 208.89 Tm 0 Tr (. Visualizzare elenco alfabetico dei calciatori) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 220.23 Tm 0 Tr ( 15  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 231.57 Tm 0 Tr ( 16  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 231.57 Tm 0 Tr (descrizioni costanti) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 242.91 Tm 0 Tr ( 17  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 242.91 Tm 0 Tr (nmax, numero massimo di calciatori che il programma può inserire,) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 28.35 254.25 Tm 0 Tr (intero) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 265.59 Tm 0 Tr ( 18  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 276.93 Tm 0 Tr ( 19  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 276.93 Tm 0 Tr (descrizione variabili globali) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 288.26 Tm 0 Tr ( 20  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 288.26 Tm 0 Tr (nome, nome calciatore, array di nmax stringhe) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 299.60 Tm 0 Tr ( 21  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 299.60 Tm 0 Tr (cognome, cognome calciatore, array di nmax stringhe) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 310.94 Tm 0 Tr ( 22  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 310.94 Tm 0 Tr (ruolo, ruolo calciatore, array di nmax stringhe) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 322.28 Tm 0 Tr ( 23  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 333.62 Tm 0 Tr ( 24  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 333.62 Tm 0 Tr (pseudo) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 344.96 Tm 0 Tr ( 25  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 356.30 Tm 0 Tr ( 26  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 356.30 Tm 0 Tr (procedura Inserimento) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 367.63 Tm 0 Tr ( 27  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 367.63 Tm 0 Tr (descriz var locali) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 378.97 Tm 0 Tr ( 28  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 378.97 Tm 0 Tr (pos, variabile per ricerca di 1 elemento, intero) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 390.31 Tm 0 Tr ( 29  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 401.65 Tm 0 Tr ( 30  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 401.65 Tm 0 Tr (inizio) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 412.99 Tm 0 Tr ( 31  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 412.99 Tm 0 Tr (    ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 77.27 412.99 Tm 0 Tr (leggi cercaNome e controlla che sia diverso da stringa vuota) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 424.33 Tm 0 Tr ( 32  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 424.33 Tm 0 Tr (    ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 77.27 424.33 Tm 0 Tr (leggi cercaCognome e controlla che sia diverso da stringa vuota) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 435.67 Tm 0 Tr ( 33  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 435.67 Tm 0 Tr (    ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 77.27 435.67 Tm 0 Tr (pos=-1;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 447.00 Tm 0 Tr ( 34  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 447.00 Tm 0 Tr (    ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 77.27 447.00 Tm 0 Tr (ricerca cercaNome e cercaCognome nei corrispettivi vettori nome e) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 28.35 458.34 Tm 0 Tr (cognome e tornami in pos la sua posizione oppure -1) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 469.68 Tm 0 Tr ( 35  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 469.68 Tm 0 Tr (    ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 77.27 469.68 Tm 0 Tr (se pos==-1) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 481.02 Tm 0 Tr ( 36  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 481.02 Tm 0 Tr (    ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 77.27 481.02 Tm 0 Tr (allora) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 492.36 Tm 0 Tr ( 37  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 492.36 Tm 0 Tr (        ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 95.07 492.36 Tm 0 Tr (scrivi calciatore non trovato) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 503.70 Tm 0 Tr ( 38  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 503.70 Tm 0 Tr (    ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 77.27 503.70 Tm 0 Tr (fse) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 515.04 Tm 0 Tr ( 39  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 515.04 Tm 0 Tr (fine) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 526.37 Tm 0 Tr ( 40  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 537.71 Tm 0 Tr ( 41  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 537.71 Tm 0 Tr (procedura RicMax) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 549.05 Tm 0 Tr ( 42  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 549.05 Tm 0 Tr (var locali:) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 560.39 Tm 0 Tr ( 43  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 560.39 Tm 0 Tr (cercaNome, nome da trovare, stringa) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 571.73 Tm 0 Tr ( 44  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 571.73 Tm 0 Tr (cercaCognome, cognome da trovare, stringa) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 583.07 Tm 0 Tr ( 45  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 583.07 Tm 0 Tr (temp, variabile per scambiare contenuto variabili nome e cognome,) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 28.35 594.41 Tm 0 Tr (stringa) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 605.74 Tm 0 Tr ( 46  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 605.74 Tm 0 Tr (altezza, altezza calciatore, array di nmax interi) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 617.08 Tm 0 Tr ( 47  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 617.08 Tm 0 Tr (anno, anno di nascita calciatore, array di nmax interi) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 628.42 Tm 0 Tr ( 48  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 628.42 Tm 0 Tr (scegli, variabile per scegliere che caso analizzare del menu, intero) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 639.76 Tm 0 Tr ( 49  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 639.76 Tm 0 Tr (maxAltezza, altezza massima calciatori, intero) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 651.10 Tm 0 Tr ( 50  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 651.10 Tm 0 Tr (minEta, anno più vecchio dei calciatori \(quindi eta più giovane\), intero) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 662.44 Tm 0 Tr ( 51  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 673.78 Tm 0 Tr ( 52  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 673.78 Tm 0 Tr (inizio) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 685.11 Tm 0 Tr ( 53  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 685.11 Tm 0 Tr (    ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 77.27 685.11 Tm 0 Tr (ricerca elemento massimo in altezza e metti in maxAltezzza il suo) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 28.35 696.45 Tm 0 Tr (valore) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 707.79 Tm 0 Tr ( 54  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 707.79 Tm 0 Tr (    ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 77.27 707.79 Tm 0 Tr (i=0) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 719.13 Tm 0 Tr ( 55  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 719.13 Tm 0 Tr (    ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 77.27 719.13 Tm 0 Tr (mentre i<n) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 730.47 Tm 0 Tr ( 56  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 730.47 Tm 0 Tr (        ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 95.07 730.47 Tm 0 Tr (se altezza[i]==maxAltezza) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 741.81 Tm 0 Tr ( 57  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 741.81 Tm 0 Tr (        ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 95.07 741.81 Tm 0 Tr (allora) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 753.15 Tm 0 Tr ( 58  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 753.15 Tm 0 Tr (            ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 112.86 753.15 Tm 0 Tr (scrivi nome[i]) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 764.49 Tm 0 Tr ( 59  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 764.49 Tm 0 Tr (        ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 95.07 764.49 Tm 0 Tr (fse) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 775.82 Tm 0 Tr ( 60  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 775.82 Tm 0 Tr (        ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 95.07 775.82 Tm 0 Tr (i++) Tj  ET Q
+Q
+
+endstream
+endobj
+5 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/Annots []
+/Contents 6 0 R>>
+endobj
+6 0 obj
+<</Length 22542>>
+stream
+q
+1.000 0.000 0.000 -1.000 0.000 841.890 cm
+2 J
+0.57 w
+BT /F2 16.00 Tf ET
+0 G
+0 g
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 38.82 Tm 0 Tr ( 61  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 38.82 Tm 0 Tr (    ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 77.27 38.82 Tm 0 Tr (fciclo) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 50.15 Tm 0 Tr ( 62  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 50.15 Tm 0 Tr (fine) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 61.49 Tm 0 Tr ( 63  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 72.83 Tm 0 Tr ( 64  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 72.83 Tm 0 Tr (punto 3) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 84.17 Tm 0 Tr ( 65  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 84.17 Tm 0 Tr (inizio) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 95.51 Tm 0 Tr ( 66  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 95.51 Tm 0 Tr (    ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 77.27 95.51 Tm 0 Tr (i=0) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 106.85 Tm 0 Tr ( 67  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 106.85 Tm 0 Tr (    ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 77.27 106.85 Tm 0 Tr (mentre i<n) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 118.19 Tm 0 Tr ( 68  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 118.19 Tm 0 Tr (        ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 95.07 118.19 Tm 0 Tr (se altezza[i]>=180 && altezza[i]<=190) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 129.52 Tm 0 Tr ( 69  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 129.52 Tm 0 Tr (        ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 95.07 129.52 Tm 0 Tr (allora) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 140.86 Tm 0 Tr ( 70  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 140.86 Tm 0 Tr (            ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 112.86 140.86 Tm 0 Tr (scrivi nome[i], cognome[i], ruolo[i]) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 152.20 Tm 0 Tr ( 71  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 152.20 Tm 0 Tr (        ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 95.07 152.20 Tm 0 Tr (fse) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 163.54 Tm 0 Tr ( 72  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 163.54 Tm 0 Tr (        ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 95.07 163.54 Tm 0 Tr (i++) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 174.88 Tm 0 Tr ( 73  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 174.88 Tm 0 Tr (    ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 77.27 174.88 Tm 0 Tr (fciclo) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 186.22 Tm 0 Tr ( 74  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 186.22 Tm 0 Tr (fine) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 197.56 Tm 0 Tr ( 75  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 208.89 Tm 0 Tr ( 76  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 208.89 Tm 0 Tr (punto 4) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 220.23 Tm 0 Tr ( 77  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 220.23 Tm 0 Tr (inizio) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 231.57 Tm 0 Tr ( 78  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 231.57 Tm 0 Tr (    ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 77.27 231.57 Tm 0 Tr (ricerca elemento minimo in anno e metti in minEta il suo valore) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 242.91 Tm 0 Tr ( 79  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 242.91 Tm 0 Tr (    ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 77.27 242.91 Tm 0 Tr (i=0) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 254.25 Tm 0 Tr ( 80  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 254.25 Tm 0 Tr (    ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 77.27 254.25 Tm 0 Tr (mentre i<n) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 265.59 Tm 0 Tr ( 81  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 265.59 Tm 0 Tr (        ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 95.07 265.59 Tm 0 Tr (se anno[i]==minEta) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 276.93 Tm 0 Tr ( 82  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 276.93 Tm 0 Tr (        ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 95.07 276.93 Tm 0 Tr (allora) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 288.26 Tm 0 Tr ( 83  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 288.26 Tm 0 Tr (            ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 112.86 288.26 Tm 0 Tr (scrivi nome[i], cognome[i], ruolo[i]) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 299.60 Tm 0 Tr ( 84  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 299.60 Tm 0 Tr (        ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 95.07 299.60 Tm 0 Tr (fse) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 310.94 Tm 0 Tr ( 85  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 310.94 Tm 0 Tr (        ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 95.07 310.94 Tm 0 Tr (i++) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 322.28 Tm 0 Tr ( 86  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 322.28 Tm 0 Tr (    ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 77.27 322.28 Tm 0 Tr (fciclo) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 333.62 Tm 0 Tr ( 87  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 333.62 Tm 0 Tr (fine) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 344.96 Tm 0 Tr ( 88  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 356.30 Tm 0 Tr ( 89  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 356.30 Tm 0 Tr (punto 5) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 367.63 Tm 0 Tr ( 90  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 367.63 Tm 0 Tr (inizio) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 378.97 Tm 0 Tr ( 91  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 378.97 Tm 0 Tr (    ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 77.27 378.97 Tm 0 Tr (ordina il vettore nome e cognome in ordine alfabetico) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 390.31 Tm 0 Tr ( 92  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 390.31 Tm 0 Tr (    ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 77.27 390.31 Tm 0 Tr (stampa tutti i dati presenti in cognome e nome) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 401.65 Tm 0 Tr ( 93  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 401.65 Tm 0 Tr (fine) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 412.99 Tm 0 Tr ( 94  ) Tj  ET Q
+q 0.502 0.000 0.000 rg BT 1 0 0 -1 59.48 412.99 Tm 0 Tr (*/) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 424.33 Tm 0 Tr ( 95  ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 59.48 424.33 Tm 0 Tr (const int ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+130.60 413.86 39.12 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 130.60 424.33 Tm 0 Tr (nmax) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 169.72 424.33 Tm 0 Tr (=) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 179.07 424.33 Tm 0 Tr (30) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 196.86 424.33 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 435.67 Tm 0 Tr ( 96  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 435.67 Tm 0 Tr (    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 77.27 435.67 Tm 0 Tr (string ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+126.17 425.20 40.02 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 126.17 435.67 Tm 0 Tr (nome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 166.19 435.67 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+170.63 425.20 39.12 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 170.63 435.67 Tm 0 Tr (nmax) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 209.75 435.67 Tm 0 Tr (], ) Tj  ET Q
+1.000 1.000 1.000 rg
+223.10 425.20 65.81 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 223.10 435.67 Tm 0 Tr (cognome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 288.91 435.67 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+293.35 425.20 39.12 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 293.35 435.67 Tm 0 Tr (nmax) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 332.47 435.67 Tm 0 Tr (], ) Tj  ET Q
+1.000 1.000 1.000 rg
+345.82 425.20 35.57 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 345.82 435.67 Tm 0 Tr (ruolo) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 381.39 435.67 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+385.83 425.20 39.12 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 385.83 435.67 Tm 0 Tr (nmax) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 424.95 435.67 Tm 0 Tr (];) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 447.00 Tm 0 Tr ( 97  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 447.00 Tm 0 Tr (    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 77.27 447.00 Tm 0 Tr (int ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+101.27 436.54 50.69 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 101.27 447.00 Tm 0 Tr (altezza) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 151.96 447.00 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+156.41 436.54 39.12 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 156.41 447.00 Tm 0 Tr (nmax) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 195.53 447.00 Tm 0 Tr (], ) Tj  ET Q
+1.000 1.000 1.000 rg
+208.87 436.54 35.58 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 208.87 447.00 Tm 0 Tr (anno) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 244.46 447.00 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+248.91 436.54 39.12 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 248.91 447.00 Tm 0 Tr (nmax) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 288.03 447.00 Tm 0 Tr (];) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 458.34 Tm 0 Tr ( 98  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 469.68 Tm 0 Tr ( 99  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 59.48 469.68 Tm 0 Tr (    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 77.27 469.68 Tm 0 Tr (int ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+101.27 459.21 8.90 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 101.27 469.68 Tm 0 Tr (n) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 110.17 469.68 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 481.02 Tm 0 Tr (100  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 481.02 Tm 0 Tr (    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 81.72 481.02 Tm 0 Tr (float ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+119.95 470.55 69.36 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 119.95 481.02 Tm 0 Tr (leggiFloat) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 189.31 481.02 Tm 0 Tr (\( ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 199.08 481.02 Tm 0 Tr (float ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+237.31 470.55 33.78 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 237.31 481.02 Tm 0 Tr (vmin) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 271.08 481.02 Tm 0 Tr (, ...\){) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 492.36 Tm 0 Tr (101  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 492.36 Tm 0 Tr (    ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 503.70 Tm 0 Tr (102  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 503.70 Tm 0 Tr (    ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 81.72 503.70 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 515.04 Tm 0 Tr (103  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 515.04 Tm 0 Tr (    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 81.72 515.04 Tm 0 Tr (string ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+130.62 504.57 75.58 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 130.62 515.04 Tm 0 Tr (leggiString) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 206.20 515.04 Tm 0 Tr (\() Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 211.53 515.04 Tm 0 Tr (string ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+260.43 504.57 38.22 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 260.43 515.04 Tm 0 Tr (mess) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 298.65 515.04 Tm 0 Tr (\)}{) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 526.37 Tm 0 Tr (104  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 526.37 Tm 0 Tr (        ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 99.51 526.37 Tm 0 Tr (string ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+148.41 515.91 25.79 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 148.41 526.37 Tm 0 Tr (aus) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 174.20 526.37 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 537.71 Tm 0 Tr (105  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 537.71 Tm 0 Tr (       ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 549.05 Tm 0 Tr (106  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 549.05 Tm 0 Tr (       ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 95.07 549.05 Tm 0 Tr (do) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 114.62 549.05 Tm 0 Tr ({) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 560.39 Tm 0 Tr (107  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 560.39 Tm 0 Tr (        ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 571.73 Tm 0 Tr (108  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 571.73 Tm 0 Tr (       ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 95.07 571.73 Tm 0 Tr (}) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 100.41 571.73 Tm 0 Tr (while ) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 144.87 571.73 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+150.20 561.26 25.79 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 150.20 571.73 Tm 0 Tr (aus) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 175.99 571.73 Tm 0 Tr (!=) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 189.79 571.73 Tm 0 Tr ("") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 201.15 571.73 Tm 0 Tr (\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 583.07 Tm 0 Tr (109  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 583.07 Tm 0 Tr (       ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 95.07 583.07 Tm 0 Tr (return ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+145.74 572.60 25.79 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 145.74 583.07 Tm 0 Tr (aus) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 171.53 583.07 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 594.41 Tm 0 Tr (110  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 594.41 Tm 0 Tr (    ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 81.72 594.41 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 605.74 Tm 0 Tr (111  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 605.74 Tm 0 Tr (    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 81.72 605.74 Tm 0 Tr (int ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+105.72 595.28 51.58 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 105.72 605.74 Tm 0 Tr (leggiInt) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 157.31 605.74 Tm 0 Tr (\() Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 162.63 605.74 Tm 0 Tr (int ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+186.63 595.28 33.78 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 186.63 605.74 Tm 0 Tr (vmin) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 220.41 605.74 Tm 0 Tr (,) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 224.86 605.74 Tm 0 Tr (int ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+248.86 595.28 38.22 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 248.86 605.74 Tm 0 Tr (vmax) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 287.08 605.74 Tm 0 Tr (, ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 295.98 605.74 Tm 0 Tr (string ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+344.87 595.28 30.22 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 344.87 605.74 Tm 0 Tr (msg) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 375.10 605.74 Tm 0 Tr (\){) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 617.08 Tm 0 Tr (112  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 617.08 Tm 0 Tr (        ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 99.51 617.08 Tm 0 Tr (int ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+123.51 606.61 31.12 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 123.51 617.08 Tm 0 Tr (num) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 154.63 617.08 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 628.42 Tm 0 Tr (113  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 628.42 Tm 0 Tr (        ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 99.51 628.42 Tm 0 Tr (do) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 119.07 628.42 Tm 0 Tr ({) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 639.76 Tm 0 Tr (114  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 639.76 Tm 0 Tr (        ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 99.51 639.76 Tm 0 Tr (cout) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 133.29 639.76 Tm 0 Tr (<<) Tj  ET Q
+1.000 1.000 1.000 rg
+151.98 629.29 30.22 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 151.98 639.76 Tm 0 Tr (msg) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 182.20 639.76 Tm 0 Tr (<<) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 200.89 639.76 Tm 0 Tr (endl) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 233.79 639.76 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 651.10 Tm 0 Tr (115  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 651.10 Tm 0 Tr (        ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 99.51 651.10 Tm 0 Tr (cin) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 122.63 651.10 Tm 0 Tr (>>) Tj  ET Q
+1.000 1.000 1.000 rg
+141.32 640.63 31.12 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 141.32 651.10 Tm 0 Tr (num) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 172.44 651.10 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 662.44 Tm 0 Tr (116  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 662.44 Tm 0 Tr (        ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 99.51 662.44 Tm 0 Tr (if) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 109.29 662.44 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+114.62 651.97 31.12 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 114.62 662.44 Tm 0 Tr (num) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 145.74 662.44 Tm 0 Tr (>) Tj  ET Q
+1.000 1.000 1.000 rg
+155.08 651.97 42.67 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 155.08 662.44 Tm 0 Tr (vmax ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 197.75 662.44 Tm 0 Tr (|| ) Tj  ET Q
+1.000 1.000 1.000 rg
+210.52 651.97 31.12 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 210.52 662.44 Tm 0 Tr (num) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 241.64 662.44 Tm 0 Tr (<) Tj  ET Q
+1.000 1.000 1.000 rg
+250.99 651.97 33.78 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 250.99 662.44 Tm 0 Tr (vmin) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 284.76 662.44 Tm 0 Tr (\)) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 673.78 Tm 0 Tr (117  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 673.78 Tm 0 Tr (            ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 117.31 673.78 Tm 0 Tr (cout) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 151.08 673.78 Tm 0 Tr (<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 169.77 673.78 Tm 0 Tr ("numero non valido") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 312.75 673.78 Tm 0 Tr (<<) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 331.43 673.78 Tm 0 Tr (endl) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 364.33 673.78 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 685.11 Tm 0 Tr (118  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 685.11 Tm 0 Tr (    ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 81.72 685.11 Tm 0 Tr (}) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 87.07 685.11 Tm 0 Tr (while) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 127.08 685.11 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+132.41 674.65 31.12 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 132.41 685.11 Tm 0 Tr (num) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 163.53 685.11 Tm 0 Tr (>) Tj  ET Q
+1.000 1.000 1.000 rg
+172.87 674.65 42.67 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 172.87 685.11 Tm 0 Tr (vmax ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 215.55 685.11 Tm 0 Tr (|| ) Tj  ET Q
+1.000 1.000 1.000 rg
+228.31 674.65 31.12 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 228.31 685.11 Tm 0 Tr (num) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 259.43 685.11 Tm 0 Tr (<) Tj  ET Q
+1.000 1.000 1.000 rg
+268.78 674.65 33.78 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 268.78 685.11 Tm 0 Tr (vmin) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 302.55 685.11 Tm 0 Tr (\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 696.45 Tm 0 Tr (119  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 696.45 Tm 0 Tr (     ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 86.17 696.45 Tm 0 Tr (return ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+136.84 685.98 31.12 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 136.84 696.45 Tm 0 Tr (num) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 167.96 696.45 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 707.79 Tm 0 Tr (120  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 707.79 Tm 0 Tr (    ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 719.13 Tm 0 Tr (121  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 719.13 Tm 0 Tr (    ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 81.72 719.13 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 730.47 Tm 0 Tr (122  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 741.81 Tm 0 Tr (123  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 753.15 Tm 0 Tr (124  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 753.15 Tm 0 Tr (    ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 764.49 Tm 0 Tr (125  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 764.49 Tm 0 Tr (    ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 775.82 Tm 0 Tr (126  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 775.82 Tm 0 Tr (    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 81.72 775.82 Tm 0 Tr (void ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+119.07 765.35 83.58 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 119.07 775.82 Tm 0 Tr (Inserimento) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 202.65 775.82 Tm 0 Tr (\(\){) Tj  ET Q
+Q
+
+endstream
+endobj
+7 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/Annots []
+/Contents 8 0 R>>
+endobj
+8 0 obj
+<</Length 33869>>
+stream
+q
+1.000 0.000 0.000 -1.000 0.000 841.890 cm
+2 J
+0.57 w
+BT /F2 16.00 Tf ET
+0 G
+1.000 1.000 1.000 rg
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 38.82 Tm 0 Tr (127  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 38.82 Tm 0 Tr (    ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 50.15 Tm 0 Tr (128  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 50.15 Tm 0 Tr (        ) Tj  ET Q
+1.000 1.000 1.000 rg
+99.51 39.69 8.90 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 99.51 50.15 Tm 0 Tr (n) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 108.41 50.15 Tm 0 Tr (=) Tj  ET Q
+1.000 1.000 1.000 rg
+117.75 39.69 48.03 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 117.75 50.15 Tm 0 Tr (leggInt) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 165.79 50.15 Tm 0 Tr (\() Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 171.11 50.15 Tm 0 Tr (1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 180.01 50.15 Tm 0 Tr (,) Tj  ET Q
+1.000 1.000 1.000 rg
+184.46 39.69 39.12 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 184.46 50.15 Tm 0 Tr (nmax) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 223.58 50.15 Tm 0 Tr (,) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 228.03 50.15 Tm 0 Tr ("inserisci il numero dei giocatori\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 61.49 Tm 0 Tr (129  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 72.83 Tm 0 Tr (130  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 84.17 Tm 0 Tr (131  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 84.17 Tm 0 Tr (    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 81.72 84.17 Tm 0 Tr (for) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 103.05 84.17 Tm 0 Tr (\() Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 108.38 84.17 Tm 0 Tr (int ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+132.38 73.70 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 132.38 84.17 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 135.93 84.17 Tm 0 Tr (=) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 145.27 84.17 Tm 0 Tr (0) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 154.17 84.17 Tm 0 Tr (; ) Tj  ET Q
+1.000 1.000 1.000 rg
+163.07 73.70 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 163.07 84.17 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 166.62 84.17 Tm 0 Tr (<) Tj  ET Q
+1.000 1.000 1.000 rg
+175.96 73.70 8.90 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 175.96 84.17 Tm 0 Tr (n) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 184.86 84.17 Tm 0 Tr (; ) Tj  ET Q
+1.000 1.000 1.000 rg
+193.75 73.70 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 193.75 84.17 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 197.31 84.17 Tm 0 Tr (++\){) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 95.51 Tm 0 Tr (132  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 95.51 Tm 0 Tr (            ) Tj  ET Q
+1.000 1.000 1.000 rg
+117.31 85.04 40.02 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 117.31 95.51 Tm 0 Tr (nome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 157.32 95.51 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+161.77 85.04 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 161.77 95.51 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 165.32 95.51 Tm 0 Tr (]=) Tj  ET Q
+1.000 1.000 1.000 rg
+179.11 85.04 75.58 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 179.11 95.51 Tm 0 Tr (leggiString) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 254.70 95.51 Tm 0 Tr (\() Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 260.03 95.51 Tm 0 Tr ("inserisci nome del calciatore") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 472.33 95.51 Tm 0 Tr (\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 106.85 Tm 0 Tr (133  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 106.85 Tm 0 Tr (        ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 99.51 106.85 Tm 0 Tr (do) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 119.07 106.85 Tm 0 Tr ({) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 118.19 Tm 0 Tr (134  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 118.19 Tm 0 Tr (            ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 117.31 118.19 Tm 0 Tr (cout) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 151.08 118.19 Tm 0 Tr (<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 169.77 118.19 Tm 0 Tr ("inserisci il cognome del calciatore") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 419.42 118.19 Tm 0 Tr (<<) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 438.11 118.19 Tm 0 Tr (endl) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 471.00 118.19 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 129.52 Tm 0 Tr (135  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 129.52 Tm 0 Tr (            ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 117.31 129.52 Tm 0 Tr (cin) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 140.43 129.52 Tm 0 Tr (>> ) Tj  ET Q
+1.000 1.000 1.000 rg
+163.56 119.06 65.81 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 163.56 129.52 Tm 0 Tr (cognome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 229.37 129.52 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+233.82 119.06 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 233.82 129.52 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 237.37 129.52 Tm 0 Tr (];) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 140.86 Tm 0 Tr (136  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 140.86 Tm 0 Tr (            ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 117.31 140.86 Tm 0 Tr (if) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 127.08 140.86 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+132.41 130.39 65.81 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 132.41 140.86 Tm 0 Tr (cognome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 198.22 140.86 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+202.67 130.39 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 202.67 140.86 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 206.22 140.86 Tm 0 Tr (]==) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 229.35 140.86 Tm 0 Tr ("") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 240.71 140.86 Tm 0 Tr (\)) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 152.20 Tm 0 Tr (137  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 152.20 Tm 0 Tr (                ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 135.10 152.20 Tm 0 Tr (cout) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 168.87 152.20 Tm 0 Tr (<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 187.56 152.20 Tm 0 Tr ("non puoi inserire un cognome nullo") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 447.93 152.20 Tm 0 Tr (<<) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 466.62 152.20 Tm 0 Tr (endl) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 499.51 152.20 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 163.54 Tm 0 Tr (138  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 163.54 Tm 0 Tr (        ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 99.51 163.54 Tm 0 Tr (}) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 104.86 163.54 Tm 0 Tr (while) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 144.87 163.54 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+150.20 153.07 65.81 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 150.20 163.54 Tm 0 Tr (cognome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 216.01 163.54 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+220.46 153.07 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 220.46 163.54 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 224.01 163.54 Tm 0 Tr (]==) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 247.15 163.54 Tm 0 Tr ("") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 258.51 163.54 Tm 0 Tr (\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 174.88 Tm 0 Tr (139  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 174.88 Tm 0 Tr (        ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 99.51 174.88 Tm 0 Tr (do) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 119.07 174.88 Tm 0 Tr ({) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 186.22 Tm 0 Tr (140  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 186.22 Tm 0 Tr (            ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 117.31 186.22 Tm 0 Tr (cout) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 151.08 186.22 Tm 0 Tr (<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 169.77 186.22 Tm 0 Tr ("inserisci il ruolo del calciatore") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 389.18 186.22 Tm 0 Tr (<<) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 407.87 186.22 Tm 0 Tr (endl) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 440.76 186.22 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 197.56 Tm 0 Tr (141  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 197.56 Tm 0 Tr (            ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 117.31 197.56 Tm 0 Tr (cin) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 140.43 197.56 Tm 0 Tr (>> ) Tj  ET Q
+1.000 1.000 1.000 rg
+163.56 187.09 35.57 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 163.56 197.56 Tm 0 Tr (ruolo) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 199.13 197.56 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+203.58 187.09 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 203.58 197.56 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 207.13 197.56 Tm 0 Tr (];) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 208.89 Tm 0 Tr (142  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 208.89 Tm 0 Tr (            ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 117.31 208.89 Tm 0 Tr (if) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 127.08 208.89 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+132.41 198.43 35.57 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 132.41 208.89 Tm 0 Tr (ruolo) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 167.98 208.89 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+172.43 198.43 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 172.43 208.89 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 175.98 208.89 Tm 0 Tr (]==) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 199.11 208.89 Tm 0 Tr ("") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 210.47 208.89 Tm 0 Tr (\)) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 220.23 Tm 0 Tr (143  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 220.23 Tm 0 Tr (                ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 135.10 220.23 Tm 0 Tr (cout) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 168.87 220.23 Tm 0 Tr (<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 187.56 220.23 Tm 0 Tr ("non puoi inserire un ruolo nullo") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 417.69 220.23 Tm 0 Tr (<<) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 436.38 220.23 Tm 0 Tr (endl) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 469.27 220.23 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 231.57 Tm 0 Tr (144  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 231.57 Tm 0 Tr (        ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 99.51 231.57 Tm 0 Tr (}) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 104.86 231.57 Tm 0 Tr (while) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 144.87 231.57 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+150.20 221.10 35.57 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 150.20 231.57 Tm 0 Tr (ruolo) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 185.77 231.57 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+190.22 221.10 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 190.22 231.57 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 193.77 231.57 Tm 0 Tr (]==) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 216.91 231.57 Tm 0 Tr ("") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 228.27 231.57 Tm 0 Tr (\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 242.91 Tm 0 Tr (145  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 254.25 Tm 0 Tr (146  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 254.25 Tm 0 Tr (         ) Tj  ET Q
+1.000 1.000 1.000 rg
+103.96 243.78 50.69 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 103.96 254.25 Tm 0 Tr (altezza) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 154.65 254.25 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+159.10 243.78 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 159.10 254.25 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 162.65 254.25 Tm 0 Tr (]=) Tj  ET Q
+1.000 1.000 1.000 rg
+176.44 243.78 51.58 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 176.44 254.25 Tm 0 Tr (leggiInt) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 228.03 254.25 Tm 0 Tr (\() Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 233.35 254.25 Tm 0 Tr (1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 242.25 254.25 Tm 0 Tr (,) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 246.70 254.25 Tm 0 Tr (160) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 273.39 254.25 Tm 0 Tr (,) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 277.83 254.25 Tm 0 Tr ("inserisci l'altezza del giocatore") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 504.76 254.25 Tm 0 Tr (\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 265.59 Tm 0 Tr (147  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 265.59 Tm 0 Tr (          ) Tj  ET Q
+1.000 1.000 1.000 rg
+108.41 255.12 35.58 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 108.41 265.59 Tm 0 Tr (anno) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 143.99 265.59 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+148.44 255.12 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 148.44 265.59 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 151.99 265.59 Tm 0 Tr (]=) Tj  ET Q
+1.000 1.000 1.000 rg
+165.79 255.12 51.58 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 165.79 265.59 Tm 0 Tr (leggiInt) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 217.37 265.59 Tm 0 Tr (\() Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 222.70 265.59 Tm 0 Tr (1995) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 258.28 265.59 Tm 0 Tr (, ) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 267.18 265.59 Tm 0 Tr (2008) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 302.76 265.59 Tm 0 Tr (,) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 307.21 265.59 Tm 0 Tr ("inserisci l'anno di nascita del) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 28.35 276.93 Tm 0 Tr (calciatore") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 102.49 276.93 Tm 0 Tr (\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 288.26 Tm 0 Tr (148  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 299.60 Tm 0 Tr (149  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 299.60 Tm 0 Tr (           ) Tj  ET Q
+1.000 1.000 1.000 rg
+112.86 289.13 56.93 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 112.86 299.60 Tm 0 Tr (quantita) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 169.79 299.60 Tm 0 Tr (=) Tj  ET Q
+1.000 1.000 1.000 rg
+179.13 289.13 51.58 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 179.13 299.60 Tm 0 Tr (leggiInt) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 230.71 299.60 Tm 0 Tr (\() Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 236.04 299.60 Tm 0 Tr (0) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 244.94 299.60 Tm 0 Tr (,) Tj  ET Q
+1.000 1.000 1.000 rg
+249.39 289.13 69.34 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 249.39 299.60 Tm 0 Tr (INT_MAX) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 318.73 299.60 Tm 0 Tr (, ) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 327.63 299.60 Tm 0 Tr ("......") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 365.67 299.60 Tm 0 Tr (\)) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 310.94 Tm 0 Tr (150  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 310.94 Tm 0 Tr (    ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 81.72 310.94 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 322.28 Tm 0 Tr (151  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 322.28 Tm 0 Tr (  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 333.62 Tm 0 Tr (152  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 333.62 Tm 0 Tr (    ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 344.96 Tm 0 Tr (153  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 344.96 Tm 0 Tr (    ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 81.72 344.96 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 356.30 Tm 0 Tr (154  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 356.30 Tm 0 Tr (    ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 367.63 Tm 0 Tr (155  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 367.63 Tm 0 Tr (    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 81.72 367.63 Tm 0 Tr (void ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+119.07 357.17 104.93 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 119.07 367.63 Tm 0 Tr (ruoloGiocatore) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 223.99 367.63 Tm 0 Tr (\(\){) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 378.97 Tm 0 Tr (156  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 378.97 Tm 0 Tr (        ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 99.51 378.97 Tm 0 Tr (string ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+148.41 368.50 81.79 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 148.41 378.97 Tm 0 Tr (cercaNome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 230.20 378.97 Tm 0 Tr (, ) Tj  ET Q
+1.000 1.000 1.000 rg
+239.10 368.50 108.48 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 239.10 378.97 Tm 0 Tr (cercaCognome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 347.58 378.97 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 390.31 Tm 0 Tr (157  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 390.31 Tm 0 Tr (        ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 99.51 390.31 Tm 0 Tr (int ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+123.51 379.84 25.79 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 123.51 390.31 Tm 0 Tr (pos) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 149.31 390.31 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 401.65 Tm 0 Tr (158  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 401.65 Tm 0 Tr (    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 81.72 401.65 Tm 0 Tr (do) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 101.27 401.65 Tm 0 Tr ({) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 412.99 Tm 0 Tr (159  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 412.99 Tm 0 Tr (                    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 152.89 412.99 Tm 0 Tr (cout) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 186.67 412.99 Tm 0 Tr (<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 205.35 412.99 Tm 0 Tr ("inserisci il nome del calciatore: ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 438.11 412.99 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 424.33 Tm 0 Tr (160  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 424.33 Tm 0 Tr (                    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 152.89 424.33 Tm 0 Tr (cin) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 176.01 424.33 Tm 0 Tr (>>) Tj  ET Q
+1.000 1.000 1.000 rg
+194.70 413.86 81.79 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 194.70 424.33 Tm 0 Tr (cercaNome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 276.49 424.33 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 435.67 Tm 0 Tr (161  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 435.67 Tm 0 Tr (                ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 135.10 435.67 Tm 0 Tr (}) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 140.44 435.67 Tm 0 Tr (while) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 180.46 435.67 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+185.79 425.20 81.79 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 185.79 435.67 Tm 0 Tr (cercaNome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 267.58 435.67 Tm 0 Tr (==) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 286.27 435.67 Tm 0 Tr ("") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 297.63 435.67 Tm 0 Tr (\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 447.00 Tm 0 Tr (162  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 447.00 Tm 0 Tr (                ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 135.10 447.00 Tm 0 Tr (do) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 154.65 447.00 Tm 0 Tr ({) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 458.34 Tm 0 Tr (163  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 458.34 Tm 0 Tr (                    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 152.89 458.34 Tm 0 Tr (cout) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 186.67 458.34 Tm 0 Tr (<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 205.35 458.34 Tm 0 Tr ("inserisci il cognome del calciatore: ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 463.90 458.34 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 469.68 Tm 0 Tr (164  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 469.68 Tm 0 Tr (                    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 152.89 469.68 Tm 0 Tr (cin) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 176.01 469.68 Tm 0 Tr (>>) Tj  ET Q
+1.000 1.000 1.000 rg
+194.70 459.21 108.48 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 194.70 469.68 Tm 0 Tr (cercaCognome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 303.18 469.68 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 481.02 Tm 0 Tr (165  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 481.02 Tm 0 Tr (                ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 135.10 481.02 Tm 0 Tr (}) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 140.44 481.02 Tm 0 Tr (while) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 180.46 481.02 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+185.79 470.55 108.48 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 185.79 481.02 Tm 0 Tr (cercaCognome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 294.27 481.02 Tm 0 Tr (==) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 312.95 481.02 Tm 0 Tr ("") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 324.31 481.02 Tm 0 Tr (\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 492.36 Tm 0 Tr (166  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 503.70 Tm 0 Tr (167  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 503.70 Tm 0 Tr (                ) Tj  ET Q
+1.000 1.000 1.000 rg
+135.10 493.23 25.79 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 135.10 503.70 Tm 0 Tr (pos) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 160.89 503.70 Tm 0 Tr (=-) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 175.56 503.70 Tm 0 Tr (1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 184.46 503.70 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 515.04 Tm 0 Tr (168  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 515.04 Tm 0 Tr (                ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 135.10 515.04 Tm 0 Tr (for) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 156.43 515.04 Tm 0 Tr (\() Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 161.75 515.04 Tm 0 Tr (int ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+185.75 504.57 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 185.75 515.04 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 189.31 515.04 Tm 0 Tr (=) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 198.65 515.04 Tm 0 Tr (0) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 207.55 515.04 Tm 0 Tr (; ) Tj  ET Q
+1.000 1.000 1.000 rg
+216.44 504.57 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 216.44 515.04 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 219.99 515.04 Tm 0 Tr (<) Tj  ET Q
+1.000 1.000 1.000 rg
+229.34 504.57 13.34 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 229.34 515.04 Tm 0 Tr (n ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 242.68 515.04 Tm 0 Tr (&& ) Tj  ET Q
+1.000 1.000 1.000 rg
+268.47 504.57 25.79 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 268.47 515.04 Tm 0 Tr (pos) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 294.27 515.04 Tm 0 Tr (==-) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 318.28 515.04 Tm 0 Tr (1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 327.18 515.04 Tm 0 Tr (; ) Tj  ET Q
+1.000 1.000 1.000 rg
+336.07 504.57 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 336.07 515.04 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 339.63 515.04 Tm 0 Tr (++\){) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 526.37 Tm 0 Tr (169  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 526.37 Tm 0 Tr (                    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 152.89 526.37 Tm 0 Tr (if) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 162.67 526.37 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+167.99 515.91 40.02 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 167.99 526.37 Tm 0 Tr (nome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 208.01 526.37 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+212.46 515.91 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 212.46 526.37 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 216.01 526.37 Tm 0 Tr (]==) Tj  ET Q
+1.000 1.000 1.000 rg
+239.15 515.91 86.24 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 239.15 526.37 Tm 0 Tr (cercaNome ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 325.39 526.37 Tm 0 Tr (&& ) Tj  ET Q
+1.000 1.000 1.000 rg
+351.18 515.91 65.81 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 351.18 526.37 Tm 0 Tr (cognome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 416.99 526.37 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+421.43 515.91 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 421.43 526.37 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 424.99 526.37 Tm 0 Tr (]== ) Tj  ET Q
+1.000 1.000 1.000 rg
+452.57 515.91 108.48 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 452.57 526.37 Tm 0 Tr (cercaCognome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 537.71 Tm 0 Tr (\){) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 549.05 Tm 0 Tr (170  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 549.05 Tm 0 Tr (                        ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 170.68 549.05 Tm 0 Tr (cout) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 204.46 549.05 Tm 0 Tr (<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 223.15 549.05 Tm 0 Tr ("ruolo del calciatore: ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 377.67 549.05 Tm 0 Tr (<<) Tj  ET Q
+1.000 1.000 1.000 rg
+396.36 538.58 35.57 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 396.36 549.05 Tm 0 Tr (ruolo) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 431.93 549.05 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+436.38 538.58 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 436.38 549.05 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 439.93 549.05 Tm 0 Tr (]<<) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 463.07 549.05 Tm 0 Tr (endl) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 495.96 549.05 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 560.39 Tm 0 Tr (171  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 560.39 Tm 0 Tr (                        ) Tj  ET Q
+1.000 1.000 1.000 rg
+170.68 549.92 25.79 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 170.68 560.39 Tm 0 Tr (pos) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 196.47 560.39 Tm 0 Tr (=) Tj  ET Q
+1.000 1.000 1.000 rg
+205.82 549.92 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 205.82 560.39 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 209.37 560.39 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 571.73 Tm 0 Tr (172  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 571.73 Tm 0 Tr (                    ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 152.89 571.73 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 583.07 Tm 0 Tr (173  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 583.07 Tm 0 Tr (                ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 135.10 583.07 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 594.41 Tm 0 Tr (174  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 594.41 Tm 0 Tr (                ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 135.10 594.41 Tm 0 Tr (if) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 144.87 594.41 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+150.20 583.94 25.79 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 150.20 594.41 Tm 0 Tr (pos) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 175.99 594.41 Tm 0 Tr (==-) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 200.01 594.41 Tm 0 Tr (1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 208.91 594.41 Tm 0 Tr (\) {) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 605.74 Tm 0 Tr (175  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 605.74 Tm 0 Tr (                    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 152.89 605.74 Tm 0 Tr (cout) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 186.67 605.74 Tm 0 Tr (<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 205.35 605.74 Tm 0 Tr ("calciatore non trovato") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 369.67 605.74 Tm 0 Tr (<<) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 388.36 605.74 Tm 0 Tr (endl) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 421.26 605.74 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 617.08 Tm 0 Tr (176  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 617.08 Tm 0 Tr (                ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 135.10 617.08 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 628.42 Tm 0 Tr (177  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 628.42 Tm 0 Tr (    ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 639.76 Tm 0 Tr (178  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 639.76 Tm 0 Tr (    ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 651.10 Tm 0 Tr (179  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 651.10 Tm 0 Tr (    ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 81.72 651.10 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 662.44 Tm 0 Tr (180  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 662.44 Tm 0 Tr (    ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 673.78 Tm 0 Tr (181  ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 63.93 673.78 Tm 0 Tr (int ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+87.93 663.31 34.67 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 87.93 673.78 Tm 0 Tr (main) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 122.60 673.78 Tm 0 Tr (\(\)) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 685.11 Tm 0 Tr (182  ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 63.93 685.11 Tm 0 Tr ({) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 696.45 Tm 0 Tr (183  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 707.79 Tm 0 Tr (184  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 707.79 Tm 0 Tr (     ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 86.17 707.79 Tm 0 Tr (int ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+110.17 697.32 40.90 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 110.17 707.79 Tm 0 Tr (scegli) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 151.07 707.79 Tm 0 Tr (, ) Tj  ET Q
+1.000 1.000 1.000 rg
+159.96 697.32 82.69 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 159.96 707.79 Tm 0 Tr (maxAltezza) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 242.65 707.79 Tm 0 Tr (=) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 251.99 707.79 Tm 0 Tr (0) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 260.89 707.79 Tm 0 Tr (, ) Tj  ET Q
+1.000 1.000 1.000 rg
+269.79 697.32 49.79 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 269.79 707.79 Tm 0 Tr (minEta) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 319.58 707.79 Tm 0 Tr (=) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 328.92 707.79 Tm 0 Tr (0) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 337.82 707.79 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 719.13 Tm 0 Tr (185  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 719.13 Tm 0 Tr (    ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 730.47 Tm 0 Tr (186  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 730.47 Tm 0 Tr (   ) Tj  ET Q
+1.000 1.000 1.000 rg
+77.27 720.00 83.58 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 77.27 730.47 Tm 0 Tr (Inserimento) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 160.86 730.47 Tm 0 Tr (\(\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 741.81 Tm 0 Tr (187  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 741.81 Tm 0 Tr (    ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 753.15 Tm 0 Tr (188  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 753.15 Tm 0 Tr (    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 81.72 753.15 Tm 0 Tr (do) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 101.27 753.15 Tm 0 Tr ({) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 764.49 Tm 0 Tr (189  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 764.49 Tm 0 Tr (        ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 99.51 764.49 Tm 0 Tr (cout) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 133.29 764.49 Tm 0 Tr (<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 151.98 764.49 Tm 0 Tr ("inserisci 1 per dati input nome e cognome restituisca) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 28.35 775.82 Tm 0 Tr (ruolo del calciatore, 2 per visualizzare i nomi dei calciatori con altezza max,) Tj  ET Q
+Q
+
+endstream
+endobj
+9 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/Annots []
+/Contents 10 0 R>>
+endobj
+10 0 obj
+<</Length 45349>>
+stream
+q
+1.000 0.000 0.000 -1.000 0.000 841.890 cm
+2 J
+0.57 w
+BT /F2 16.00 Tf ET
+0 G
+1.000 1.000 1.000 rg
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 28.35 38.82 Tm 0 Tr (3 per visualizzare i calciatori con altezza compresa tra 1,80 e 1,90, 4 per) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 28.35 50.15 Tm 0 Tr (visualizzare il calciatore con età minore, 5 per visualizzare elenco alfabetico) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 28.35 61.49 Tm 0 Tr (dei calciatori, 6 per uscire") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 215.42 61.49 Tm 0 Tr (<<) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 234.11 61.49 Tm 0 Tr (endl) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 267.00 61.49 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 72.83 Tm 0 Tr (190  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 72.83 Tm 0 Tr (        ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 99.51 72.83 Tm 0 Tr (cin) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 122.63 72.83 Tm 0 Tr (>>) Tj  ET Q
+1.000 1.000 1.000 rg
+141.32 62.36 40.90 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 141.32 72.83 Tm 0 Tr (scegli) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 182.22 72.83 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 84.17 Tm 0 Tr (191  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 84.17 Tm 0 Tr (        ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 99.51 84.17 Tm 0 Tr (switch) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 149.31 84.17 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+154.63 73.70 40.90 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 154.63 84.17 Tm 0 Tr (scegli) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 195.53 84.17 Tm 0 Tr (\){) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 95.51 Tm 0 Tr (192  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 95.51 Tm 0 Tr (            ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 117.31 95.51 Tm 0 Tr (case ) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 157.34 95.51 Tm 0 Tr (1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 166.23 95.51 Tm 0 Tr (:) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 106.85 Tm 0 Tr (193  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 106.85 Tm 0 Tr (                 ) Tj  ET Q
+1.000 1.000 1.000 rg
+139.55 96.38 104.93 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 139.55 106.85 Tm 0 Tr (ruoloGiocatore) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 244.47 106.85 Tm 0 Tr (\(\);        ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 118.19 Tm 0 Tr (194  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 118.19 Tm 0 Tr (                ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 135.10 118.19 Tm 0 Tr (break) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 177.79 118.19 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 129.52 Tm 0 Tr (195  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 129.52 Tm 0 Tr (            ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 117.31 129.52 Tm 0 Tr (case ) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 157.34 129.52 Tm 0 Tr (2) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 166.23 129.52 Tm 0 Tr (:) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 140.86 Tm 0 Tr (196  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 140.86 Tm 0 Tr (                ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 135.10 140.86 Tm 0 Tr (for) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 156.43 140.86 Tm 0 Tr (\() Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 161.75 140.86 Tm 0 Tr (int ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+185.75 130.39 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 185.75 140.86 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 189.31 140.86 Tm 0 Tr (=) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 198.65 140.86 Tm 0 Tr (0) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 207.55 140.86 Tm 0 Tr (;) Tj  ET Q
+1.000 1.000 1.000 rg
+211.99 130.39 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 211.99 140.86 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 215.55 140.86 Tm 0 Tr (<) Tj  ET Q
+1.000 1.000 1.000 rg
+224.89 130.39 8.90 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 224.89 140.86 Tm 0 Tr (n) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 233.79 140.86 Tm 0 Tr (;) Tj  ET Q
+1.000 1.000 1.000 rg
+238.23 130.39 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 238.23 140.86 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 241.79 140.86 Tm 0 Tr (++\){) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 152.20 Tm 0 Tr (197  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 152.20 Tm 0 Tr (                    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 152.89 152.20 Tm 0 Tr (if) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 162.67 152.20 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+167.99 141.73 50.69 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 167.99 152.20 Tm 0 Tr (altezza) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 218.68 152.20 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+223.13 141.73 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 223.13 152.20 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 226.68 152.20 Tm 0 Tr (]>) Tj  ET Q
+1.000 1.000 1.000 rg
+240.47 141.73 82.69 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 240.47 152.20 Tm 0 Tr (maxAltezza) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 323.16 152.20 Tm 0 Tr (\)) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 163.54 Tm 0 Tr (198  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 163.54 Tm 0 Tr (                        ) Tj  ET Q
+1.000 1.000 1.000 rg
+170.68 153.07 82.69 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 170.68 163.54 Tm 0 Tr (maxAltezza) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 253.37 163.54 Tm 0 Tr (=) Tj  ET Q
+1.000 1.000 1.000 rg
+262.71 153.07 50.69 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 262.71 163.54 Tm 0 Tr (altezza) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 313.40 163.54 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+317.85 153.07 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 317.85 163.54 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 321.40 163.54 Tm 0 Tr (];) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 174.88 Tm 0 Tr (199  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 174.88 Tm 0 Tr (                ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 135.10 174.88 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 186.22 Tm 0 Tr (200  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 186.22 Tm 0 Tr (                ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 135.10 186.22 Tm 0 Tr (cout) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 168.87 186.22 Tm 0 Tr (<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 187.56 186.22 Tm 0 Tr ("i calciatori con altezza maggiore sono: ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 474.59 186.22 Tm 0 Tr (<<) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 493.27 186.22 Tm 0 Tr (endl) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 526.17 186.22 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 197.56 Tm 0 Tr (201  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 197.56 Tm 0 Tr (                ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 135.10 197.56 Tm 0 Tr (for) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 156.43 197.56 Tm 0 Tr (\() Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 161.75 197.56 Tm 0 Tr (int ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+185.75 187.09 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 185.75 197.56 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 189.31 197.56 Tm 0 Tr (=) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 198.65 197.56 Tm 0 Tr (0) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 207.55 197.56 Tm 0 Tr (;) Tj  ET Q
+1.000 1.000 1.000 rg
+211.99 187.09 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 211.99 197.56 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 215.55 197.56 Tm 0 Tr (<) Tj  ET Q
+1.000 1.000 1.000 rg
+224.89 187.09 8.90 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 224.89 197.56 Tm 0 Tr (n) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 233.79 197.56 Tm 0 Tr (;) Tj  ET Q
+1.000 1.000 1.000 rg
+238.23 187.09 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 238.23 197.56 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 241.79 197.56 Tm 0 Tr (++\){) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 208.89 Tm 0 Tr (202  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 208.89 Tm 0 Tr (                    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 152.89 208.89 Tm 0 Tr (if) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 162.67 208.89 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+167.99 198.43 50.69 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 167.99 208.89 Tm 0 Tr (altezza) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 218.68 208.89 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+223.13 198.43 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 223.13 208.89 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 226.68 208.89 Tm 0 Tr (]==) Tj  ET Q
+1.000 1.000 1.000 rg
+249.82 198.43 82.69 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 249.82 208.89 Tm 0 Tr (maxAltezza) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 332.51 208.89 Tm 0 Tr (\)) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 220.23 Tm 0 Tr (203  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 220.23 Tm 0 Tr (                        ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 170.68 220.23 Tm 0 Tr (cout) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 204.46 220.23 Tm 0 Tr (<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 223.15 220.23 Tm 0 Tr ("nome: ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 283.42 220.23 Tm 0 Tr (<<) Tj  ET Q
+1.000 1.000 1.000 rg
+302.11 209.76 40.02 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 302.11 220.23 Tm 0 Tr (nome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 342.12 220.23 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+346.57 209.76 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 346.57 220.23 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 350.12 220.23 Tm 0 Tr (]<<) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 373.26 220.23 Tm 0 Tr (endl) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 406.15 220.23 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 231.57 Tm 0 Tr (204  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 231.57 Tm 0 Tr (                ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 135.10 231.57 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 242.91 Tm 0 Tr (205  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 242.91 Tm 0 Tr (                ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 135.10 242.91 Tm 0 Tr (break) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 177.79 242.91 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 254.25 Tm 0 Tr (206  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 254.25 Tm 0 Tr (            ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 117.31 254.25 Tm 0 Tr (case ) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 157.34 254.25 Tm 0 Tr (3) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 166.23 254.25 Tm 0 Tr (:) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 265.59 Tm 0 Tr (207  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 265.59 Tm 0 Tr (                ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 135.10 265.59 Tm 0 Tr (cout) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 168.87 265.59 Tm 0 Tr (<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 187.56 265.59 Tm 0 Tr ("i calciatori con altezza compresa tra 1,80 e 1,90) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 28.35 276.93 Tm 0 Tr (sono: ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 77.61 276.93 Tm 0 Tr (<<) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 96.30 276.93 Tm 0 Tr (endl) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 129.19 276.93 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 288.26 Tm 0 Tr (208  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 288.26 Tm 0 Tr (                ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 135.10 288.26 Tm 0 Tr (for) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 156.43 288.26 Tm 0 Tr (\() Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 161.75 288.26 Tm 0 Tr (int ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+185.75 277.80 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 185.75 288.26 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 189.31 288.26 Tm 0 Tr (=) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 198.65 288.26 Tm 0 Tr (0) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 207.55 288.26 Tm 0 Tr (; ) Tj  ET Q
+1.000 1.000 1.000 rg
+216.44 277.80 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 216.44 288.26 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 219.99 288.26 Tm 0 Tr (<) Tj  ET Q
+1.000 1.000 1.000 rg
+229.34 277.80 8.90 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 229.34 288.26 Tm 0 Tr (n) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 238.23 288.26 Tm 0 Tr (; ) Tj  ET Q
+1.000 1.000 1.000 rg
+247.13 277.80 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 247.13 288.26 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 250.68 288.26 Tm 0 Tr (++\){) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 299.60 Tm 0 Tr (209  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 299.60 Tm 0 Tr (                    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 152.89 299.60 Tm 0 Tr (if) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 162.67 299.60 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+167.99 289.13 50.69 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 167.99 299.60 Tm 0 Tr (altezza) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 218.68 299.60 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+223.13 289.13 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 223.13 299.60 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 226.68 299.60 Tm 0 Tr (]>=) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 249.82 299.60 Tm 0 Tr (180) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 276.51 299.60 Tm 0 Tr (&&) Tj  ET Q
+1.000 1.000 1.000 rg
+297.85 289.13 50.69 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 297.85 299.60 Tm 0 Tr (altezza) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 348.54 299.60 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+352.99 289.13 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 352.99 299.60 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 356.54 299.60 Tm 0 Tr (]<=) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 379.67 299.60 Tm 0 Tr (190) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 406.36 299.60 Tm 0 Tr (\)) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 310.94 Tm 0 Tr (210  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 310.94 Tm 0 Tr (                        ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 170.68 310.94 Tm 0 Tr (cout) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 204.46 310.94 Tm 0 Tr (<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 223.15 310.94 Tm 0 Tr ("nome: ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 283.42 310.94 Tm 0 Tr (<<) Tj  ET Q
+1.000 1.000 1.000 rg
+302.11 300.47 40.02 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 302.11 310.94 Tm 0 Tr (nome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 342.12 310.94 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+346.57 300.47 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 346.57 310.94 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 350.12 310.94 Tm 0 Tr (]<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 373.26 310.94 Tm 0 Tr (" cognome: ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 463.77 310.94 Tm 0 Tr (<<) Tj  ET Q
+1.000 1.000 1.000 rg
+482.46 300.47 65.81 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 482.46 310.94 Tm 0 Tr (cognome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 548.27 310.94 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+552.71 300.47 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 552.71 310.94 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 322.28 Tm 0 Tr (]<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 51.48 322.28 Tm 0 Tr (" ruolo: ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 111.75 322.28 Tm 0 Tr (<< ) Tj  ET Q
+1.000 1.000 1.000 rg
+134.89 311.81 35.57 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 134.89 322.28 Tm 0 Tr (ruolo) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 170.46 322.28 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+174.91 311.81 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 174.91 322.28 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 178.46 322.28 Tm 0 Tr (]<<) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 201.59 322.28 Tm 0 Tr (endl) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 234.49 322.28 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 333.62 Tm 0 Tr (211  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 333.62 Tm 0 Tr (                ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 135.10 333.62 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 344.96 Tm 0 Tr (212  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 344.96 Tm 0 Tr (                ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 135.10 344.96 Tm 0 Tr (break) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 177.79 344.96 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 356.30 Tm 0 Tr (213  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 356.30 Tm 0 Tr (            ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 117.31 356.30 Tm 0 Tr (case ) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 157.34 356.30 Tm 0 Tr (4) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 166.23 356.30 Tm 0 Tr (:) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 367.63 Tm 0 Tr (214  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 367.63 Tm 0 Tr (                ) Tj  ET Q
+1.000 1.000 1.000 rg
+135.10 357.17 49.79 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 135.10 367.63 Tm 0 Tr (minEta) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 184.89 367.63 Tm 0 Tr (=) Tj  ET Q
+1.000 1.000 1.000 rg
+194.23 357.17 35.58 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 194.23 367.63 Tm 0 Tr (anno) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 229.82 367.63 Tm 0 Tr ([) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 234.27 367.63 Tm 0 Tr (0) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 243.16 367.63 Tm 0 Tr (];) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 378.97 Tm 0 Tr (215  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 378.97 Tm 0 Tr (                ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 135.10 378.97 Tm 0 Tr (for) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 156.43 378.97 Tm 0 Tr (\() Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 161.75 378.97 Tm 0 Tr (int ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+185.75 368.50 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 185.75 378.97 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 189.31 378.97 Tm 0 Tr (=) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 198.65 378.97 Tm 0 Tr (0) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 207.55 378.97 Tm 0 Tr (;) Tj  ET Q
+1.000 1.000 1.000 rg
+211.99 368.50 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 211.99 378.97 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 215.55 378.97 Tm 0 Tr (<) Tj  ET Q
+1.000 1.000 1.000 rg
+224.89 368.50 8.90 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 224.89 378.97 Tm 0 Tr (n) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 233.79 378.97 Tm 0 Tr (;) Tj  ET Q
+1.000 1.000 1.000 rg
+238.23 368.50 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 238.23 378.97 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 241.79 378.97 Tm 0 Tr (++\){) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 390.31 Tm 0 Tr (216  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 390.31 Tm 0 Tr (                    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 152.89 390.31 Tm 0 Tr (if) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 162.67 390.31 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+167.99 379.84 35.58 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 167.99 390.31 Tm 0 Tr (anno) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 203.58 390.31 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+208.03 379.84 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 208.03 390.31 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 211.58 390.31 Tm 0 Tr (]<) Tj  ET Q
+1.000 1.000 1.000 rg
+225.37 379.84 49.79 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 225.37 390.31 Tm 0 Tr (minEta) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 275.16 390.31 Tm 0 Tr (\)) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 401.65 Tm 0 Tr (217  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 401.65 Tm 0 Tr (                        ) Tj  ET Q
+1.000 1.000 1.000 rg
+170.68 391.18 49.79 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 170.68 401.65 Tm 0 Tr (minEta) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 220.47 401.65 Tm 0 Tr (=) Tj  ET Q
+1.000 1.000 1.000 rg
+229.82 391.18 35.58 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 229.82 401.65 Tm 0 Tr (anno) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 265.40 401.65 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+269.85 391.18 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 269.85 401.65 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 273.40 401.65 Tm 0 Tr (];) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 412.99 Tm 0 Tr (218  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 412.99 Tm 0 Tr (                ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 135.10 412.99 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 424.33 Tm 0 Tr (219  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 424.33 Tm 0 Tr (                ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 135.10 424.33 Tm 0 Tr (cout) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 168.87 424.33 Tm 0 Tr (<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 187.56 424.33 Tm 0 Tr ("i calciatori con eta minore sono: ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 428.35 424.33 Tm 0 Tr (<<) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 447.03 424.33 Tm 0 Tr (endl) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 479.93 424.33 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 435.67 Tm 0 Tr (220  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 435.67 Tm 0 Tr (                ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 135.10 435.67 Tm 0 Tr (for) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 156.43 435.67 Tm 0 Tr (\() Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 161.75 435.67 Tm 0 Tr (int ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+185.75 425.20 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 185.75 435.67 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 189.31 435.67 Tm 0 Tr (=) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 198.65 435.67 Tm 0 Tr (0) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 207.55 435.67 Tm 0 Tr (;) Tj  ET Q
+1.000 1.000 1.000 rg
+211.99 425.20 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 211.99 435.67 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 215.55 435.67 Tm 0 Tr (<) Tj  ET Q
+1.000 1.000 1.000 rg
+224.89 425.20 8.90 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 224.89 435.67 Tm 0 Tr (n) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 233.79 435.67 Tm 0 Tr (;) Tj  ET Q
+1.000 1.000 1.000 rg
+238.23 425.20 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 238.23 435.67 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 241.79 435.67 Tm 0 Tr (++\){) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 447.00 Tm 0 Tr (221  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 447.00 Tm 0 Tr (                    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 152.89 447.00 Tm 0 Tr (if) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 162.67 447.00 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+167.99 436.54 35.58 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 167.99 447.00 Tm 0 Tr (anno) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 203.58 447.00 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+208.03 436.54 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 208.03 447.00 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 211.58 447.00 Tm 0 Tr (]==) Tj  ET Q
+1.000 1.000 1.000 rg
+234.71 436.54 49.79 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 234.71 447.00 Tm 0 Tr (minEta) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 284.51 447.00 Tm 0 Tr (\)) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 458.34 Tm 0 Tr (222  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 458.34 Tm 0 Tr (                        ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 170.68 458.34 Tm 0 Tr (cout) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 204.46 458.34 Tm 0 Tr (<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 223.15 458.34 Tm 0 Tr ("nome: ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 283.42 458.34 Tm 0 Tr (<<) Tj  ET Q
+1.000 1.000 1.000 rg
+302.11 447.87 40.02 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 302.11 458.34 Tm 0 Tr (nome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 342.12 458.34 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+346.57 447.87 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 346.57 458.34 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 350.12 458.34 Tm 0 Tr (]<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 373.26 458.34 Tm 0 Tr (" cognome: ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 463.77 458.34 Tm 0 Tr (<<) Tj  ET Q
+1.000 1.000 1.000 rg
+482.46 447.87 65.81 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 482.46 458.34 Tm 0 Tr (cognome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 548.27 458.34 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+552.71 447.87 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 552.71 458.34 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 469.68 Tm 0 Tr (]<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 51.48 469.68 Tm 0 Tr (" ruolo: ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 111.75 469.68 Tm 0 Tr (<< ) Tj  ET Q
+1.000 1.000 1.000 rg
+134.89 459.21 35.57 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 134.89 469.68 Tm 0 Tr (ruolo) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 170.46 469.68 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+174.91 459.21 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 174.91 469.68 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 178.46 469.68 Tm 0 Tr (]<<) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 201.59 469.68 Tm 0 Tr (endl) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 234.49 469.68 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 481.02 Tm 0 Tr (223  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 481.02 Tm 0 Tr (                ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 135.10 481.02 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 492.36 Tm 0 Tr (224  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 492.36 Tm 0 Tr (                ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 135.10 492.36 Tm 0 Tr (break) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 177.79 492.36 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 503.70 Tm 0 Tr (225  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 503.70 Tm 0 Tr (            ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 117.31 503.70 Tm 0 Tr (case ) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 157.34 503.70 Tm 0 Tr (5) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 166.23 503.70 Tm 0 Tr (:) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 515.04 Tm 0 Tr (226  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 515.04 Tm 0 Tr (                ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 135.10 515.04 Tm 0 Tr (for) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 156.43 515.04 Tm 0 Tr (\() Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 161.75 515.04 Tm 0 Tr (int ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+185.75 504.57 8.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 185.75 515.04 Tm 0 Tr (k) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 193.75 515.04 Tm 0 Tr (=) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 203.10 515.04 Tm 0 Tr (0) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 211.99 515.04 Tm 0 Tr (; ) Tj  ET Q
+1.000 1.000 1.000 rg
+220.89 504.57 8.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 220.89 515.04 Tm 0 Tr (k) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 228.89 515.04 Tm 0 Tr (<) Tj  ET Q
+1.000 1.000 1.000 rg
+238.23 504.57 8.90 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 238.23 515.04 Tm 0 Tr (n) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 247.13 515.04 Tm 0 Tr (-) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 252.46 515.04 Tm 0 Tr (1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 261.35 515.04 Tm 0 Tr (; ) Tj  ET Q
+1.000 1.000 1.000 rg
+270.25 504.57 8.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 270.25 515.04 Tm 0 Tr (k) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 278.25 515.04 Tm 0 Tr (++\) {) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 526.37 Tm 0 Tr (227  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 526.37 Tm 0 Tr (                    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 152.89 526.37 Tm 0 Tr (for) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 174.22 526.37 Tm 0 Tr (\() Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 179.55 526.37 Tm 0 Tr (int ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+203.55 515.91 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 203.55 526.37 Tm 0 Tr (j) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 207.10 526.37 Tm 0 Tr (=) Tj  ET Q
+1.000 1.000 1.000 rg
+216.44 515.91 8.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 216.44 526.37 Tm 0 Tr (k) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 224.44 526.37 Tm 0 Tr (+) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 233.79 526.37 Tm 0 Tr (1) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 242.68 526.37 Tm 0 Tr (; ) Tj  ET Q
+1.000 1.000 1.000 rg
+251.58 515.91 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 251.58 526.37 Tm 0 Tr (j) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 255.13 526.37 Tm 0 Tr (<) Tj  ET Q
+1.000 1.000 1.000 rg
+264.47 515.91 8.90 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 264.47 526.37 Tm 0 Tr (n) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 273.37 526.37 Tm 0 Tr (; ) Tj  ET Q
+1.000 1.000 1.000 rg
+282.27 515.91 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 282.27 526.37 Tm 0 Tr (j) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 285.82 526.37 Tm 0 Tr (++\) {) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 537.71 Tm 0 Tr (228  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 537.71 Tm 0 Tr (                        ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 170.68 537.71 Tm 0 Tr (if) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 180.46 537.71 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+185.79 527.24 40.02 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 185.79 537.71 Tm 0 Tr (nome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 225.80 537.71 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+230.25 527.24 8.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 230.25 537.71 Tm 0 Tr (k) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 238.25 537.71 Tm 0 Tr (]>) Tj  ET Q
+1.000 1.000 1.000 rg
+252.04 527.24 40.02 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 252.04 537.71 Tm 0 Tr (nome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 292.06 537.71 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+296.51 527.24 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 296.51 537.71 Tm 0 Tr (j) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 300.06 537.71 Tm 0 Tr (] || \() Tj  ET Q
+1.000 1.000 1.000 rg
+327.05 527.24 40.02 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 327.05 537.71 Tm 0 Tr (nome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 367.07 537.71 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+371.51 527.24 8.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 371.51 537.71 Tm 0 Tr (k) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 379.51 537.71 Tm 0 Tr (]==) Tj  ET Q
+1.000 1.000 1.000 rg
+402.65 527.24 40.02 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 402.65 537.71 Tm 0 Tr (nome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 442.67 537.71 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+447.11 527.24 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 447.11 537.71 Tm 0 Tr (j) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 450.67 537.71 Tm 0 Tr (] && ) Tj  ET Q
+1.000 1.000 1.000 rg
+485.35 527.24 65.81 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 485.35 537.71 Tm 0 Tr (cognome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 551.16 537.71 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+555.61 527.24 8.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 555.61 537.71 Tm 0 Tr (k) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 28.35 549.05 Tm 0 Tr (]>) Tj  ET Q
+1.000 1.000 1.000 rg
+42.14 538.58 65.81 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 42.14 549.05 Tm 0 Tr (cognome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 107.95 549.05 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+112.39 538.58 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 112.39 549.05 Tm 0 Tr (j) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 115.95 549.05 Tm 0 Tr (]\)\){) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 560.39 Tm 0 Tr (229  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 560.39 Tm 0 Tr (                            ) Tj  ET Q
+1.000 1.000 1.000 rg
+188.47 549.92 35.57 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 188.47 560.39 Tm 0 Tr (temp) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 224.04 560.39 Tm 0 Tr (=) Tj  ET Q
+1.000 1.000 1.000 rg
+233.39 549.92 40.02 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 233.39 560.39 Tm 0 Tr (nome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 273.40 560.39 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+277.85 549.92 8.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 277.85 560.39 Tm 0 Tr (k) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 285.85 560.39 Tm 0 Tr (];) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 571.73 Tm 0 Tr (230  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 571.73 Tm 0 Tr (                            ) Tj  ET Q
+1.000 1.000 1.000 rg
+188.47 561.26 40.02 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 188.47 571.73 Tm 0 Tr (nome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 228.49 571.73 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+232.94 561.26 8.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 232.94 571.73 Tm 0 Tr (k) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 240.94 571.73 Tm 0 Tr (]=) Tj  ET Q
+1.000 1.000 1.000 rg
+254.73 561.26 40.02 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 254.73 571.73 Tm 0 Tr (nome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 294.75 571.73 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+299.19 561.26 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 299.19 571.73 Tm 0 Tr (j) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 302.75 571.73 Tm 0 Tr (];) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 583.07 Tm 0 Tr (231  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 583.07 Tm 0 Tr (                            ) Tj  ET Q
+1.000 1.000 1.000 rg
+188.47 572.60 40.02 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 188.47 583.07 Tm 0 Tr (nome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 228.49 583.07 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+232.94 572.60 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 232.94 583.07 Tm 0 Tr (j) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 236.49 583.07 Tm 0 Tr (]=) Tj  ET Q
+1.000 1.000 1.000 rg
+250.28 572.60 35.57 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 250.28 583.07 Tm 0 Tr (temp) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 285.85 583.07 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 594.41 Tm 0 Tr (232  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 594.41 Tm 0 Tr (                            ) Tj  ET Q
+1.000 1.000 1.000 rg
+188.47 583.94 35.57 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 188.47 594.41 Tm 0 Tr (temp) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 224.04 594.41 Tm 0 Tr (=) Tj  ET Q
+1.000 1.000 1.000 rg
+233.39 583.94 65.81 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 233.39 594.41 Tm 0 Tr (cognome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 299.19 594.41 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+303.64 583.94 8.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 303.64 594.41 Tm 0 Tr (k) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 311.64 594.41 Tm 0 Tr (];) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 605.74 Tm 0 Tr (233  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 605.74 Tm 0 Tr (                            ) Tj  ET Q
+1.000 1.000 1.000 rg
+188.47 595.28 65.81 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 188.47 605.74 Tm 0 Tr (cognome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 254.28 605.74 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+258.73 595.28 8.00 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 258.73 605.74 Tm 0 Tr (k) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 266.73 605.74 Tm 0 Tr (]=) Tj  ET Q
+1.000 1.000 1.000 rg
+280.52 595.28 65.81 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 280.52 605.74 Tm 0 Tr (cognome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 346.33 605.74 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+350.78 595.28 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 350.78 605.74 Tm 0 Tr (j) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 354.33 605.74 Tm 0 Tr (];) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 617.08 Tm 0 Tr (234  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 617.08 Tm 0 Tr (                            ) Tj  ET Q
+1.000 1.000 1.000 rg
+188.47 606.61 65.81 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 188.47 617.08 Tm 0 Tr (cognome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 254.28 617.08 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+258.73 606.61 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 258.73 617.08 Tm 0 Tr (j) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 262.28 617.08 Tm 0 Tr (]=) Tj  ET Q
+1.000 1.000 1.000 rg
+276.07 606.61 35.57 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 276.07 617.08 Tm 0 Tr (temp) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 311.64 617.08 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 628.42 Tm 0 Tr (235  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 628.42 Tm 0 Tr (                        ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 170.68 628.42 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 639.76 Tm 0 Tr (236  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 639.76 Tm 0 Tr (                    ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 152.89 639.76 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 651.10 Tm 0 Tr (237  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 651.10 Tm 0 Tr (                ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 135.10 651.10 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 662.44 Tm 0 Tr (238  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 673.78 Tm 0 Tr (239  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 673.78 Tm 0 Tr (                ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 135.10 673.78 Tm 0 Tr (cout) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 168.87 673.78 Tm 0 Tr (<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 187.56 673.78 Tm 0 Tr ("elenco alfabetico dei calciatori:") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 416.79 673.78 Tm 0 Tr (<<) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 435.48 673.78 Tm 0 Tr (endl) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 468.38 673.78 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 685.11 Tm 0 Tr (240  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 685.11 Tm 0 Tr (                ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 135.10 685.11 Tm 0 Tr (for) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 156.43 685.11 Tm 0 Tr (\() Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 161.75 685.11 Tm 0 Tr (int ) Tj  ET Q
+BT /F2 16.00 Tf ET
+1.000 1.000 1.000 rg
+185.75 674.65 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 185.75 685.11 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 189.31 685.11 Tm 0 Tr (=) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 198.65 685.11 Tm 0 Tr (0) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 207.55 685.11 Tm 0 Tr (; ) Tj  ET Q
+1.000 1.000 1.000 rg
+216.44 674.65 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 216.44 685.11 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 219.99 685.11 Tm 0 Tr (<) Tj  ET Q
+1.000 1.000 1.000 rg
+229.34 674.65 8.90 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 229.34 685.11 Tm 0 Tr (n) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 238.23 685.11 Tm 0 Tr (; ) Tj  ET Q
+1.000 1.000 1.000 rg
+247.13 674.65 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 247.13 685.11 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 250.68 685.11 Tm 0 Tr (++\) {) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 696.45 Tm 0 Tr (241  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 696.45 Tm 0 Tr (                    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 152.89 696.45 Tm 0 Tr (cout) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 186.67 696.45 Tm 0 Tr (<<) Tj  ET Q
+1.000 1.000 1.000 rg
+205.35 685.98 40.02 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 205.35 696.45 Tm 0 Tr (nome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 245.37 696.45 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+249.82 685.98 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 249.82 696.45 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 253.37 696.45 Tm 0 Tr (]<<) Tj  ET Q
+q 0.000 0.000 1.000 rg BT 1 0 0 -1 276.51 696.45 Tm 0 Tr (" ") Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 292.31 696.45 Tm 0 Tr (<<) Tj  ET Q
+1.000 1.000 1.000 rg
+311.00 685.98 65.81 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 311.00 696.45 Tm 0 Tr (cognome) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 376.81 696.45 Tm 0 Tr ([) Tj  ET Q
+1.000 1.000 1.000 rg
+381.26 685.98 3.55 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 381.26 696.45 Tm 0 Tr (i) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 384.81 696.45 Tm 0 Tr (]<<) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.627 0.000 rg BT 1 0 0 -1 407.95 696.45 Tm 0 Tr (endl) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 440.84 696.45 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 707.79 Tm 0 Tr (242  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 707.79 Tm 0 Tr (                ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 135.10 707.79 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 719.13 Tm 0 Tr (243  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 719.13 Tm 0 Tr (                ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 135.10 719.13 Tm 0 Tr (break) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 177.79 719.13 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 730.47 Tm 0 Tr (244  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 730.47 Tm 0 Tr (        ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 99.51 730.47 Tm 0 Tr (}) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 741.81 Tm 0 Tr (245  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 741.81 Tm 0 Tr (    ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 81.72 741.81 Tm 0 Tr (}) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 87.07 741.81 Tm 0 Tr (while) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 127.08 741.81 Tm 0 Tr (\() Tj  ET Q
+1.000 1.000 1.000 rg
+132.41 731.34 40.90 11.34 re f q 0.000 0.000 0.000 rg BT 1 0 0 -1 132.41 741.81 Tm 0 Tr (scegli) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 173.31 741.81 Tm 0 Tr (!=) Tj  ET Q
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 187.10 741.81 Tm 0 Tr (6) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 195.99 741.81 Tm 0 Tr (\);) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 753.15 Tm 0 Tr (246  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 764.49 Tm 0 Tr (247  ) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 63.93 764.49 Tm 0 Tr (    ) Tj  ET Q
+BT /F3 16.00 Tf ET
+q 0.000 0.000 0.627 rg BT 1 0 0 -1 81.72 764.49 Tm 0 Tr (return ) Tj  ET Q
+BT /F2 16.00 Tf ET
+q 0.941 0.000 0.941 rg BT 1 0 0 -1 132.39 764.49 Tm 0 Tr (0) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 141.29 764.49 Tm 0 Tr (;) Tj  ET Q
+q 0.000 0.000 0.000 rg BT 1 0 0 -1 28.35 775.82 Tm 0 Tr (248  ) Tj  ET Q
+q 1.000 0.000 0.000 rg BT 1 0 0 -1 63.93 775.82 Tm 0 Tr (}) Tj  ET Q
+Q
+
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R 5 0 R 7 0 R 9 0 R ]
+/Count 4
+/MediaBox [0 0 595.276 841.890]
+>>
+endobj
+11 0 obj
+<</Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+>>
+endobj
+12 0 obj
+<</Type /Font
+/BaseFont /Helvetica-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+>>
+endobj
+13 0 obj
+<</Type /Font
+/BaseFont /Courier
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+>>
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F2 11 0 R
+/F3 12 0 R
+/F1 13 0 R
+>>
+/XObject <<
+>>
+>>
+endobj
+14 0 obj
+<<
+/Names []
+>>
+endobj
+15 0 obj
+<<
+/Producer (þÿ w x P d f D o c u m e n t   0 . 9 . 8)
+/CreationDate (D:20241213104150)
+>>
+endobj
+16 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
+>>
+endobj
+xref
+0 17
+0000000000 65535 f 
+0000113705 00000 n 
+0000114106 00000 n 
+0000000009 00000 n 
+0000000098 00000 n 
+0000011523 00000 n 
+0000011612 00000 n 
+0000034205 00000 n 
+0000034294 00000 n 
+0000068214 00000 n 
+0000068304 00000 n 
+0000113812 00000 n 
+0000113909 00000 n 
+0000114011 00000 n 
+0000114233 00000 n 
+0000114265 00000 n 
+0000114373 00000 n 
+trailer
+<<
+/Size 17
+/Root 16 0 R
+/Info 15 0 R
+>>
+startxref
+114477
+%%EOF

@@ -105,8 +105,10 @@ fse
                 $elencoUtenti = db_query($strsql, [], []);
                 break;
             case 'utente_specifico':
-                $strsql = "SELECT idUtente FROM utenti WHERE cognome = ? AND nome = ?";
+/*                $strsql = "SELECT idUtente FROM utenti WHERE cognome = ? AND nome = ?";
                 $elencoUtenti = db_query($strsql, [$_POST['cognome'], $_POST['nome']], [PDO::PARAM_STR, PDO::PARAM_STR]);
+                */
+                $elencoUtenti[0]['idUtente']=$_POST['idUtente'];
                 break;
         }
         

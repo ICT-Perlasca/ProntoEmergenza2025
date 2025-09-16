@@ -38,6 +38,7 @@ if (!isset($_SESSION['idUtente'])) {
             require_once("./components/Header/header.php");
             require_once("./components/Footer/footer.php");
             require_once("./components/SimpleComponent/COMP_Alert.php");
+            require_once("./components/SimpleComponent/COMP_selectUtenti.php");
             
             echo COMP_header($_SESSION);
 
@@ -104,7 +105,7 @@ if (!isset($_SESSION['idUtente'])) {
                     </select>
                 </div>
                 <div class="mb-3" id="specificoField" style="display:none;">
-                    <div class="row">
+<!--                    <div class="row">
                         <div class="col-md-6">
                             <label for="cognome" class="form-label">Cognome</label>
                             <input type="text" class="form-control" id="cognome" name="cognome" placeholder="Cognome">
@@ -114,6 +115,10 @@ if (!isset($_SESSION['idUtente'])) {
                             <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
                         </div>
                     </div>
+                        -->
+                    <center>
+                        <?php echo COMP_selectUtenti('idUtente');?>
+                    </center>
                 </div>
 <!--                                <button name="inserisciComunicazione" type="submit" class="btn btn-primary w-100">
                     <i class="fas fa-paper-plane me-2"></i> Invia Comunicazione
@@ -136,12 +141,12 @@ if (!isset($_SESSION['idUtente'])) {
                 
                 if (destinatario === 'utente_specifico') {
                     specificoField.style.display = 'block';
-                    document.getElementById('cognome').setAttribute('required', '');
-                    document.getElementById('nome').setAttribute('required', '');
+                    document.getElementById('idUtente').setAttribute('required', '');
+                    //document.getElementById('nome').setAttribute('required', '');
                 } else {
                     specificoField.style.display = 'none';
-                    document.getElementById('cognome').removeAttribute('required');
-                    document.getElementById('nome').removeAttribute('required');
+                    document.getElementById('idUtente').removeAttribute('required');
+                    //document.getElementById('nome').removeAttribute('required');
                 }
             }
 
