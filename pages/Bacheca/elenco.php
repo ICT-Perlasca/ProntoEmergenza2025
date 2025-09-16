@@ -9,6 +9,7 @@
         require_once ("components/Head/head.php");
         require_once ("components/Header/header.php");
         require_once ("components/Footer/footer.php");
+        require_once("./globals.php");
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +43,11 @@
                 </div>
                 <div class="col-11 d-flex flex-column">
                     <div>
-                        <span class="text-primary"><?php echo $c["nome"]; ?></span> - <strong><?php echo $c["titolo"]; ?></strong>
+                        <span class="text-primary"><?php echo $c['nome']; ?></span> - <strong><?php echo $c['titolo']; ?></strong>
+                    <?php   
+                    if (isset($c['nomeFileAllegato']) && strcmp($c['nomeFileAllegato'],"")!=0)
+                        echo "<strong> ( Allegato ) </strong>";
+                    ?>
                     </div>
                     Emessa il: <?php echo date("d/m/Y", strtotime($c["dataEmissione"])); ?>
                 </div>
@@ -91,10 +96,10 @@
                         </div>
                         <div class="modal-footer">
                             <?php
-                                if(isset($c['nomeFileAllegato'])){
-                                    echo '<a href="./uploads/documenti/'.$c['nomeFileAllegato'].'" download>
+                               if(isset($c['nomeFileAllegato']) && strcmp($c['nomeFileAllegato'],"")!=0){
+                                    echo "<a href='/$cartellaBacheca/".$c['nomeFileAllegato']."' download='".$c['nomeFileAllegato']."'>
                                         Scarica allegato
-                                    </a>';
+                                    </a>";
                                 }
                             ?>
                         </div>
