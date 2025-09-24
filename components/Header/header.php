@@ -229,11 +229,11 @@ function _adminLinks(){
                 [
                     "url" => "mezzi/aggiunta",
                     "title" => "Nuovo mezzo"
-                ]/*,
+                ],
                 [
                     "url" => "mezzi/storico",
                     "title" => "Storico mezzi"
-                ]*/
+                ]
             ]
         ]
     ];

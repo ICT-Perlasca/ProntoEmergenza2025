@@ -5,7 +5,7 @@ allora
     vai al login
 altrimenti
     visualizza header
-    visualizza titolo "Insrimento nuovo utente"???
+    visualizza titolo "Inserimento nuovo utente"???
     se esiste POST
     allora
       apiinserimento utente con controll dei dati inseriti in post e restituzione vettore $errori (vettore vuoto se non ci sono errori ed ins effettuato nel db)
