@@ -4,7 +4,7 @@ require_once('./components/SimpleComponent/COMP_Buttons.php');
 
 function COMP_ModificaProfilo($emailUt){
     //class = 'table-striped table-warning'
-    $utente = API_GetUtente([], array("emailUt" => $emailUt), $_SESSION);
+    $utente = API_getUtente([], array("emailUt" => $emailUt), $_SESSION);
 
     $msg = "
     <div class = ' col-6 col-sm-12 col-md-6 col container pt-5 pb-5 justify-content-center align-items-center'>

@@ -1,7 +1,7 @@
 <?php
 require_once("funzioniDB.php");
 
-function API_ElencoCompleanni($get, $post, $session){
+function API_elencoCompleanni($get, $post, $session){
     if(!isset($post['idUtente'])){
         header("HTTP/1.1 403 Forbidden");
         return [];

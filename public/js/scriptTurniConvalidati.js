@@ -7,7 +7,7 @@ function GetTurniMese(form){
 	let meseAnno=form.meseAnno.value;
 	array=meseAnno.split('-');
 	const conn= new XMLHttpRequest();
-	conn.open("POST","./api/API_ElencoTurniConvalidatiMensile");
+	conn.open("POST","./api/API_elencoTurniConvalidatiMensile");
 	conn.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	conn.onload= function(){
 		rispostaGetTurniMesi(this);
@@ -46,7 +46,7 @@ function GetMesi(tipoSelect){
 //alert("cancello div");
 	document.getElementById('tableTurni').innerHTML="";
 	const conn=new XMLHttpRequest();
-	conn.open("POST", "./api/API_GetMesi");
+	conn.open("POST", "./api/API_getMesi");
 	conn.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	conn.onload=function(){
 		rispostaGetMesi(this);
@@ -80,7 +80,7 @@ function getTurniMeseUtente(form){
 	//let arrayutente=utente.split(' ');
 	let idUtente=form.idUtente.value;
 	const conn= new XMLHttpRequest();
-	conn.open("POST","./api/API_ElencoTurniConvalidatiMensileUtente");
+	conn.open("POST","./api/API_elencoTurniConvalidatiMensileUtente");
 	conn.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	conn.onload= function(){
 		rispostaGetTurniMesi(this);

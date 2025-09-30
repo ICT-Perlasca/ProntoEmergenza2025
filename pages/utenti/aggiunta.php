@@ -24,7 +24,7 @@ session_start();
 require_once "./components/Footer/footer.php";
 require_once "./components/Header/header.php";
 require_once "./components/Head/head.php";
-require_once "./api/apiRegistrazione/inserimentoUtente.php";
+require_once "./api/apiRegistrazione/API_inserimentoUtente.php";
 require_once "./components/formRegistrazione/formRegistrazione.php";
 
 if(!isset($_SESSION['idUtente'])){

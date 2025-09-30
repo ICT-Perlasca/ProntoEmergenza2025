@@ -1,7 +1,7 @@
 <?php
     //ATTENZIONE: LA GRAFICA NON E' STATA PERFEZIONATA
     require_once("./funzioniDB.php");
-    require_once ("./api/API_SlotTurni.php");
+    require_once ("./api/API_slotTurni.php");
     require_once ("./components/Head/head.php");
     require_once ("./components/Header/header.php");
    // require_once ("./components/SimpleComponent/COMP_popup.php");
@@ -24,7 +24,7 @@
         //se è settato $_POST['mese'] x cui mese già selezionato 
         if (isset($_POST['mese'])){
             //byprati:eseguoinserimento turni
-            $esito = API_SlotTurni([], $_POST, $_SESSION); //altrimenti controlla se i turni sono stati inseriti correttamente
+            $esito = API_slotTurni([], $_POST, $_SESSION); //altrimenti controlla se i turni sono stati inseriti correttamente
             /*byprati:
             visualizza messaggio[testo]
             se esito['status'] ='ok'

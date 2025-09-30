@@ -2,7 +2,7 @@
 require_once("funzioniDB.php");
 require_once("API_upload.php");
 require_once("./globals.php");
-function API_AggiuntaComunicazione($get, $post, $session){
+function API_aggiuntaComunicazione($get, $post, $session){
     global $cartellaBacheca;
    
     if (!isset($session['tipoUtente']) || $session['tipoUtente'] != "admin"){

@@ -28,7 +28,7 @@
 
 		return $fileName;
 	}
-
+//vel vettore get vengono forniti i nomi dei campi dei form di tipo file che devono essere uploadati
 function API_uploadDocument($get, $post, $session,$allowedTypes = ['jpg', 'jpeg', 'png', 'pdf']) {
     $errors = [];
 

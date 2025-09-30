@@ -1,6 +1,6 @@
 <?php
     require_once("./funzioniDB.php");//implicito require di globals...
-function API_SlotTurni($get, $post, $session){
+function API_slotTurni($get, $post, $session){
     global $turni;
 
     if (!isset($session['tipoUtente']) || $session['tipoUtente'] != "admin"){

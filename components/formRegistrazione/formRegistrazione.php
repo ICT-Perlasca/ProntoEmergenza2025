@@ -1,4 +1,7 @@
 <?php
+require_once "./components/SimpleComponent/COMP_selectRuolo.php";
+require_once "./components/SimpleComponent/COMP_selectTipiDocumenti.php";
+
 function mostraErrore($campo, $errori) {
     if (is_array($errori) && isset($errori[$campo])) {
         return '<span class="text-danger d-block mt-1">' . htmlspecialchars($errori[$campo]) . '</span>';
@@ -76,30 +79,30 @@ function COMP_formRegistrazione(array $errori = [], array $valori = [], bool $se
 
                 <div class="mb-3">
                     <label class="form-label">*Cognome</label>
-                    <input type="text" name="cognome" class="form-control border-primary" maxlength="30" required value="' . $val('cognome') . '">
+                    <input type="text" name="cognome" class="form-control" maxlength="30" required value="' . $val('cognome') . '">
                     ' . mostraErrore('cognome', $errori) . '
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">*Nome</label>
-                    <input type="text" name="nome" class="form-control border-primary" maxlength="30" required value="' . $val('nome') . '">
+                    <input type="text" name="nome" class="form-control" maxlength="30" required value="' . $val('nome') . '">
                     ' . mostraErrore('nome', $errori) . '
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">*Codice Fiscale</label>
-                    <input type="text" name="codiceFiscale" class="form-control border-primary" maxlength="16" required value="' . $val('codiceFiscale') . '">
+                    <input type="text" name="codiceFiscale" class="form-control" maxlength="16" required value="' . $val('codiceFiscale') . '">
                     ' . mostraErrore('codiceFiscale', $errori) . '
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">*Data di nascita</label>
-                    <input type="date" name="dataNascita" class="form-control border-primary" required value="' . $val('dataNascita') . '">
+                    <input type="date" name="dataNascita" class="form-control" required value="' . $val('dataNascita') . '">
                     ' . mostraErrore('dataNascita', $errori) . '
                 </div>
                 <div class=mb-3>
                     <label class="form-label">Immagine</label>
-                    <input type="file" name="fileUp[]" class="form-control border-primary" value="' . $val('immagine') . '">
+                    <input type="file" name="imageUp" class="form-control" value="' . $val('immagine') . '">
                 </div>
         <!-- Indirizzo -->
                 <h5 class="mt-4 mb-3">*Indirizzo</h5>
@@ -108,12 +111,12 @@ function COMP_formRegistrazione(array $errori = [], array $valori = [], bool $se
                 <div class="row mb-3">
                     <div class="col-md-8">
                         <label class="form-label">*Via</label>
-                        <input type="text" name="via" class="form-control border-primary" maxlength="20" required value="' . $val('via') . '">
+                        <input type="text" name="via" class="form-control " maxlength="20" required value="' . $val('via') . '">
                         ' . mostraErrore('via', $errori) . '
                     </div>
                     <div class="col-md-4">
                         <label class="form-label">*Numero civico</label>
-                        <input type="text" name="numero" class="form-control border-primary" maxlength="4" required value="' . $val('numero') . '">
+                        <input type="text" name="numero" class="form-control" maxlength="4" required value="' . $val('numero') . '">
                         ' . mostraErrore('numero', $errori) . '
                     </div>
                 </div>
@@ -121,17 +124,17 @@ function COMP_formRegistrazione(array $errori = [], array $valori = [], bool $se
                 <div class="row mb-3">
                     <div class="col-md-4">
                         <label class="form-label">*CAP</label>
-                        <input type="text" name="cap" class="form-control border-primary" maxlength="5" required value="' . $val('cap') . '">
+                        <input type="text" name="cap" class="form-control " maxlength="5" required value="' . $val('cap') . '">
                         ' . mostraErrore('cap', $errori) . '
                     </div>
                     <div class="col-md-5">
                         <label class="form-label">*Città</label>
-                        <input type="text" name="citta" class="form-control border-primary" maxlength="20" required value="' . $val('citta') . '">
+                        <input type="text" name="citta" class="form-control" maxlength="20" required value="' . $val('citta') . '">
                         ' . mostraErrore('citta', $errori) . '
                     </div>
                     <div class="col-md-3">
                         <label class="form-label">*Provincia</label>
-                        <input type="text" name="provincia" class="form-control border-primary" maxlength="2" required value="' . $val('provincia') . '">
+                        <input type="text" name="provincia" class="form-control" maxlength="2" required value="' . $val('provincia') . '">
                         ' . mostraErrore('provincia', $errori) . '
                     </div>
                 </div>
@@ -141,12 +144,12 @@ function COMP_formRegistrazione(array $errori = [], array $valori = [], bool $se
                 <hr class="mb-4">
                 <div class="mb-3">
                     <label class="form-label">*Telefono</label>
-                    <input type="tel" name="telefono" class="form-control border-primary" maxlength="10" pattern="^\d{10}$" placeholder="1234567890" required value="' . $val('telefono') . '">
+                    <input type="tel" name="telefono" class="form-control" maxlength="10" pattern="^\d{10}$" placeholder="1234567890" required value="' . $val('telefono') . '">
                     ' . mostraErrore('telefono', $errori) . '
                 </div>
                 <div class="mb-3">
                     <label class="form-label">*Email</label>
-                    <input type="email" name="email" class="form-control border-primary" maxlength="50" required value="' . $val('email') . '">
+                    <input type="email" name="email" class="form-control" maxlength="50" required value="' . $val('email') . '">
                     ' . mostraErrore('email', $errori) . '
                 </div>
         
@@ -156,93 +159,109 @@ function COMP_formRegistrazione(array $errori = [], array $valori = [], bool $se
 
                 <div class="mb-3">
                     <label class="form-label">*Username</label>
-                    <input type="text" name="username" class="form-control border-primary" maxlength="30" required value="' . $val('username') . '">
+                    <input type="text" name="username" class="form-control " maxlength="30" required value="' . $val('username') . '">
                     ' . mostraErrore('username', $errori) . '
                 </div>
                 <div class="mb-3">
                     <label class="form-label">*Password</label>
-                    <input type="password" name="password" id="password" class="form-control border-primary" maxlength="20" required>
+                    <input type="password" name="password" id="password" class="form-control " maxlength="20" required>
                     ' . mostraErrore('password', $errori) . '
                 </div>
                 <div class="mb-3">
                     <label class="form-label">*Ripeti Password</label>
-                    <input type="password" name="confirmPassword" id="confirmPassword" class="form-control border-primary" maxlength="20" required onblur=ControllaPsw(form.schedaUtente);>
+                    <input type="password" name="confirmPassword" id="confirmPassword" class="form-control" maxlength="20" required onblur=ControllaPsw(form.schedaUtente);>
                     ' . mostraErrore('password', $errori) . '
                 </div>
                 
-        <!-- Tipo di attività e funzioni varie-->
+        <!-- Tipo di attività - ruolo e funzioni varie-->
                 <h5 class="mt-4 mb-3">Tipo di attività e funzioni varie</h5>
                 <hr class="mb-4">
                 <!--<div class="mb-4 text-center">
                     <div class="row justify-content-center g-3">
                         <div class="col-md-5">-->
-                <div class="mb-3">        
-                            <label class="form-label">Disponibilità per attività di 118 </label>
-                            <select class="form-select rounded p-1 border-2 border-primary bg-light text-dark shadow-sm" name="indisponibilita" required>
-                                <option value="0" ' . $selected('indisponibilita', '0') . '>Disponibile</option>
-                                <option value="1" ' . $selected('indisponibilita', '1') . '>Non disponibile</option>
-                            </select>
-                </div>
-                <div class="mb-3">
-                            <label class="form-label">Istruttore (si/no)</label>
-                            <select class="form-select rounded p-1 border-2 border-primary bg-light text-dark shadow-sm" name="istruttore" required>
-                                <option value="0" ' . $selected('istruttore', '0') . '>No</option>
-                                <option value="1" ' . $selected('istruttore', '1') . '>Si</option>
-                            </select>
-                </div>
                  <div class="mb-3">
-                            <label class="form-label">Tipo utente </label>
-                            <select class="form-select rounded p-1 border-2 border-primary bg-light text-dark shadow-sm" name="tipoUtente"'.$enableSetUser('tipoUtente').'>
+                            <label class="form-label">*Tipo utente </label>
+                            <select class="form-select rounded p-1 border-2 bg-light text-dark shadow-sm" name="tipoUtente"'.$enableSetUser('tipoUtente').'>
                                 <option value="user" ' . $selectedUser('tipoUtente', 'user') . '>User</option>
                                 <option value="admin" ' . $selectedUser('tipoUtente', 'admin') . '>Admin</option>
                             </select>
                 </div>
+                <div class="mb-3">        
+                            <label class="form-label">*Disponibilità per attività di 118 </label>
+                            <select class="form-select rounded p-1 border-2 bg-light text-dark shadow-sm" name="indisponibilita" required>
+                                <option value="0" ' . $selected('indisponibilita', '0') . '>Disponibile</option>
+                                <option value="1" ' . $selected('indisponibilita', '1') . '>Non disponibile</option>
+                            </select>
+                </div>
+                 <div class="mb-3">
+                            <label class="form-label">*Status </label>
+                            <select class="form-select rounded p-1 border-2 bg-light text-dark shadow-sm" name="istruttore" required>
+                                <option value="volontario">volontario</option>
+                                <option value="dipendente">dipendente</option>
+                                <option value="corsista">corsista</option>
+                            </select>
+                </div>
+                 <div class="mb-3">
+                            <label class="form-label">*Ruolo </label>
+                            '.COMP_selectRuolo('idRuolo').'
+                </div>
+                <div class="mb-3">
+                            <label class="form-label">*Istruttore (si/no)</label>
+                            <select class="form-select rounded p-1 border-2 bg-light text-dark shadow-sm" name="istruttore" required>
+                                <option value="0" ' . $selected('istruttore', '0') . '>No</option>
+                                <option value="1" ' . $selected('istruttore', '1') . '>Si</option>
+                            </select>
+                </div>
+                
                 <!--    </div>
                 </div>-->
 
-                <!-- Documento -->
+        <!-- Documento -->
                 <h5 class="mt-4 mb-3">Documento </h5>
                 <hr class="mb-4">
-
+                <div class="mb-3">
+                            <label class="form-label">*Tipo documento </label>
+                            '.COMP_selectTipiDocumenti('idTipoDocumento').'
+                </div>
                 <div class="mb-4">
-                    <label class="form-label" for="fronte">*Foto del fronte del documento</label>
-                    <div class="input-group">
-                        <input type="file" id="fronte" name="fronte" class="d-none" required onchange="document.getElementById(\'fronte-label\').innerText = this.files[0].name">
-                        <label for="fronte" class="btn btn-outline-primary rounded-3 border-2">Scegli file</label>
+                    <label class="form-label" for="fronte">Foto del fronte del documento</label>
+                     <input type="file" name="fronte" id="fronte" class="form-control">
+                    <!--<div class="input-group">
+                        <input type="file" id="fronte" name="fronte" class="d-none" onchange="document.getElementById(\'fronte-label\').innerText = this.files[0].name">
+                        <label for="fronte" class="btn  btn-outline-primary rounded-3 border-2">Scegli file</label>
                         <span id="fronte-label" class="ms-3">Nessun file selezionato</span>
-                    </div>
+                    </div>-->
                     ' . mostraErrore('fronte', $errori) . '
                 </div>
 
                 <div class="mb-4">
-                    <label class="form-label" for="retro">*Foto del retro del documento</label>
-                    <div class="input-group">
-                        <input type="file" id="retro" name="retro" class="d-none" required onchange="document.getElementById(\'retro-label\').innerText = this.files[0].name">
+                    <label class="form-label" for="retro">Foto del retro del documento</label>
+                     <input type="file" name="retro" id "retro" class="form-control">
+                    <!--<div class="input-group">
+                        <input type="file" id="retro" name="retro" class="d-none" onchange="document.getElementById(\'retro-label\').innerText = this.files[0].name">
                         <label for="retro" class="btn btn-outline-primary rounded-3 border-2">Scegli file</label>
                         <span id="retro-label" class="ms-3">Nessun file selezionato</span>
-                    </div>
+                    </div>-->
                     ' . mostraErrore('retro', $errori) . '
                 </div>
 
                 <div class="mb-4">
                     <label class="form-label">*Data di emissione</label>
-                    <input type="date" name="dataEmissione" class="form-control rounded-3 border-2 border-primary" required value="' . $val('dataEmissione') . '" >
+                    <input type="date" name="dataEmissione" class="form-control rounded-3 border-2" required value="' . $val('dataEmissione') . '" >
                     ' . mostraErrore('dataEmissione', $errori) . '
                 </div>
 
                 <div class="mb-4">
                     <label class="form-label">*Data di scadenza</label>
-                    <input type="date" name="dataScadenza" class="form-control rounded-3 border-2 border-primary" required value="' . $val('dataScadenza') . '">
+                    <input type="date" name="dataScadenza" class="form-control rounded-3 border-2" required value="' . $val('dataScadenza') . '">
                     ' . mostraErrore('dataScadenza', $errori) . '
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">*Descrizione</label>
-                    <input type="text" name="descrizione" class="form-control border-primary" required value="' . $val('descrizione') . '">
+                    <label class="form-label">Descrizione</label>
+                    <input type="text" name="descrizione" class="form-control" value="' . $val('descrizione') . '">
                     ' . mostraErrore('descrizione', $errori) . '
-                </div>
-
-                
+                </div>                
                 ' . $regbtn . '
             </form>
 

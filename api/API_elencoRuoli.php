@@ -1,5 +1,6 @@
 <?php
-    require_once("../../funzioniDB.php");
+require_once "./funzioniDB.php";
+    //require_once("../../funzioniDB.php");
 function API_elencoRuoli($get, $post, $session){
     //prati: può esserechiamata sia su utente admin che su utente user x cui controllo solo la sessione esistente
     if (!isset($session['tipoUtente'])){

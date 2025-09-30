@@ -19,7 +19,7 @@ echo COMP_head();
     require_once ("./components/Header/header.php");
     require_once ("./components/Cards/cardVeicolo.php");
     require_once ("./components/Footer/footer.php");
-    require_once ("./api/API_ElencoMezziDisponibili.php");
+    require_once ("./api/API_elencoMezziDisponibili.php");
     require_once ("./components/SimpleComponent/searchBar.php");
 
 echo COMP_header($_SESSION);
@@ -27,7 +27,7 @@ echo CMP_SearchBar("mezzi");
 
 echo '<div class="container my-4">';
 echo '<div class="row g-4">';
-foreach(API_ElencoMezziDisponibili([],[], $_SESSION) as $m) {
+foreach(API_elencoMezziDisponibili([],[], $_SESSION) as $m) {
     echo generaCardMezzo($m);
 }
 echo '</div>';

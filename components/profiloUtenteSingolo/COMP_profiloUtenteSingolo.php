@@ -1,9 +1,9 @@
 <?php
-require_once('./api/API_GetUtenteByEmail.php');
+require_once('./api/API_getUtenteByEmail.php');
 require_once('./components/SimpleComponent/COMP_Buttons.php');
 require_once ("./globals.php");
 function CMP_profiloUtenteSingolo($emailUt){
-	$utente = API_GetUtente([], array("emailUt" => $emailUt), $_SESSION);
+	$utente = API_getUtente([], array("emailUt" => $emailUt), $_SESSION);
 	
 	if ($utente == []){
 		$msg = "Tipo di utente non valido";

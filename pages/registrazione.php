@@ -34,7 +34,7 @@ fse
 <?php
 //byprati: non testo la sessione !!!! session_start();
 
-require_once "./api/apiRegistrazione/inserimentoUtente.php";
+require_once "./api/apiRegistrazione/API_inserimentoUtente.php";
 require_once "./components/formRegistrazione/formRegistrazione.php";
 
 $errori = [];
@@ -53,7 +53,8 @@ else{
 
 <h1 class="text-center text-primary my-4">
 </h1>
-<?php echo COMP_formRegistrazione($errori, $_POST); ?>
+<?php 
+    echo COMP_formRegistrazione($errori, $_POST); ?>
 
 <?php
 } 

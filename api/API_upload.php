@@ -2,6 +2,7 @@
 //require_once("./globals.php");
 function API_upload($cartella,$fileUp,$get, $post, $session)
 {
+    //$fileUp vettore che contine gli eleiemti di $_FILES x il camp del form
     //global $cartellaImmagini;
     if (!isset($fileUp['name'])) 
     {

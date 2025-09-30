@@ -4,7 +4,7 @@
     if (!isset($_SESSION['idUtente'])) {
         header("Location: ../login");
     } else {
-        require_once ("api/API_ElencoComunicazioni.php");
+        require_once ("api/API_elencoComunicazioni.php");
         require_once ("api/TutteComunicazioni.php");
         require_once ("components/Head/head.php");
         require_once ("components/Header/header.php");

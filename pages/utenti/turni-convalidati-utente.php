@@ -7,7 +7,7 @@
 	require_once("./components/Footer/footer.php");
 	require_once("./components/SimpleComponent/COMP_form.php");
 	require_once("./components/SimpleComponent/COMP_selectUtenti.php");
-	require_once("./api/API_GetMesi.php");
+	require_once("./api/API_getMesi.php");
 	session_start();
 	if(!isset($_SESSION["idUtente"])){
 		header("Location: ./pages/login.php");

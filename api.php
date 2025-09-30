@@ -7,7 +7,7 @@ $route = isset($_GET['route']) ? trim($_GET['route'], "/") : '';
 
 switch ($route) {
     case 'api/elencoComunicazioni':
-        require_once ("./api/API_ElencoComunicazioni.php");
+        require_once ("./api/API_elencoComunicazioni.php");
         echo json_encode(API_elencoComunicazioni($_GET, $_POST, $_SESSION));
         break;
     case 'api/segnarecomunicazioneletta':
@@ -15,19 +15,19 @@ switch ($route) {
         echo json_encode(API_segnareComunicazioneLetta($_GET, $_POST, $_SESSION));
         break;
     case 'api/ElencoMezziDisponibili':
-        require_once ("./api/API_ElencoMezziDisponibili.php");
-        echo json_encode(API_ElencoMezziDisponibili($_GET, $_POST, $_SESSION));
+        require_once ("./api/API_elencoMezziDisponibili.php");
+        echo json_encode(API_elencoMezziDisponibili($_GET, $_POST, $_SESSION));
         break;
     case 'api/GetMezzo':
         require_once ("./api/GetMezzo.php");
-        echo json_encode(API_GetMezzo($_GET, $_POST, $_SESSION));
+        echo json_encode(API_getMezzo($_GET, $_POST, $_SESSION));
         break;
     case 'api/GetUtente':
         require_once ("./api/GetUtente.php");
-        echo json_encode(API_GetUtente($_GET, $_POST, $_SESSION));
+        echo json_encode(API_getUtente($_GET, $_POST, $_SESSION));
         break;
     case 'api/ritornaUtenti':
-        require_once ("./api/API_RitornaUtenti.php");
+        require_once ("./api/API_ritornaUtenti.php");
         echo json_encode(API_ritornaUtenti($_GET, $_POST, $_SESSION));
         break;    
     case 'api/elencoTurniData':
@@ -50,41 +50,41 @@ switch ($route) {
         require_once ("./api/API_cancellaTurno.php");
         echo json_encode(API_cancellaTurno($_GET, $_POST, $_SESSION)); 
         break;
-    case 'api/API_ElencoCompleanni':
-        require_once ("./api/API_ElencoCompleanni.php");
-        echo json_encode(API_ElencoCompleanni($_GET, $_POST, $_SESSION));
+    case 'api/API_elencoCompleanni':
+        require_once ("./api/API_elencoCompleanni.php");
+        echo json_encode(API_elencoCompleanni($_GET, $_POST, $_SESSION));
         break;
-    case 'api/API_ElencoEventiPrevisti':
-        require_once ("./api/API_ElencoEventiPrevisti.php");
-        echo json_encode(API_ElencoEventiPrevisti($_GET, $_POST, $_SESSION));
+    case 'api/API_elencoEventiPrevisti':
+        require_once ("./api/API_elencoEventiPrevisti.php");
+        echo json_encode(API_elencoEventiPrevisti($_GET, $_POST, $_SESSION));
         break;
-    case 'api/API_ElencoOreUtente':
-        require_once ("./api/API_ElencoOreUtente.php");
-        echo json_encode(API_ElencoOreUtente($_GET, $_POST, $_SESSION));
+    case 'api/API_elencoOreUtente':
+        require_once ("./api/API_elencoOreUtente.php");
+        echo json_encode(API_elencoOreUtente($_GET, $_POST, $_SESSION));
         break;
-    case 'api/API_ElencoOreUtenteMensile':
-        require_once ("./api/API_ElencoOreUtenteMensile.php");
-        echo json_encode(API_ElencoOreUtenteMensile($_GET, $_POST, $_SESSION));
+    case 'api/API_elencoOreUtenteMensile':
+        require_once ("./api/API_elencoOreUtenteMensile.php");
+        echo json_encode(API_elencoOreUtenteMensile($_GET, $_POST, $_SESSION));
         break;  
-    case 'api/API_ElencoTurniAnnoPrecedente':
-        require_once ("./api/API_ElencoTurniAnnoPrecedente.php");
-        echo json_encode(API_ElencoTurniAnnoPrecedente($_GET, $_POST, $_SESSION));
+    case 'api/API_elencoTurniAnnoPrecedente':
+        require_once ("./api/API_elencoTurniAnnoPrecedente.php");
+        echo json_encode(API_elencoTurniAnnoPrecedente($_GET, $_POST, $_SESSION));
         break;
-    case 'api/API_ElencoTurniConvalidatiMensile':
-        require_once ("./api/API_ElencoTurniConvalidatiMensile.php");
-        echo json_encode(API_ElencoTurniConvalidatiMensile($_GET, $_POST, $_SESSION));
+    case 'api/API_elencoTurniConvalidatiMensile':
+        require_once ("./api/API_elencoTurniConvalidatiMensile.php");
+        echo json_encode(API_elencoTurniConvalidatiMensile($_GET, $_POST, $_SESSION));
         break;
-    case 'api/API_ElencoTurniConvalidatiMensileUtente':
-        require_once ("./api/API_ElencoTurniConvalidatiMensileUtente.php");
-        echo json_encode(API_ElencoTurniConvalidatiMensileUtente($_GET, $_POST, $_SESSION));
+    case 'api/API_elencoTurniConvalidatiMensileUtente':
+        require_once ("./api/API_elencoTurniConvalidatiMensileUtente.php");
+        echo json_encode(API_elencoTurniConvalidatiMensileUtente($_GET, $_POST, $_SESSION));
         break;
-    case 'api/API_ElencoTurniConvalidatiUtente':
-        require_once ("./api/API_ElencoTurniConvalidatiUtente.php");
-        echo json_encode(API_ElencoTurniConvalidatiUtente($_GET, $_POST, $_SESSION));
+    case 'api/API_elencoTurniConvalidatiUtente':
+        require_once ("./api/API_elencoTurniConvalidatiUtente.php");
+        echo json_encode(API_elencoTurniConvalidatiUtente($_GET, $_POST, $_SESSION));
         break;
-    case 'api/API_GetMesi':
-        require_once ("./api/API_GetMesi.php");
-        echo json_encode(API_GetMesi($_GET, $_POST, $_SESSION));
+    case 'api/API_getMesi':
+        require_once ("./api/API_getMesi.php");
+        echo json_encode(API_getMesi($_GET, $_POST, $_SESSION));
          break;
     case 'api/API_ritornaTurnoUtente_tra_due_date':
         require_once ("./api/API_ritornaTurnoUtente_tra_due_date.php");

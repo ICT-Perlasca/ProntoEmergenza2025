@@ -1,9 +1,9 @@
 <?php
 require_once("funzioniDB.php");
 
-//perchè usare questa API quando esiste $_SESSIO['idTipoUtenti']?????? 
+//perchè usare questa API quando esiste $_SESSION['idTipoUtenti']?????? 
 //API che controlla che tipo sia l'utente, ritorna il tipo in un array oppure un errore.
-function API_RitornaTipo ($get, $post, $session) {
+function API_ritornaTipo ($get, $post, $session) {
     $sqlVer = "SELECT
             tipoUtente
         FROM

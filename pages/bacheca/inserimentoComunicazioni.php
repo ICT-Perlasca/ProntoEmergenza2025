@@ -8,7 +8,7 @@ if (!isset($_SESSION['idUtente'])) {
 <!DOCTYPE html>
 <html lang="it">
     <?php
-        require("././api/API_AggiuntaComunicazione.php");
+        require("././api/API_aggiuntaComunicazione.php");
         require_once("./components/Head/head.php");
         require_once("./components/SimpleComponent/COMP_form.php");
         echo COMP_head();
@@ -177,7 +177,7 @@ if (!isset($_SESSION['idUtente'])) {
       </script>
         <?php
             } else {
-                $res = API_AggiuntaComunicazione($_GET, $_POST, $_SESSION);
+                $res = API_aggiuntaComunicazione($_GET, $_POST, $_SESSION);
 
                 if(isset($res['error'])){
                     echo COMP_Alert("alert-danger",$res['error']);

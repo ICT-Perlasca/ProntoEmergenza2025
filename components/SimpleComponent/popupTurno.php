@@ -20,6 +20,8 @@
         $ruoli=API_elencoRuoli([],[],$_SESSION);
     else
         $ruoli=API_elencoRuoli([],['idUtente'=>$idUtente],$_SESSION);
+// non è stato usato COMP_selectRuolo x creare la select sulla scelta del ruolo perchè 
+// qui all'evento onChange si devon scegliere anche gli utenti abbinati al ruolo
 
      ob_start();
 

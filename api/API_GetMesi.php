@@ -3,7 +3,7 @@
 //Percorso: ProntoEmergenza2025/api
 
 	require_once("./funzioniDB.php");
-	function API_GetMesi($get, $post, $session){
+	function API_getMesi($get, $post, $session){
 		if (!isset($session['tipoUtente']) || $session['tipoUtente'] != "admin"){
 			header("HTTP/1_.1 403 Forbidden");
 			return [];

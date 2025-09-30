@@ -2,7 +2,7 @@
 //API che restituisce i turni convalidati di un determinato mese per un utente(completata)
 //Percorso: ProntoEmergenza2025/api
 require_once("funzioniDB.php");
-function API_ElencoTurniConvalidatiMensileUtente($get, $post, $session){
+function API_elencoTurniConvalidatiMensileUtente($get, $post, $session){
     if(!isset($session['tipoUtente']) || $session['tipoUtente'] != "admin"){
         header("HTTP/1.1 403 Forbidden");
         return [];

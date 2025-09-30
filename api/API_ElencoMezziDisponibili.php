@@ -1,7 +1,7 @@
 <?php
 require_once("funzioniDB.php");
 
-function API_ElencoMezziDisponibili($get, $post, $session){
+function API_elencoMezziDisponibili($get, $post, $session){
     if (!isset($session['tipoUtente']) || $session['tipoUtente'] != "admin"){
         header('HTTP/1.1 403 Forbidden');
         return [];

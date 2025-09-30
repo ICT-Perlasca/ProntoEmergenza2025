@@ -1,6 +1,6 @@
 <?php
 require_once("funzioniDB.php");
-function API_GetUtente($get, $post, $session){
+function API_getUtente($get, $post, $session){
   // if(!isset($post['emailUt']) || !isset($session['tipoUtente']) || $session['tipoUtente'] != "admin"){
   //situazione di errore x cui non restituisco i dati dell'utente
   // non sono loggato oppure (sono loggato e non sono admin e email passata e diversa da email in sessione)
