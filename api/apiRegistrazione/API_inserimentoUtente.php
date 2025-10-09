@@ -4,13 +4,13 @@ require_once "globals.php";
 require_once "./api/API_upload.php";
 
 function API_inserimentoUtente($get, $post, $session) {
-globals $cartellaImmagini, $cartellaDocumenti;
+global $cartellaImmagini, $cartellaDocumenti;
     $campiObbligatori = [
         "cognome", "nome", "codiceFiscale", "dataNascita",
         "via", "numero", "cap", "citta", "provincia","telefono",
-        "emil","username", "password",
+        "email","username", "password",
         "indisponibilita", "istruttore","dataEmissione",
-        "dataScadenza","tipoUtente", "status"
+        "dataScadenza","tipoUtente", "status","numerodocumento"
     ];
     
     $errori = [];
@@ -37,7 +37,7 @@ globals $cartellaImmagini, $cartellaDocumenti;
     if (!$dataEmissione) {
         $errori['dataEmissione'] = "Formato data di emissione non valido.";
     }
-    $dataScandenza = DateTime::createFromFormat('Y-m-d', $post['dataScadenza']);
+    $dataScadenza = DateTime::createFromFormat('Y-m-d', $post['dataScadenza']);
     if (!$dataScadenza) {
         $errori['dataScadenza'] = "Formato data di scadenza non valido.";
     }
@@ -137,7 +137,7 @@ globals $cartellaImmagini, $cartellaDocumenti;
             PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_STR,
             PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_STR,
             PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_STR, PDO::PARAM_STR,
-            PDO::PARAM_INT, PDO::PARAM_INT, PDO::PARAM_STR, PDO::PARAM_STR
+            PDO::PARAM_INT, PDO::PARAM_INT, PDO::PARAM_STR, PDO::PARAM_STR,PDO::PARAM_STR
         ];
 
         $rows = db_query($query, $valori, $tipi);
@@ -190,8 +190,8 @@ globals $cartellaImmagini, $cartellaDocumenti;
   
 
             */
-            if (isset($_FILES['imgUp'])){
-                $ret=API_upload($cartellaImmagini,$_FILE['imgUp'],$get,$post,$session);
+            if (isset($_FILES['imageUp'])){
+                $ret=API_upload($cartellaImmagini,$_FILES['imageUp'],$get,$post,$session);
                 if (isset($ret['error']))
                     $errori['errorImg']='utente inserito ma immagine profilo non caricata';
                 else{
@@ -206,8 +206,8 @@ globals $cartellaImmagini, $cartellaDocumenti;
             }
             if (isset($_FILES['fronte']) || isset ($_FILES['retro'])){
                 if (isset($_FILES['fronte'])){
-                    $retfronte=API_upload($cartellaDocumenti,$_FILE['fronte'],$get,$post,$session);
-                    if (isset($ret['error'])){
+                    $retfronte=API_upload($cartellaDocumenti,$_FILES['fronte'],$get,$post,$session);
+                    if (isset($retfronte['error'])){
                         $errori['errorDoc'].='utente inserito ma fronte documento non caricato';
                         $fronte='';
                     }
@@ -215,8 +215,8 @@ globals $cartellaImmagini, $cartellaDocumenti;
                         $fronte=$retfronte['nomeFile'];
                 }
                 if (isset($_FILES['retro'])){
-                    $retretro=API_upload($cartellaDocumenti,$_FILE['retro'],$get,$post,$session);
-                    if (isset($ret['error'])){
+                    $retretro=API_upload($cartellaDocumenti,$_FILES['retro'],$get,$post,$session);
+                    if (isset($retretro['error'])){
                         $errori['errorDoc'].='utente inserito ma retro documento non caricato';
                         $retro='';
                     }
@@ -224,11 +224,11 @@ globals $cartellaImmagini, $cartellaDocumenti;
                         $retro=$retretro['nomeFile'];
                 }
                 if (!isset($ret['errorDoc'])){ //quindi tutto OK
-                    if (isset($post['descrizione']))
-                        $descr=$post['descrizione'];
+                    if (isset($post['numerodocumento']))
+                        $descr=$post['numerodocumento'];
                     else
                         $desc='';
-                    $query="insert into documenti(idTipoDocumento, descrizione, fronte, retro,
+                    $query="insert into documenti(idTipoDocumento, numerodocumento, fronte, retro,
                         dataEmissione,dataScadenza, idUtente) 
                         values(?,?,?,?,
                         ?,?,?)";
@@ -243,7 +243,7 @@ globals $cartellaImmagini, $cartellaDocumenti;
             }
             
 
-    // TODO: Invio notifica via email agli admin
+    // TODO: Invio notifica via email agli admin e allutente stesso perla validazione dell'utente
     
                 return [];
             }

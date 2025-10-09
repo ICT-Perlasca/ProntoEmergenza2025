@@ -20,18 +20,18 @@ function COMP_formRegistrazione(array $errori = [], array $valori = [], bool $se
         else 
             return $value == '0' ? 'selected' : '';
     };
-    $selectedUser = function($field, $value) {//xxxxxx da sistemare
+    $selectedUser = function($field, $value) { //seleiozna opzione user e blocca la scelta dell'opzione admin se si è in Registrazione
         if (isset($_SESSION[$field]))
             return (string)$_SESSION[$field] === (string)$value ? 'selected' : '';
-        else 
-            return $value == 'user' ? 'selected' : '';
+        else // la sessione non è settata quindi sono in Registrazione
+            return $value == 'user' ? 'selected' : 'disabled';
     };
-    $enableSetUser = function($field) {//permette di disabilitare combo di scelta se utente non loggato (ossia per registrazione)
+    /*$enableSetUser = function($field) {//permette di disabilitare combo di scelta se utente non loggato (ossia per registrazione)
         if (isset($_SESSION[$field]))
             return  'required';
         else 
             return 'disabled';
-    };
+    };*/
     $hasError = !empty($errori);
 
     $regbtn = '<div class="d-flex justify-content-center mt-4">
@@ -53,23 +53,44 @@ function COMP_formRegistrazione(array $errori = [], array $valori = [], bool $se
     return '
     <script>
     function ControllaPsw(form){
-      psw1=document.getElementById("password");
-      pswchk=document.getElementById("confirmPassword");
-      if (psw1.value!=pswchk.value){
-        alert("le due password indicate non corrispondono");
-        psw1.value="";
-        pswchk.value="";
-        psw1.focus();
-        return false;
-      }
-    else
-        return true;
+        psw1=document.getElementById("password");
+        pswchk=document.getElementById("confirmPassword");
+        if (psw1.value!=pswchk.value){
+            alert("le due password indicate non corrispondono");
+            psw1.value="";
+            pswchk.value="";
+            psw1.focus();
+            return false;
+        }
+        else
+            return true;
+    }
+    function cambiaRuolo(){
+    //alert("sono in cambiaRuolo");
+        statusValue=document.getElementById("status").value;
+        ruoloObj=document.getElementById("idRuolo");
+        if(statusValue=="corsista"){
+            ruoloObj.value="2";//valore di "corsista" su DB. Si dovrebbe fare ricerca tramite API sul server
+            ruoloObj.disabled=true;
+        }
+        else{
+            ruoloObj.value="1";//valore della prima scelta ("autista")
+            ruoloObj.disabled=false;
+        }
+    }
+    function controllaIstruttore(){
+        ruoloObj==document.getElementById("idRuolo");
+        istruttoreObj=document.getElementById("istruttore");
+        if (istruttoreObj.value=="0" && ruoloObj.value=="3"){
+            alert("ruolo non compatibile !!!!");
+            istruttoreObj.value="1";
+        }
     }
     </script>
     <div class="row min-vh-100 justify-content-center align-items-center bg-primary text-white py-5" m-0>
         <div class="col-12 col-md-8 col-lg-6 bg-white text-dark p-5 rounded shadow">
 
-            ' . ($hasError ? '<div class="alert alert-danger mb-4">Si sono verificati degli errori, correggi i campi evidenziati.</div>' : '') . '
+            ' . ($hasError ? '<div class="alert alert-danger mb-4">Si sono verificati degli errori, correggi i campi evidenziati.</div>'.print_r($errori) : '') . '
 
             <form method="POST" enctype="multipart/form-data" name=schedaUtente>
 
@@ -181,21 +202,21 @@ function COMP_formRegistrazione(array $errori = [], array $valori = [], bool $se
                         <div class="col-md-5">-->
                  <div class="mb-3">
                             <label class="form-label">*Tipo utente </label>
-                            <select class="form-select rounded p-1 border-2 bg-light text-dark shadow-sm" name="tipoUtente"'.$enableSetUser('tipoUtente').'>
+                            <select class="form-select rounded p-1 border-2" name="tipoUtente" >
                                 <option value="user" ' . $selectedUser('tipoUtente', 'user') . '>User</option>
                                 <option value="admin" ' . $selectedUser('tipoUtente', 'admin') . '>Admin</option>
                             </select>
                 </div>
                 <div class="mb-3">        
                             <label class="form-label">*Disponibilità per attività di 118 </label>
-                            <select class="form-select rounded p-1 border-2 bg-light text-dark shadow-sm" name="indisponibilita" required>
+                            <select class="form-select rounded p-1 border-2 " name="indisponibilita" required>
                                 <option value="0" ' . $selected('indisponibilita', '0') . '>Disponibile</option>
                                 <option value="1" ' . $selected('indisponibilita', '1') . '>Non disponibile</option>
                             </select>
                 </div>
                  <div class="mb-3">
                             <label class="form-label">*Status </label>
-                            <select class="form-select rounded p-1 border-2 bg-light text-dark shadow-sm" name="istruttore" required>
+                            <select class="form-select rounded p-1 border-2" id="status" name="status" onchange="cambiaRuolo();" required>
                                 <option value="volontario">volontario</option>
                                 <option value="dipendente">dipendente</option>
                                 <option value="corsista">corsista</option>
@@ -207,7 +228,7 @@ function COMP_formRegistrazione(array $errori = [], array $valori = [], bool $se
                 </div>
                 <div class="mb-3">
                             <label class="form-label">*Istruttore (si/no)</label>
-                            <select class="form-select rounded p-1 border-2 bg-light text-dark shadow-sm" name="istruttore" required>
+                            <select class="form-select rounded p-1 border-2" id="istruttore" name="istruttore" onchange="controllaIstruttore();" required>
                                 <option value="0" ' . $selected('istruttore', '0') . '>No</option>
                                 <option value="1" ' . $selected('istruttore', '1') . '>Si</option>
                             </select>
@@ -223,7 +244,12 @@ function COMP_formRegistrazione(array $errori = [], array $valori = [], bool $se
                             <label class="form-label">*Tipo documento </label>
                             '.COMP_selectTipiDocumenti('idTipoDocumento').'
                 </div>
-                <div class="mb-4">
+                 <div class="mb-3">
+                    <label class="form-label">*Numero documento</label>
+                    <input type="text" name="numerodocumento" class="form-control" value="' . $val('numerodocumento') . '">
+                    ' . mostraErrore('numerodocumento', $errori) . '
+                </div>                
+               <div class="mb-4">
                     <label class="form-label" for="fronte">Foto del fronte del documento</label>
                      <input type="file" name="fronte" id="fronte" class="form-control">
                     <!--<div class="input-group">
@@ -257,11 +283,6 @@ function COMP_formRegistrazione(array $errori = [], array $valori = [], bool $se
                     ' . mostraErrore('dataScadenza', $errori) . '
                 </div>
 
-                <div class="mb-3">
-                    <label class="form-label">Descrizione</label>
-                    <input type="text" name="descrizione" class="form-control" value="' . $val('descrizione') . '">
-                    ' . mostraErrore('descrizione', $errori) . '
-                </div>                
                 ' . $regbtn . '
             </form>
 

@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if(isset($_POST['nome']) && empty($errori)){
 ?>
     <div class="alert alert-success" role="alert">
-    Successo, attendere che un amministratore convalidi la tua registrazione
+    Sei stato registrato con successo!! Attendi che un amministratore convalidi la tua registrazione.
     </div>
 <?php
 }
