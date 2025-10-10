@@ -7,11 +7,11 @@ if (isset($_SESSION['nome']))  //utente già loggato
 else {
     if (isset($_POST['username'])){//utente ha compilato il form
         //cerca utente
-        $strSql="select * from utenti where username=? and password=?";
+        $strSql="select * from utenti where username=? and password=? and validato=1";
         $ris=db_query($strSql,[$_POST['username'],$_POST['password']],[PDO::PARAM_STR,PDO::PARAM_STR]);
         //print_r($ris);
         if (count($ris)==0) { //utente non esiste
-            setcookie("errorelogin","Nome utente o password errati!!",time()+60*60,"/");
+            setcookie("errorelogin","Nome utente o password errati o utente NON validato via email!!",time()+60*60,"/");
             header("location:/ProntoEmergenza2025/login");
         }
         else{ //utente esiste
@@ -66,7 +66,7 @@ else {
                     <!--<div class='col-12 alert alert-secondary' role='alert'>sezione dell'errore</div>-->
                     <?php
                     if (isset($_COOKIE['errorelogin'])){
-                       echo "<div class='col-12 alert alert-secondary' role='alert'>Nome utente o password inesistenti!!!!</div>"; 
+                       echo "<div class='col-12 alert alert-secondary' role='alert'>".$_COOKIE['errorelogin']."</div>"; 
                        setcookie("errorelogin","",time()-1,"/");                  
                     }
                     ?>
