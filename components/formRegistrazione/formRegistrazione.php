@@ -86,11 +86,19 @@ function COMP_formRegistrazione(array $errori = [], array $valori = [], bool $se
             istruttoreObj.value="1";
         }
     }
+    function showPwd() {
+        var input = document.getElementById("password");
+        if (input.type === "password") {
+          input.type = "text";
+        } else {
+          input.type = "password";
+        }
+    }
     </script>
     <div class="row min-vh-100 justify-content-center align-items-center bg-primary text-white py-5" m-0>
         <div class="col-12 col-md-8 col-lg-6 bg-white text-dark p-5 rounded shadow">
 
-            ' . ($hasError ? '<div class="alert alert-danger mb-4">Si sono verificati degli errori, correggi i campi evidenziati.</div>'.print_r($errori) : '') . '
+            ' . ($hasError ? '<div class="alert alert-danger mb-4">Si sono verificati degli errori, correggi i campi evidenziati:<br>'.print_r($errori).'</div>' : '') . '
 
             <form method="POST" enctype="multipart/form-data" name=schedaUtente>
 
@@ -252,22 +260,12 @@ function COMP_formRegistrazione(array $errori = [], array $valori = [], bool $se
                <div class="mb-4">
                     <label class="form-label" for="fronte">Foto del fronte del documento</label>
                      <input type="file" name="fronte" id="fronte" class="form-control">
-                    <!--<div class="input-group">
-                        <input type="file" id="fronte" name="fronte" class="d-none" onchange="document.getElementById(\'fronte-label\').innerText = this.files[0].name">
-                        <label for="fronte" class="btn  btn-outline-primary rounded-3 border-2">Scegli file</label>
-                        <span id="fronte-label" class="ms-3">Nessun file selezionato</span>
-                    </div>-->
                     ' . mostraErrore('fronte', $errori) . '
                 </div>
 
                 <div class="mb-4">
                     <label class="form-label" for="retro">Foto del retro del documento</label>
                      <input type="file" name="retro" id "retro" class="form-control">
-                    <!--<div class="input-group">
-                        <input type="file" id="retro" name="retro" class="d-none" onchange="document.getElementById(\'retro-label\').innerText = this.files[0].name">
-                        <label for="retro" class="btn btn-outline-primary rounded-3 border-2">Scegli file</label>
-                        <span id="retro-label" class="ms-3">Nessun file selezionato</span>
-                    </div>-->
                     ' . mostraErrore('retro', $errori) . '
                 </div>
 

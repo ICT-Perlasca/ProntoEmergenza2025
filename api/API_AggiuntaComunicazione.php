@@ -3,7 +3,7 @@ require_once("funzioniDB.php");
 require_once("API_upload.php");
 require_once("./globals.php");
 function API_aggiuntaComunicazione($get, $post, $session){
-    global $cartellaBacheca;
+    global $cartellaBacheca,$imgAllegato;
    
     if (!isset($session['tipoUtente']) || $session['tipoUtente'] != "admin"){
         header("HTTP/1.1 403 Forbidden");
@@ -30,7 +30,7 @@ fse
 
 */
     if ($_FILES['fileUp']['error']!=4){// se vero esiste allegato
-        $ctrlImg = API_upload("./$cartellaBacheca/",$_FILES['fileUp'],[],[], $session);
+        $ctrlImg = API_upload("./$cartellaBacheca/",$imgAllegato,$_FILES['fileUp'],[],[], $session);
         if(isset($ctrlImg['error'])){
         //da sistemare
         //$res['error']="file non compatibile";

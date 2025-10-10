@@ -3,8 +3,13 @@ require_once "funzioniDB.php";
 require_once "globals.php";
 require_once "./api/API_upload.php";
 
+function esisteFile($file){//verifico se tramite form il file di cui mi viene passato $_FILES è stato scelto 
+    if ($file['size'] ==0 && empty($files['tmp_name']))
+        return false;
+    else return true;
+}
 function API_inserimentoUtente($get, $post, $session) {
-global $cartellaImmagini, $cartellaDocumenti;
+global $cartellaImmagini, $cartellaDocumenti, $imgDocF, $imgDocR, $imgProfilo;
     $campiObbligatori = [
         "cognome", "nome", "codiceFiscale", "dataNascita",
         "via", "numero", "cap", "citta", "provincia","telefono",
@@ -190,8 +195,8 @@ global $cartellaImmagini, $cartellaDocumenti;
   
 
             */
-            if (isset($_FILES['imageUp'])){
-                $ret=API_upload($cartellaImmagini,$_FILES['imageUp'],$get,$post,$session);
+            if (esisteFile($_FILES['imageUp'])){
+                $ret=API_upload($cartellaImmagini,$imgProfilo,$_FILES['imageUp'],$get,$post,$session);
                 if (isset($ret['error']))
                     $errori['errorImg']='utente inserito ma immagine profilo non caricata';
                 else{
@@ -204,9 +209,10 @@ global $cartellaImmagini, $cartellaDocumenti;
                 }
 
             }
-            if (isset($_FILES['fronte']) || isset ($_FILES['retro'])){
-                if (isset($_FILES['fronte'])){
-                    $retfronte=API_upload($cartellaDocumenti,$_FILES['fronte'],$get,$post,$session);
+            if (esisteFile($_FILES['fronte']) || esisteFile ($_FILES['retro'])){
+                $errori['errorDoc']='';
+                if (esisteFile($_FILES['fronte'])){
+                    $retfronte=API_upload($cartellaDocumenti,$imgDocF,$_FILES['fronte'],$get,$post,$session);
                     if (isset($retfronte['error'])){
                         $errori['errorDoc'].='utente inserito ma fronte documento non caricato';
                         $fronte='';
@@ -214,8 +220,10 @@ global $cartellaImmagini, $cartellaDocumenti;
                     else
                         $fronte=$retfronte['nomeFile'];
                 }
-                if (isset($_FILES['retro'])){
-                    $retretro=API_upload($cartellaDocumenti,$_FILES['retro'],$get,$post,$session);
+                else 
+                    $fronte='';
+                if (esisteFile($_FILES['retro'])){
+                    $retretro=API_upload($cartellaDocumenti,$imgDocR,$_FILES['retro'],$get,$post,$session);
                     if (isset($retretro['error'])){
                         $errori['errorDoc'].='utente inserito ma retro documento non caricato';
                         $retro='';
@@ -223,9 +231,15 @@ global $cartellaImmagini, $cartellaDocumenti;
                     else
                         $retro=$retretro['nomeFile'];
                 }
-                if (!isset($ret['errorDoc'])){ //quindi tutto OK
+                else
+                    $retro='';
+
+                //se nessuna riga precedente ha caricato almenouno dei due messaggi di errore (x fronte e retro) allora elimino var
+                if ($errori['errorDoc']==='') unset($errori['errorDoc']); 
+
+                if (!isset($errori['errorDoc'])){ //quindi tutto OK (nessun errore nelle upload precedenti)
                     if (isset($post['numerodocumento']))
-                        $descr=$post['numerodocumento'];
+                        $desc=$post['numerodocumento'];
                     else
                         $desc='';
                     $query="insert into documenti(idTipoDocumento, numerodocumento, fronte, retro,
@@ -239,15 +253,20 @@ global $cartellaImmagini, $cartellaDocumenti;
                     $rowdoc=db_query($query,$valori,$tipi);
                     if (isset($rowdoc['error']))
                         $errori['error']='errore in inserimento documento per utente -'.$rowdoc['error'];                       
+                    
+                }//fine ->non ci sono errori x immagini fronte o retro (nulla in errorDoc) ma potrebbe esistere errore per inser del documento in DB
+                else{//ci sono errori in errorDoc
+                    $errori['errore']=$errori['errorDoc'];
+                    unset($errori['errorDoc']);
                 }
             }
             
 
-    // TODO: Invio notifica via email agli admin e allutente stesso perla validazione dell'utente
+    // TODO: Invio notifica via email agli admin e all'utente stesso per la validazione dell'utente
     
-                return [];
-            }
-        }
+                return $errori;
+            }//fine no errori in inserimento ruolo
+        }//fine no errori in inserimento utente
     }
 }
 ?>

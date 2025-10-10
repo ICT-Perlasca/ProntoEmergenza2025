@@ -1,15 +1,15 @@
 <?php
 //require_once("./globals.php");
-function API_upload($cartella,$fileUp,$get, $post, $session)
+//$cartella in cui salvare l'immagine
+//$prefix prefisso del nome da dre all'immagine lato server
+//$fileUp  vettore che contiene gli elementi di $_FILES x il camp del form
+function API_upload($cartella,$prefix,$fileUp,$get, $post, $session)
 {
-    //$fileUp vettore che contine gli eleiemti di $_FILES x il camp del form
-    //global $cartellaImmagini;
     if (!isset($fileUp['name'])) 
     {
         return (['error'=>'non è stato trasferito alcun file']); 
     }
 
-    //$fileUp = $_FILES['fileUp'];
     $estensioni = ['jpg', 'jpeg', 'png','pdf'];
     $dimensioneMassima = 3 * 1024 * 1024; // 3MB
     $percorso = "";
@@ -34,8 +34,8 @@ function API_upload($cartella,$fileUp,$get, $post, $session)
     {
         mkdir($cartella, 0755, true);
     }
-    $nomeFile = $session['username'] . "_" . $ts->getTimestamp() . "." . $estensione;
-    $percorso = $cartella . $nomeFile;
+    $nomeFile = $prefix. "_" . $ts->getTimestamp() . "." . $estensione;
+    $percorso = $cartella ."/". $nomeFile;
     if (move_uploaded_file($fileUp['tmp_name'], $percorso)) 
     {
         $ret['success']='file trasferito con successo';

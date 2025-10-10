@@ -1,5 +1,7 @@
 <?php
 // Funzione per processare un singolo file
+/* da settembre 2025 viene usata API_upload!!!!!!!!!!!!!!!!!!!!!!!!!1
+
     function processFile(array $file, string $uploadDir, string $role, array $allowedTypes) {
 		// Verifica se i dati del file sono presenti e se non ci sono errori
 		if (!isset($file["name"], $file["tmp_name"]) || $file["error"] !== UPLOAD_ERR_OK) {
@@ -119,4 +121,5 @@ function API_uploadDocument($get, $post, $session,$allowedTypes = ['jpg', 'jpeg'
 
     return $errors;
 }
+    */
 ?>

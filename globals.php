@@ -7,8 +7,13 @@ $DSN="mysql:host=" .$HOST . ";dbname=" . $DB;
 $DOMAIN_NAME = "http://localhost/ProntoEmergenza2025";
 $cartellaImmagini="uploads/images";
 $cartellaBacheca="ProntoEmergenza2025/uploads/bacheca";
-$cartellaDocumenti="uploads/document";
+$cartellaDocumenti="ProntoEmergenza2025/uploads/document";
 $imgAvatar="avatar-100.png";
+$imgDocF="documentF";
+$imgDocR="documentoR";
+$imgAllegato="allegatoDoc";
+$imgProfilo="profiloImg";
+
 
 //turni da inserire (mattina, pomeriggio e notte)
 $turni = [
