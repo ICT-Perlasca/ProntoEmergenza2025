@@ -32,7 +32,7 @@ fse
 </div>
 
 <?php
-//byprati: non testo la sessione !!!! session_start();
+//byprati: non testo la sessione  perchè in fase di registrazione utente NON è loggato!!!! session_start();
 
 require_once "./api/apiRegistrazione/API_inserimentoUtente.php";
 require_once "./components/formRegistrazione/formRegistrazione.php";
@@ -42,6 +42,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $errori = API_inserimentoUtente([], $_POST, []);
 }
 if(isset($_POST['nome']) && empty($errori)){
+    
+    // TODO: Invio notifica via email agli admin e all'utente stesso per la validazione dello username da parte dell'utente
+
 ?>
     <div class="alert alert-success" role="alert">
     Sei stato registrato con successo!! Attendi che un amministratore convalidi la tua registrazione.

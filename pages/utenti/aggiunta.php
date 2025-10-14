@@ -21,6 +21,7 @@ fse
 */
 session_start();
 
+require_once "funzioniDB.php";
 require_once "./components/Footer/footer.php";
 require_once "./components/Header/header.php";
 require_once "./components/Head/head.php";
@@ -40,7 +41,7 @@ if(!isset($_SESSION['idUtente'])){
     echo COMP_header($_SESSION);
 ?>
 
-    <span class="col-8 text-center">
+    <span class="col-8 text-center text-primary">
         <h1>Inserimento nuovo utente</h1>
     </span>
 <?php
@@ -49,8 +50,19 @@ if(!isset($_SESSION['idUtente'])){
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errori = API_inserimentoUtente([], $_POST, []);
     }
-    if (isset($_POST['nome']) && empty($errori)) {
-        echo '<div class="alert alert-success mb-4" style="font-weight: bold; font-size: 1.1rem;">Utente registrato con successo.</div>';
+    if (isset($_POST['nome']) && !isset($errori['error'])) {
+        
+    // TODO: Invio notifica via email all'utente stesso per la validazione dello username da parte dell'utente
+
+        //style="font-weight: bold; font-size: 1.1rem;" nel div??? eliminato by prati
+        echo '<div class="alert alert-success mb-4" role="alert">
+              Utente registrato con successo.
+              </div>';
+        //byprati: convalida dell'utente perchè inserito by admin
+        $strsq="update utenti set validato=1 where idUtente=?";
+        $valori=[$idUtente];
+        $tipi=[PDO::PARAM_INT];
+        $rowQuery=db_query($strsql,$valori,$tipi);
     }
     else{
 ?>

@@ -163,8 +163,8 @@ global $cartellaImmagini, $cartellaDocumenti, $imgDocF, $imgDocR, $imgProfilo;
             $tipi=[PDO::PARAM_INT,PDO::PARAM_INT];
             $rowdoc=db_query($query,$valori,$tipi);
             if (isset($rows["error"])) {
-                $errori['errorIns'] = "Errore nell'inserimento del ruolo dell'utente: " . $rows["error"];
-                return $errori;
+                $errori['error'] = "Errore nell'inserimento del ruolo dell'utente: " . $rows["error"];
+                return $errori;   //=====>>>>>> esce qui in caso di errore nella INSERT sul DB!!!!!
             }
             else{
             /* immaginedel profilo
@@ -198,7 +198,7 @@ global $cartellaImmagini, $cartellaDocumenti, $imgDocF, $imgDocR, $imgProfilo;
             if (esisteFile($_FILES['imageUp'])){
                 $ret=API_upload($cartellaImmagini,$imgProfilo,$_FILES['imageUp'],$get,$post,$session);
                 if (isset($ret['error']))
-                    $errori['errorImg']='utente inserito ma immagine profilo non caricata';
+                    $errori['error']='utente inserito ma immagine profilo non caricata';
                 else{
                     $query="update utenti set immagine=? where idUtente=?;";
                     $valori=[$ret['nomeFile'],$idUtente];
@@ -256,14 +256,15 @@ global $cartellaImmagini, $cartellaDocumenti, $imgDocF, $imgDocR, $imgProfilo;
                     
                 }//fine ->non ci sono errori x immagini fronte o retro (nulla in errorDoc) ma potrebbe esistere errore per inser del documento in DB
                 else{//ci sono errori in errorDoc
-                    $errori['errore']=$errori['errorDoc'];
+                    $errori['error']=$errori['errorDoc'];
                     unset($errori['errorDoc']);
                 }
             }
             
 
-    // TODO: Invio notifica via email agli admin e all'utente stesso per la validazione dell'utente
-    
+
+                $errori['idUtente']=$idUtente;
+                
                 return $errori;
             }//fine no errori in inserimento ruolo
         }//fine no errori in inserimento utente
