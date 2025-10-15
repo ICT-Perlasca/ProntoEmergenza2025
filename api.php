@@ -38,7 +38,11 @@ switch ($route) {
         require_once ("./api/API_elencoDatiTurnoSingolo.php");
         echo json_encode(API_elencoDatiTurnoSingolo($_GET, $_POST, $_SESSION));
         break;
-    case 'api/salvaTurno':
+    case 'api/API_popupTurno':
+        require_once ("./api/API_popupTurno.php");
+        echo json_encode(API_popupTurno($_GET, $_POST, $_SESSION)); 
+        break;
+    case 'api/API_salvaTurno':
         require_once ("./api/API_salvaTurno.php");
         echo json_encode(API_salvaTurno($_GET, $_POST, $_SESSION)); 
         break;

@@ -31,7 +31,7 @@ function aggiornaOra(form){
 
 function apriPopupTurno(data, nomeUtente) {
     $.ajax({
-        url: './components/SimpleComponent/popupTurno.php',
+        url: 'api/API_popupTurno',
         method: 'POST',
         async: false,
         dataType: 'json',
@@ -82,7 +82,7 @@ fse
     console.log("Note:", note);
 
     $.ajax({
-        url: 'api/salvaTurno',
+        url: 'api/API_salvaTurno',
         method: 'POST',
         async: false,
         data: { idUtente: idUtente, dataTurno: dataTurno, fasciaOraria: fasciaOraria, oraInizioEffettiva: oraInizioEffettiva, oraFineEffettiva: oraFineEffettiva, ruolo: ruolo, note: note },

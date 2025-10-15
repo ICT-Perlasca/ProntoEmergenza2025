@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Ott 15, 2025 alle 08:05
+-- Creato il: Ott 15, 2025 alle 21:47
 -- Versione del server: 10.4.32-MariaDB
 -- Versione PHP: 8.2.12
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `pronto_emergenza`
 --
-CREATE DATABASE IF NOT EXISTS `pronto_emergenza` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `pronto_emergenza`;
 
 -- --------------------------------------------------------
 
@@ -89,7 +87,8 @@ INSERT INTO `comunicazioni` (`idComunicazione`, `dataEmissione`, `titolo`, `test
 (11, '2025-09-14', 'Avviso generico', 'Aperto calendario di ottobre. Si prega di inserirsi!!!', '', '2025-09-30', 10, 1),
 (12, '2025-09-14', 'Riunione volont', 'si invitano tutti i socie ad intervenire all\'incontro del 24/09 alle ore 20 presso la sede per deliberare sul seguente odb:\r\n1)jhiuhiuh\r\n2)iuhiuhiuh\r\n3) varie ed eventuali\r\ncordiali saluti a tutti', 'mario.rossi_1757871430.pdf', '2025-09-30', 9, 1),
 (15, '2025-09-16', 'Avviso generico', 'Si prega di prendere visione del documento allegato, frmare e rispondere alle domande e rimanare al più presto alla email protoemergenza@email.it-\r\nSaluti a tutti', 'mario.rossi_1758009839.pdf', '2025-10-03', 10, 1),
-(16, '2025-10-14', 'Riunione volont', 'Si avvisa che il giorno 05/11 si terrà la riunione annuale del comitato tecnico scientifico per la nomina dei suoi membri. Chiunque desideri partecipare è invitato ad intervenire', 'allegatoDoc_1760431315.pdf', '2025-11-10', 9, 1);
+(16, '2025-10-14', 'Riunione volont', 'Si avvisa che il giorno 05/11 si terrà la riunione annuale del comitato tecnico scientifico per la nomina dei suoi membri. Chiunque desideri partecipare è invitato ad intervenire', 'allegatoDoc_1760431315.pdf', '2025-11-10', 9, 1),
+(17, '2025-10-15', 'Documento', 'ti invio la foto del documento che mi è scaduto così tu la puoi variare\r\nnumero documento gftrgeff66\r\ndata emissione: 14/10/2025\r\ndata scadenza: 14/10/2035', 'allegatoDoc_1760536819.pdf', '2025-11-15', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -421,7 +420,97 @@ INSERT INTO `turni118` (`idTurno118`, `data`, `oraInizio`, `oraFine`, `festivo`,
 (100, '2025-10-30', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
 (101, '2025-10-31', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
 (102, '2025-10-31', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
-(103, '2025-10-31', '19:00:00', '07:00:00', '0', NULL, NULL, NULL);
+(103, '2025-10-31', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(104, '2025-11-01', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(105, '2025-11-01', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(106, '2025-11-01', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(107, '2025-11-02', '07:00:00', '13:00:00', '1', NULL, NULL, NULL),
+(108, '2025-11-02', '13:00:00', '19:00:00', '1', NULL, NULL, NULL),
+(109, '2025-11-02', '19:00:00', '07:00:00', '1', NULL, NULL, NULL),
+(110, '2025-11-03', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(111, '2025-11-03', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(112, '2025-11-03', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(113, '2025-11-04', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(114, '2025-11-04', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(115, '2025-11-04', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(116, '2025-11-05', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(117, '2025-11-05', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(118, '2025-11-05', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(119, '2025-11-06', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(120, '2025-11-06', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(121, '2025-11-06', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(122, '2025-11-07', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(123, '2025-11-07', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(124, '2025-11-07', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(125, '2025-11-08', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(126, '2025-11-08', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(127, '2025-11-08', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(128, '2025-11-09', '07:00:00', '13:00:00', '1', NULL, NULL, NULL),
+(129, '2025-11-09', '13:00:00', '19:00:00', '1', NULL, NULL, NULL),
+(130, '2025-11-09', '19:00:00', '07:00:00', '1', NULL, NULL, NULL),
+(131, '2025-11-10', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(132, '2025-11-10', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(133, '2025-11-10', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(134, '2025-11-11', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(135, '2025-11-11', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(136, '2025-11-11', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(137, '2025-11-12', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(138, '2025-11-12', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(139, '2025-11-12', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(140, '2025-11-13', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(141, '2025-11-13', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(142, '2025-11-13', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(143, '2025-11-14', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(144, '2025-11-14', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(145, '2025-11-14', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(146, '2025-11-15', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(147, '2025-11-15', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(148, '2025-11-15', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(149, '2025-11-16', '07:00:00', '13:00:00', '1', NULL, NULL, NULL),
+(150, '2025-11-16', '13:00:00', '19:00:00', '1', NULL, NULL, NULL),
+(151, '2025-11-16', '19:00:00', '07:00:00', '1', NULL, NULL, NULL),
+(152, '2025-11-17', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(153, '2025-11-17', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(154, '2025-11-17', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(155, '2025-11-18', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(156, '2025-11-18', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(157, '2025-11-18', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(158, '2025-11-19', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(159, '2025-11-19', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(160, '2025-11-19', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(161, '2025-11-20', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(162, '2025-11-20', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(163, '2025-11-20', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(164, '2025-11-21', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(165, '2025-11-21', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(166, '2025-11-21', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(167, '2025-11-22', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(168, '2025-11-22', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(169, '2025-11-22', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(170, '2025-11-23', '07:00:00', '13:00:00', '1', NULL, NULL, NULL),
+(171, '2025-11-23', '13:00:00', '19:00:00', '1', NULL, NULL, NULL),
+(172, '2025-11-23', '19:00:00', '07:00:00', '1', NULL, NULL, NULL),
+(173, '2025-11-24', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(174, '2025-11-24', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(175, '2025-11-24', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(176, '2025-11-25', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(177, '2025-11-25', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(178, '2025-11-25', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(179, '2025-11-26', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(180, '2025-11-26', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(181, '2025-11-26', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(182, '2025-11-27', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(183, '2025-11-27', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(184, '2025-11-27', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(185, '2025-11-28', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(186, '2025-11-28', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(187, '2025-11-28', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(188, '2025-11-29', '07:00:00', '13:00:00', '0', NULL, NULL, NULL),
+(189, '2025-11-29', '13:00:00', '19:00:00', '0', NULL, NULL, NULL),
+(190, '2025-11-29', '19:00:00', '07:00:00', '0', NULL, NULL, NULL),
+(191, '2025-11-30', '07:00:00', '13:00:00', '1', NULL, NULL, NULL),
+(192, '2025-11-30', '13:00:00', '19:00:00', '1', NULL, NULL, NULL),
+(193, '2025-11-30', '19:00:00', '07:00:00', '1', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -451,7 +540,12 @@ INSERT INTO `turniutenti` (`idTurnoUtente`, `testoNota`, `oraInizioEffettiva`, `
 (2, 'devo andare dal dottore', '07:00:00', '12:00:00', 0, 50, NULL, NULL, 4, 9),
 (3, '', '13:00:00', '19:00:00', 0, 75, NULL, NULL, 4, 7),
 (4, '', '19:00:00', '07:00:00', 0, 76, NULL, NULL, 4, 5),
-(5, '', '13:00:00', '19:00:00', 0, 39, NULL, NULL, 4, 3);
+(5, '', '13:00:00', '19:00:00', 0, 39, NULL, NULL, 4, 3),
+(7, '', '07:00:00', '13:00:00', 0, 122, NULL, NULL, 4, 15),
+(8, '', '07:00:00', '13:00:00', 0, 122, NULL, NULL, 1, 4),
+(9, '', '07:00:00', '13:00:00', 0, 137, NULL, NULL, 3, 3),
+(10, '', '19:00:00', '07:00:00', 0, 166, NULL, NULL, 3, 3),
+(11, '', '13:00:00', '19:00:00', 0, 183, NULL, NULL, 3, 3);
 
 -- --------------------------------------------------------
 
@@ -570,7 +664,10 @@ INSERT INTO `utenticomunicazioni` (`idUtentiComunicazioni`, `idUtente`, `idComun
 (43, 14, 16, NULL),
 (44, 15, 16, NULL),
 (45, 16, 16, NULL),
-(46, 17, 16, NULL);
+(46, 17, 16, NULL),
+(47, 1, 17, NULL),
+(48, 9, 17, NULL),
+(49, 16, 17, NULL);
 
 -- --------------------------------------------------------
 
@@ -730,7 +827,7 @@ ALTER TABLE `assistenze`
 -- AUTO_INCREMENT per la tabella `comunicazioni`
 --
 ALTER TABLE `comunicazioni`
-  MODIFY `idComunicazione` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID della comunicazione, utilizzato come chiave primaria e auto-incrementato per garantire univocità automatica', AUTO_INCREMENT=17;
+  MODIFY `idComunicazione` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID della comunicazione, utilizzato come chiave primaria e auto-incrementato per garantire univocità automatica', AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT per la tabella `documenti`
@@ -778,13 +875,13 @@ ALTER TABLE `tipidocumenti`
 -- AUTO_INCREMENT per la tabella `turni118`
 --
 ALTER TABLE `turni118`
-  MODIFY `idTurno118` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificativo del turno', AUTO_INCREMENT=104;
+  MODIFY `idTurno118` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificativo del turno', AUTO_INCREMENT=194;
 
 --
 -- AUTO_INCREMENT per la tabella `turniutenti`
 --
 ALTER TABLE `turniutenti`
-  MODIFY `idTurnoUtente` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificativo del turno dell''utente', AUTO_INCREMENT=7;
+  MODIFY `idTurnoUtente` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificativo del turno dell''utente', AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT per la tabella `utenti`
@@ -796,7 +893,7 @@ ALTER TABLE `utenti`
 -- AUTO_INCREMENT per la tabella `utenticomunicazioni`
 --
 ALTER TABLE `utenticomunicazioni`
-  MODIFY `idUtentiComunicazioni` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `idUtentiComunicazioni` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT per la tabella `utentiruoli`

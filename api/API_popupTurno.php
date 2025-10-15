@@ -1,14 +1,16 @@
 <?php
    // require_once('../../api/API_elencoUtentiRuolo.php');
-    require_once('../../api/API_elencoRuoli.php');
-    session_start();
+require_once('./api/API_elencoRuoli.php');
+//require_once "./funzioniDB.php";
+function API_popupTurno($get, $post, $session) {
+   // session_start();
     $nomeUtente = $_POST['nomeUtente'] ?? null;
     $data = $_POST['dataTurno'] ?? null;
 
     // Ruolo dell'utente corrente
-    $tipoUtente = $_SESSION['tipoUtente'];//prati ?? 'user'; 
+    $tipoUtente = $session['tipoUtente'];//prati ?? 'user'; 
     //byprati: recupero id utente dalla sessione (lo metterò come campo nascosto se utente non è admin)
-    $idUtente=$_SESSION['idUtente'];
+    $idUtente=$session['idUtente'];
     /*print_r('tipoUtente: ' . $_SESSION['tipoUtente'] );
     print_r('Ruolo utente: ' . $ruoloUtente);*/
    
@@ -105,8 +107,8 @@
         'html' => $html,
         'utenteIsAdmin' => ($tipoUtente === 'admin')
     ];
-
-    header('Content-Type: application/json');
-    echo json_encode($response);
-    
+    return $response;
+//    header('Content-Type: application/json');
+//    echo json_encode($response);
+}
 ?>
