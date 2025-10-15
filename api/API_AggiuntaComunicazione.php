@@ -4,8 +4,10 @@ require_once("API_upload.php");
 require_once("./globals.php");
 function API_aggiuntaComunicazione($get, $post, $session){
     global $cartellaBacheca,$imgAllegato;
-   
-    if (!isset($session['tipoUtente']) || $session['tipoUtente'] != "admin"){
+  // print_r($get);
+  // print_r($post);
+  // print_r($session);
+    if (!isset($session['tipoUtente'])){
         header("HTTP/1.1 403 Forbidden");
         return [];
     }

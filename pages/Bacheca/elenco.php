@@ -97,7 +97,7 @@
                         <div class="modal-footer">
                             <?php
                                if(isset($c['nomeFileAllegato']) && strcmp($c['nomeFileAllegato'],"")!=0){
-                                    echo "<a href='/$cartellaBacheca/".$c['nomeFileAllegato']."' download='".$c['nomeFileAllegato']."'>
+                                    echo "<a href='$cartellaBacheca/".$c['nomeFileAllegato']."' download='".$c['nomeFileAllegato']."'>
                                         Scarica allegato
                                     </a>";
                                 }

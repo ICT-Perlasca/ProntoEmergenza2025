@@ -6,7 +6,7 @@ $HOST = "localhost";
 $DSN="mysql:host=" .$HOST . ";dbname=" . $DB;
 $DOMAIN_NAME = "http://localhost/ProntoEmergenza2025";
 $cartellaImmagini="uploads/images";
-$cartellaBacheca="ProntoEmergenza2025/uploads/bacheca";
+$cartellaBacheca="uploads/bacheca";
 $cartellaDocumenti="uploads/document";
 $imgAvatar="avatar-100.png";
 $imgDocF="documentF";

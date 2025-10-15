@@ -253,8 +253,8 @@ function _volontarioLinks(){
                     "title" => "Elenco comunicazioni"
                 ],
                 [
-                    "url" => "bacheca/to-admin",
-                    "title" => "Invio comunicazione all'admin"
+                    "url" => "bacheca/inserimentoComunicazioni",
+                    "title" => "Inserimento comunicazione per admin"
                 ]
             ]
         ],
