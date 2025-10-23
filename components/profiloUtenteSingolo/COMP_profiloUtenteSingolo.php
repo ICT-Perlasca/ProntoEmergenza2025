@@ -1,9 +1,10 @@
 <?php
-require_once('./api/API_getUtenteByEmail.php');
+//require_once('./api/API_getUtente.php');
 require_once('./components/SimpleComponent/COMP_Buttons.php');
 require_once ("./globals.php");
-function CMP_profiloUtenteSingolo($emailUt){
-	$utente = API_getUtente([], array("emailUt" => $emailUt), $_SESSION);
+function COMP_profiloUtenteSingolo($utente){
+	//API richiamata in ambiete chiamate profiloUtente.php
+	//$utente = API_getUtenteByEmail([], array("emailUt" => $emailUt), $_SESSION);
 	
 	if ($utente == []){
 		$msg = "Tipo di utente non valido";
@@ -15,7 +16,7 @@ function CMP_profiloUtenteSingolo($emailUt){
 				<div class = 'row'>
 
 					<div class = ' col-6 col-sm-12 col-md-6 col d-flex flex-column justify-content-center align-items-center'>
-						<img src = ".$img." width='200'></td>
+						<img src = ".$img." width='200' height=200 class='rounded-circle '></td>
 						<div>".$utente[0]['nome']. " " . $utente[0]['cognome'] ."</div>
 						
 					</div>
@@ -30,13 +31,13 @@ function CMP_profiloUtenteSingolo($emailUt){
 									<th>E-mail</th>
 								</tr>
 								<tr>
-									<th>Età</th>
+									<th>Data nascita</th>
 								</tr>
 								<tr>
 									<th>Indirizzo</th>
 								</tr>
 								<tr>
-									<th>Qualifiche</th>
+									<th>Ruoli</th>
 								</tr>
 							</thead>
 						</table>
@@ -52,13 +53,13 @@ function CMP_profiloUtenteSingolo($emailUt){
 									<td>". $utente[0]['email'] ."</td>
 								</tr>
 								<tr>
-									<td>".calcolaEta( $utente[0]['dataNascita'] )."</td>
+									<td>".date_format(date_create($utente[0]['dataNascita']),"d/m/Y")."</td>
 								</tr>
 								<tr>
-									<td>". $utente[0]['via'] . " " . $utente[0]['numero'] . " " . $utente[0]['citta']. "</td>
+									<td>Via ". $utente[0]['via'] . " " . $utente[0]['numero'] . " " . $utente[0]['citta']." (".$utente[0]['provincia'].")</td>
 								</tr>
 								<tr>
-									<td>". $utente[0]['tipoUtente'] ."</td>
+									<td>". $utente[0]['ruoli'] ."</td>
 								</tr>
 							</tbody>
 						</table>
@@ -72,7 +73,7 @@ function CMP_profiloUtenteSingolo($emailUt){
 						".COMP_Button("	", "HOME", "./home")."
 					</div>
 					<div class='col-sm-6 col-md-3 text-center'>
-						".COMP_Button("", "MODIFICA", "./modificaUtente")."
+						".COMP_Button("", "MODIFICA", "./utenti/modificaUtente")."
 					</div>
 				</div>
 
@@ -83,23 +84,3 @@ function CMP_profiloUtenteSingolo($emailUt){
 }
 
 
-function calcolaEta($dataN){
-	$oggi = new DateTime();
-	$dn = new DateTime($dataN);
-	$diff = $dn->diff($oggi);
-	return $diff->y;
-}
-
-function ritornaImmagine($immagine){  
-
-	global $imgAvatar, $cartellaImmagini;
-
-	$path = "./$cartellaImmagini/";
-	$img = "";
-	
-	if ($immagine!="" && file_exists($path.$immagine))
-		$img = $path.$immagine;
-	else
-		$img = "./public/images/$imgAvatar";
-	return $img;
-}

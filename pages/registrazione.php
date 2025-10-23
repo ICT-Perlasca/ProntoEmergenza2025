@@ -35,7 +35,7 @@ fse
 //byprati: non testo la sessione  perchè in fase di registrazione utente NON è loggato!!!! session_start();
 
 require_once "./api/apiRegistrazione/API_inserimentoUtente.php";
-require_once "./components/formRegistrazione/formRegistrazione.php";
+require_once "./components/formRegistrazione/COMP_formRegistrazione.php";
 
 $errori = [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

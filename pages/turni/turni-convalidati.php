@@ -25,15 +25,7 @@
 			<script type="text/javascript" src="./public/js/scriptTurniConvalidati.js"></script>
 			 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 			<center>
-				<!--<div class="container py-5">
-					<div class="row justify-content-center align-items-center min-vh-40">
-						<div class="col-md-8 col-lg-6">
-							<div class="card shadow-lg animate__animated animate__fadeInDown">
-								<div class="card-body p-4">
-									<h3 class="text-center text-primary mb-4">
-										 Elenco Turni Convalidati
-									</h3>
-	-->
+		
 				<?php echo COMP_formContainerHeader('Elenco Turni Convalidati di un utente',false,'');?>
 
 				<form method="POST" action="" class="needs-validation" onsubmit="GetTurniMese(this); return false;">
@@ -47,8 +39,6 @@
 						</select>
 					</div>
 					<div class="mb-3" id=selectMeseAnno></div>
-<!--					<input name="inserisciComunicazione" value="Ricerca Turni" type="submit" id="btnRicercaTurni" class="btn btn-primary w-50" disabled>
-	-->
 					<?php echo COMP_formFooter('Ricerca Turni','btnRicercaTurni',true);?>
 					<input type=hidden id=hiddenJson value="">
 				</form>

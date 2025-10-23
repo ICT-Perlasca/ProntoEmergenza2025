@@ -22,10 +22,11 @@ switch ($route) {
         require_once ("./api/GetMezzo.php");
         echo json_encode(API_getMezzo($_GET, $_POST, $_SESSION));
         break;
-    case 'api/GetUtente':
+    /*case 'api/GetUtente':
         require_once ("./api/GetUtente.php");
         echo json_encode(API_getUtente($_GET, $_POST, $_SESSION));
         break;
+        */
     case 'api/ritornaUtenti':
         require_once ("./api/API_ritornaUtenti.php");
         echo json_encode(API_ritornaUtenti($_GET, $_POST, $_SESSION));

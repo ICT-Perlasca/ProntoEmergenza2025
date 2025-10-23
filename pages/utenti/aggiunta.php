@@ -26,7 +26,7 @@ require_once "./components/Footer/footer.php";
 require_once "./components/Header/header.php";
 require_once "./components/Head/head.php";
 require_once "./api/apiRegistrazione/API_inserimentoUtente.php";
-require_once "./components/formRegistrazione/formRegistrazione.php";
+require_once "./components/formRegistrazione/COMP_formRegistrazione.php";
 
 if(!isset($_SESSION['idUtente'])){
     header("Location: login");
@@ -65,9 +65,7 @@ if(!isset($_SESSION['idUtente'])){
         $rowQuery=db_query($strsql,$valori,$tipi);
     }
     else{
-?>
 
-<?php 
         echo COMP_formRegistrazione($errori, $_POST,false);
     }
     echo COMP_Footer();

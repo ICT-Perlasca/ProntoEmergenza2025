@@ -23,7 +23,7 @@ $turni = [
 ]; 
 /*
 Idea generale: stabilire format delle email generali con queste variabili che si renderanno disponibili 
-per i codici php che includeranno il file per usare la funzione invio email. i dati tra le {} dovranno
+per i codici php che includeranno il file per usare la funzione invio email. I dati tra le {} dovranno
 essere sostituiti prima di essere passati come parametri alla funzione inviaEmail
 */
 // formato della email di validazione della email dell'utente necessaria in caso di nuovo utente
@@ -59,4 +59,29 @@ Il team di ProntoEmergenza di Agnosine(BS)<br>
 Associazione di Volontariato",
     "oggetto"=>"ProntoEmergenza: Nuovo mese in programmazione"
 ];
+function calcolaEta($dataN){
+	$oggi = new DateTime();
+	$dn = new DateTime($dataN);
+	$diff = $dn->diff($oggi);
+	return $diff->y;
+}
+
+function ritornaImmagine($immagine){  
+
+	global $imgAvatar, $cartellaImmagini;
+
+	$path = "./$cartellaImmagini/";
+	$img = "";
+	
+	if ($immagine!="" && file_exists($path.$immagine))
+		$img = $path.$immagine;
+	else
+		$img = "./public/images/$imgAvatar";
+	return $img;
+}
+function esisteFile($file){//verifico se tramite form il file di cui mi viene passato $_FILES è stato scelto 
+    if ($file['size'] ==0 && empty($files['tmp_name']))
+        return false;
+    else return true;
+}
 ?>

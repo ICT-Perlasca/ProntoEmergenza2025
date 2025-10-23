@@ -3,11 +3,7 @@ require_once "funzioniDB.php";
 require_once "globals.php";
 require_once "./api/API_upload.php";
 
-function esisteFile($file){//verifico se tramite form il file di cui mi viene passato $_FILES è stato scelto 
-    if ($file['size'] ==0 && empty($files['tmp_name']))
-        return false;
-    else return true;
-}
+
 function API_inserimentoUtente($get, $post, $session) {
 global $cartellaImmagini, $cartellaDocumenti, $imgDocF, $imgDocR, $imgProfilo;
     $campiObbligatori = [
@@ -27,6 +23,7 @@ global $cartellaImmagini, $cartellaDocumenti, $imgDocF, $imgDocR, $imgProfilo;
         }
     }
 
+    //tutti uesti controlli ripetuti anche in API_modificaUtente=>funzione??
     // Convalida dei valori input
     // Verifica la lunghezza e il formato del codice fiscale (16 caratteri alfanumerici)
     if (strlen($post['codiceFiscale']) !== 16 || !preg_match("/^[A-Z0-9]+$/i", $post['codiceFiscale'])) {
@@ -158,15 +155,17 @@ global $cartellaImmagini, $cartellaDocumenti, $imgDocF, $imgDocR, $imgProfilo;
             $idUtente=$rows['lastId'];
 
             //inserimento del ruolo selezionato in tabella utentiruoli
-            $query="insert into utentiruoli(idUtente,idRuolo) values(?,?)";
-            $valori=[$idUtente,$post['idRuolo']];
-            $tipi=[PDO::PARAM_INT,PDO::PARAM_INT];
-            $rowdoc=db_query($query,$valori,$tipi);
-            if (isset($rows["error"])) {
-                $errori['error'] = "Errore nell'inserimento del ruolo dell'utente: " . $rows["error"];
-                return $errori;   //=====>>>>>> esce qui in caso di errore nella INSERT sul DB!!!!!
+            if ($post['idRuolo']!=''){
+                $query="insert into utentiruoli(idUtente,idRuolo) values(?,?)";
+                $valori=[$idUtente,$post['idRuolo']];
+                $tipi=[PDO::PARAM_INT,PDO::PARAM_INT];
+                $rowdoc=db_query($query,$valori,$tipi);
+                if (isset($rows["error"])) {
+                    $errori['error'] = "Errore nell'inserimento del ruolo dell'utente: " . $rows["error"];
+                    return $errori;   //=====>>>>>> esce qui in caso di errore nella INSERT sul DB!!!!!
+                }
             }
-            else{
+            //else{
             /* immaginedel profilo
             se esiste immagineprofilo
                  upload immagine profilo
@@ -266,7 +265,7 @@ global $cartellaImmagini, $cartellaDocumenti, $imgDocF, $imgDocR, $imgProfilo;
                 $errori['idUtente']=$idUtente;
                 
                 return $errori;
-            }//fine no errori in inserimento ruolo
+            //}//fine no errori in inserimento ruolo
         }//fine no errori in inserimento utente
     }
 }

@@ -48,7 +48,7 @@
                     Tel. 0365/826210 - Fax: 0365/1871098<br>
                     C.F. 96022920175<br>
                     WebMaster: Claudia Prati, docente Informatica "I.I.S. Perlasca", Vobarno(BS)<br>
-                    con la collaborazione delle classi 5AI-5BI-5AG as 2023-2024 , 5AI-5BI as 2024-2025</p>
+                    con la collaborazione del proff. Roberto Gallina - Andrea Bonardi e delle classi 5AI-5BI-5AG as 2023-2024 , 5AI-5BI as 2024-2025</p>
                     <div class="mt-2 d-flex justify-content-center gap-3 flex-wrap">'.$socialLinks.'
                     </div>
                 </div>

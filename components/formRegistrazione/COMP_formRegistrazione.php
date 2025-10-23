@@ -130,7 +130,7 @@ function COMP_formRegistrazione(array $errori = [], array $valori = [], bool $se
                     ' . mostraErrore('dataNascita', $errori) . '
                 </div>
                 <div class=mb-3>
-                    <label class="form-label">Immagine</label>
+                    <label class="form-label">Immagine profilo</label>
                     <input type="file" name="imageUp" class="form-control" value="' . $val('immagine') . '">
                 </div>
         <!-- Indirizzo -->
