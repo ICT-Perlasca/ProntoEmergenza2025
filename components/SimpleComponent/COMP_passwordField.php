@@ -1,15 +1,20 @@
 <?php
+require_once "./globals.php";
 
 function COMP_passwordField($id, $name) {
-    $strJs="(document.getElementById('$id').type==='password')?document.getElementById('$id').type='text':document.getElementById('$id').type='password'";
-    return '<div class="d-flex ps-3">
-    <input type="password" name="'.$name.'" id="'.$id.'" class="form-control  col-sm-8" maxlength="20">
-    <div class="col-sm-2"></div>
-    <input type=button onclick="'.$strJs.'" value="show/hide" class="btn btn-primary col-sm2">
+    global $publicImages,$imgEye,$DOMAIN_NAME;
+    $nameImageEye=$DOMAIN_NAME."/".$publicImages."/".$imgEye;
+    $strJs="(document.getElementById('$id').type==='password')?document.getElementById('$id').type='text':document.getElementById('$id').type='password';return false;";
+    return '<div class="d-flex">
+    <input type="password" name="'.$name.'" id="'.$id.'" class="form-control" maxlength="20">
+    <!--<input type=button onclick="'.$strJs.'" value="show/hide" class="btn btn-primary col-sm2">-->
+    <button class="btn btn-outline-primary" onclick="'.$strJs.'"><img src="'.$nameImageEye.'"></button>
     </div>';
 }
 function COMP_passwordCheckField($idPsw, $idCheck,$nameCheck) {
-    $strJs="(document.getElementById('$idCheck').type==='password')?document.getElementById('$idCheck').type='text':document.getElementById('$idCheck').type='password'";
+    global $publicImages,$imgEye,$DOMAIN_NAME;
+    $nameImageEye=$DOMAIN_NAME."/".$publicImages."/".$imgEye;
+    $strJs="(document.getElementById('$idCheck').type==='password')?document.getElementById('$idCheck').type='text':document.getElementById('$idCheck').type='password';return false;";
     return '
     <script>
     function ControllaPsw(form){
@@ -26,10 +31,10 @@ function COMP_passwordCheckField($idPsw, $idCheck,$nameCheck) {
             return true;
     }
     </script>
-    <div class="d-flex ps-3">
-    <input type="password" name="'.$nameCheck.'" id="'.$idCheck.'" onblur=ControllaPsw(this); class="form-control  col-sm-8" maxlength="20">
-    <div class="col-sm-2"></div>
-    <input type=button onclick="'.$strJs.'" value="show/hide" class="btn btn-primary col-sm2">
+    <div class="d-flex">
+    <input type="password" name="'.$nameCheck.'" id="'.$idCheck.'" onblur=ControllaPsw(this); class="form-control" maxlength="20">
+    <!--<input type=button onclick="'.$strJs.'" value="show/hide" class="btn btn-primary">-->
+    <button class="btn btn-outline-primary" onclick="'.$strJs.'"><img src="'.$nameImageEye.'"></button>
     </div>';
 }
 

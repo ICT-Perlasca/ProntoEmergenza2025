@@ -1,6 +1,7 @@
 <?php
 require_once "./components/SimpleComponent/COMP_selectRuolo.php";
 require_once "./components/SimpleComponent/COMP_selectTipiDocumenti.php";
+require_once "./components/SimpleComponent/COMP_passwordField.php";
 
 function mostraErrore($campo, $errori) {
     if (is_array($errori) && isset($errori[$campo])) {
@@ -52,19 +53,6 @@ function COMP_formRegistrazione(array $errori = [], array $valori = [], bool $se
 
     return '
     <script>
-    function ControllaPsw(form){
-        psw1=document.getElementById("password");
-        pswchk=document.getElementById("confirmPassword");
-        if (psw1.value!=pswchk.value){
-            alert("le due password indicate non corrispondono");
-            psw1.value="";
-            pswchk.value="";
-            psw1.focus();
-            return false;
-        }
-        else
-            return true;
-    }
     function cambiaRuolo(){
     //alert("sono in cambiaRuolo");
         statusValue=document.getElementById("status").value;
@@ -84,14 +72,6 @@ function COMP_formRegistrazione(array $errori = [], array $valori = [], bool $se
         if (istruttoreObj.value=="0" && ruoloObj.value=="3"){
             alert("ruolo non compatibile !!!!");
             istruttoreObj.value="1";
-        }
-    }
-    function showPwd() {
-        var input = document.getElementById("password");
-        if (input.type === "password") {
-          input.type = "text";
-        } else {
-          input.type = "password";
         }
     }
     </script>
@@ -193,13 +173,13 @@ function COMP_formRegistrazione(array $errori = [], array $valori = [], bool $se
                 </div>
                 <div class="mb-3">
                     <label class="form-label">*Password</label>
-                    <input type="password" name="password" id="password" class="form-control " maxlength="20" required>
-                    ' . mostraErrore('password', $errori) . '
+                    <!--<input type="password" name="password" id="password" class="form-control " maxlength="20" required>-->
+                    ' . COMP_passwordField('password','password'). mostraErrore('password', $errori) . '
                 </div>
                 <div class="mb-3">
                     <label class="form-label">*Ripeti Password</label>
-                    <input type="password" name="confirmPassword" id="confirmPassword" class="form-control" maxlength="20" required onblur=ControllaPsw(form.schedaUtente);>
-                    ' . mostraErrore('password', $errori) . '
+                    <!--<input type="password" name="confirmPassword" id="confirmPassword" class="form-control" maxlength="20" required onblur=ControllaPsw(form.schedaUtente);>-->
+                    ' . COMP_passwordCheckField('password','confirmPassword','confirmPassword'). mostraErrore('password', $errori) . '
                 </div>
                 
         <!-- Tipo di attività - ruolo e funzioni varie-->

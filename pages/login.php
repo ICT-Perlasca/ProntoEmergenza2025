@@ -1,5 +1,6 @@
 <?php
 require_once("./funzioniDB.php");
+require_once("./components/SimpleComponent/COMP_passwordField.php");
 
 session_start();
 if (isset($_SESSION['nome']))  //utente già loggato
@@ -57,7 +58,8 @@ else {
                     </div>
                     <div class="col-12">
                         <label for="inputPassword" class="form-label">Password</label>
-                        <input type="password" name="password" id="inputPassword" placeholder="password" class="form-control  text-secondary" aria-label="Password">
+                        <!--<input type="password" name="password" id="inputPassword" placeholder="password" class="form-control  text-secondary" aria-label="Password">-->
+                        <?php echo COMP_passwordField('password','password'); ?>
                     </div>
                     <div class="col-12"><h2 id="h2Log"></h2></div>
                     <div class="col-12 text-center">

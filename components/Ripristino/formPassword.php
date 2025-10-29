@@ -6,9 +6,11 @@
                     <h4 class="mb-4 text-center">Ripristina Password</h4>
                     <div class="mb-3">
                         <label for="psw" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="psw" name="psw" required>
+                        <!--<input type="password" class="form-control" id="psw" name="psw" required>-->
+                        '. COMP_passwordField('psw','psw').'
                         <label for="confPsw" class="form-label">Conferma password</label>
-                        <input type="password" class="form-control" id="confPsw" name="confPsw" required>
+                        <!--<input type="password" class="form-control" id="confPsw" name="confPsw" required>-->
+                        '. COMP_passwordCheckField('psw','confPsw','confPsw').'
                         <input type="hidden" class="form-control" id="token" name="token" value="'.$token.'">
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Reset password</button>
