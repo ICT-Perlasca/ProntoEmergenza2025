@@ -1,6 +1,6 @@
 <?php
 require_once("./funzioniDB.php");
-
+/*
 //Chiamando l'API si ricevono tutte i ruoli necessari per poter fare un servizio al 118
 function API_elencoRuoli($get, $post, $session) {
 
@@ -19,5 +19,5 @@ function API_elencoRuoli($get, $post, $session) {
 
     $risultato = db_query($sql, $valori, $tipi);
     return $risultato;
-}
+}*/
 ?>

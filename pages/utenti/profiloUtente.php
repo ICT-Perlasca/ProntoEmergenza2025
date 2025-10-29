@@ -5,7 +5,6 @@ require_once ("./components/Footer/footer.php");
 require_once ("./components/profiloUtenteSingolo/COMP_profiloUtenteSingolo.php");
 require_once("./api/API_getUtente.php");
 require_once("./funzioniDB.php");
-
 session_start();
 if(!isset($_SESSION['idUtente']))
     header("Location: login");

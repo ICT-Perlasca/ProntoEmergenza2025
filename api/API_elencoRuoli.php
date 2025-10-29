@@ -8,16 +8,16 @@ function API_elencoRuoli($get, $post, $session){
         return [];
     }else{
        /* prati: elenco ruoli da visualizzare
-    se utente è admin non mi arriva in POST l'id del ruolo
+    se non mi arriva in POST l'id dell'utente
     allora
         recupero dal DB tutti i ruoli
     altrimenti
-        recupero dalDB solo i ruoli dell'utente user loggato
+        recupero dalDB solo i ruoli dell'utente il cui id è in post
     fse
     carico i ruoli recuperati dal DB
     
     */
-        if ($session['tipoUtente']==='admin'){
+        if (!isset($post['idUtente'])){ //$session['tipoUtente']==='admin'){
             $strsql="select * from ruoli";
             $dati=[];
             $tipi=[];

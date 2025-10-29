@@ -5,7 +5,7 @@ function COMP_formContainerHeader($titolo,$hasMsg,$txtMessage) {
     <div class='row  justify-content-center align-items-center bg-primary text-white py-5' m-0>
         <div class='col-12 col-md-8 col-lg-6 bg-white text-dark p-5 rounded shadow'>";
     if ($hasMsg) 
-        $formHEader.= "<div class='alert alert-danger mb-4'>$$txtMessage</div>";
+        $formHeader.= "<div class='alert alert-danger mb-4'>$txtMessage</div>";
     return $formHeader;
 }
 function COMP_formFooter($testoBottone,$idBottone,$disabledBottone,$linkReset=""){ //bottoni finali di un qualsiasi form
@@ -23,7 +23,8 @@ function COMP_formFooter($testoBottone,$idBottone,$disabledBottone,$linkReset=""
         <div class='px-2'>
             <button type='submit' class='btn btn-primary' id=$idBottone name=$idBottone $disabled>$testoBottone</button>
         </div>
-    </div>";
+    </div>
+    </form>";
     return $formFooter;
     
 }

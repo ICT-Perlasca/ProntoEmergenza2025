@@ -26,7 +26,8 @@ function API_getUtenteByEmail($get, $post, $session){
     }
 }
 function API_getUtenteById($get, $post, $session){
-   if(!isset($post['idUtente']) || !isset($session['tipoUtente']) || $session['tipoUtente'] != "admin"){
+    //situazione d'errore: o nomi è arrivato idUtente via post o utente non loggato
+   if(!isset($post['idUtente']) || !isset($session['tipoUtente'])){// || $session['tipoUtente'] != "admin"){
         header("HTTP/1.1 403 Forbidden");
         return [];
     }else{

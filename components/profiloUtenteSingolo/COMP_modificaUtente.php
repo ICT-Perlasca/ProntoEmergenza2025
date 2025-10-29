@@ -2,6 +2,7 @@
 require_once('./api/API_getUtente.php');
 require_once('./components/SimpleComponent/COMP_Buttons.php');
 require_once('./components/SimpleComponent/COMP_selectRuolo.php');
+require_once('./components/SimpleComponent/COMP_passwordField.php');
 
 function mostraErrore($campo, $errori) {
     if (is_array($errori) && isset($errori[$campo])) {
@@ -16,7 +17,7 @@ function COMP_modificaUtente($idUtente,$errori,$post){
     if (isset($_POST['via']))
         $dati=$post;
     else{
-        $utente = API_getUtenteById([], array("idUtente" => $idUtente), $_SESSION);
+        $utente = API_getUtenteById([], ["idUtente" => $idUtente], $_SESSION);
         //print_r($utente);
         $dati=$utente[0];
     }
@@ -122,13 +123,14 @@ function COMP_modificaUtente($idUtente,$errori,$post){
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Password</label><!-- la password vecchia NON può essere visualizzata!!!-->
-                    <input type="password" name="password" id="password" class="form-control " maxlength="20">
-                    ' . mostraErrore('password', $errori) . '
+                   <!-- <input type="password" name="password" id="password" class="form-control " maxlength="20">-->
+
+                    ' . COMP_passwordField('password','password').mostraErrore('password', $errori) . '
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Ripeti Password</label>
-                    <input type="password" name="confirmPassword" id="confirmPassword" class="form-control" maxlength="20" onblur=ControllaPsw(form.schedaUtente);>
-                    ' . mostraErrore('password', $errori) . '
+                    <!--<input type="password" name="confirmPassword" id="confirmPassword" class="form-control" maxlength="20" onblur=ControllaPsw(form.schedaUtente);>-->
+                    ' . COMP_passwordCheckField('password','confirmPassword','confirmPassword'). mostraErrore('password', $errori) . '
                 </div>
                 
         <!-- Tipo di attività - ruolo e funzioni varie-->
@@ -139,28 +141,29 @@ function COMP_modificaUtente($idUtente,$errori,$post){
                         <div class="col-md-5">-->
                  <div class="mb-3">
                             <label class="form-label">Tipo utente </label>
-                            <select class="form-select rounded p-1 border-2" name="tipoUtente" '.(($_SESSION['tipoUtente']=='user')?"readonly":"").' >
+                            <select class="form-select rounded p-1 border-2" name="tipoUtente" '.(($_SESSION['tipoUtente']=='user')?"disabled":"").' > <!-- opppure readonly?????-->
                                 <option value="user" ' . (($dati['tipoUtente']== 'user')?"selected":"") . '>User</option>
                                 <option value="admin" ' . (($dati['tipoUtente']== 'admin')?"selected":""). '>Admin</option>
                             </select>
                 </div>
                 <div class="mb-3">        
-                            <label class="form-label">*Disponibilità per attività di 118 </label>
+                     <label class="form-label">Disponibilità per attività di 118 </label>
                             <select class="form-select rounded p-1 border-2 " name="indisponibilita">
                                 <option value="0" ' . (($dati['indisponibilita']== 0)?"selected":""). '>Disponibile</option>
                                 <option value="1" ' . (($dati['indisponibilita']== 1)?"selected":"") . '>Non disponibile</option>
                             </select>
                 </div>
-               <!--  <div class="mb-3">
+                <div class="mb-3">
                             <label class="form-label">Status </label>
-                            <select class="form-select rounded p-1 border-2" id="status" name="status" '.(($_SESSION['tipoUtente']=='user')?"readonly":"").' >
+                            <select class="form-select rounded p-1 border-2" id="status" name="status" '.(($_SESSION['tipoUtente']=='user')?"disabled":"").' > <!-- opppure readonly????-->
                                 <option value="volontario">volontario</option>
                                 <option value="dipendente">dipendente</option>
                                 <option value="corsista">corsista</option>
                             </select>
-                </div>-->
+                </div>
                  <div class="mb-3">
-                            <label class="form-label">Ruoli attuali:'.$dati['ruoli'].' </label>
+                            <label class="form-label">Ruoli attuali: </label><br>
+                            <input type="text" name="ruoli" class="form-control " maxlength="30" readonly value="' . $dati['ruoli' ]. '">
                             <label class="form-label">Aggiunta ruolo: </label>
                             '.COMP_selectRuolo('idRuolo').'
                 </div>
@@ -170,8 +173,7 @@ function COMP_modificaUtente($idUtente,$errori,$post){
                                 <option value="0" '.(($dati['istruttore']== 0)?"selected":""). '>No</option>
                                 <option value="1" '.(($dati['istruttore']== 1)?"selected":""). '>Si</option>
                             </select>.
-                </div>
-           </form>     
+                </div>   
     <!--    </div></div>-->';
     return $msg;
 }
