@@ -1,5 +1,6 @@
 <?php
 require_once("./funzioniDB.php");
+require_once("./globals.php");
 require_once("./components/SimpleComponent/COMP_passwordField.php");
 
 session_start();
@@ -16,7 +17,8 @@ else {
             header("location:/ProntoEmergenza2025/login");
         }
         else{ //utente esiste
-            $_SESSION['idUtente']=$ris[0]['idUtente'];
+            $_SESSION=caricaSessione($ris[0]);
+            /*$_SESSION['idUtente']=$ris[0]['idUtente'];
             $_SESSION['username']=$ris[0]['username'];
             $_SESSION['nome']=$ris[0]['nome'];
             $_SESSION['cognome']=$ris[0]['cognome'];
@@ -27,6 +29,7 @@ else {
             $_SESSION['status']=$ris[0]['status'];
             $_SESSION['tipoUtente']=$ris[0]['tipoUtente'];
             $_SESSION['immagine']=(!is_null($ris[0]['immagine'])&&$ris[0]['immagine']!="")?"./".$cartellaImmagini."/".$ris[0]['immagine']:"./public/images/".$imgAvatar;
+            */
             //"./".$cartellaImmagini."/".$ris[0]['immagine']:"./public/images/avatar.jpg";
             header("location:/ProntoEmergenza2025");
         }

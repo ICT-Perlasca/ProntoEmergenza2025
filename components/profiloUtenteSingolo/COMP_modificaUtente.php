@@ -3,6 +3,7 @@ require_once('./api/API_getUtente.php');
 require_once('./components/SimpleComponent/COMP_Buttons.php');
 require_once('./components/SimpleComponent/COMP_selectRuolo.php');
 require_once('./components/SimpleComponent/COMP_passwordField.php');
+require_once('./components/SimpleComponent/COMP_checkRuolo.php');
 
 function mostraErrore($campo, $errori) {
     if (is_array($errori) && isset($errori[$campo])) {
@@ -139,9 +140,9 @@ function COMP_modificaUtente($idUtente,$errori,$post){
                 <!--<div class="mb-4 text-center">
                     <div class="row justify-content-center g-3">
                         <div class="col-md-5">-->
-                 <div class="mb-3">
+                 <div class="mb-3" '.(($_SESSION['tipoUtente']=='user')?"hidden":"").'>
                             <label class="form-label">Tipo utente </label>
-                            <select class="form-select rounded p-1 border-2" name="tipoUtente" '.(($_SESSION['tipoUtente']=='user')?"disabled":"").' > <!-- opppure readonly?????-->
+                            <select class="form-select rounded p-1 border-2" name="tipoUtente" >
                                 <option value="user" ' . (($dati['tipoUtente']== 'user')?"selected":"") . '>User</option>
                                 <option value="admin" ' . (($dati['tipoUtente']== 'admin')?"selected":""). '>Admin</option>
                             </select>
@@ -153,23 +154,25 @@ function COMP_modificaUtente($idUtente,$errori,$post){
                                 <option value="1" ' . (($dati['indisponibilita']== 1)?"selected":"") . '>Non disponibile</option>
                             </select>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3" '.(($_SESSION['tipoUtente']=='user')?"hidden":"").'>
                             <label class="form-label">Status </label>
-                            <select class="form-select rounded p-1 border-2" id="status" name="status" '.(($_SESSION['tipoUtente']=='user')?"disabled":"").' > <!-- opppure readonly????-->
+                            <select class="form-select rounded p-1 border-2" id="status" name="status"  >
                                 <option value="volontario">volontario</option>
                                 <option value="dipendente">dipendente</option>
                                 <option value="corsista">corsista</option>
                             </select>
                 </div>
-                 <div class="mb-3">
-                            <label class="form-label">Ruoli attuali: </label><br>
+                 <div class="mb-3" '.(($_SESSION['tipoUtente']=='user')?"hidden":"").'>
+                <!--        <label class="form-label">Ruoli attuali: </label><br>
                             <input type="text" name="ruoli" class="form-control " maxlength="30" readonly value="' . $dati['ruoli' ]. '">
                             <label class="form-label">Aggiunta ruolo: </label>
                             '.COMP_selectRuolo('idRuolo').'
+                -->
+                '.COMP_checkRuolo('ruoli[]',$idUtente).'
                 </div>
-                <div class="mb-3">
+                <div class="mb-3" '.(($_SESSION['tipoUtente']=='user')?"hidden":"").'>
                             <label class="form-label">Istruttore (si/no)</label>
-                            <select class="form-select rounded p-1 border-2" id="istruttore" name="istruttore" onchange="controllaIstruttore();" required>
+                            <select class="form-select rounded p-1 border-2" id="istruttore" name="istruttore" onchange="controllaIstruttore();" required >
                                 <option value="0" '.(($dati['istruttore']== 0)?"selected":""). '>No</option>
                                 <option value="1" '.(($dati['istruttore']== 1)?"selected":""). '>Si</option>
                             </select>.

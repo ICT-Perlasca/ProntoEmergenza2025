@@ -86,4 +86,19 @@ function esisteFile($file){//verifico se tramite form il file di cui mi viene pa
         return false;
     else return true;
 }
+function caricaSessione($vetDati){
+    global $cartellaImmagini, $imgAvatar;
+    $sess['idUtente']=$vetDati['idUtente'];
+    $sess['username']=$vetDati['username'];
+    $sess['nome']=$vetDati['nome'];
+    $sess['cognome']=$vetDati['cognome'];
+    $sess['dataNascita']=$vetDati['dataNascita'];
+    $sess['email']=$vetDati['email'];
+    $sess['telefono']=$vetDati['telefono'];
+    $sess['istruttore']=$vetDati['istruttore'];
+    $sess['status']=$vetDati['status'];
+    $sess['tipoUtente']=$vetDati['tipoUtente'];
+    $sess['immagine']=(!is_null($vetDati['immagine'])&&$vetDati['immagine']!="")?"./".$cartellaImmagini."/".$vetDati['immagine']:"./public/images/".$imgAvatar;
+    return  $sess;       
+}
 ?>

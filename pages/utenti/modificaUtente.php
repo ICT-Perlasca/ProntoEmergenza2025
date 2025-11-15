@@ -30,7 +30,8 @@ altrimenti
     visualizza footer
 fse
 */
-require_once "funzioniDB.php";
+require_once "./funzioniDB.php";
+require_once "./globals.php";
 require_once "./components/Footer/footer.php";
 require_once "./components/Header/header.php";
 require_once "./components/Head/head.php";
@@ -66,7 +67,7 @@ if(!isset($_SESSION['idUtente'])){
 ?>
 <body>
 <?php
-    echo COMP_header($_SESSION);
+    
     
 ?>
    <!-- <span class="col-8 text-center text-primary">
@@ -76,10 +77,15 @@ if(!isset($_SESSION['idUtente'])){
    
     if (isset($_POST['via']) && !isset($errori['error'])) {
         //fine della modifica perchè no errori dopo update
+        //carico i dati nuovi dell'utente che li ha modificati in sessione
+        $dati=API_getUtenteById(["idUtente"=>$idUtente],[],$_SESSION);
+        $_SESSION=caricaSessione($dati[0]);
+        echo COMP_header($_SESSION);
         echo COMP_formContainerHeader($title,true,"Modifica effettuata con successo!!!!");
         echo COMP_formContainerFooter();    
     }
     else{ //o siamo prima volta(senza post) o con post ma con errori quindi ripresento il form con i dati
+        echo COMP_header($_SESSION);
         echo COMP_formContainerHeader($title,isset($errori['error']), (isset($errori['error']))?$errori['error']:'');//messaggiosolo in caso di errori
         echo COMP_modificaUtente($idUtente,$errori, $_POST);
         echo COMP_formFooter("Modifica Utente","btnModifica",false,"/ProntoEmergenza2025");

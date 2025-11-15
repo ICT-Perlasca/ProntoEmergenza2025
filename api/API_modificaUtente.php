@@ -2,6 +2,7 @@
 //session_start();
 require_once "funzioniDB.php";
 require_once "./api/API_upload.php";
+require_once "./api/API_getUtente.php";
 require_once "./globals.php";
 
 function API_modificaUtente($get, $post, $session) {
@@ -14,6 +15,7 @@ function API_modificaUtente($get, $post, $session) {
     } else {
         //2. recupera idUtente da GET
         $idUtente=$get['idUtente'];
+        
 
         // 3. Recupera dati POST
       //readonly  $cognome=$post['cognome'];
@@ -180,6 +182,17 @@ function API_modificaUtente($get, $post, $session) {
             //print_r($tipi);
             $resUpdate=db_query($strsql,$valori,$tipi);
 
+
+            //modifica dei ruoli
+            //cancello i ruoli vecchi presenti nelDB
+            $resDel=db_query('delete from utentiruoli where idUtente=?',[$idUtente],[PDO::PARAM_INT]);
+
+            //per ogni elemento checckato inserisco una nuova npla in utenti ruoli con idUtente e idRuolo
+            //gli elementi checckati sono gli unici inviati via post
+            $ruoliNew=$post['ruoli'];
+            foreach($ruoliNew as $id){
+               $resIns=db_query('insert into utentiruoli (idRuolo,idUtente) values(?,?)',[$id,$idUtente],[PDO::PARAM_INT,PDO::PARAM_INT]);
+            }
             if (isset($resUpdate['error'])) {
                 $response['error'] = "Errore nell'aggiornamento dell'utente num.  $idUtente Errore dalla query:".$resUpdate['error'];
             } else {

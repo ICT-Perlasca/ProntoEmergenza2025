@@ -16,8 +16,8 @@ function COMP_selectRuolo($nameIdSelect,$idUtente=-1){
 
     if ($idUtente==-1)
         $dati=API_elencoRuoli([],[],$session);//senza parametri quindi ritorna elenco di TUTTI i ruoli
-    else
-        $ruoli=API_elencoRuoli([],['idUtente'=>$idUtente],$session);//con parametri quindi ritorna elenco dei ruoli di quell'utente
+    else   //prima era var $ruoli
+        $dati=API_elencoRuoli([],['idUtente'=>$idUtente],$session);//con parametri quindi ritorna elenco dei ruoli di quell'utente
 
     $select="<select class='form-select  rounded p-1 border-2' name='$nameIdSelect' id='$nameIdSelect'>
              <option value=''>Seleziona un ruolo:</option>";
