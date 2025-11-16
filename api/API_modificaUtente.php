@@ -164,6 +164,19 @@ function API_modificaUtente($get, $post, $session) {
                 $tipi[]=PDO::PARAM_STR;
             }
             if(isset($nomeFileProfilo)){
+                //accedo ai dati vecchi dell'utente x avere il vecchio nome del file immagine
+                $datiVecchiUtente=API_getUtenteById([],['idUtente' => $idUtente],$_SESSION);
+                if (!isset($datiVecchiUtente[0]['immagine'])) echo "non trovata npla con id=".$idUtente;
+                $oldImgProfilo=$datiVecchiUtente[0]['immagine'];
+                if (!is_null($oldImgProfilo)&&$oldImgProfilo!=""){
+                    //cancella file dalla cartella
+                    $nomeFileDelete = "./$cartellaImmagini/".$oldImgProfilo;
+                    // Verifica se il file esiste
+                    if (file_exists($nomeFileDelete)) {
+                        // Elimina il file
+                        unlink($nomeFileDelete);
+                    }
+                }
                 $strsql.=",immagine=?";
                 $valori[]=$nomeFileProfilo;
                 $tipi[]=PDO::PARAM_STR;

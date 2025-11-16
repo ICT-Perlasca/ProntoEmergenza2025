@@ -66,10 +66,6 @@ if(!isset($_SESSION['idUtente'])){
     echo COMP_head();  
 ?>
 <body>
-<?php
-    
-    
-?>
    <!-- <span class="col-8 text-center text-primary">
         <h1>Modifica profilo utente</h1>
     </span>-->
@@ -77,9 +73,11 @@ if(!isset($_SESSION['idUtente'])){
    
     if (isset($_POST['via']) && !isset($errori['error'])) {
         //fine della modifica perchè no errori dopo update
-        //carico i dati nuovi dell'utente che li ha modificati in sessione
-        $dati=API_getUtenteById(["idUtente"=>$idUtente],[],$_SESSION);
-        $_SESSION=caricaSessione($dati[0]);
+        //carico i dati nuovi dell'utente che li ha modificati in sessione SOLO SE chi  è in session è lo stesso utente che ha effettauto la modifica del proprio profilo
+        if ($idUtente==$_SESSION['idUtente']){ //questo NON deve essere fatto se ladmin ha modificato i dati di un utente!!!
+            $dati=API_getUtenteById([],["idUtente"=>$idUtente],$_SESSION);
+            $_SESSION=caricaSessione($dati[0]);
+        }
         echo COMP_header($_SESSION);
         echo COMP_formContainerHeader($title,true,"Modifica effettuata con successo!!!!");
         echo COMP_formContainerFooter();    

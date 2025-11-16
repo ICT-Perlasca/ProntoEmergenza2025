@@ -61,6 +61,7 @@ Il team di ProntoEmergenza di Agnosine(BS)<br>
 Associazione di Volontariato",
     "oggetto"=>"ProntoEmergenza: Nuovo mese in programmazione"
 ];
+
 function calcolaEta($dataN){
 	$oggi = new DateTime();
 	$dn = new DateTime($dataN);
@@ -86,7 +87,7 @@ function esisteFile($file){//verifico se tramite form il file di cui mi viene pa
         return false;
     else return true;
 }
-function caricaSessione($vetDati){
+function caricaSessione($vetDati){//dal vettore dei dati completi dell'utente, carica n sessione i dati necessari
     global $cartellaImmagini, $imgAvatar;
     $sess['idUtente']=$vetDati['idUtente'];
     $sess['username']=$vetDati['username'];
