@@ -75,7 +75,7 @@ function COMP_formRegistrazione(array $errori = [], array $valori = [], bool $se
         }
     }
     </script>
-    <div class="row min-vh-100 justify-content-center align-items-center bg-primary text-white py-5" m-0>
+    <div class="row min-vh-100 justify-content-center align-items-center bg-primary text-white py-2" m-0>
         <div class="col-12 col-md-8 col-lg-6 bg-white text-dark p-5 rounded shadow">
 
             ' . ($hasError ? '<div class="alert alert-danger mb-4">Si sono verificati degli errori, correggi i campi evidenziati:<br>'.print_r($errori).'</div>' : '') . '

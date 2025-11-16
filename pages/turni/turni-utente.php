@@ -6,7 +6,8 @@
 	require_once("./components/Header/header.php");
 	require_once("./components/Footer/footer.php");
 	require_once("./components/SimpleComponent/COMP_form.php");
-	require_once("./api/API_getMesi.php");
+    require_once("./components/SimpleComponent/COMP_selectUtenti.php");
+	//require_once("./api/API_getMesi.php");
 	session_start();
 	if(!isset($_SESSION["idUtente"])){
 		header("Location: ./pages/login.php");
@@ -22,24 +23,18 @@
 	
 	echo COMP_Header($_SESSION);
 ?>	
-			<script type="text/javascript" src="./public/js/scriptTurniConvalidati.js"></script>
+			<script type="text/javascript" src="./public/js/scriptTurniUtente.js"></script>
 			 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 			<center>
 		
-				<?php echo COMP_formContainerHeader('Elenco Turni Convalidati di un utente',false,'');?>
+				<?php echo COMP_formContainerHeader('Elenco Turni di un utente',false,'');?>
 
-				<form method="POST" action="" class="needs-validation mt-0" onsubmit="GetTurniMese(this); return false;">
+				<form method="POST" action="" class="needs-validation mt-0" onsubmit="GetTurni(this); return false;">
 					<div>
-						<label for="tipo" class="form-label">Tipo di turno</label>
-						<select name="tipo" onChange="GetMesi(this)">
-							<option>-</option>
-							<option value=turni118>Turni 118</option>
-							<option value=programmati>Eventi Programmati</option>
-							<option value=assistenza>Assistenza</option>
-						</select>
-					</div>
-					<div  id=selectMeseAnno></div>
-					<?php echo COMP_formFooter('Ricerca Turni','btnRicercaTurni',true);?>
+				    <label for="utente">Scegli l'utente</label>
+					<?php echo COMP_selectUtenti("idUtente");?>
+			        </div>
+                    <?php echo COMP_formFooter('Ricerca Turni','btnRicercaTurni',false);?>
 					<input type=hidden id=hiddenJson value="">
 				</form>
 				<?php echo COMP_formContainerFooter();?>

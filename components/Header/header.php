@@ -42,7 +42,7 @@ function COMP_header($user) {
                         </div>
                         <ul class="dropdown-menu" aria-labelledby="userDropdown">
                             <li><a class="dropdown-item" href="utenti/profiloUtente">Profilo</a></li>
-                            <li><a class="dropdown-item" href="#">Impostazioni</a></li>
+                           <!-- <li><a class="dropdown-item" href="#">Impostazioni</a></li>-->
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="logout">Logout</a></li>
                         </ul>

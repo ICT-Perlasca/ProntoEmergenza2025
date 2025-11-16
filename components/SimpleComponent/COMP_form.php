@@ -2,8 +2,8 @@
 function COMP_formContainerHeader($titolo,$hasMsg,$txtMessage) {
 //min-vh-100
     $formHeader= " <span class='col-8 text-center text-primary'><h1>$titolo</h1></span>
-    <div class='row  justify-content-center align-items-center bg-primary text-white py-5' m-0>
-        <div class='col-12 col-md-8 col-lg-6 bg-white text-dark p-5 rounded shadow'>";
+    <div class='row  justify-content-center align-items-center bg-primary text-white py-2' m-0>
+        <div class='col-12 col-md-8 col-lg-6 bg-white text-dark p-2 rounded shadow'>";
     if ($hasMsg) 
         $formHeader.= "<div class='alert alert-danger mb-4'>$txtMessage</div>";
     return $formHeader;
