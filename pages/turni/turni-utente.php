@@ -29,22 +29,26 @@
 		
 				<?php echo COMP_formContainerHeader('Elenco Turni di un utente',false,'');?>
 
-				<form method="POST" action="" class="needs-validation mt-0" onsubmit="GetTurni(this); return false;">
+				<form method="POST" action="" class="needs-validation mt-0" onsubmit="GetTurniUtente(this); return false;">
 					<div>
 				    <label for="utente">Scegli l'utente</label>
 					<?php echo COMP_selectUtenti("idUtente");?>
 			        </div>
+					<div>
+						<label for="tipo" class="form-label">Tipo di turno</label>
+						<select name="tipo">
+							<option>-</option>
+							<option value=turni118>Turni 118</option>
+							<option value=programmati>Eventi Programmati</option>
+							<option value=assistenza>Assistenza</option>
+						</select>
+					</div>
                     <?php echo COMP_formFooter('Ricerca Turni','btnRicercaTurni',false);?>
 					<input type=hidden id=hiddenJson value="">
 				</form>
 				<?php echo COMP_formContainerFooter();?>
-<!--								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-	-->
-				<div  id=tableTurni></div> <!--class="mb-3"-->
+		
+				<div  id=tableTurni></div>
 			</center>
 			<?php
 				echo COMP_Footer();

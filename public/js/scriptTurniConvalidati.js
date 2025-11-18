@@ -10,12 +10,12 @@ function GetTurniMese(form){
 	conn.open("POST","./api/API_elencoTurniConvalidatiMensile");
 	conn.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	conn.onload= function(){
-		rispostaGetTurniMesi(this);
+		rispostaGetTurniMesi(this,tipo);
 	}
 	conn.send("tipo="+tipo+"&year="+array[0]+"&month="+array[1]);
 }
 
-function rispostaGetTurniMesi(xhttp){
+function rispostaGetTurniMesi(xhttp,tipo){
 	let risposta=JSON.parse(xhttp.responseText);
 	if(risposta.length==0){
 		document.getElementById('tableTurni').innerHTML="Nessun turno trovato";
@@ -26,7 +26,7 @@ function rispostaGetTurniMesi(xhttp){
 		str+="<input type=hidden name=json value='"+xhttp.responseText+"'>";
         str+="<input type=hidden name=title value='Elenco turni convalidati'>";
 		str+=`<nav><button type=submit class="btn" name=excel><img src="./public/images/excel-48.png"></button><button class="btn" type=submit name=pdf><img src="./public/images/pdf-50.png"></button></nav>`;
-		str+="</form><br><br><table border=1 class=table><tr><th>Data</th><th>Ora Inizio</th><th>Ora Fine</th><th>Nome</th><th>Cognome</th><th>Ruolo</th></tr>";
+		str+='</form><br><h1>'+tipo+'</h1><table border=1 class=table><tr><th>Data</th><th>Ora Inizio</th><th>Ora Fine</th><th>Nome</th><th>Cognome</th><th>Ruolo</th></tr>';
 		for(let i=0;i<risposta.length; i++){
 			str=str+"<tr>";
 			str=str+"<td>"+risposta[i]['data']+"</td>";
@@ -38,6 +38,7 @@ function rispostaGetTurniMesi(xhttp){
 			str=str+"</tr>";
 		}
 		str=str+"</table>";
+		//console.log(str);
 		document.getElementById('tableTurni').innerHTML=str;		
 	}
 }
@@ -83,7 +84,7 @@ function getTurniMeseUtente(form){
 	conn.open("POST","./api/API_elencoTurniConvalidatiMensileUtente");
 	conn.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	conn.onload= function(){
-		rispostaGetTurniMesi(this);
+		rispostaGetTurniMesi(this,tipo);
 	}
 	conn.send("tipo="+tipo+"&year="+array[0]+"&month="+array[1]+"&idUtente="+idUtente);
 }

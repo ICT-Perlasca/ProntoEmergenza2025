@@ -4,7 +4,7 @@ function turniData(dataStr) {
     console.log("Fetching shifts for date:", dataStr); // Log the date being fetched
 
     $.ajax({
-        url: "api/elencoTurniData",
+        url: "api/API_elencoTurniData",
         type: "POST",
         data: { data: dataStr },
         dataType: "json",

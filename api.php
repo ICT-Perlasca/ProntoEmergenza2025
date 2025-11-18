@@ -31,11 +31,11 @@ switch ($route) {
         require_once ("./api/API_ritornaUtenti.php");
         echo json_encode(API_ritornaUtenti($_GET, $_POST, $_SESSION));
         break;    
-    case 'api/elencoTurniData':
+    case 'api/API_elencoTurniData':
         require_once ("./api/elencoTurniData.php");
         echo json_encode(API_elencoTurniData($_GET, $_POST, $_SESSION));
         break;
-    case 'api/elencoDatiTurnoSingolo':
+    case 'api/API_elencoDatiTurnoSingolo':
         require_once ("./api/API_elencoDatiTurnoSingolo.php");
         echo json_encode(API_elencoDatiTurnoSingolo($_GET, $_POST, $_SESSION));
         break;
